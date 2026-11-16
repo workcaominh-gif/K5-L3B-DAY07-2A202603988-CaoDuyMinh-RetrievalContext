@@ -2,7 +2,7 @@
 
 Chuẩn bị: cắm ổ T7, `docker start day6_student_starter-postgres-1`, chạy `day7-agent` → http://127.0.0.1:8780.
 Để sẵn một ảnh cắt nhỏ từ video (vd thẻ tiêu đề Golden Squash Hotcakes) để kéo vào ô chat.
-Bản rút gọn 2 phút: bỏ đoạn 1:30–1:55 (âm thanh) và nói gọn đoạn video.
+Bản 2 phút: report/presentation_2min.md.
 
 ## 0:00–0:15 · Bài toán (tab Agent)
 "Bếp ăn trường học có một cuốn sách USDA 148 trang và video hướng dẫn. Câu trả lời nằm rải trong bảng nguyên liệu,
