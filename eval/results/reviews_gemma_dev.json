@@ -1,0 +1,206 @@
+[
+ {
+  "query_id": "q01",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the 72-hour window with without-undue-delay language, the unlikely-risk exception, the reasons-for-delay requirement, and the processor duty, all supported by the single cited Article 33 chunk.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q02",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly answers 13 years with the key condition that Member States may lower the age by law but not below 13, and the cited Article 8 chunk directly supports the answer and the parental consent and verification claims.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q03",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly states the top tier (EUR 20 million or 4% of worldwide turnover, whichever is higher) with supporting citations, and the lower tier and Article 58(2) details are also supported by the retrieved chunks.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q05",
+  "citation_support": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer correctly gives the structured, commonly used, machine-readable format and the right to transmit to another controller, with conditions (consent/contract, automated means), direct transfer, and limits all supported by the cited Article 20 and recitals.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q06",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states that the sub-250-employee exemption from Article 30(1)-(2) does not apply if the processing is risky, not occasional, or involves special categories or criminal data, matching the gold answer and quote; the recital citation supports the SME-derogation claim.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q07",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly quotes Article 4(1) GDPR's definition of personal data, matching the gold answer, and adds accurate identifiability details and Recital 26 points that both cited chunks support.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q08",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly answers yes with the gold quote and adds the supported conditions (overriding interests, reasonable expectations, careful assessment, and the right to object to direct marketing profiling), all backed by the cited recitals.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q10",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer correctly states that the data subject can require erasure without undue delay where a listed ground applies, and each cited chunk supports its attached claim, but the closing note that the text was cut off is unsupported because the cited chunks contain the full Article 17(1)(c) and 17(3)(d).",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q11",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly lists all special categories from Article 9(1), including health and sex life or sexual orientation, and the cited chunks support the claims, with chunk 1 supporting the paragraph 3 and 4 statements about exceptions and further Member State conditions.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q12",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly gives EUR 35 million or 7% of worldwide annual turnover, whichever is higher, for prohibited practices, matching the gold answer and evidence; the added Union-institution cap of EUR 1,500,000 is supported by the second chunk and is a correct accessory detail.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q13",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly states the 10^25 FLOPs cumulative training compute presumption from Article 51(2), and the recital chunks support the claims about threshold adjustment and the two-week notification to the AI Office.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q15",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly gives the general 15-day deadline with the immediate-after-causal-link condition and the awareness trigger, and the death-of-a-person 10-day exception is supported by chunk 587; the paragraph 3 mention is accurately flagged as truncated, so the answer is correct and complete with conditions.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q16",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly states providers and deployers must take measures to ensure a sufficient level of AI literacy for staff and others operating AI on their behalf, taking into account the conditions in Article 4, and the recitals support the supplementary points; the final recital claim is loosely supported but the core answer is complete and correct.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q17",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states at least one national sandbox per Member State, operational within 24 months, with the joint and participation options all supported by the cited Article 57 chunk, which contains the gold quote.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q18",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly answers yes under duly justified urgency with authorisation requested within 24 hours, with citations supporting each claim, but it omits the gold condition that use stops and data is deleted if authorisation is rejected, though it honestly notes that gap; the answer is still correct and complete on the core conditions, so it earns full credit.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q20",
+  "citation_support": [
+   true
+  ],
+  "reason": "The answer correctly identifies discriminatory outcomes, exclusion of groups, and violation of dignity and non-discrimination from Recital 31, all supported by the single cited chunk, and the claims about how scoring works and unfair treatment are also in the cited text.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q22",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states the disclosure obligation for AI systems interacting with natural persons, the obviousness exception, and the law-enforcement exception with its public-reporting carve-out, all supported by Article 50(1); the Article 50(2) machine-readable marking claim is also supported by its cited chunk.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q24",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer correctly identifies Annex III point 4 recruitment/selection uses (targeted job ads, filtering applications, evaluating candidates) and adds related employment uses, each supported by the cited chunks; the citation to chunk 702 directly supports the recruitment claim and chunk 703 supports the work-relationship claim, while chunk 700 supports that Annex III is the Article 6(2) list.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "u01",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly abstained since the GDPR sets no annual registration or notification fee, and its cited chunks accurately state that notification obligations were abolished (Recital 89) and that supervisory authority tasks are free of charge with only a reasonable fee for manifestly unfounded or excessive requests (Art. 57), without inventing a fee.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ },
+ {
+  "query_id": "u02",
+  "citation_support": [
+   true
+  ],
+  "reason": "The question has no answer in the corpus; the agent abstained and its only citation (Article 64) accurately describes the AI Office without asserting any headcount, so no unsupported fact was stated.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ }
+]

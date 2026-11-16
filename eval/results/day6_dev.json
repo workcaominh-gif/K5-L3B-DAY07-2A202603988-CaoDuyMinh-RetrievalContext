@@ -1,0 +1,2564 @@
+{
+ "split": "dev",
+ "index": "chunks_bge strategy B (+part filter = C)",
+ "results": {
+  "dense": {
+   "n": 18,
+   "hit1": 8,
+   "hit3": 14,
+   "mrr10": 0.616,
+   "seconds": 10.5,
+   "claude_tokens": 0,
+   "cost_usd": 0.0,
+   "claude_failures": 0
+  },
+  "bm25": {
+   "n": 18,
+   "hit1": 8,
+   "hit3": 10,
+   "mrr10": 0.507,
+   "seconds": 0.1,
+   "claude_tokens": 0,
+   "cost_usd": 0.0,
+   "claude_failures": 0
+  },
+  "hybrid": {
+   "n": 18,
+   "hit1": 8,
+   "hit3": 12,
+   "mrr10": 0.594,
+   "seconds": 0.6,
+   "claude_tokens": 0,
+   "cost_usd": 0.0,
+   "claude_failures": 0
+  },
+  "hybrid_rerank": {
+   "n": 18,
+   "hit1": 14,
+   "hit3": 15,
+   "mrr10": 0.817,
+   "seconds": 56.5,
+   "claude_tokens": 83507,
+   "cost_usd": 0.0109,
+   "claude_failures": 0
+  },
+  "rewrite": {
+   "n": 18,
+   "hit1": 13,
+   "hit3": 18,
+   "mrr10": 0.861,
+   "seconds": 39.9,
+   "claude_tokens": 9721,
+   "cost_usd": 0.0023,
+   "claude_failures": 0
+  },
+  "dense_gemma": {
+   "n": 18,
+   "hit1": 12,
+   "hit3": 18,
+   "mrr10": 0.824,
+   "seconds": 6.0,
+   "claude_tokens": 0,
+   "cost_usd": 0.0,
+   "claude_failures": 0
+  }
+ },
+ "traces": {
+  "dense": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:292",
+      "page": 71,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:18",
+      "page": 8,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:662",
+      "page": 395,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:438",
+      "page": 111,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:665",
+      "page": 397,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:114",
+      "page": 27,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:64",
+      "page": 17,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:331",
+      "page": 82,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:287",
+      "page": 70,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:94",
+      "page": 23,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:198",
+      "page": 47,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:202",
+      "page": 49,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:201",
+      "page": 48,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.3333333333333333,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:69",
+      "page": 18,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:71",
+      "page": 18,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:53",
+      "page": 14,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:72",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.1,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:325",
+      "page": 181,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:326",
+      "page": 181,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:330",
+      "page": 186,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:194",
+      "page": 101,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:180",
+      "page": 92,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:264",
+      "page": 138,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.2,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:39",
+      "page": 21,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:642",
+      "page": 386,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:249",
+      "page": 130,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:519",
+      "page": 302,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:236",
+      "page": 123,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.125,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:71",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:332",
+      "page": 186,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:100",
+      "page": 49,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:55",
+      "page": 29,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:490",
+      "page": 282,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:491",
+      "page": 283,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:642",
+      "page": 386,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.3333333333333333,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:707",
+      "page": 429,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     }
+    ]
+   }
+  ],
+  "bm25": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:295",
+      "page": 72,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:29",
+      "page": 8,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.14285714285714285,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:435",
+      "page": 110,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:173",
+      "page": 41,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:174",
+      "page": 41,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:220",
+      "page": 115,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:61",
+      "page": 16,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:23",
+      "page": 7,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:375",
+      "page": 92,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:94",
+      "page": 23,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:25",
+      "page": 7,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:14",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:712",
+      "page": 433,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:71",
+      "page": 18,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:69",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:364",
+      "page": 204,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:344",
+      "page": 85,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:205",
+      "page": 107,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:516",
+      "page": 299,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:667",
+      "page": 398,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:198",
+      "page": 103,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:195",
+      "page": 101,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:588",
+      "page": 348,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:98",
+      "page": 49,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:222",
+      "page": 116,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:110",
+      "page": 55,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.3333333333333333,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:531",
+      "page": 309,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:526",
+      "page": 307,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.14285714285714285,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:172",
+      "page": 88,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:315",
+      "page": 166,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:30",
+      "page": 17,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:146",
+      "page": 74,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:56",
+      "page": 29,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:222",
+      "page": 116,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:461",
+      "page": 266,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:725",
+      "page": 440,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     }
+    ]
+   }
+  ],
+  "hybrid": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:292",
+      "page": 71,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:161",
+      "page": 38,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.25,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:172",
+      "page": 41,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:435",
+      "page": 110,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:437",
+      "page": 111,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:64",
+      "page": 17,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:114",
+      "page": 27,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:220",
+      "page": 115,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.2,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:94",
+      "page": 23,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:286",
+      "page": 70,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:198",
+      "page": 47,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:25",
+      "page": 7,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:202",
+      "page": 49,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:69",
+      "page": 18,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:71",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:53",
+      "page": 14,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:364",
+      "page": 204,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:667",
+      "page": 398,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:338",
+      "page": 189,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:668",
+      "page": 399,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:194",
+      "page": 101,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:195",
+      "page": 101,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:264",
+      "page": 138,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.1,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:38",
+      "page": 21,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:39",
+      "page": 21,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:98",
+      "page": 49,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:519",
+      "page": 302,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:526",
+      "page": 307,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.14285714285714285,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:71",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:75",
+      "page": 37,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:55",
+      "page": 29,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:103",
+      "page": 51,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:490",
+      "page": 282,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:227",
+      "page": 119,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:208",
+      "page": 109,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:729",
+      "page": 445,
+      "hit": false
+     }
+    ]
+   }
+  ],
+  "hybrid_rerank": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:292",
+      "page": 71,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:29",
+      "page": 8,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:439",
+      "page": 111,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:438",
+      "page": 111,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:172",
+      "page": 41,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:73",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:252",
+      "page": 60,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:64",
+      "page": 17,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:287",
+      "page": 70,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:94",
+      "page": 23,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:198",
+      "page": 47,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:25",
+      "page": 7,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:202",
+      "page": 49,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:255",
+      "page": 61,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:69",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:229",
+      "page": 55,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:53",
+      "page": 14,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:338",
+      "page": 189,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:325",
+      "page": 181,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:326",
+      "page": 181,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:195",
+      "page": 101,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:194",
+      "page": 101,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:264",
+      "page": 138,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:323",
+      "page": 180,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:38",
+      "page": 21,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:39",
+      "page": 21,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:236",
+      "page": 123,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:519",
+      "page": 302,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": false,
+    "rr": 0.2,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:334",
+      "page": 187,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:71",
+      "page": 35,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:55",
+      "page": 29,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:82",
+      "page": 41,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:490",
+      "page": 282,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:225",
+      "page": 118,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:227",
+      "page": 119,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:743",
+      "page": 454,
+      "hit": false
+     }
+    ]
+   }
+  ],
+  "rewrite": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:292",
+      "page": 71,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:29",
+      "page": 8,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:438",
+      "page": 111,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:437",
+      "page": 111,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:439",
+      "page": 111,
+      "hit": true
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:73",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:260",
+      "page": 63,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:252",
+      "page": 60,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:287",
+      "page": 70,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:285",
+      "page": 69,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:198",
+      "page": 47,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:199",
+      "page": 48,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:201",
+      "page": 48,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:255",
+      "page": 61,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:71",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:364",
+      "page": 204,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:225",
+      "page": 54,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:667",
+      "page": 398,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:654",
+      "page": 391,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:664",
+      "page": 395,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:195",
+      "page": 101,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:198",
+      "page": 103,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:588",
+      "page": 348,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:323",
+      "page": 180,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:39",
+      "page": 21,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:413",
+      "page": 239,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:236",
+      "page": 123,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:519",
+      "page": 302,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:333",
+      "page": 187,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:71",
+      "page": 35,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:55",
+      "page": 29,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:82",
+      "page": 41,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:490",
+      "page": 282,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:225",
+      "page": 118,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:492",
+      "page": 283,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:731",
+      "page": 446,
+      "hit": false
+     }
+    ]
+   }
+  ],
+  "dense_gemma": [
+   {
+    "id": "q01",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:291",
+      "page": 71,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:97",
+      "page": 24,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:292",
+      "page": 71,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q02",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:223",
+      "page": 53,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:35",
+      "page": 10,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:373",
+      "page": 92,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q03",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:172",
+      "page": 41,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:439",
+      "page": 111,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:437",
+      "page": 111,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q05",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:260",
+      "page": 63,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:252",
+      "page": 60,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:124",
+      "page": 29,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q06",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:287",
+      "page": 70,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:12",
+      "page": 4,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:286",
+      "page": 70,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q07",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:198",
+      "page": 47,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:194",
+      "page": 46,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:202",
+      "page": 49,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q08",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:45",
+      "page": 12,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:44",
+      "page": 12,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:75",
+      "page": 19,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q10",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:255",
+      "page": 61,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:254",
+      "page": 61,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:71",
+      "page": 18,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q11",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:gdpr-2016:224",
+      "page": 54,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:gdpr-2016:53",
+      "page": 14,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:gdpr-2016:229",
+      "page": 55,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q12",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:654",
+      "page": 391,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:664",
+      "page": 395,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:287",
+      "page": 145,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q13",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:195",
+      "page": 101,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:496",
+      "page": 286,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:198",
+      "page": 103,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q15",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:587",
+      "page": 348,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:586",
+      "page": 347,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:589",
+      "page": 349,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q16",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.5,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:167",
+      "page": 86,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:323",
+      "page": 180,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:38",
+      "page": 21,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q17",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:518",
+      "page": 301,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:519",
+      "page": 302,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:236",
+      "page": 123,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q18",
+    "hit1": false,
+    "hit3": true,
+    "rr": 0.3333333333333333,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:69",
+      "page": 34,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:70",
+      "page": 35,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:333",
+      "page": 187,
+      "hit": true
+     }
+    ]
+   },
+   {
+    "id": "q20",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:61",
+      "page": 31,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:110",
+      "page": 55,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:100",
+      "page": 49,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q22",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:490",
+      "page": 282,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:491",
+      "page": 283,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:225",
+      "page": 118,
+      "hit": false
+     }
+    ]
+   },
+   {
+    "id": "q24",
+    "hit1": true,
+    "hit3": true,
+    "rr": 1.0,
+    "top3": [
+     {
+      "chunk_id": "B:eu-ai-act-2024:702",
+      "page": 425,
+      "hit": true
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:700",
+      "page": 424,
+      "hit": false
+     },
+     {
+      "chunk_id": "B:eu-ai-act-2024:733",
+      "page": 447,
+      "hit": false
+     }
+    ]
+   }
+  ]
+ }
+}

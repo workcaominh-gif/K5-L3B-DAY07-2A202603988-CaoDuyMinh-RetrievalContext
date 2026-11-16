@@ -1,0 +1,39 @@
+{
+ "reviewer": "manual read of every test row (8 per config) - Claude Code session on behalf of the student; student to confirm",
+ "rows_read": {
+  "gemma_test": [
+   "q04",
+   "q09",
+   "q14",
+   "q19",
+   "q21",
+   "q23",
+   "u03",
+   "u04"
+  ],
+  "bge_test": [
+   "q04",
+   "q09",
+   "q14",
+   "q19",
+   "q21",
+   "q23",
+   "u03",
+   "u04"
+  ]
+ },
+ "overrides": [
+  {
+   "file": "reviews_bge_test.json",
+   "query_id": "q09",
+   "field": "answer_grade",
+   "judge": 1,
+   "final": 2,
+   "why": "GDPR Art. 37(1) reads 'The controller and the processor shall designate a data protection officer in any case where: (a) the processing is carried out by a public authority or body, except for courts acting in their judicial capacity' - the agent's 'applies to both the controller and the processor' is correct; the judge was wrong."
+  }
+ ],
+ "agreed_notes": {
+  "gemma u03": "abstained correctly; recital 148 cited for 'general provisions on administrative fines' - judge marked unsupported (conservative), kept",
+  "bge q21 / gemma q19": "one extra citation each does not support its sentence - judge label kept"
+ }
+}

@@ -1,0 +1,189 @@
+[
+ {
+  "query_id": "q04",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "controller shall provide information on action taken on request without undue delay within one month, extension by two further months",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:233",
+     "B:gdpr-2016:302",
+     "B:gdpr-2016:246",
+     "B:gdpr-2016:234",
+     "B:gdpr-2016:291"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:233",
+   "B:gdpr-2016:234"
+  ]
+ },
+ {
+  "query_id": "q09",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "designation of data protection officer public authority or body except courts acting in judicial capacity",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:305",
+     "B:gdpr-2016:306",
+     "B:gdpr-2016:308",
+     "B:gdpr-2016:307",
+     "B:gdpr-2016:429"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:305",
+   "B:gdpr-2016:306"
+  ]
+ },
+ {
+  "query_id": "q14",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "'AI system' means a machine-based system designed to operate with varying levels of autonomy definition",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:26",
+     "B:eu-ai-act-2024:308",
+     "B:eu-ai-act-2024:24",
+     "B:eu-ai-act-2024:52",
+     "B:eu-ai-act-2024:681"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:308",
+   "B:eu-ai-act-2024:24",
+   "B:eu-ai-act-2024:26"
+  ]
+ },
+ {
+  "query_id": "q19",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "high-risk AI systems education and vocational training",
+    "filter": {
+     "part": "annex"
+    },
+    "results": [
+     "B:eu-ai-act-2024:701",
+     "B:eu-ai-act-2024:702",
+     "B:eu-ai-act-2024:700",
+     "B:eu-ai-act-2024:749",
+     "B:eu-ai-act-2024:733"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:701",
+   "B:eu-ai-act-2024:702",
+   "B:eu-ai-act-2024:700"
+  ]
+ },
+ {
+  "query_id": "q21",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "deep fake disclosure obligation deployers exception artistic creative satirical",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:231",
+     "B:eu-ai-act-2024:230",
+     "B:eu-ai-act-2024:493",
+     "B:eu-ai-act-2024:225",
+     "B:eu-ai-act-2024:422",
+     "B:eu-ai-act-2024:492"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:493",
+   "B:eu-ai-act-2024:231",
+   "B:eu-ai-act-2024:492"
+  ]
+ },
+ {
+  "query_id": "q23",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "This Regulation shall apply from entry into force date of application",
+    "filter": {
+     "part": "article"
+    },
+    "results": [
+     "B:eu-ai-act-2024:690",
+     "B:gdpr-2016:460",
+     "B:eu-ai-act-2024:298",
+     "B:eu-ai-act-2024:299",
+     "B:eu-ai-act-2024:650"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:690"
+  ]
+ },
+ {
+  "query_id": "u03",
+  "status": "abstain",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "Irish Data Protection Commission fine imposed on Meta 2023",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:247",
+     "B:eu-ai-act-2024:299",
+     "B:eu-ai-act-2024:246",
+     "B:eu-ai-act-2024:665",
+     "B:eu-ai-act-2024:364"
+    ]
+   }
+  ],
+  "citations": []
+ },
+ {
+  "query_id": "u04",
+  "status": "abstain",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "AI regulatory sandbox EU funding amount euros per sandbox",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:518",
+     "B:eu-ai-act-2024:534",
+     "B:eu-ai-act-2024:530",
+     "B:eu-ai-act-2024:236",
+     "B:eu-ai-act-2024:526"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:518"
+  ]
+ }
+]

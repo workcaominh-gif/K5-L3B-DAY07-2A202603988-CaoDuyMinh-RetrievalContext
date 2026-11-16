@@ -1,0 +1,915 @@
+{
+ "summary": {
+  "config": "gemma",
+  "split": "dev",
+  "n": 20,
+  "errors": 0,
+  "context_evidence_rate": "18/18",
+  "answered_answerable": "18/18",
+  "abstained_unanswerable": "2/2",
+  "with_citation": "18/18",
+  "searches_per_q": 1.05,
+  "cost_usd": 0.186,
+  "median_seconds": 5.2
+ },
+ "rows": [
+  {
+   "query_id": "q01",
+   "split": "dev",
+   "answerable": true,
+   "question": "Within how many hours must a controller notify a personal data breach to the supervisory authority under the GDPR?",
+   "status": "answered",
+   "error": null,
+   "answer": "The controller must notify the supervisory authority without undue delay and, where feasible, not later than 72 hours after becoming aware of the breach [cite:B:gdpr-2016:291].\n\nTwo conditions apply:\n- Notification is not required if the breach is unlikely to result in a risk to the rights and freedoms of natural persons [cite:B:gdpr-2016:291].\n- If the notification is made after 72 hours, it must include reasons for the delay [cite:B:gdpr-2016:291].\n\nA processor must notify the controller without undue delay after becoming aware of a breach [cite:B:gdpr-2016:291].",
+   "raw_answer": "The controller must notify the supervisory authority without undue delay and, where feasible, not later than 72 hours after becoming aware of the breach [cite:B:gdpr-2016:291].\n\nTwo conditions apply:\n- Notification is not required if the breach is unlikely to result in a risk to the rights and freedoms of natural persons [cite:B:gdpr-2016:291].\n- If the notification is made after 72 hours, it must include reasons for the delay [cite:B:gdpr-2016:291].\n\nA processor must notify the controller without undue delay after becoming aware of a breach [cite:B:gdpr-2016:291].",
+   "citations": [
+    "B:gdpr-2016:291"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "notification of a personal data breach to the supervisory authority within 72 hours",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:291",
+      "B:gdpr-2016:97",
+      "B:gdpr-2016:99",
+      "B:gdpr-2016:292"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:291",
+    "B:gdpr-2016:97",
+    "B:gdpr-2016:99",
+    "B:gdpr-2016:292"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3801,
+   "cost_usd": 0.0093,
+   "seconds": 23.9
+  },
+  {
+   "query_id": "q02",
+   "split": "dev",
+   "answerable": true,
+   "question": "What is the lowest age a Member State may set for a child's own consent to information society services?",
+   "status": "answered",
+   "error": null,
+   "answer": "**13 years.** The default age for a child's own consent is 16. Member States may lower it by law, \"provided that such lower age is not below 13 years\" [cite:B:gdpr-2016:223].\n\nThis applies where consent under Article 6(1)(a) is the legal basis and the information society services are offered directly to a child. Below the applicable age, processing is lawful only if the holder of parental responsibility gives or authorises consent. The controller must make reasonable efforts to verify that consent [cite:B:gdpr-2016:223].",
+   "raw_answer": "**13 years.** The default age for a child's own consent is 16. Member States may lower it by law, \"provided that such lower age is not below 13 years\" [cite:B:gdpr-2016:223].\n\nThis applies where consent under Article 6(1)(a) is the legal basis and the information society services are offered directly to a child. Below the applicable age, processing is lawful only if the holder of parental responsibility gives or authorises consent. The controller must make reasonable efforts to verify that consent [cite:B:gdpr-2016:223].",
+   "citations": [
+    "B:gdpr-2016:223"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "conditions applicable to child's consent in relation to information society services age Member States may provide lower age",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:223",
+      "B:gdpr-2016:35",
+      "B:gdpr-2016:373",
+      "B:gdpr-2016:222"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:223",
+    "B:gdpr-2016:35",
+    "B:gdpr-2016:373",
+    "B:gdpr-2016:222"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3636,
+   "cost_usd": 0.0087,
+   "seconds": 24.2
+  },
+  {
+   "query_id": "q03",
+   "split": "dev",
+   "answerable": true,
+   "question": "What is the highest administrative fine tier under the GDPR?",
+   "status": "answered",
+   "error": null,
+   "answer": "The highest GDPR fine tier is up to 20 000 000 EUR. For an undertaking, it is up to 4 % of total worldwide annual turnover of the preceding financial year, whichever is higher. [cite:B:gdpr-2016:438]\n\nIt applies to infringements of:\n- the basic processing principles, including consent conditions (Articles 5, 6, 7 and 9);\n- data subjects' rights (Articles 12 to 22);\n- transfers to third countries or international organisations (Articles 44 to 49);\n- obligations under Member State law adopted under Chapter IX;\n- non-compliance with certain supervisory authority orders. [cite:B:gdpr-2016:438]\n\nNon-compliance with an order under Article 58(2) falls in the same tier. [cite:B:gdpr-2016:439]\n\nThe lower tier is up to 10 000 000 EUR or 2 %. [cite:B:gdpr-2016:437]\n\nMember States may decide whether and to what extent fines can be imposed on public authorities and bodies. [cite:B:gdpr-2016:439]",
+   "raw_answer": "The highest GDPR fine tier is up to 20 000 000 EUR. For an undertaking, it is up to 4 % of total worldwide annual turnover of the preceding financial year, whichever is higher. [cite:B:gdpr-2016:438]\n\nIt applies to infringements of:\n- the basic processing principles, including consent conditions (Articles 5, 6, 7 and 9);\n- data subjects' rights (Articles 12 to 22);\n- transfers to third countries or international organisations (Articles 44 to 49);\n- obligations under Member State law adopted under Chapter IX;\n- non-compliance with certain supervisory authority orders. [cite:B:gdpr-2016:438]\n\nNon-compliance with an order under Article 58(2) falls in the same tier. [cite:B:gdpr-2016:439]\n\nThe lower tier is up to 10 000 000 EUR or 2 %. [cite:B:gdpr-2016:437]\n\nMember States may decide whether and to what extent fines can be imposed on public authorities and bodies. [cite:B:gdpr-2016:439]",
+   "citations": [
+    "B:gdpr-2016:438",
+    "B:gdpr-2016:439",
+    "B:gdpr-2016:437"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "administrative fines up to 20 000 000 EUR or 4% of total worldwide annual turnover",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:439",
+      "B:gdpr-2016:438",
+      "B:gdpr-2016:437",
+      "B:eu-ai-act-2024:660",
+      "B:eu-ai-act-2024:654"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:439",
+    "B:gdpr-2016:438",
+    "B:gdpr-2016:437",
+    "B:eu-ai-act-2024:660",
+    "B:eu-ai-act-2024:654"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4492,
+   "cost_usd": 0.0121,
+   "seconds": 24.8
+  },
+  {
+   "query_id": "q05",
+   "split": "dev",
+   "answerable": true,
+   "question": "In what form can a person get their own data back so they can move it to another provider?",
+   "status": "answered",
+   "error": null,
+   "answer": "The data must be given in a \"structured, commonly used and machine-readable format\". The person can also transmit it to another controller without hindrance from the original one. This applies to personal data they provided to the controller [cite:B:gdpr-2016:260].\n\n**Conditions:** The processing must be based on consent or on a contract. It must also be carried out by automated means [cite:B:gdpr-2016:260].\n\n**Direct transfer:** The person can ask for the data to go straight from one controller to the other, where technically feasible [cite:B:gdpr-2016:260].\n\n**Limits:** The right must not adversely affect the rights and freedoms of others [cite:B:gdpr-2016:261]. Controllers are encouraged to develop interoperable formats. They are not obliged to adopt or maintain technically compatible processing systems [cite:B:gdpr-2016:73][cite:B:gdpr-2016:74].",
+   "raw_answer": "The data must be given in a \"structured, commonly used and machine-readable format\". The person can also transmit it to another controller without hindrance from the original one. This applies to personal data they provided to the controller [cite:B:gdpr-2016:260].\n\n**Conditions:** The processing must be based on consent or on a contract. It must also be carried out by automated means [cite:B:gdpr-2016:260].\n\n**Direct transfer:** The person can ask for the data to go straight from one controller to the other, where technically feasible [cite:B:gdpr-2016:260].\n\n**Limits:** The right must not adversely affect the rights and freedoms of others [cite:B:gdpr-2016:261]. Controllers are encouraged to develop interoperable formats. They are not obliged to adopt or maintain technically compatible processing systems [cite:B:gdpr-2016:73][cite:B:gdpr-2016:74].",
+   "citations": [
+    "B:gdpr-2016:260",
+    "B:gdpr-2016:261",
+    "B:gdpr-2016:73",
+    "B:gdpr-2016:74"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "right to data portability structured, commonly used and machine-readable format transmit to another controller",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:260",
+      "B:gdpr-2016:73",
+      "B:gdpr-2016:261",
+      "B:gdpr-2016:74",
+      "B:gdpr-2016:132"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:260",
+    "B:gdpr-2016:73",
+    "B:gdpr-2016:261",
+    "B:gdpr-2016:74",
+    "B:gdpr-2016:132"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3938,
+   "cost_usd": 0.0103,
+   "seconds": 24.8
+  },
+  {
+   "query_id": "q06",
+   "split": "dev",
+   "answerable": true,
+   "question": "Does a small company with 100 employees always have to keep records of processing activities?",
+   "status": "answered",
+   "error": null,
+   "answer": "No, not always. A company with 100 employees is below the 250-person threshold, so the record-keeping duties in Article 30(1) and (2) don't normally apply to it. [cite:B:gdpr-2016:287]\n\nThe exemption is lost if any one of these is true:\n- The processing is likely to result in a risk to the rights and freedoms of data subjects.\n- The processing is not occasional.\n- The processing includes special categories of data under Article 9(1), or data on criminal convictions and offences under Article 10. [cite:B:gdpr-2016:287]\n\nProcessing that isn't occasional is common, so the exemption will often not help in practice. The recitals say the derogation is meant to take account of the situation of micro, small and medium-sized enterprises. [cite:B:gdpr-2016:12]",
+   "raw_answer": "No, not always. A company with 100 employees is below the 250-person threshold, so the record-keeping duties in Article 30(1) and (2) don't normally apply to it. [cite:B:gdpr-2016:287]\n\nThe exemption is lost if any one of these is true:\n- The processing is likely to result in a risk to the rights and freedoms of data subjects.\n- The processing is not occasional.\n- The processing includes special categories of data under Article 9(1), or data on criminal convictions and offences under Article 10. [cite:B:gdpr-2016:287]\n\nProcessing that isn't occasional is common, so the exemption will often not help in practice. The recitals say the derogation is meant to take account of the situation of micro, small and medium-sized enterprises. [cite:B:gdpr-2016:12]",
+   "citations": [
+    "B:gdpr-2016:287",
+    "B:gdpr-2016:12"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "records of processing activities obligation enterprise fewer than 250 employees exception",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:287",
+      "B:gdpr-2016:12",
+      "B:gdpr-2016:94",
+      "B:gdpr-2016:286",
+      "B:gdpr-2016:285"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:287",
+    "B:gdpr-2016:12",
+    "B:gdpr-2016:94",
+    "B:gdpr-2016:286",
+    "B:gdpr-2016:285"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3919,
+   "cost_usd": 0.0076,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "q07",
+   "split": "dev",
+   "answerable": true,
+   "question": "How does the GDPR define personal data?",
+   "status": "answered",
+   "error": null,
+   "answer": "Article 4(1) defines \"personal data\" as \"any information relating to an identified or identifiable natural person ('data subject')\" [cite:B:gdpr-2016:198].\n\nAn identifiable person is one who can be identified, directly or indirectly. The identifier can be a name, an identification number, location data or an online identifier. It can also be one or more factors specific to that person's physical, physiological, genetic, mental, economic, cultural or social identity [cite:B:gdpr-2016:198].\n\nRecital 26 adds two points:\n- Pseudonymised data that could be attributed to a person using additional information is still information on an identifiable person [cite:B:gdpr-2016:24].\n- To decide whether someone is identifiable, you take account of all means reasonably likely to be used, such as singling out. This applies whether the controller or another person would use them. Objective factors include the cost and time needed and the technology available [cite:B:gdpr-2016:24].",
+   "raw_answer": "Article 4(1) defines \"personal data\" as \"any information relating to an identified or identifiable natural person ('data subject')\" [cite:B:gdpr-2016:198].\n\nAn identifiable person is one who can be identified, directly or indirectly. The identifier can be a name, an identification number, location data or an online identifier. It can also be one or more factors specific to that person's physical, physiological, genetic, mental, economic, cultural or social identity [cite:B:gdpr-2016:198].\n\nRecital 26 adds two points:\n- Pseudonymised data that could be attributed to a person using additional information is still information on an identifiable person [cite:B:gdpr-2016:24].\n- To decide whether someone is identifiable, you take account of all means reasonably likely to be used, such as singling out. This applies whether the controller or another person would use them. Objective factors include the cost and time needed and the technology available [cite:B:gdpr-2016:24].",
+   "citations": [
+    "B:gdpr-2016:198",
+    "B:gdpr-2016:24"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "definition of 'personal data' means any information relating to an identified or identifiable natural person",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:198",
+      "B:gdpr-2016:24",
+      "B:gdpr-2016:202",
+      "B:gdpr-2016:199",
+      "B:gdpr-2016:201"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:198",
+    "B:gdpr-2016:24",
+    "B:gdpr-2016:202",
+    "B:gdpr-2016:199",
+    "B:gdpr-2016:201"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4191,
+   "cost_usd": 0.0088,
+   "seconds": 5.2
+  },
+  {
+   "query_id": "q08",
+   "split": "dev",
+   "answerable": true,
+   "question": "According to the explanatory recitals, can processing personal data for direct marketing be based on legitimate interest?",
+   "status": "answered",
+   "error": null,
+   "answer": "Yes, it can. The recitals say processing for direct marketing \"may be regarded as carried out for a legitimate interest\" [cite:B:gdpr-2016:45].\n\nThis is conditional:\n- A legitimate interest can serve as a legal basis only if the data subject's interests or fundamental rights and freedoms are not overriding. This takes into account the data subject's reasonable expectations based on their relationship with the controller [cite:B:gdpr-2016:44].\n- The interest needs careful assessment [cite:B:gdpr-2016:44].\n- Where personal data are processed for direct marketing, the data subject has the right to object. This includes profiling to the extent it is related to such direct marketing [cite:B:gdpr-2016:75].",
+   "raw_answer": "Yes, it can. The recitals say processing for direct marketing \"may be regarded as carried out for a legitimate interest\" [cite:B:gdpr-2016:45].\n\nThis is conditional:\n- A legitimate interest can serve as a legal basis only if the data subject's interests or fundamental rights and freedoms are not overriding. This takes into account the data subject's reasonable expectations based on their relationship with the controller [cite:B:gdpr-2016:44].\n- The interest needs careful assessment [cite:B:gdpr-2016:44].\n- Where personal data are processed for direct marketing, the data subject has the right to object. This includes profiling to the extent it is related to such direct marketing [cite:B:gdpr-2016:75].",
+   "citations": [
+    "B:gdpr-2016:45",
+    "B:gdpr-2016:44",
+    "B:gdpr-2016:75"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "processing personal data for direct marketing purposes may be regarded as carried out for a legitimate interest",
+     "filter": {
+      "part": "recital"
+     },
+     "results": [
+      "B:gdpr-2016:45",
+      "B:gdpr-2016:75",
+      "B:gdpr-2016:44",
+      "B:gdpr-2016:43",
+      "B:gdpr-2016:48"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:45",
+    "B:gdpr-2016:75",
+    "B:gdpr-2016:44",
+    "B:gdpr-2016:43",
+    "B:gdpr-2016:48"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4097,
+   "cost_usd": 0.0083,
+   "seconds": 4.5
+  },
+  {
+   "query_id": "q10",
+   "split": "dev",
+   "answerable": true,
+   "question": "What does the right to be forgotten let a data subject ask the controller to do?",
+   "status": "answered",
+   "error": null,
+   "answer": "The data subject can ask the controller to erase personal data concerning them without undue delay. The controller must do so where a listed ground applies. [cite:B:gdpr-2016:254]\n\nGrounds include:\n- The data are no longer necessary for the purposes they were collected or processed for. [cite:B:gdpr-2016:254]\n- The data subject withdraws consent and there is no other legal ground for the processing. [cite:B:gdpr-2016:254]\n- The data subject objects under Article 21(1) and there are no overriding legitimate grounds. [cite:B:gdpr-2016:254]\n\nIf the controller made the data public, it must take reasonable steps to inform other controllers processing the data. It must tell them that the data subject has requested erasure of any links to, or copies or replications of, the data. It must take account of available technology and the cost of implementation. [cite:B:gdpr-2016:255]\n\nThe right does not apply to the extent processing is necessary for:\n- freedom of expression and information\n- compliance with a legal obligation, or a public-interest task\n- public health\n- archiving, research or statistical purposes (where erasure would seriously impair those purposes) [cite:B:gdpr-2016:256]\n\nThe results show only the first ground of Article 17(1)(c) and the first part of Article 17(3)(d). The text of Article 17(1) after point (c) and of Article 17(3) after point (d) was cut off, so this list may be incomplete.",
+   "raw_answer": "The data subject can ask the controller to erase personal data concerning them without undue delay. The controller must do so where a listed ground applies. [cite:B:gdpr-2016:254]\n\nGrounds include:\n- The data are no longer necessary for the purposes they were collected or processed for. [cite:B:gdpr-2016:254]\n- The data subject withdraws consent and there is no other legal ground for the processing. [cite:B:gdpr-2016:254]\n- The data subject objects under Article 21(1) and there are no overriding legitimate grounds. [cite:B:gdpr-2016:254]\n\nIf the controller made the data public, it must take reasonable steps to inform other controllers processing the data. It must tell them that the data subject has requested erasure of any links to, or copies or replications of, the data. It must take account of available technology and the cost of implementation. [cite:B:gdpr-2016:255]\n\nThe right does not apply to the extent processing is necessary for:\n- freedom of expression and information\n- compliance with a legal obligation, or a public-interest task\n- public health\n- archiving, research or statistical purposes (where erasure would seriously impair those purposes) [cite:B:gdpr-2016:256]\n\nThe results show only the first ground of Article 17(1)(c) and the first part of Article 17(3)(d). The text of Article 17(1) after point (c) and of Article 17(3) after point (d) was cut off, so this list may be incomplete.",
+   "citations": [
+    "B:gdpr-2016:254",
+    "B:gdpr-2016:255",
+    "B:gdpr-2016:256"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "right to erasure ('right to be forgotten') data subject obtain from controller erasure of personal data without undue delay",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:254",
+      "B:gdpr-2016:255",
+      "B:gdpr-2016:71",
+      "B:gdpr-2016:256",
+      "B:gdpr-2016:69"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:254",
+    "B:gdpr-2016:255",
+    "B:gdpr-2016:71",
+    "B:gdpr-2016:256",
+    "B:gdpr-2016:69"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4332,
+   "cost_usd": 0.0105,
+   "seconds": 5.8
+  },
+  {
+   "query_id": "q11",
+   "split": "dev",
+   "answerable": true,
+   "question": "Which categories of personal data are special categories whose processing is prohibited by default?",
+   "status": "answered",
+   "error": null,
+   "answer": "Under GDPR Article 9(1), processing is prohibited for personal data revealing: [cite:B:gdpr-2016:224]\n- racial or ethnic origin\n- political opinions\n- religious or philosophical beliefs\n- trade union membership\n\nIt is also prohibited for: [cite:B:gdpr-2016:224]\n- genetic data\n- biometric data used to uniquely identify a natural person\n- data concerning health\n- data concerning a natural person's sex life or sexual orientation\n\nThe prohibition is the default rule. Article 9 sets out exceptions in other paragraphs. One example is paragraph 3, which allows processing for the purposes in point (h) of paragraph 2 when a professional bound by secrecy is responsible for it. [cite:B:gdpr-2016:229] Member States may add further conditions for genetic, biometric and health data. [cite:B:gdpr-2016:229]",
+   "raw_answer": "Under GDPR Article 9(1), processing is prohibited for personal data revealing: [cite:B:gdpr-2016:224]\n- racial or ethnic origin\n- political opinions\n- religious or philosophical beliefs\n- trade union membership\n\nIt is also prohibited for: [cite:B:gdpr-2016:224]\n- genetic data\n- biometric data used to uniquely identify a natural person\n- data concerning health\n- data concerning a natural person's sex life or sexual orientation\n\nThe prohibition is the default rule. Article 9 sets out exceptions in other paragraphs. One example is paragraph 3, which allows processing for the purposes in point (h) of paragraph 2 when a professional bound by secrecy is responsible for it. [cite:B:gdpr-2016:229] Member States may add further conditions for genetic, biometric and health data. [cite:B:gdpr-2016:229]",
+   "citations": [
+    "B:gdpr-2016:224",
+    "B:gdpr-2016:229"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "processing of special categories of personal data prohibited racial or ethnic origin, political opinions, religious beliefs, health, sex life",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:224",
+      "B:gdpr-2016:51",
+      "B:gdpr-2016:229",
+      "B:eu-ai-act-2024:60",
+      "B:gdpr-2016:55"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:224",
+    "B:gdpr-2016:51",
+    "B:gdpr-2016:229",
+    "B:eu-ai-act-2024:60",
+    "B:gdpr-2016:55"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3991,
+   "cost_usd": 0.0083,
+   "seconds": 4.2
+  },
+  {
+   "query_id": "q12",
+   "split": "dev",
+   "answerable": true,
+   "question": "What is the maximum fine for using a prohibited AI practice under the AI Act?",
+   "status": "answered",
+   "error": null,
+   "answer": "Under the AI Act, using a prohibited AI practice can lead to administrative fines of up to EUR 35 000 000. If the offender is an undertaking, the cap is up to 7 % of its total worldwide annual turnover for the preceding financial year, whichever is higher [cite:B:eu-ai-act-2024:654].\n\nException: Union institutions, bodies, offices and agencies face a lower cap. Their fines for breaching the Article 5 prohibitions go up to EUR 1 500 000 [cite:B:eu-ai-act-2024:664].",
+   "raw_answer": "Under the AI Act, using a prohibited AI practice can lead to administrative fines of up to EUR 35 000 000. If the offender is an undertaking, the cap is up to 7 % of its total worldwide annual turnover for the preceding financial year, whichever is higher [cite:B:eu-ai-act-2024:654].\n\nException: Union institutions, bodies, offices and agencies face a lower cap. Their fines for breaching the Article 5 prohibitions go up to EUR 1 500 000 [cite:B:eu-ai-act-2024:664].",
+   "citations": [
+    "B:eu-ai-act-2024:654",
+    "B:eu-ai-act-2024:664"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "administrative fines non-compliance with prohibition of AI practices referred to in Article 5",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:664",
+      "B:eu-ai-act-2024:654",
+      "B:eu-ai-act-2024:665",
+      "B:eu-ai-act-2024:525",
+      "B:eu-ai-act-2024:287"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:664",
+    "B:eu-ai-act-2024:654",
+    "B:eu-ai-act-2024:665",
+    "B:eu-ai-act-2024:525",
+    "B:eu-ai-act-2024:287"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4110,
+   "cost_usd": 0.0075,
+   "seconds": 3.7
+  },
+  {
+   "query_id": "q13",
+   "split": "dev",
+   "answerable": true,
+   "question": "Above what training compute is a general-purpose AI model presumed to have high-impact capabilities?",
+   "status": "answered",
+   "error": null,
+   "answer": "A general-purpose AI model is presumed to have high-impact capabilities when the cumulative computation used for its training, measured in FLOPs, is greater than 10^25 [cite:B:eu-ai-act-2024:496].\n\nThis presumption is the basis for classifying a model as a general-purpose AI model with systemic risk under Article 51(1)(a) [cite:B:eu-ai-act-2024:496].\n\nThe recitals say the threshold should be adjusted over time to reflect technological and industrial changes, such as algorithmic improvements or increased hardware efficiency [cite:B:eu-ai-act-2024:195].\n\nA provider whose model meets the threshold should notify the AI Office within two weeks [cite:B:eu-ai-act-2024:198].",
+   "raw_answer": "A general-purpose AI model is presumed to have high-impact capabilities when the cumulative computation used for its training, measured in FLOPs, is greater than 10^25 [cite:B:eu-ai-act-2024:496].\n\nThis presumption is the basis for classifying a model as a general-purpose AI model with systemic risk under Article 51(1)(a) [cite:B:eu-ai-act-2024:496].\n\nThe recitals say the threshold should be adjusted over time to reflect technological and industrial changes, such as algorithmic improvements or increased hardware efficiency [cite:B:eu-ai-act-2024:195].\n\nA provider whose model meets the threshold should notify the AI Office within two weeks [cite:B:eu-ai-act-2024:198].",
+   "citations": [
+    "B:eu-ai-act-2024:496",
+    "B:eu-ai-act-2024:195",
+    "B:eu-ai-act-2024:198"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "general-purpose AI model high-impact capabilities presumed cumulative amount of computation floating point operations",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:195",
+      "B:eu-ai-act-2024:198",
+      "B:eu-ai-act-2024:496",
+      "B:eu-ai-act-2024:321",
+      "B:eu-ai-act-2024:749"
+     ]
+    },
+    {
+     "event": "read",
+     "chunk_id": "B:eu-ai-act-2024:496"
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:195",
+    "B:eu-ai-act-2024:198",
+    "B:eu-ai-act-2024:496",
+    "B:eu-ai-act-2024:321",
+    "B:eu-ai-act-2024:749"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 2,
+   "tokens": 7862,
+   "cost_usd": 0.0114,
+   "seconds": 5.9
+  },
+  {
+   "query_id": "q15",
+   "split": "dev",
+   "answerable": true,
+   "question": "What is the deadline for a provider to report a serious incident involving a high-risk AI system?",
+   "status": "answered",
+   "error": null,
+   "answer": "The general deadline is 15 days. The provider must report immediately after it establishes a causal link, or the reasonable likelihood of one, between the AI system and the serious incident. In any event, it must report no later than 15 days after the provider or, where applicable, the deployer becomes aware of the incident. The period must take account of the severity of the incident. [cite:B:eu-ai-act-2024:586]\n\nExceptions:\n- **Death of a person:** report immediately after establishing or suspecting a causal relationship, and no later than 10 days after becoming aware of the incident. [cite:B:eu-ai-act-2024:587]\n- **Incomplete reports:** to meet the deadline, the provider may submit an incomplete initial report and follow it with a complete one. [cite:B:eu-ai-act-2024:587]\n- **Widespread infringement or a serious incident as defined in Article 3, point (44)(b):** paragraph 3 sets a different rule, but the retrieved text cuts off before it. [cite:B:eu-ai-act-2024:586]",
+   "raw_answer": "The general deadline is 15 days. The provider must report immediately after it establishes a causal link, or the reasonable likelihood of one, between the AI system and the serious incident. In any event, it must report no later than 15 days after the provider or, where applicable, the deployer becomes aware of the incident. The period must take account of the severity of the incident. [cite:B:eu-ai-act-2024:586]\n\nExceptions:\n- **Death of a person:** report immediately after establishing or suspecting a causal relationship, and no later than 10 days after becoming aware of the incident. [cite:B:eu-ai-act-2024:587]\n- **Incomplete reports:** to meet the deadline, the provider may submit an incomplete initial report and follow it with a complete one. [cite:B:eu-ai-act-2024:587]\n- **Widespread infringement or a serious incident as defined in Article 3, point (44)(b):** paragraph 3 sets a different rule, but the retrieved text cuts off before it. [cite:B:eu-ai-act-2024:586]",
+   "citations": [
+    "B:eu-ai-act-2024:586",
+    "B:eu-ai-act-2024:587"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "reporting of serious incidents provider high-risk AI system immediately not later than 15 days",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:587",
+      "B:eu-ai-act-2024:586",
+      "B:eu-ai-act-2024:589",
+      "B:eu-ai-act-2024:588",
+      "B:eu-ai-act-2024:264"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:587",
+    "B:eu-ai-act-2024:586",
+    "B:eu-ai-act-2024:589",
+    "B:eu-ai-act-2024:588",
+    "B:eu-ai-act-2024:264"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4230,
+   "cost_usd": 0.009,
+   "seconds": 5.1
+  },
+  {
+   "query_id": "q16",
+   "split": "dev",
+   "answerable": true,
+   "question": "What do companies that build or use AI have to do about their employees' understanding of AI?",
+   "status": "answered",
+   "error": null,
+   "answer": "Providers and deployers of AI systems must take measures to ensure, \"to their best extent\", a sufficient level of AI literacy. This covers their staff and other people who operate or use AI systems on their behalf. [cite:B:eu-ai-act-2024:323]\n\nThe measures must take into account:\n- the technical knowledge, experience, education and training of those people;\n- the context in which the AI systems will be used;\n- the people or groups of people on whom the AI systems will be used. [cite:B:eu-ai-act-2024:323]\n\nThe recitals explain that AI literacy covers the following:\n- applying the technical elements correctly during development;\n- the measures to apply during use;\n- interpreting the AI system's output. [cite:B:eu-ai-act-2024:38]\n\nThe recitals describe the duty as a way to give actors in the AI value chain the insights they need to comply with the Act. [cite:B:eu-ai-act-2024:39]",
+   "raw_answer": "Providers and deployers of AI systems must take measures to ensure, \"to their best extent\", a sufficient level of AI literacy. This covers their staff and other people who operate or use AI systems on their behalf. [cite:B:eu-ai-act-2024:323]\n\nThe measures must take into account:\n- the technical knowledge, experience, education and training of those people;\n- the context in which the AI systems will be used;\n- the people or groups of people on whom the AI systems will be used. [cite:B:eu-ai-act-2024:323]\n\nThe recitals explain that AI literacy covers the following:\n- applying the technical elements correctly during development;\n- the measures to apply during use;\n- interpreting the AI system's output. [cite:B:eu-ai-act-2024:38]\n\nThe recitals describe the duty as a way to give actors in the AI value chain the insights they need to comply with the Act. [cite:B:eu-ai-act-2024:39]",
+   "citations": [
+    "B:eu-ai-act-2024:323",
+    "B:eu-ai-act-2024:38",
+    "B:eu-ai-act-2024:39"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "AI literacy of staff and other persons dealing with the operation and use of AI systems",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:323",
+      "B:eu-ai-act-2024:38",
+      "B:eu-ai-act-2024:39",
+      "B:eu-ai-act-2024:105",
+      "B:eu-ai-act-2024:141"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:323",
+    "B:eu-ai-act-2024:38",
+    "B:eu-ai-act-2024:39",
+    "B:eu-ai-act-2024:105",
+    "B:eu-ai-act-2024:141"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4073,
+   "cost_usd": 0.0085,
+   "seconds": 4.2
+  },
+  {
+   "query_id": "q17",
+   "split": "dev",
+   "answerable": true,
+   "question": "How many AI regulatory sandboxes must each Member State set up?",
+   "status": "answered",
+   "error": null,
+   "answer": "Each Member State must ensure that its competent authorities establish at least one AI regulatory sandbox at national level. That sandbox must be operational by 24 months from the Regulation's entry into force [cite:B:eu-ai-act-2024:518].\n\nThe Act gives some flexibility in how a Member State meets this:\n- The sandbox may be established jointly with the competent authorities of one or more other Member States [cite:B:eu-ai-act-2024:518].\n- The obligation may also be met by participating in an existing sandbox, provided that participation gives an equivalent level of national coverage [cite:B:eu-ai-act-2024:518].\n\nMember States may also set up additional sandboxes at regional or local level, or jointly with other Member States [cite:B:eu-ai-act-2024:518].",
+   "raw_answer": "Each Member State must ensure that its competent authorities establish at least one AI regulatory sandbox at national level. That sandbox must be operational by 24 months from the Regulation's entry into force [cite:B:eu-ai-act-2024:518].\n\nThe Act gives some flexibility in how a Member State meets this:\n- The sandbox may be established jointly with the competent authorities of one or more other Member States [cite:B:eu-ai-act-2024:518].\n- The obligation may also be met by participating in an existing sandbox, provided that participation gives an equivalent level of national coverage [cite:B:eu-ai-act-2024:518].\n\nMember States may also set up additional sandboxes at regional or local level, or jointly with other Member States [cite:B:eu-ai-act-2024:518].",
+   "citations": [
+    "B:eu-ai-act-2024:518"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "Member States shall ensure competent authorities establish at least one AI regulatory sandbox at national level",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:518",
+      "B:eu-ai-act-2024:519",
+      "B:eu-ai-act-2024:523",
+      "B:eu-ai-act-2024:236",
+      "B:eu-ai-act-2024:532"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:518",
+    "B:eu-ai-act-2024:519",
+    "B:eu-ai-act-2024:523",
+    "B:eu-ai-act-2024:236",
+    "B:eu-ai-act-2024:532"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4349,
+   "cost_usd": 0.0087,
+   "seconds": 5.4
+  },
+  {
+   "query_id": "q18",
+   "split": "dev",
+   "answerable": true,
+   "question": "In an urgent case, can police start using real-time remote biometric identification before getting authorisation?",
+   "status": "answered",
+   "error": null,
+   "answer": "Yes, but only in a narrow exception. Real-time remote biometric identification in publicly accessible spaces for law enforcement normally needs prior authorisation from a judicial authority or an independent administrative authority whose decision is binding. [cite:B:eu-ai-act-2024:333]\n\nIn a duly justified situation of urgency, use may start without authorisation. The authorisation must then be requested without undue delay, and at the latest within 24 hours. [cite:B:eu-ai-act-2024:333]\n\nThe recitals say urgency means it is effectively and objectively impossible to obtain authorisation beforehand. Use must also be limited to the absolute minimum necessary. [cite:B:eu-ai-act-2024:70]\n\nIn urgent cases, use may also start before the system is registered in the EU database. Registration must still be completed without undue delay. [cite:B:eu-ai-act-2024:332]\n\nThe retrieved text cuts off after the 24-hour requirement. I could not see what happens if authorisation is refused.",
+   "raw_answer": "Yes, but only in a narrow exception. Real-time remote biometric identification in publicly accessible spaces for law enforcement normally needs prior authorisation from a judicial authority or an independent administrative authority whose decision is binding. [cite:B:eu-ai-act-2024:333]\n\nIn a duly justified situation of urgency, use may start without authorisation. The authorisation must then be requested without undue delay, and at the latest within 24 hours. [cite:B:eu-ai-act-2024:333]\n\nThe recitals say urgency means it is effectively and objectively impossible to obtain authorisation beforehand. Use must also be limited to the absolute minimum necessary. [cite:B:eu-ai-act-2024:70]\n\nIn urgent cases, use may also start before the system is registered in the EU database. Registration must still be completed without undue delay. [cite:B:eu-ai-act-2024:332]\n\nThe retrieved text cuts off after the 24-hour requirement. I could not see what happens if authorisation is refused.",
+   "citations": [
+    "B:eu-ai-act-2024:333",
+    "B:eu-ai-act-2024:70",
+    "B:eu-ai-act-2024:332"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "real-time remote biometric identification urgency use commenced without prior authorisation",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:333",
+      "B:eu-ai-act-2024:75",
+      "B:eu-ai-act-2024:70",
+      "B:eu-ai-act-2024:332",
+      "B:eu-ai-act-2024:69"
+     ]
+    },
+    {
+     "event": "thought",
+     "text": "I'm checking the rule for when authorisation is rejected, which is to use stopped and deleted data, and I'm thinking about searching for the rest of it before I read the next part.\n\n"
+    },
+    {
+     "event": "read",
+     "chunk_id": "B:eu-ai-act-2024:333"
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:333",
+    "B:eu-ai-act-2024:75",
+    "B:eu-ai-act-2024:70",
+    "B:eu-ai-act-2024:332",
+    "B:eu-ai-act-2024:69"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 2,
+   "tokens": 7065,
+   "cost_usd": 0.0109,
+   "seconds": 5.8
+  },
+  {
+   "query_id": "q20",
+   "split": "dev",
+   "answerable": true,
+   "question": "According to the recitals, why is social scoring by AI considered harmful?",
+   "status": "answered",
+   "error": null,
+   "answer": "Recital 31 explains why social scoring is considered harmful.\n\n- **Discrimination and exclusion:** Social scoring by public or private actors \"may lead to discriminatory outcomes and the exclusion of certain groups\" [cite:B:eu-ai-act-2024:61].\n- **Rights and values:** It may violate the right to dignity and non-discrimination, and the values of equality and justice [cite:B:eu-ai-act-2024:61].\n- **How it works:** These systems evaluate or classify people or groups using many data points on social behaviour, or on known, inferred or predicted personal characteristics, over time [cite:B:eu-ai-act-2024:61].\n- **Unfair treatment:** The resulting score may lead to detrimental or unfavourable treatment in social contexts unrelated to where the data was first generated or collected. It may also lead to treatment that is disproportionate or unjustified relative to the gravity of the person's social behaviour [cite:B:eu-ai-act-2024:61].\n\nThe retrieved text of the recital cuts off mid-sentence, so I have not seen its final words.",
+   "raw_answer": "Recital 31 explains why social scoring is considered harmful.\n\n- **Discrimination and exclusion:** Social scoring by public or private actors \"may lead to discriminatory outcomes and the exclusion of certain groups\" [cite:B:eu-ai-act-2024:61].\n- **Rights and values:** It may violate the right to dignity and non-discrimination, and the values of equality and justice [cite:B:eu-ai-act-2024:61].\n- **How it works:** These systems evaluate or classify people or groups using many data points on social behaviour, or on known, inferred or predicted personal characteristics, over time [cite:B:eu-ai-act-2024:61].\n- **Unfair treatment:** The resulting score may lead to detrimental or unfavourable treatment in social contexts unrelated to where the data was first generated or collected. It may also lead to treatment that is disproportionate or unjustified relative to the gravity of the person's social behaviour [cite:B:eu-ai-act-2024:61].\n\nThe retrieved text of the recital cuts off mid-sentence, so I have not seen its final words.",
+   "citations": [
+    "B:eu-ai-act-2024:61"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "social scoring AI systems harmful discriminatory outcomes exclusion of certain groups",
+     "filter": {
+      "part": "recital"
+     },
+     "results": [
+      "B:eu-ai-act-2024:61",
+      "B:eu-ai-act-2024:111",
+      "B:eu-ai-act-2024:133",
+      "B:eu-ai-act-2024:110",
+      "B:eu-ai-act-2024:106"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:61",
+    "B:eu-ai-act-2024:111",
+    "B:eu-ai-act-2024:133",
+    "B:eu-ai-act-2024:110",
+    "B:eu-ai-act-2024:106"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4420,
+   "cost_usd": 0.0099,
+   "seconds": 5.4
+  },
+  {
+   "query_id": "q22",
+   "split": "dev",
+   "answerable": true,
+   "question": "Do chatbot providers have to tell people they are talking to a machine?",
+   "status": "answered",
+   "error": null,
+   "answer": "Yes, in most cases. Providers must design and develop AI systems that interact directly with people so that those people are informed they are interacting with an AI system [cite:B:eu-ai-act-2024:490].\n\n**Exceptions:**\n- Disclosure isn't required where it is obvious to a reasonably well-informed, observant and circumspect person, given the circumstances and context of use [cite:B:eu-ai-act-2024:490].\n- The obligation doesn't apply to AI systems authorised by law to detect, prevent, investigate or prosecute criminal offences, subject to appropriate safeguards for third parties' rights and freedoms. That exception doesn't hold if the system is available to the public to report a criminal offence [cite:B:eu-ai-act-2024:490].\n\nSeparately, providers of systems that generate synthetic text, audio, image or video must mark the outputs in a machine-readable format so they are detectable as artificially generated [cite:B:eu-ai-act-2024:491].",
+   "raw_answer": "Yes, in most cases. Providers must design and develop AI systems that interact directly with people so that those people are informed they are interacting with an AI system [cite:B:eu-ai-act-2024:490].\n\n**Exceptions:**\n- Disclosure isn't required where it is obvious to a reasonably well-informed, observant and circumspect person, given the circumstances and context of use [cite:B:eu-ai-act-2024:490].\n- The obligation doesn't apply to AI systems authorised by law to detect, prevent, investigate or prosecute criminal offences, subject to appropriate safeguards for third parties' rights and freedoms. That exception doesn't hold if the system is available to the public to report a criminal offence [cite:B:eu-ai-act-2024:490].\n\nSeparately, providers of systems that generate synthetic text, audio, image or video must mark the outputs in a machine-readable format so they are detectable as artificially generated [cite:B:eu-ai-act-2024:491].",
+   "citations": [
+    "B:eu-ai-act-2024:490",
+    "B:eu-ai-act-2024:491"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "providers shall ensure AI systems intended to interact directly with natural persons inform them they are interacting with an AI system",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:490",
+      "B:eu-ai-act-2024:491",
+      "B:eu-ai-act-2024:371",
+      "B:eu-ai-act-2024:225",
+      "B:eu-ai-act-2024:170"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:490",
+    "B:eu-ai-act-2024:491",
+    "B:eu-ai-act-2024:371",
+    "B:eu-ai-act-2024:225",
+    "B:eu-ai-act-2024:170"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4179,
+   "cost_usd": 0.009,
+   "seconds": 5.0
+  },
+  {
+   "query_id": "q24",
+   "split": "dev",
+   "answerable": true,
+   "question": "Within the annexes, which recruitment uses of AI are high-risk?",
+   "status": "answered",
+   "error": null,
+   "answer": "Annex III, point 4 (\"Employment, workers management and access to self-employment\") lists these high-risk uses.\n\n- **Recruitment or selection:** AI systems intended for recruiting or selecting natural persons. The annex names three examples: placing targeted job advertisements, analysing and filtering job applications, and evaluating candidates [cite:B:eu-ai-act-2024:702].\n- **Decisions during the work relationship:** AI systems intended to make decisions affecting the terms of work-related relationships, or their promotion or termination. The same applies to systems that allocate tasks based on individual behaviour or personal traits or characteristics. It also applies to systems that monitor and evaluate the performance and behaviour of persons in such relationships [cite:B:eu-ai-act-2024:703].\n\nAnnex III is introduced as the list of high-risk systems under Article 6(2) [cite:B:eu-ai-act-2024:700].",
+   "raw_answer": "Annex III, point 4 (\"Employment, workers management and access to self-employment\") lists these high-risk uses.\n\n- **Recruitment or selection:** AI systems intended for recruiting or selecting natural persons. The annex names three examples: placing targeted job advertisements, analysing and filtering job applications, and evaluating candidates [cite:B:eu-ai-act-2024:702].\n- **Decisions during the work relationship:** AI systems intended to make decisions affecting the terms of work-related relationships, or their promotion or termination. The same applies to systems that allocate tasks based on individual behaviour or personal traits or characteristics. It also applies to systems that monitor and evaluate the performance and behaviour of persons in such relationships [cite:B:eu-ai-act-2024:703].\n\nAnnex III is introduced as the list of high-risk systems under Article 6(2) [cite:B:eu-ai-act-2024:700].",
+   "citations": [
+    "B:eu-ai-act-2024:702",
+    "B:eu-ai-act-2024:703",
+    "B:eu-ai-act-2024:700"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "employment, workers management, recruitment or selection of natural persons high-risk AI systems",
+     "filter": {
+      "part": "annex"
+     },
+     "results": [
+      "B:eu-ai-act-2024:700",
+      "B:eu-ai-act-2024:702",
+      "B:eu-ai-act-2024:703",
+      "B:eu-ai-act-2024:733",
+      "B:eu-ai-act-2024:704"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:700",
+    "B:eu-ai-act-2024:702",
+    "B:eu-ai-act-2024:703",
+    "B:eu-ai-act-2024:733",
+    "B:eu-ai-act-2024:704"
+   ],
+   "context_evidence": true,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 4160,
+   "cost_usd": 0.0089,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "u01",
+   "split": "dev",
+   "answerable": false,
+   "question": "What annual registration fee must a controller pay to its supervisory authority under the GDPR?",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the knowledge base to answer this.\n\nI searched for a GDPR annual registration fee or notification fee paid by controllers to a supervisory authority. I found no such provision.\n\n- Recital 89 says the general obligation to notify processing to supervisory authorities should be abolished. [cite:B:gdpr-2016:101]\n- Article 57 says supervisory authority tasks are free of charge for data subjects and, where applicable, for data protection officers. [cite:B:gdpr-2016:376]\n- Article 57 also allows a reasonable fee based on administrative costs, or a refusal to act, for manifestly unfounded or excessive requests. [cite:B:gdpr-2016:376]",
+   "raw_answer": "Not enough evidence in the knowledge base to answer this.\n\nI searched for a GDPR annual registration fee or notification fee paid by controllers to a supervisory authority. I found no such provision.\n\n- Recital 89 says the general obligation to notify processing to supervisory authorities should be abolished. [cite:B:gdpr-2016:101]\n- Article 57 says supervisory authority tasks are free of charge for data subjects and, where applicable, for data protection officers. [cite:B:gdpr-2016:376]\n- Article 57 also allows a reasonable fee based on administrative costs, or a refusal to act, for manifestly unfounded or excessive requests. [cite:B:gdpr-2016:376]",
+   "citations": [
+    "B:gdpr-2016:101",
+    "B:gdpr-2016:376"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "fee payable by controller to supervisory authority registration notification",
+     "filter": null,
+     "results": [
+      "B:gdpr-2016:376",
+      "B:eu-ai-act-2024:261",
+      "B:gdpr-2016:361",
+      "B:gdpr-2016:388",
+      "B:gdpr-2016:150"
+     ]
+    },
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "general obligation to notify supervisory authority abolished; records of processing activities",
+     "filter": {
+      "part": "recital"
+     },
+     "results": [
+      "B:gdpr-2016:101",
+      "B:gdpr-2016:94",
+      "B:gdpr-2016:146",
+      "B:gdpr-2016:107",
+      "B:gdpr-2016:136"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:gdpr-2016:376",
+    "B:eu-ai-act-2024:261",
+    "B:gdpr-2016:361",
+    "B:gdpr-2016:388",
+    "B:gdpr-2016:150",
+    "B:gdpr-2016:101",
+    "B:gdpr-2016:94",
+    "B:gdpr-2016:146",
+    "B:gdpr-2016:107",
+    "B:gdpr-2016:136"
+   ],
+   "context_evidence": null,
+   "searches": 2,
+   "rounds": 1,
+   "tokens": 5633,
+   "cost_usd": 0.0123,
+   "seconds": 4.0
+  },
+  {
+   "query_id": "u02",
+   "split": "dev",
+   "answerable": false,
+   "question": "How many full-time staff does the AI Act require the AI Office to employ?",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the knowledge base to answer this.\n\nI searched for \"AI Office staff number full-time employees\". The results show Article 64, which says the Commission develops Union expertise and capabilities in AI through the AI Office [cite:B:eu-ai-act-2024:559]. They don't set any number of full-time staff for the AI Office.",
+   "raw_answer": "Not enough evidence in the knowledge base to answer this.\n\nI searched for \"AI Office staff number full-time employees\". The results show Article 64, which says the Commission develops Union expertise and capabilities in AI through the AI Office [cite:B:eu-ai-act-2024:559]. They don't set any number of full-time staff for the AI Office.",
+   "citations": [
+    "B:eu-ai-act-2024:559"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "search",
+     "tool": "search_law",
+     "query": "AI Office staff number full-time employees",
+     "filter": null,
+     "results": [
+      "B:eu-ai-act-2024:559",
+      "B:eu-ai-act-2024:434",
+      "B:eu-ai-act-2024:176",
+      "B:eu-ai-act-2024:577",
+      "B:eu-ai-act-2024:425"
+     ]
+    }
+   ],
+   "context_ids": [
+    "B:eu-ai-act-2024:559",
+    "B:eu-ai-act-2024:434",
+    "B:eu-ai-act-2024:176",
+    "B:eu-ai-act-2024:577",
+    "B:eu-ai-act-2024:425"
+   ],
+   "context_evidence": null,
+   "searches": 1,
+   "rounds": 1,
+   "tokens": 3648,
+   "cost_usd": 0.0057,
+   "seconds": 3.5
+  }
+ ]
+}

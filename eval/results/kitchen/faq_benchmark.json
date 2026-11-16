@@ -1,0 +1,429 @@
+[
+ {
+  "q": "Which recipe won the Grand Prize, and which school created it?",
+  "a": "Porcupine Sliders won the Grand Prize of the Recipes for Healthy Kids Competition [cookbook p.9]. It was developed by the recipe challenge team of South Education Center Alternative (SECA) School in Richfield, Minnesota [cookbook p.11] (PDF p.11 = printed p.9).",
+  "citations": [
+   "[cookbook p.9]",
+   "[cookbook p.11]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "Which recipe won the Popular Choice award and how many votes did it get?",
+  "a": "Tasty Tots. Over 16,000 public votes were cast online among the top 15 semi-finalist recipes, and Tasty Tots received over 2,000 community votes [cookbook p.9] (PDF p.9 = printed p.7).",
+  "citations": [
+   "[cookbook p.9]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "How long should hands be washed before and after handling food?",
+  "a": "Wash with warm water and soap for 20 seconds, before and after handling food [cookbook p.145] (PDF p.145 = printed p.143).",
+  "citations": [
+   "[cookbook p.145]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "What internal temperatures does the food-safety page give for meat and poultry?",
+  "a": "Raw beef, pork, lamb and veal steaks, chops and roasts: minimum 145 °F (then rest at least three minutes); raw ground beef, pork, lamb and veal: 160 °F; all poultry: 165 °F, each measured with a food thermometer [cookbook p.145].",
+  "citations": [
+   "[cookbook p.145]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "What are the oven settings for Porcupine Sliders?",
+  "a": "Conventional oven 350 °F for 18 minutes; convection oven 325 °F for 14 minutes; \"DO NOT OVERCOOK\". The patties are portioned with a No. 8 scoop (½ cup) onto a parchment-lined sheet pan (18” x 26” x 1”) [cookbook p.13] (PDF p.13 = printed p.11).",
+  "citations": [
+   "[cookbook p.13]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "Which foods does the cookbook list as the top 8 food allergens?",
+  "a": "Fish, shellfish, eggs, milk, wheat, peanuts, tree nuts and soybeans [cookbook p.6] (PDF p.6 = printed p.4).",
+  "citations": [
+   "[cookbook p.6]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "How long do whole-grain flours keep in the refrigerator and the freezer?",
+  "a": "Most whole-grain flours keep well in the refrigerator for 2 to 3 months and in the freezer for 6 to 8 months; the shelf life varies because the oil in various whole-grain flours differs [cookbook p.47] (PDF p.47 = printed p.45).",
+  "citations": [
+   "[cookbook p.47]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "How many servings are the recipes standardized for, and what ingredient limit does the cookbook state?",
+  "a": "The recipes are standardized for 25 and 50 servings and \"include no more than 15 ingredients\" [cookbook p.8] (PDF p.8 = printed p.6). (See the compare question on Aztec Grain Salad for a recipe whose table lists more.)",
+  "citations": [
+   "[cookbook p.8]"
+  ],
+  "type": "lookup"
+ },
+ {
+  "q": "How much raw ground turkey does Porcupine Sliders need for 25 and for 50 servings?",
+  "a": "25 servings: 3 lb 8 oz (1 qt 3 cups); 50 servings: 6 lb 15 ½ oz (3 qt 2 cups), \"Raw ground turkey, lean\" [cookbook p.12] (PDF p.12 = printed p.10).",
+  "citations": [
+   "[cookbook p.12]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "What are the nutrients per serving for Porcupine Sliders?",
+  "a": "Calories 247.00, protein 16.35 g, total fat 9.26 g, sodium 365.57 mg, dietary fiber 3.14 g per slider (one slider is a serving) [cookbook p.13] (PDF p.13 = printed p.11).",
+  "citations": [
+   "[cookbook p.13]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "List the quinoa and chicken broth quantities for Mediterranean Quinoa Salad at 25 and 50 servings.",
+  "a": "Quinoa, dry: 1 lb 10 ½ oz (1 qt ¼ cup) for 25 and 3 lb 6 oz (2 qt ½ cup) for 50; low-sodium chicken broth: 2 qt for 25 and 1 gal for 50 [cookbook p.20] (PDF p.20 = printed p.18).",
+  "citations": [
+   "[cookbook p.20]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "How many tots are in a Tasty Tots serving and how many for 25 and 50 servings?",
+  "a": "A serving is 6 tots; 25 servings yield 150 tots (about 7 lb 5 oz) and 50 servings yield 300 tots (about 14 lb 10 oz) [cookbook p.55] (PDF p.55 = printed p.53).",
+  "citations": [
+   "[cookbook p.55]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "What is a serving of Chic’ Penne and what are its yields?",
+  "a": "1 ½ cups (two 6 fl oz spoodles) provides 1 oz equivalent meat/meat alternate, ⅜ cup dark green vegetable and 1 ¾ oz equivalent grains. 25 servings: about 14 lb, 1 steam table pan; 50 servings: about 27 lb 8 oz, 2 steam table pans [cookbook p.17] (PDF p.17 = printed p.15).",
+  "citations": [
+   "[cookbook p.17]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "Which ingredients drive the allergen flags for Chic’ Penne?",
+  "a": "Rule-based from ingredient names (verify labels): wheat/gluten from enriched all-purpose flour, penne pasta, multi-grain, dry; milk from low-fat mozzarella cheese, low moisture, part-skim, shredded, nonfat milk, reduced-fat cheddar cheese, shredded. Ingredient list: [cookbook p.16] [cookbook p.17]. The flags are derived from names, not stated by the cookbook.",
+  "citations": [
+   "[cookbook p.16]",
+   "[cookbook p.17]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "What are the fiber and sodium values per serving for Sweet Potato and Black Bean Stew?",
+  "a": "Dietary fiber 12.25 g and sodium 578.59 mg per serving (1 cup) [cookbook p.97] (PDF p.97 = printed p.95).",
+  "citations": [
+   "[cookbook p.97]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "What does the Porcupine Sliders Marketing Guide say to buy for 25 and 50 servings?",
+  "a": "As purchased, for 25 / 50 servings: red onions 4 oz / 8 oz; celery 9 oz / 1 lb 2 oz; baby spinach 12 oz / 1 lb 8 oz [cookbook p.13] (PDF p.13 = printed p.11). The Marketing Guide covers foods that lose weight in trimming [cookbook p.6].",
+  "citations": [
+   "[cookbook p.13]",
+   "[cookbook p.6]"
+  ],
+  "type": "table"
+ },
+ {
+  "q": "What does the photo of Porcupine Sliders show?",
+  "a": "A full-page photo of three sliders on round seeded buns with a patty, lettuce and a tomato slice; the front slider has a bamboo pick; red grapes sit on the left of a white rectangular plate over a blue-and-white striped cloth. A red callout reads \"GRAND PRIZE WINNER / Recipes for Healthy Kids\" [cookbook p.10] (PDF p.10 = printed p.8).",
+  "citations": [
+   "[cookbook p.10]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What is shown in the Chic’ Penne photo?",
+  "a": "Penne pasta with broccoli florets, chicken chunks and shredded yellow cheddar and white cheese in a creamy sauce, in a white bowl on a green-and-white striped cloth; callout \"1ST PLACE WINNER / Whole Grains\" [cookbook p.14] (PDF p.14 = printed p.12).",
+  "citations": [
+   "[cookbook p.14]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What does the Mediterranean Quinoa Salad photo look like?",
+  "a": "Quinoa salad in a white ribbed bowl with cherry tomato halves, black olives, red onion pieces and sliced green onion, a silver spoon at right and lemon halves in front; callout \"2ND PLACE WINNER / Whole Grains\" [cookbook p.18] (PDF p.18 = printed p.16).",
+  "citations": [
+   "[cookbook p.18]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What is shown in the Aztec Grain Salad photo?",
+  "a": "Two white square bowls of quinoa with butternut squash cubes, golden raisins, dried cranberries, apple pieces and chopped parsley, with dark forks on a multicolored patterned napkin [cookbook p.22] (PDF p.22 = printed p.20).",
+  "citations": [
+   "[cookbook p.22]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What do the Tasty Tots look like in their photo?",
+  "a": "Golden, shredded-textured, small rounded bites on a wooden board with a few green herb bits, a white paper cone at the right and a dish of red dipping sauce in the background; the page carries a \"POPULAR CHOICE WINNER\" callout [cookbook p.52] (PDF p.52 = printed p.50).",
+  "citations": [
+   "[cookbook p.52]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What does the table-of-contents photo for Tuscan Smoked Turkey and Bean Soup show?",
+  "a": "A white bowl of soup with diced ham, white beans, diced carrots, chopped greens and a sprig of fresh thyme on top, a brown-handled spoon at the upper right, a green-striped cloth and a piece of bread; the entry is printed page 96, \"1st Place Winner\" [cookbook p.3] (PDF p.3 = printed p.1).",
+  "citations": [
+   "[cookbook p.3]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What do the photos beside the \"Add lean protein\" and \"Don’t forget the dairy\" tips show?",
+  "a": "Add lean protein: a whole roasted chicken, browned and glossy, with a drumstick in front. Don’t forget the dairy: a blue-and-white milk carton whose printed text reads \"Milk\" and \"Fat-Free\" [cookbook p.7] (PDF p.7 = printed p.5).",
+  "citations": [
+   "[cookbook p.7]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What does the Marketing Guide photo on the front-matter page show?",
+  "a": "A kitchen scale with a round white dial face and a metal bowl holding three bell peppers (green, yellow, orange), surrounded by broccoli, orange and red bell peppers, asparagus, red potatoes, mushrooms, celery stalks, leaf lettuce and tomatoes; the dial numbers are not legible [cookbook p.6] (PDF p.6 = printed p.4).",
+  "citations": [
+   "[cookbook p.6]"
+  ],
+  "type": "photo"
+ },
+ {
+  "q": "What oven temperature does the Golden Squash Hotcakes video use?",
+  "a": "The caption says \"Pre-heat oven to 400 °F\" while a hand sets the oven control panel [yt:QhkDOr6kmi4 @0:21](https://youtu.be/QhkDOr6kmi4?t=21).",
+  "citations": [
+   "[yt:QhkDOr6kmi4 @0:21](https://youtu.be/QhkDOr6kmi4?t=21)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "How long is the shredded squash baked in the Golden Squash Hotcakes video?",
+  "a": "The caption says \"Bake 8–10 minutes\" (with a 10 MIN timer icon) as the baking sheet of shredded yellow squash on parchment goes into the oven [yt:QhkDOr6kmi4 @0:39](https://youtu.be/QhkDOr6kmi4?t=39).",
+  "citations": [
+   "[yt:QhkDOr6kmi4 @0:39](https://youtu.be/QhkDOr6kmi4?t=39)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "Is there narration in the Golden Squash Hotcakes video?",
+  "a": "No: the video is music only and the instructions appear as on-screen captions (the \"Wash your hands, 20 seconds\" caption appears at 0:14) [yt:QhkDOr6kmi4 @0:00](https://youtu.be/QhkDOr6kmi4?t=0) [yt:QhkDOr6kmi4 @0:14](https://youtu.be/QhkDOr6kmi4?t=14).",
+  "citations": [
+   "[yt:QhkDOr6kmi4 @0:00](https://youtu.be/QhkDOr6kmi4?t=0)",
+   "[yt:QhkDOr6kmi4 @0:14](https://youtu.be/QhkDOr6kmi4?t=14)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "What CACFP crediting information does the Golden Squash Hotcakes end card show?",
+  "a": "For Children Ages 3–5: serving size 1 hotcake, ⅛ cup vegetable, ½ oz eq grains, and \"This recipe is whole grain-rich\"; source: Team Nutrition CACFP Easy Recipe Project [yt:QhkDOr6kmi4 @2:15](https://youtu.be/QhkDOr6kmi4?t=135).",
+  "citations": [
+   "[yt:QhkDOr6kmi4 @2:15](https://youtu.be/QhkDOr6kmi4?t=135)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "What are the ingredients and amounts for Corn and Zucchini Pancakes?",
+  "a": "The on-screen card lists 3 green onions, 3 medium-sized zucchini, 1 cup whole-wheat flour, ¼ teaspoon salt, ½ teaspoon baking powder, 1½ cups of corn, 3 large eggs and 1½ tablespoons of oil (used when cooking the pancakes) [yt:eSKtPtW0X2o @5:12](https://youtu.be/eSKtPtW0X2o?t=312).",
+  "citations": [
+   "[yt:eSKtPtW0X2o @5:12](https://youtu.be/eSKtPtW0X2o?t=312)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "How are the Corn and Zucchini Pancakes cooked and for how long?",
+  "a": "The pan is on the burner set to medium (no numeric temperature stated) [yt:eSKtPtW0X2o @6:03](https://youtu.be/eSKtPtW0X2o?t=363); each pancake uses ¼ cup of mix [yt:eSKtPtW0X2o @6:12](https://youtu.be/eSKtPtW0X2o?t=372); a 5-minute timer is set, then each pancake is flipped [yt:eSKtPtW0X2o @6:46](https://youtu.be/eSKtPtW0X2o?t=406); the second side gets another 5 minutes [yt:eSKtPtW0X2o @7:16](https://youtu.be/eSKtPtW0X2o?t=436), about 10 minutes in total [yt:eSKtPtW0X2o @6:55](https://youtu.be/eSKtPtW0X2o?t=415).",
+  "citations": [
+   "[yt:eSKtPtW0X2o @6:03](https://youtu.be/eSKtPtW0X2o?t=363)",
+   "[yt:eSKtPtW0X2o @6:12](https://youtu.be/eSKtPtW0X2o?t=372)",
+   "[yt:eSKtPtW0X2o @6:46](https://youtu.be/eSKtPtW0X2o?t=406)",
+   "[yt:eSKtPtW0X2o @6:55](https://youtu.be/eSKtPtW0X2o?t=415)",
+   "[yt:eSKtPtW0X2o @7:16](https://youtu.be/eSKtPtW0X2o?t=436)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "What are the hand-washing steps shown in the Corn and Zucchini Pancakes video?",
+  "a": "Wet hands with running water; apply soap and scrub for about 20 seconds (tip: sing \"Happy Birthday\" twice), including under the nails, behind the hand and between the fingers; rinse; use a paper towel to turn off the faucet [yt:eSKtPtW0X2o @0:52](https://youtu.be/eSKtPtW0X2o?t=52) [yt:eSKtPtW0X2o @0:56](https://youtu.be/eSKtPtW0X2o?t=56) [yt:eSKtPtW0X2o @1:01](https://youtu.be/eSKtPtW0X2o?t=61) [yt:eSKtPtW0X2o @1:04](https://youtu.be/eSKtPtW0X2o?t=64) [yt:eSKtPtW0X2o @1:09](https://youtu.be/eSKtPtW0X2o?t=69).",
+  "citations": [
+   "[yt:eSKtPtW0X2o @0:52](https://youtu.be/eSKtPtW0X2o?t=52)",
+   "[yt:eSKtPtW0X2o @0:56](https://youtu.be/eSKtPtW0X2o?t=56)",
+   "[yt:eSKtPtW0X2o @1:01](https://youtu.be/eSKtPtW0X2o?t=61)",
+   "[yt:eSKtPtW0X2o @1:04](https://youtu.be/eSKtPtW0X2o?t=64)",
+   "[yt:eSKtPtW0X2o @1:09](https://youtu.be/eSKtPtW0X2o?t=69)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "What toppings are offered with the Corn and Zucchini Pancakes?",
+  "a": "The \"Toppings\" card lists low-fat yogurt, salsa and chopped herbs (dill, basil, chives) [yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453).",
+  "citations": [
+   "[yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453)"
+  ],
+  "type": "video"
+ },
+ {
+  "q": "Do the cookbook and the two videos agree on how long to wash hands?",
+  "a": "Yes. The cookbook says 20 seconds with warm water and soap [cookbook p.145]; the Golden Squash Hotcakes caption says \"Wash your hands, 20 seconds\" [yt:QhkDOr6kmi4 @0:14](https://youtu.be/QhkDOr6kmi4?t=14); the Corn and Zucchini Pancakes card says \"Scrub hands (20 seconds)\" [yt:eSKtPtW0X2o @0:52](https://youtu.be/eSKtPtW0X2o?t=52).",
+  "citations": [
+   "[cookbook p.145]",
+   "[yt:QhkDOr6kmi4 @0:14](https://youtu.be/QhkDOr6kmi4?t=14)",
+   "[yt:eSKtPtW0X2o @0:52](https://youtu.be/eSKtPtW0X2o?t=52)"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "The Golden Squash Hotcakes video preheats to 400 °F; does any cookbook recipe also roast squash at 400 °F?",
+  "a": "Yes, Aztec Grain Salad roasts cubed butternut squash and apple at 400 °F (conventional 15–20 minutes, convection 12–15 minutes) [cookbook p.24], which matches the video's 400 °F preheat [yt:QhkDOr6kmi4 @0:21](https://youtu.be/QhkDOr6kmi4?t=21). The foods differ: the video bakes shredded yellow summer squash for 8–10 minutes [yt:QhkDOr6kmi4 @0:39](https://youtu.be/QhkDOr6kmi4?t=39), so only the temperature is the same.",
+  "citations": [
+   "[cookbook p.24]",
+   "[yt:QhkDOr6kmi4 @0:21](https://youtu.be/QhkDOr6kmi4?t=21)",
+   "[yt:QhkDOr6kmi4 @0:39](https://youtu.be/QhkDOr6kmi4?t=39)"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "The pancake host has low-fat Greek yogurt and skim milk with her pancakes; which cookbook tip supports that?",
+  "a": "The \"Don’t forget the dairy\" tip recommends pairing a meal with a cup of fat-free or low-fat milk [cookbook p.7]; the host says she likes the pancakes with low-fat Greek yogurt and skim milk at dinner [yt:eSKtPtW0X2o @0:24](https://youtu.be/eSKtPtW0X2o?t=24), and a low-fat yogurt topping is listed [yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453).",
+  "citations": [
+   "[cookbook p.7]",
+   "[yt:eSKtPtW0X2o @0:24](https://youtu.be/eSKtPtW0X2o?t=24)",
+   "[yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453)"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "Why does the pancake video use whole-wheat flour, and how can a shopper identify whole-grain foods?",
+  "a": "The host says whole wheat contains the entire kernel (bran, germ, endosperm) and makes the pancakes healthier [yt:eSKtPtW0X2o @5:17](https://youtu.be/eSKtPtW0X2o?t=317). The cookbook advises making at least half your grains whole and looking for \"100% whole grain\" or \"100% whole wheat\" [cookbook p.7], and for the word \"whole\" at the start of the ingredient list; \"multi-grain\", \"100% wheat\" or brown color may not mean whole grain [cookbook p.47].",
+  "citations": [
+   "[yt:eSKtPtW0X2o @5:17](https://youtu.be/eSKtPtW0X2o?t=317)",
+   "[cookbook p.7]",
+   "[cookbook p.47]"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "Which top-8 allergens appear in the Corn and Zucchini Pancakes video?",
+  "a": "The cookbook list is fish, shellfish, eggs, milk, wheat, peanuts, tree nuts and soybeans [cookbook p.6]. The video uses 3 large eggs [yt:eSKtPtW0X2o @4:47](https://youtu.be/eSKtPtW0X2o?t=287) and 1 cup whole-wheat flour [yt:eSKtPtW0X2o @5:12](https://youtu.be/eSKtPtW0X2o?t=312), and offers low-fat yogurt as a topping [yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453). The video itself never names allergens, and it does not say yogurt is milk; the cookbook's rule-based allergen list treats plain low-fat yogurt as milk [cookbook p.33]. Mapping is an inference from ingredient names.",
+  "citations": [
+   "[cookbook p.6]",
+   "[yt:eSKtPtW0X2o @4:47](https://youtu.be/eSKtPtW0X2o?t=287)",
+   "[yt:eSKtPtW0X2o @5:12](https://youtu.be/eSKtPtW0X2o?t=312)",
+   "[yt:eSKtPtW0X2o @7:33](https://youtu.be/eSKtPtW0X2o?t=453)",
+   "[cookbook p.33]"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "Which two award-winning recipes came from Bellingham Memorial Middle School, and what awards did they win?",
+  "a": "Tasty Tots (Popular Choice winner [cookbook p.9]) and Mediterranean Quinoa Salad (2nd place, Whole Grains [cookbook p.18]). The school's story says two of its eight developed recipes, Tasty Tots and Mediterranean Quinoa Salad, became winners in the cookbook [cookbook p.53]; the quinoa salad story page also names Bellingham, Massachusetts [cookbook p.19].",
+  "citations": [
+   "[cookbook p.9]",
+   "[cookbook p.18]",
+   "[cookbook p.53]",
+   "[cookbook p.19]"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "Which recipe has the lowest sodium, and what do the sodium tips advise?",
+  "a": "Harvest Stew has the lowest sodium per serving in the compiled data at 57.37 mg [cookbook p.131], just below Aztec Grain Salad at 58.43 mg [cookbook p.25]. The sodium tips say to think fresh, cook at home, skip the salt, and read labels for \"low sodium\", \"reduced sodium\" or \"no salt added\" [cookbook p.115].",
+  "citations": [
+   "[cookbook p.131]",
+   "[cookbook p.25]",
+   "[cookbook p.115]"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "If I chill cooked dry beans for Fiesta Wrap, how fast must they cool, and how does that relate to the 2-hour room-temperature rule?",
+  "a": "The bean notes say to chill for later use: cool to 70 °F within 2 hours and to 40 °F or lower within an additional 4 hours [cookbook p.126]. The food-safety page says perishable food should not be left out more than 2 hours at room temperature (1 hour above 90 °F) [cookbook p.145]. The sources do not link the two rules explicitly.",
+  "citations": [
+   "[cookbook p.126]",
+   "[cookbook p.145]"
+  ],
+  "type": "multi-hop"
+ },
+ {
+  "q": "Does the food-safety page agree with the recipes on hot-holding temperature?",
+  "a": "No, the sources differ. The food-safety page says hot food should be held at 140 °F or warmer [cookbook p.145]; Porcupine Sliders and other recipes say \"Hold for hot service at 135 °F or higher\" [cookbook p.13]. The sources do not explain the difference.",
+  "citations": [
+   "[cookbook p.145]",
+   "[cookbook p.13]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Compare the \"heat to\" CCP temperatures of Porcupine Sliders, Roasted Fish Crispy Slaw Wrap and Tasty Tots.",
+  "a": "Porcupine Sliders (ground turkey): 165 °F for at least 15 seconds [cookbook p.13]; Roasted Fish Crispy Slaw Wrap: 145 °F [cookbook p.80]; Tasty Tots (sweet potato and garbanzo bean tots): 140 °F [cookbook p.55]. The 165 °F value matches the poultry rule [cookbook p.145]; the page gives no fish temperature.",
+  "citations": [
+   "[cookbook p.13]",
+   "[cookbook p.80]",
+   "[cookbook p.55]",
+   "[cookbook p.145]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Which recipes have the highest and lowest calories per serving?",
+  "a": "Highest: Stir-Fry Fajita Chicken, Squash, and Corn at 396.34 [cookbook p.65]; lowest: Lentils of the Southwest at 68.66 [cookbook p.105] (a ¼ cup serving, versus ¾ cup stir-fry over ½ cup brown rice).",
+  "citations": [
+   "[cookbook p.65]",
+   "[cookbook p.105]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Compare Chicken Alfredo with a Twist and Chicken Curry Casserole on protein, calories and sodium.",
+  "a": "Chicken Alfredo with a Twist: protein 29.71 g, calories 344.92, sodium 571.55 mg [cookbook p.29]. Chicken Curry Casserole: protein 14.33 g, calories 220.32, sodium 563.78 mg [cookbook p.33]. Serving sizes differ (1 cup vs ¾ cup).",
+  "citations": [
+   "[cookbook p.29]",
+   "[cookbook p.33]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Aztec Grain Salad and Peppy Quinoa are both quinoa dishes; how do they differ nutritionally?",
+  "a": "Aztec Grain Salad: 297.80 calories, sodium 58.43 mg, fiber 5.56 g (1 cup) [cookbook p.25]. Peppy Quinoa: 174.70 calories, sodium 93.07 mg, fiber 3.42 g (½ cup) [cookbook p.41].",
+  "citations": [
+   "[cookbook p.25]",
+   "[cookbook p.41]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Compare the rule-based allergen flags of Stir-Fried Green Rice, Eggs, and Ham with Porcupine Sliders.",
+  "a": "Stir-Fried Green Rice, Eggs, and Ham: egg, sesame (sesame oil) and soy (low-sodium soy sauce) [cookbook p.50] [cookbook p.51]. Porcupine Sliders: egg (liquid whole egg) and wheat/gluten (mini whole-grain rolls) [cookbook p.12] [cookbook p.13]. Both lists are derived from ingredient names (verify labels).",
+  "citations": [
+   "[cookbook p.50]",
+   "[cookbook p.51]",
+   "[cookbook p.12]",
+   "[cookbook p.13]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "Does Aztec Grain Salad respect the cookbook's \"no more than 15 ingredients\" statement?",
+  "a": "The statement is on [cookbook p.8], but the Aztec Grain Salad ingredient table lists 17 rows (quinoa, water, apples, squash, canola oil, ginger, cinnamon, orange juice concentrate, olive oil, honey, mustard, vinegar, salt, black pepper, white pepper, cilantro, dried cranberries) [cookbook p.24] [cookbook p.25]. This is a conflict between the two pages; the sources do not say whether water, salt or spices are excluded from the count.",
+  "citations": [
+   "[cookbook p.8]",
+   "[cookbook p.24]",
+   "[cookbook p.25]"
+  ],
+  "type": "compare"
+ },
+ {
+  "q": "How do conventional and convection oven times differ for Porcupine Sliders and Chic’ Penne?",
+  "a": "Porcupine Sliders: conventional 350 °F for 18 minutes, convection 325 °F for 14 minutes [cookbook p.13]. Chic’ Penne (covered with foil): conventional 350 °F for 8 minutes, convection 350 °F for 4 minutes [cookbook p.17]. In both, the convection oven needs less time; only Porcupine Sliders also lowers the temperature.",
+  "citations": [
+   "[cookbook p.13]",
+   "[cookbook p.17]"
+  ],
+  "type": "compare"
+ }
+]

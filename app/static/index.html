@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bếp Trường · Kitchen KB</title>
+<style>
+:root{--bg:#f7f6f2;--panel:#fff;--ink:#22201c;--muted:#76716a;--line:#e3dfd6;--accent:#c4612f;--accent-soft:#f6e6dc;
+--ok:#2f7d4f;--warn:#a8590c;--bad:#b3261e;--code:#f1eee7;--user:#efe9df}
+@media (prefers-color-scheme:dark){:root{--bg:#1c1b19;--panel:#252320;--ink:#ece8e1;--muted:#a49d92;--line:#3a3732;
+--accent:#e08254;--accent-soft:#3b2b21;--ok:#6fc28f;--warn:#e0a35c;--bad:#f08a80;--code:#2e2b27;--user:#2f2c28}}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:16px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+.brand{font-weight:650;letter-spacing:-.01em}.brand small{color:var(--muted);font-weight:400;margin-left:6px}
+nav.tabs{display:flex;gap:4px;margin-left:auto}nav.tabs button{border:0;background:none;color:var(--muted);padding:7px 12px;border-radius:8px;font:inherit;cursor:pointer}
+nav.tabs button[aria-selected=true]{background:var(--accent-soft);color:var(--ink);font-weight:600}
+main{flex:1;min-height:0;min-width:0;display:flex;overflow:hidden}section.tab{flex:1;min-height:0;min-width:0;display:none}section.tab.on{display:flex}
+/* chat */
+#chat{flex-direction:column;align-items:center}
+#log{flex:1;overflow:auto;width:100%;padding:24px 16px 8px}
+.wrap{max-width:780px;margin:0 auto}
+.msg{margin:0 0 22px}.msg.user .bubble{background:var(--user);border-radius:16px;padding:10px 14px;margin-left:auto;max-width:85%;width:fit-content;white-space:pre-wrap}
+.msg.bot .bubble{padding:2px 2px}
+.bubble table{border-collapse:collapse;margin:8px 0;font-size:14px}.bubble th,.bubble td{border:1px solid var(--line);padding:4px 8px;text-align:left}
+.bubble th{background:var(--code)}.bubble p{margin:6px 0}.bubble ul,.bubble ol{margin:6px 0;padding-left:22px}
+sup.c{display:inline-block;min-width:18px;padding:0 5px;margin:0 1px;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:650;text-align:center;cursor:pointer;line-height:17px}
+.trace{border:1px solid var(--line);border-radius:12px;margin:0 0 10px;background:var(--panel)}
+.trace>summary{list-style:none;cursor:pointer;padding:8px 12px;color:var(--muted);font-size:13px;display:flex;gap:8px;align-items:center}
+.trace>summary::-webkit-details-marker{display:none}.trace>summary:before{content:"▸";transition:.15s}.trace[open]>summary:before{transform:rotate(90deg)}
+.steps{padding:0 12px 10px;font-size:13px}
+.step{display:grid;grid-template-columns:92px 1fr;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.step b{font-size:11px;letter-spacing:.04em;text-transform:uppercase}.step .t{color:var(--muted)}.step.act b{color:var(--accent)}.step.obs b{color:var(--ok)}.step.err b{color:var(--bad)}
+.step pre{margin:0;white-space:pre-wrap;word-break:break-word;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:6px 8px;border-radius:6px;max-height:180px;overflow:auto}
+.does{font-size:12.5px;margin:0 0 4px}.mdls{display:flex;gap:4px;flex-wrap:wrap;margin:0 0 5px}
+.mdl{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.01em;padding:1px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-transform:none}
+.tthumbs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 6px}.tthumbs a{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--muted);font-size:10.5px}
+.tthumbs img{height:56px;max-width:110px;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:#000}
+.spin{width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:s 1s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
+.sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.src{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:3px 8px;color:var(--ink);text-decoration:none;background:var(--panel)}
+.src em{color:var(--accent);font-style:normal;font-weight:650;margin-right:4px}
+.meta{color:var(--muted);font-size:12px;margin-top:6px;display:flex;gap:10px;flex-wrap:wrap}
+.flag{color:var(--warn)}
+#composer{width:100%;padding:10px 16px 18px}
+.box{max-width:780px;margin:0 auto;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:8px 10px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.box textarea{width:100%;border:0;outline:0;resize:none;background:transparent;color:var(--ink);font:inherit;min-height:44px;max-height:180px;padding:6px 4px}
+.row{display:flex;align-items:center;gap:6px}.row .sp{flex:1}
+.ib{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;height:34px;min-width:34px;padding:0 9px;cursor:pointer;font-size:14px}
+.ib.rec{background:var(--bad);color:#fff;border-color:var(--bad)}
+.send{background:var(--accent);color:#fff;border:0}.send:disabled{opacity:.45;cursor:default}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 4px 4px}.chip{font-size:12px;background:var(--accent-soft);border-radius:8px;padding:2px 8px}
+.hint{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+.welcome{text-align:center;padding:8vh 0 2vh}.welcome h1{font-weight:550;font-size:28px;margin:0 0 6px;letter-spacing:-.02em}
+.welcome p{color:var(--muted);margin:0 0 18px}.sugs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;text-align:left}
+.sug{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:10px 12px;cursor:pointer;font-size:14px;color:var(--ink)}
+.sug span{display:block;color:var(--muted);font-size:12px}
+
+/* pipeline tab */
+#pipe .view{max-width:1100px;margin:0 auto}
+.viz{--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--base:#b9b6ad;--grid:#e3dfd6;--seq0:#e8f0fb;--seq1:#2a78d6}
+@media (prefers-color-scheme:dark){.viz{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--base:#6b6862;--grid:#3a3732;--seq0:#22303f;--seq1:#3987e5}}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 16px}
+.stage h2{margin:0 0 2px;font-size:17px}.stage .lead{color:var(--muted);margin:0 0 12px;font-size:13.5px}
+.flowd{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:8px 0 14px}
+.fbox{flex:1 1 130px;min-width:120px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg);font-size:12.5px;position:relative}
+.fbox b{display:block;font-size:13px}.fbox .n{font-size:20px;font-weight:650;letter-spacing:-.02em;display:block;margin-top:2px}
+.fbox .k{color:var(--muted);font-size:11.5px}.farr{align-self:center;color:var(--muted);padding:0 5px;font-size:16px}
+.fbox.ai{border-color:var(--accent)}.fbox.ai:after{content:"LLM / VLM";position:absolute;top:-8px;right:8px;font-size:9.5px;background:var(--accent);color:#fff;border-radius:6px;padding:1px 5px;letter-spacing:.04em}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:12px}
+.chart{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel);min-width:0}
+.chart h4{margin:0 0 2px;font-size:13.5px}.chart .cap{color:var(--muted);font-size:12px;margin:0 0 6px}
+.chart svg{width:100%;max-width:520px;height:auto;display:block;overflow:visible}.chart text{font:11.5px -apple-system,system-ui,sans-serif;fill:var(--ink)}
+.chart text.m{fill:var(--muted)}.chart rect.bar:hover{opacity:.8}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:6px 0 12px}
+.tile{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg)}.tile b{display:block;font-size:20px;letter-spacing:-.02em}.tile span{color:var(--muted);font-size:12px}
+.loop{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;counter-reset:st}
+.loop div{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:12.5px;background:var(--bg)}.loop div b{display:block}
+.note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+
+/* pdf tab */
+#pdf{min-height:0}.pdfwrap{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+.pdfbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--panel);font-size:13px}
+.pdfbar input[type=number]{width:64px;font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.pdfbar .sp{flex:1}.pdfgrid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pdfsrc{border-right:1px solid var(--line);min-height:0;display:flex;background:#525659}.pdfsrc iframe,.pdfsrc object{flex:1;border:0;width:100%;height:100%}
+.pdfsrc img{max-width:100%;max-height:100%;margin:auto;display:block;background:#fff}
+.pdfout{overflow:auto;padding:14px 16px;min-width:0}.pdfout h3{margin:0 0 4px}
+.chk{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}.chk span{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:2px 8px;background:var(--panel)}
+.chk .good{border-color:var(--ok);color:var(--ok)}.chk .bad{border-color:var(--bad);color:var(--bad)}
+@media(max-width:900px){.pdfgrid{grid-template-columns:1fr;grid-template-rows:55vh auto}.pdfsrc{border-right:0;border-bottom:1px solid var(--line)}}
+/* pages tab */
+#pages{min-height:0}
+.side{width:300px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:var(--panel)}
+.side .flt{padding:10px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.side select,.side input{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.list{overflow:auto;flex:1}.it{padding:8px 12px;border-bottom:1px solid var(--line);cursor:pointer;font-size:13px}
+.it:hover{background:var(--bg)}.it.on{background:var(--accent-soft)}.it .h{display:flex;gap:6px;align-items:center}.it .s{color:var(--muted);font-size:12px}
+.badge{font-size:10.5px;border-radius:6px;padding:1px 6px;border:1px solid var(--line);color:var(--muted)}
+.badge.hard{border-color:var(--bad);color:var(--bad)}.badge.son{color:var(--accent);border-color:var(--accent)}
+.view{flex:1;overflow:auto;padding:16px;min-width:0}
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}@media(max-width:1000px){.cmp{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0;overflow:auto}
+.card h3{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.card img{width:100%;border-radius:6px;border:1px solid var(--line)}
+.gen table{border-collapse:collapse;width:100%;font-size:12.5px;margin:6px 0}.gen th,.gen td{border:1px solid var(--line);padding:3px 6px;vertical-align:top;text-align:left}
+.gen th{background:var(--code)}.gen figure{margin:8px 0;padding:8px;border:1px dashed var(--line);border-radius:8px}.gen figcaption{font-style:italic;color:var(--muted)}
+.gen .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}.gen header,.gen footer{color:var(--muted);font-size:12px}.gen h1{font-size:19px;margin:4px 0}
+.facts{font-size:13px;margin:10px 0 0;padding-left:18px}.dis li{color:var(--bad)}
+.frames{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}.frames figure{margin:0;font-size:12px}.frames img{width:100%;border-radius:6px}
+/* ingestion tab */
+#ingest .view{max-width:1200px;margin:0 auto}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.kpi b{display:block;font-size:22px;letter-spacing:-.02em}.kpi span{color:var(--muted);font-size:12px}
+table.grid{border-collapse:collapse;width:100%;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.grid th,table.grid td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}table.grid th{background:var(--code);font-weight:600}
+h2{font-size:16px;margin:22px 0 8px}.muted{color:var(--muted)}
+.ingr td:first-child{font-weight:600}.pill{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:7px;padding:0 6px;margin:1px 2px 1px 0;background:var(--bg)}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;margin:6px 0 14px}.flow span{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px 9px}.flow i{color:var(--muted);font-style:normal}
+nav.tabs button{white-space:nowrap}
+#graph{min-height:0}.gwrap{flex:1;display:flex;flex-direction:column;min-width:0;position:relative}
+.gbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--panel);font-size:13px}
+.gbar input{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:200px}
+.gbar label{white-space:nowrap;display:inline-flex;align-items:center;gap:3px}#grels{display:flex;flex-wrap:wrap;gap:2px 10px;min-width:0}
+@media(max-width:760px){.gbar input{min-width:0;flex:1 1 100%}#gsvg{min-height:52vh}}#gsvg{flex:1;width:100%;min-height:0;cursor:grab;background:var(--bg)}
+.glegend{position:absolute;left:12px;bottom:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 9px;font-size:12px;z-index:2}
+.glegend span{display:inline-flex;align-items:center;gap:5px;margin-right:9px}.glegend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.gside{width:340px;border-left:1px solid var(--line);background:var(--panel);overflow:auto;padding:12px;font-size:13px}
+.gside h3{margin:0 0 4px;font-size:16px}.gside ul{padding-left:18px;margin:6px 0}.gside li{margin:3px 0}
+#gsvg text{font:11px -apple-system,system-ui,sans-serif;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px}
+#gsvg .dim{opacity:.1}
+@media(max-width:760px){#graph{flex-direction:column}.gside{width:100%;max-height:35vh;border-left:0;border-top:1px solid var(--line)}}
+.media{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:10px;margin-top:10px;min-width:0}
+.media figure{min-width:0}.vwrap{position:relative;aspect-ratio:16/9;background:#000}.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s;pointer-events:none}
+.media figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+.media iframe{width:100%;aspect-ratio:16/9;border:0;display:block}.media img{width:100%;display:block;max-height:220px;object-fit:cover;object-position:top}
+.vposter{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer;aspect-ratio:16/9}
+.vposter img{width:100%;height:100%;max-height:none;object-fit:cover}.vplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+background:rgba(0,0,0,.72);color:#fff;border-radius:999px;padding:8px 16px;font-size:15px;font-weight:650}.vposter:hover .vplay{background:var(--accent)}
+a.vlink{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+.media figcaption{font-size:12px;padding:6px 9px;display:flex;justify-content:space-between;gap:8px}.media figcaption a{color:var(--accent)}
+.upimg{max-width:180px;max-height:140px;border-radius:10px;display:block;margin-top:6px}
+#drop{position:fixed;inset:0;background:color-mix(in srgb,var(--accent) 18%,transparent);border:3px dashed var(--accent);display:none;
+align-items:center;justify-content:center;z-index:9;font-size:22px;font-weight:600;color:var(--ink);backdrop-filter:blur(2px)}#drop.on{display:flex}
+.recbar{font-size:12px;color:var(--bad);display:none}
+.msel{font:inherit;font-size:12.5px;height:34px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);padding:0 6px;max-width:240px;min-width:0;flex:0 1 auto}
+@media(max-width:760px){.msel{max-width:130px}}
+.row{flex-wrap:wrap}.recbar.on{display:inline}
+@media(max-width:760px){header{flex-wrap:wrap;gap:6px;padding:8px 12px}.brand small{display:none}nav.tabs{margin-left:0;width:100%;overflow-x:auto}
+.cmp{grid-template-columns:1fr}.gen .cols{grid-template-columns:1fr}.side{width:100%;max-height:40vh;border-right:0;border-bottom:1px solid var(--line)}#pages{flex-direction:column}nav.tabs button{padding:6px 8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Bếp Trường <small>Kitchen KB · Claude Sonnet 5.5 · ReAct</small></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="chat">Agent</button>
+    <button role="tab" aria-selected="false" data-tab="pdf">PDF gốc ↔ kết quả</button>
+    <button role="tab" aria-selected="false" data-tab="pages">Trang khó → HTML</button>
+    <button role="tab" aria-selected="false" data-tab="ingest">Dữ liệu đã nạp</button>
+    <button role="tab" aria-selected="false" data-tab="graph">Graph</button>
+    <button role="tab" aria-selected="false" data-tab="pipe">Pipeline</button>
+  </nav>
+</header>
+<div id="drop">Thả ảnh hoặc âm thanh để tìm trong sách và video</div>
+<main>
+  <!-- TAB 1: agent -->
+  <section class="tab on" id="chat">
+    <div id="log"><div class="wrap" id="thread">
+      <div class="welcome" id="welcome">
+        <h1>Hỏi về công thức, bảng, ảnh hoặc video</h1>
+        <p>Trả lời có trích dẫn trang và mốc thời gian. Gửi ảnh, ghi âm câu hỏi, hoặc một đoạn âm thanh từ video.</p>
+        <div class="sugs">
+          <button class="sug" data-q="Cần bao nhiêu gạo lứt cho 50 suất Porcupine Sliders?">Cần bao nhiêu gạo lứt cho 50 suất Porcupine Sliders?<span>Bảng nguyên liệu</span></button>
+          <button class="sug" data-q="Những món nào có cá hoặc trứng? Kèm trang.">Những món nào có cá hoặc trứng?<span>Graph · dị ứng</span></button>
+          <button class="sug" data-q="Trong video Golden Squash Hotcakes, nướng ở bao nhiêu độ và bao lâu?">Video hotcakes nướng bao nhiêu độ, bao lâu?<span>Chữ trên khung hình</span></button>
+          <button class="sug" data-q="Giữ nóng món ăn ở nhiệt độ nào? Các nguồn có thống nhất không?">Giữ nóng ở nhiệt độ nào? Nguồn có thống nhất?<span>Xung đột nguồn</span></button>
+          <button class="sug" data-q="Cho tôi xem đoạn video các bạn nhỏ lật bánh pancake trên chảo">Cho xem đoạn video lật bánh pancake<span>Tìm khoảnh khắc video bằng chữ</span></button>
+          <button class="sug" data-q="Trang nào có ảnh món bánh mì kẹp thịt nhỏ (slider) với nho?">Trang nào có ảnh slider kèm nho?<span>Tìm ảnh trong PDF bằng chữ</span></button>
+        </div>
+      </div>
+    </div></div>
+    <div id="composer"><div class="box">
+      <div class="chips" id="chips"></div>
+      <textarea id="q" rows="1" placeholder="Hỏi Bếp Trường…  (Enter để gửi, Shift+Enter xuống dòng)"></textarea>
+      <div class="row">
+        <button class="ib" id="attach" title="Đính kèm ảnh hoặc âm thanh">＋</button>
+        <button class="ib" id="mic" title="Một nút cho cả 3: nói mô tả, mở âm thanh từ video, hoặc ngân nga — bấm lần nữa để dừng">🎙</button>
+        <select id="method" class="msel" title="Phương pháp truy xuất văn bản cho agent"></select>
+        <select id="ibackend" class="msel" title="Cách so khớp ảnh"></select>
+        <span class="recbar" id="recbar">● đang ghi <span id="rect">0</span>s — nói, phát âm thanh video, hoặc ngân nga; bấm ■ để gửi</span>
+        <span class="sp"></span>
+        <button class="ib send" id="send" disabled>Gửi ↑</button>
+      </div>
+      <input type="file" id="file" accept="image/*,audio/*" hidden>
+    </div><div class="hint">Kéo-thả hoặc dán ảnh/âm thanh vào trang để tìm. Agent chỉ trả lời từ kho tài liệu USDA đã nạp; câu ngoài phạm vi sẽ bị từ chối. Mọi bước được ghi trace.</div></div>
+  </section>
+
+  <!-- TAB: original PDF next to the extraction result -->
+  <section class="tab" id="pdf">
+    <div class="pdfwrap">
+      <div class="pdfbar">
+        <button class="ib" id="pprev" title="Trang trước (←)">‹</button>
+        <label>Trang PDF <input id="pnum" type="number" min="1" max="148" value="12"></label><span class="muted" id="pinfo"></span>
+        <button class="ib" id="pnext" title="Trang sau (→)">›</button>
+        <span class="sp"></span>
+        <label><input type="radio" name="pmode" value="pdf" checked> PDF thật</label>
+        <label><input type="radio" name="pmode" value="png"> ảnh trang</label>
+        <a class="ib" id="popen" target="_blank" rel="noopener" href="/media/pdf#page=12" style="display:inline-flex;align-items:center;text-decoration:none">Mở PDF ↗</a>
+      </div>
+      <div class="pdfgrid">
+        <div class="pdfsrc" id="psrc"></div>
+        <div class="pdfout" id="pout"><p class="muted">Đang tải…</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB 2: pages -> HTML -->
+  <section class="tab" id="pages">
+    <aside class="side">
+      <div class="flt">
+        <select id="ftype"><option value="">Mọi loại trang</option><option>table</option><option>photo</option><option>story</option><option>tips</option><option>front</option><option>toc</option><option>cover</option></select>
+        <label style="font-size:13px"><input type="checkbox" id="fhard" checked> chỉ trang khó</label>
+        <input id="fq" placeholder="Lọc theo món…" style="flex:1;min-width:120px">
+      </div>
+      <div class="list" id="plist"></div>
+    </aside>
+    <div class="view" id="pview"><p class="muted">Chọn một trang hoặc video bên trái.</p></div>
+  </section>
+
+  <!-- TAB 5: pipeline explained -->
+  <section class="tab" id="pipe"><div class="view" id="pview2"><p class="muted">Đang tải…</p></div></section>
+
+  <!-- TAB 4: knowledge graph -->
+  <section class="tab" id="graph">
+    <div class="gwrap">
+      <div class="gbar">
+        <input id="gq" placeholder="Tìm nút: egg, quinoa, Porcupine…">
+        <span id="grels"></span>
+        <button class="ib" id="gfit">Vừa khung</button>
+      </div>
+      <div class="glegend" id="glegend"></div>
+      <svg id="gsvg" role="img" aria-label="Knowledge graph"></svg>
+    </div>
+    <aside class="gside" id="gside"><p class="muted">Bấm một nút để xem các cạnh và bằng chứng (trang sách hoặc mốc video). Kéo để di chuyển, cuộn để zoom.</p></aside>
+  </section>
+
+  <!-- TAB 3: ingestion inventory -->
+  <section class="tab" id="ingest"><div class="view" id="iview"><p class="muted">Đang tải…</p></div></section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s), esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let session = null, attachments = [], busy = false;
+// ---------- tabs ----------
+document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
+  document.querySelectorAll("nav.tabs button").forEach(x => x.setAttribute("aria-selected", x === b));
+  document.querySelectorAll("section.tab").forEach(s => s.classList.toggle("on", s.id === b.dataset.tab));
+  if (b.dataset.tab === "pages" && !PAGES) loadPages();
+  if (b.dataset.tab === "ingest" && !INV) loadInventory();
+  if (b.dataset.tab === "graph" && !GRAPH) loadGraph();
+  if (b.dataset.tab === "pipe" && !PIPE) loadPipeline();
+  if (b.dataset.tab === "pdf") pdfGo(PDFPAGE, true);
+});
+// ---------- markdown (small, escape-first) ----------
+function md(src, cites) {
+  const lines = esc(src).split("\n"); let html = "", i = 0;
+  const inline = t => t.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|[^*])\*(?!\s)(.+?)\*/g, "$1<i>$2</i>").replace(/_(.+?)_/g, "<i>$1</i>")
+    .replace(/\[([^\]]+)\]\((https:\/\/(?:youtu\.be|www\.youtube\.com)\/[^\s)]+|\/media\/[^\s)]+)\)/g, (m, t, u) => `<a class="vlink" target="_blank" rel="noopener" href="${u}">${t}</a>`)
+    .replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\[cite:([^\]\s]+)\]/g, (m, id) => { let k = cites.indexOf(id); if (k < 0) { cites.push(id); k = cites.length - 1; } return `<sup class="c" data-cite="${id}">${k + 1}</sup>`; });
+  while (i < lines.length) {
+    const l = lines[i];
+    if (/^\|.*\|\s*$/.test(l) && /^\|[\s:|-]+\|\s*$/.test(lines[i + 1] || "")) {
+      const row = r => r.trim().replace(/^\||\|$/g, "").split("|").map(c => inline(c.trim()));
+      html += "<table><tr>" + row(l).map(c => `<th>${c}</th>`).join("") + "</tr>"; i += 2;
+      while (i < lines.length && /^\|/.test(lines[i])) { html += "<tr>" + row(lines[i]).map(c => `<td>${c}</td>`).join("") + "</tr>"; i++; }
+      html += "</table>"; continue;
+    }
+    if (/^\s*[-*] /.test(l)) { html += "<ul>"; while (i < lines.length && /^\s*[-*] /.test(lines[i])) html += `<li>${inline(lines[i++].replace(/^\s*[-*] /, ""))}</li>`; html += "</ul>"; continue; }
+    if (/^\s*\d+\. /.test(l)) { html += "<ol>"; while (i < lines.length && /^\s*\d+\. /.test(lines[i])) html += `<li>${inline(lines[i++].replace(/^\s*\d+\. /, ""))}</li>`; html += "</ol>"; continue; }
+    if (/^#{1,4} /.test(l)) { html += `<p><b>${inline(l.replace(/^#+ /, ""))}</b></p>`; i++; continue; }
+    if (l.trim()) html += `<p>${inline(l)}</p>`; i++;
+  }
+  return html;
+}
+const VTITLE = { QhkDOr6kmi4: "Golden Squash Hotcakes", eSKtPtW0X2o: "Corn and Zucchini Pancakes" };
+function citeLink(id) {
+  let m = id.match(/^cookbook:p(\d{3})/); if (m) return { label: `Sách tr.${+m[1]}`, url: `/media/page/${+m[1]}` };
+  m = id.match(/^(?:yt|img:yt):([A-Za-z0-9_-]{11})[:@]?(?:s\d+|f\d+|f_\d+)?@?([\d.]+)?/);
+  if (m) { const t = m[2] != null ? Math.floor(m[2]) : null, name = VTITLE[m[1]] || "Video";
+    return { label: `▶ ${name}${t != null ? " " + Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0") : ""}`, url: `https://youtu.be/${m[1]}${t != null ? "?t=" + t : ""}` }; }
+  if (id.startsWith("img:cookbook:p")) { const n = +id.slice(14); return { label: `Ảnh tr.${n}`, url: `/media/page/${n}` }; }
+  if (id.startsWith("pkg:")) return { label: id.replace("pkg:", "Gói "), url: null };
+  return { label: id, url: null };
+}
+// ---------- chat ----------
+const q = $("#q"), send = $("#send");
+q.oninput = () => { q.style.height = "auto"; q.style.height = Math.min(q.scrollHeight, 180) + "px"; send.disabled = busy || (!q.value.trim() && !attachments.length); };
+q.onkeydown = e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); if (!send.disabled) ask(); } };
+send.onclick = ask;
+document.querySelectorAll(".sug").forEach(b => b.onclick = () => { q.value = b.dataset.q; q.oninput(); ask(); });
+$("#attach").onclick = () => $("#file").click();
+$("#file").onchange = e => { const f = e.target.files[0]; if (f) upload(f, f.name); e.target.value = ""; };
+const previews = {};
+async function upload(blob, name, autoSend) {
+  const data = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result.split(",")[1]); fr.readAsDataURL(blob); });
+  const res = await fetch("/api/upload", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, data }) }).then(r => r.json());
+  if (res.id) {
+    attachments.push(res.id); if (blob.type.startsWith("image/")) previews[res.id] = URL.createObjectURL(blob);
+    renderChips(name); q.oninput(); if (autoSend && !busy) ask();
+  } else alert(res.error || "upload failed");
+}
+// drag & drop + paste: images / audio search immediately
+let dragDepth = 0;
+addEventListener("dragenter", e => { if ([...e.dataTransfer.types].includes("Files")) { dragDepth++; $("#drop").classList.add("on"); } });
+addEventListener("dragleave", () => { if (--dragDepth <= 0) { dragDepth = 0; $("#drop").classList.remove("on"); } });
+addEventListener("dragover", e => e.preventDefault());
+addEventListener("drop", e => {
+  e.preventDefault(); dragDepth = 0; $("#drop").classList.remove("on");
+  const files = [...e.dataTransfer.files].filter(f => /^(image|audio|video)\//.test(f.type));
+  if (!files.length) return;
+  document.querySelector('[data-tab=chat]').click();
+  files.forEach((f, i) => upload(f, f.name, i === files.length - 1));
+});
+addEventListener("paste", e => { const f = [...(e.clipboardData?.files || [])].find(f => f.type.startsWith("image/")); if (f) upload(f, "dan-anh.png", true); });
+function renderChips(name) { $("#chips").insertAdjacentHTML("beforeend", `<span class="chip">📎 ${esc(name)}</span>`); }
+let rec = null;
+$("#mic").onclick = async () => {
+  if (rec) { rec.stop(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true }); const chunks = [];
+    rec = new MediaRecorder(stream); rec.ondataavailable = e => chunks.push(e.data);
+    let sec = 0; const tick = setInterval(() => { $("#rect").textContent = ++sec; if (sec >= 30) rec?.stop(); }, 1000);
+    rec.onstop = () => { clearInterval(tick); stream.getTracks().forEach(t => t.stop()); $("#mic").classList.remove("rec"); $("#mic").textContent = "🎙"; $("#recbar").classList.remove("on");
+      upload(new Blob(chunks, { type: "audio/webm" }), "ghi-am.webm", true); rec = null; };
+    rec.start(); $("#mic").classList.add("rec"); $("#mic").textContent = "■"; $("#rect").textContent = 0; $("#recbar").classList.add("on");
+  } catch (e) { alert("Không truy cập được micro: " + e.message); }
+};
+async function ask() {
+  const audioAtt = attachments.some(a => /\.(webm|wav|m4a|mp3|ogg)$/.test(a));
+  const text = q.value.trim() || (attachments.length ? (audioAtt
+      ? "Tôi vừa ghi âm: có thể là lời tôi mô tả điều cần tìm, âm thanh phát từ một video, hoặc tiếng ngân nga. Hãy nhận diện và tìm đúng chỗ trong sách/video."
+      : "Ảnh này giống trang nào trong sách hoặc khoảnh khắc nào trong video? Cho tôi biết món gì và chỗ chính xác.") : "");
+  if (!text) return;
+  const atts = attachments.slice(); attachments = []; $("#chips").innerHTML = ""; q.value = ""; q.oninput();
+  $("#welcome")?.remove(); busy = true; send.disabled = true;
+  const t = $("#thread");
+  t.insertAdjacentHTML("beforeend", `<div class="msg user"><div class="bubble">${esc(text)}${atts.map(a => previews[a] ? `<img class="upimg" alt="ảnh đính kèm" src="${previews[a]}">` : `<div class="meta">🎙 ${esc(a)}</div>`).join("")}</div></div>`);
+  t.insertAdjacentHTML("beforeend", `<div class="msg bot"><details class="trace"><summary><span class="spin"></span><span class="lbl">Đang suy nghĩ…</span></summary><div class="steps"></div></details><div class="bubble"></div></div>`);
+  const bot = t.lastElementChild, steps = bot.querySelector(".steps"), lbl = bot.querySelector(".lbl"), bubble = bot.querySelector(".bubble");
+  scrollDown();
+  let nAct = 0;
+  const finalText = text;
+  const res = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ session, text: finalText, attachments: atts, method: $("#method").value, image_backend: $("#ibackend").value }) });
+  const reader = res.body.getReader(), dec = new TextDecoder(); let buf = "";
+  for (;;) {
+    const { value, done } = await reader.read(); if (done) break;
+    buf += dec.decode(value, { stream: true }); let k;
+    while ((k = buf.indexOf("\n\n")) >= 0) {
+      const line = buf.slice(0, k); buf = buf.slice(k + 2);
+      if (!line.startsWith("data: ")) continue;
+      const ev = JSON.parse(line.slice(6));
+      if (ev.type === "session") session = ev.id;
+      else if (ev.type === "thought") steps.insertAdjacentHTML("beforeend", `<div class="step"><b class="t">Thought<br><span class="mdl">Sonnet 5.5</span></b><div>${esc(ev.text)}</div></div>`);
+      else if (ev.type === "action") { nAct++; lbl.textContent = `Đang gọi ${ev.tool}… (bước ${ev.step})`; steps.insertAdjacentHTML("beforeend", `<div class="step act"><b>Action ${ev.step}</b><div>${ev.does ? `<div class="does">${esc(ev.does)}</div>` : ""}${(ev.models || []).length ? `<div class="mdls">${ev.models.map(m => `<span class="mdl">${esc(m)}</span>`).join("")}</div>` : ""}<pre>${esc(ev.tool)}(${esc(JSON.stringify(ev.input))})</pre></div></div>`); }
+      else if (ev.type === "observation") steps.insertAdjacentHTML("beforeend", `<div class="step ${ev.error ? "err" : "obs"}"><b>${ev.error ? "Error" : "Observation"}</b><div>${(ev.thumbs || []).length ? `<div class="tthumbs">${ev.thumbs.map(t => `<a target="_blank" rel="noopener" href="${esc(t.href)}" title="${esc(t.label)}"><img loading="lazy" alt="${esc(t.label)}" src="${esc(t.url)}"><span>${esc(t.label)}</span></a>`).join("")}</div>` : ""}<pre>${esc(ev.preview)}</pre></div></div>`);
+      else if (ev.type === "input" && ev.guard?.length) steps.insertAdjacentHTML("beforeend", `<div class="step err"><b>Guard</b><div class="flag">${esc(ev.guard.join(", "))}</div></div>`);
+      else if (ev.type === "guard") steps.insertAdjacentHTML("beforeend", `<div class="step err"><b>Guard</b><div>${esc(ev.reason)}${ev.tool ? " · " + esc(ev.tool) : ""}${ev.count ? " ×" + ev.count : ""}</div></div>`);
+      else if (ev.type === "verifier") steps.insertAdjacentHTML("beforeend", `<div class="step err"><b>Verifier ${ev.nudge}</b><div>${esc(ev.reason)} → yêu cầu kiểm tra lại</div></div>`);
+      else if (ev.type === "error") steps.insertAdjacentHTML("beforeend", `<div class="step err"><b>Error</b><div>${esc(ev.message)}</div></div>`);
+      else if (ev.type === "final") {
+        const cites = []; bubble.innerHTML = md(ev.answer, cites);
+        bot.querySelector(".spin").remove();
+        lbl.textContent = `Suy luận · ${nAct} lần gọi tool · ${ev.seconds ?? "–"} giây`;
+        if (cites.length) bubble.insertAdjacentHTML("beforeend", `<div class="sources">${cites.map((c, i) => { const L = citeLink(c); return L.url ? `<a class="src" target="_blank" rel="noopener" href="${L.url}"><em>${i + 1}</em>${esc(L.label)}</a>` : `<span class="src"><em>${i + 1}</em>${esc(L.label)}</span>`; }).join("")}</div>`);
+        if (ev.media?.length) bubble.insertAdjacentHTML("beforeend", `<div class="media">${ev.media.map(m => m.type === "video"
+          ? `<figure><button class="vposter" data-v="${esc(m.video_id)}" data-t="${m.t | 0}" title="Phát tại ${Math.floor(m.t / 60)}:${String(m.t % 60).padStart(2, "0")}"><img alt="khung hình tại ${m.t | 0}s" src="/media/still/${encodeURIComponent(m.video_id)}/${m.t | 0}"><span class="vplay">▶ ${Math.floor(m.t / 60)}:${String(m.t % 60).padStart(2, "0")}</span></button><figcaption><span>▶ ${Math.floor(m.t / 60)}:${String(m.t % 60).padStart(2, "0")}</span><a target="_blank" rel="noopener" href="https://youtu.be/${encodeURIComponent(m.video_id)}?t=${m.t | 0}">mở YouTube tại mốc này</a></figcaption></figure>`
+          : `<figure><a target="_blank" rel="noopener" href="/media/page/${m.pdf_page}"><img loading="lazy" alt="PDF page ${m.pdf_page}" src="/media/page/${m.pdf_page}"></a><figcaption><span>Sách tr.${m.pdf_page}${m.recipe ? " · " + esc(m.recipe) : ""}</span><a href="#" data-pdf="${m.pdf_page}">so với PDF</a></figcaption></figure>`).join("")}</div>`);
+        bubble.querySelectorAll(".vposter").forEach(b => b.onclick = () => {
+          // Muted autoplay is allowed by browsers, so the player starts AT the moment instead of pausing on YouTube's
+          // default thumbnail. Our exact-second frame stays on top until the player has had time to start.
+          const poster = b.querySelector("img").src, w = document.createElement("div");
+          w.className = "vwrap";
+          w.innerHTML = `<iframe title="video ${esc(b.dataset.v)} at ${b.dataset.t}s" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(b.dataset.v)}?start=${b.dataset.t}&autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1"></iframe><img alt="" src="${poster}">`;
+          b.replaceWith(w);
+          const img = w.querySelector("img");
+          w.querySelector("iframe").addEventListener("load", () => setTimeout(() => { img.style.opacity = 0; setTimeout(() => img.remove(), 400); }, 1200));
+        });
+        bubble.querySelectorAll("[data-pdf]").forEach(a => a.onclick = e => { e.preventDefault(); openPdfPage(+a.dataset.pdf); });
+        bubble.querySelectorAll("[data-goto]").forEach(a => a.onclick = async e => { e.preventDefault(); document.querySelector("[data-tab=pages]").click(); while (!PAGES) await new Promise(r => setTimeout(r, 100)); $("#fhard").checked = false; renderList(); showPage(+a.dataset.goto); });
+        bubble.insertAdjacentHTML("beforeend", `<div class="meta"><span>⚙ ${esc(METHODS[ev.method] || ev.method || "")}${ev.image_backend === "gemma" ? " · ảnh: Gemma" : ""}</span><span>${ev.tokens ?? 0} tokens · $${ev.cost_usd ?? 0}</span>${ev.abstained ? '<span class="flag">đã từ chối do thiếu bằng chứng</span>' : ""}${(ev.flags || []).map(f => `<span class="flag">guard: ${esc(f)}</span>`).join("")}</div>`);
+        bubble.querySelectorAll("sup.c").forEach(s => s.onclick = () => { const L = citeLink(s.dataset.cite); if (L.url) window.open(L.url, "_blank", "noopener"); });
+      }
+      scrollDown();
+    }
+  }
+  busy = false; q.oninput();
+}
+function scrollDown() { const l = $("#log"); l.scrollTop = l.scrollHeight; }
+// ---------- pages tab ----------
+let PAGES = null;
+async function loadPages() {
+  PAGES = await fetch("/api/pages").then(r => r.json());
+  ["#ftype", "#fhard", "#fq"].forEach(s => $(s).oninput = renderList); renderList();
+  const first = PAGES.find(p => p.hard); if (first) showPage(first.n);
+}
+function renderList() {
+  const ty = $("#ftype").value, hard = $("#fhard").checked, fq = $("#fq").value.toLowerCase();
+  const vids = [["QhkDOr6kmi4", "Golden Squash Hotcakes (không lời, chỉ chữ trên màn hình)"], ["eSKtPtW0X2o", "Corn and Zucchini Pancakes (STT + phụ đề)"]];
+  const rows = PAGES.filter(p => (!ty || p.type === ty) && (!hard || p.hard || p.disagreements >= 3 || p.type === "toc") && (!fq || (p.recipe || "").toLowerCase().includes(fq)));
+  $("#plist").innerHTML = vids.map(([id, t]) => `<div class="it" data-v="${id}"><div class="h"><b>🎬 Video</b><span class="badge hard">video</span></div><div class="s">${esc(t)}</div></div>`).join("") +
+    rows.map(p => `<div class="it" data-n="${p.n}"><div class="h"><b>Tr. PDF ${p.n}</b><span class="badge">${esc(p.type)}</span><span class="badge ${p.tier === "sonnet" ? "son" : ""}">${p.tier}</span>${p.hard ? '<span class="badge hard">khó</span>' : ""}</div>
+      <div class="s">${esc(p.recipe || p.category || "")}${p.hard ? " — " + esc(p.hard) : ""}</div><div class="s">${p.facts} facts · ${p.disagreements} sửa text layer · ${p.mismatch} lệch số</div></div>`).join("");
+  document.querySelectorAll("#plist .it").forEach(el => el.onclick = () => el.dataset.v ? showVideo(el.dataset.v) : showPage(+el.dataset.n));
+}
+function mark(sel) { document.querySelectorAll("#plist .it").forEach(e => e.classList.toggle("on", e.matches(sel))); }
+async function showPage(n) {
+  mark(`[data-n="${n}"]`); const p = PAGES.find(x => x.n === n), d = await fetch(`/api/page/${n}`).then(r => r.json());
+  $("#pview").innerHTML = `<h2 style="margin-top:0">PDF trang ${n}${p.printed ? ` (in số ${p.printed})` : ""} · ${esc(p.type)} ${p.recipe ? "· " + esc(p.recipe) : ""}</h2>
+   <p><a href="#" onclick="openPdfPage(${n});return false">Mở trang này trong PDF gốc ↔ kết quả</a></p>
+   <p class="muted">${p.hard ? "<b>Vì sao khó:</b> " + esc(p.hard) + " · " : ""}Model: ${p.tier === "sonnet" ? "Sonnet 5.5" : "Haiku 5.5"} · độ tin cậy ${esc(d.confidence)} · ${p.facts} facts · số liệu lệch text layer: ${p.mismatch}</p>
+   <div class="cmp"><div class="card"><h3>Trang gốc</h3><img alt="PDF page ${n}" src="/media/page/${n}"></div><div class="card gen"><h3>HTML sinh bởi VLM</h3>${d.html}</div></div>
+   ${d.disagreements.length ? `<div class="card" style="margin-top:12px"><h3>Sửa so với text layer PDF (${d.disagreements.length})</h3><ul class="facts dis">${d.disagreements.map(x => `<li>${esc(x.where)}: ảnh <b>${esc(x.image)}</b> ≠ text layer <b>${esc(x.text_layer)}</b> → chọn <b>${esc(x.chosen)}</b> (${esc(x.why)})</li>`).join("")}</ul></div>` : ""}
+   <div class="card" style="margin-top:12px"><h3>Atomic facts (${d.facts.length}) — đơn vị truy xuất</h3><ul class="facts">${d.facts.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>`;
+  $("#pview").scrollTop = 0;
+}
+async function showVideo(id) {
+  mark(`[data-v="${id}"]`); const d = await fetch(`/api/video/${id}`).then(r => r.json());
+  $("#pview").innerHTML = `<h2 style="margin-top:0">🎬 ${esc(d.meta.title)}</h2><p class="muted"><a href="${esc(d.meta.url)}" target="_blank" rel="noopener">${esc(d.meta.url)}</a> · ${d.segments.length} đoạn · ${d.facts.length} facts ${d.meta.speech ? "· lời: " + esc(d.meta.speech) : ""}</p>
+   <div class="card"><h3>Khung hình theo cảnh + chữ trên màn hình (đã sửa OCR)</h3><div class="frames">${d.segments.filter(s => s.frame).map(s => `<figure><a href="${esc(s.link)}" target="_blank" rel="noopener"><img alt="frame" src="/media/frame/${id}/${esc(s.frame.replace(".jpg", ""))}"></a><figcaption><b>${Math.floor(s.t0 || 0)}s</b> ${esc((s.on_screen_text || []).join(" / ") || s.topic || "")}</figcaption></figure>`).join("")}</div></div>
+   ${d.corrections.length ? `<div class="card" style="margin-top:12px"><h3>Sửa OCR (${d.corrections.length})</h3><ul class="facts dis">${d.corrections.map(c => `<li>${esc(c.frame)}: "${esc(c.ocr)}" → <b>${esc(c.corrected)}</b> (${esc(c.why)})</li>`).join("")}</ul></div>` : ""}
+   ${d.stt_vs_captions.length ? `<div class="card" style="margin-top:12px"><h3>STT vs phụ đề YouTube</h3><table class="grid"><tr><th>t</th><th>STT (whisper)</th><th>Phụ đề</th><th>Giữ</th></tr>${d.stt_vs_captions.map(x => `<tr><td>${esc(x.t)}</td><td>${esc(x.stt)}</td><td>${esc(x.caption)}</td><td>${esc(x.kept)}</td></tr>`).join("")}</table></div>` : ""}
+   <div class="card gen" style="margin-top:12px"><h3>HTML sinh bởi agent video</h3>${d.html}</div>`;
+  $("#pview").scrollTop = 0;
+}
+// ---------- ingestion tab ----------
+let INV = null;
+async function loadInventory() {
+  INV = await fetch("/api/inventory").then(r => r.json()); const I = INV, v = I.verification;
+  const kc = I.stores["kb_cook (bge-small 384d + full-text)"], nUnits = Object.values(kc).reduce((a, b) => a + b, 0);
+  $("#iview").innerHTML = `
+   <h2 style="margin-top:0">Pipeline</h2>
+   <div class="flow"><span>Data: PDF 148 tr. + 2 video</span><i>→</i><span>Processing: triage · text layer · OCR · VLM (Sonnet/Haiku) · STT · caption · frame OCR</span><i>→</i><span>Indexing: bge + full-text · CLIP · fingerprint</span><i>→</i><span>Enrichment: metadata · facts · graph</span><i>→</i><span>Compilation: wiki · SOP · FAQ · glossary</span><i>→</i><span>Agent (Sonnet 5.5, ReAct)</span></div>
+   <div class="kpis">
+     <div class="kpi"><b>${nUnits.toLocaleString()}</b><span>đơn vị văn bản trong kb_cook</span></div>
+     <div class="kpi"><b>${Object.values(I.stores["kb_image (CLIP ViT-B/32 512d)"]).reduce((a, b) => a + b, 0)}</b><span>ảnh trang + khung hình video (CLIP)</span></div>
+     <div class="kpi"><b>${Object.values(I.stores["kg_edges (graph)"]).reduce((a, b) => a + b, 0)}</b><span>cạnh graph (nguyên liệu, dị ứng, CCP…)</span></div>
+     <div class="kpi"><b>${v.verified.toLocaleString()}</b><span>số liệu khớp text layer · ${v.mismatch} lệch · ${v.image_only} chỉ có trong ảnh</span></div>
+     <div class="kpi"><b>${I.ingredients.length}</b><span>nguyên liệu khác nhau trong ${I.recipes.length} công thức</span></div>
+     <div class="kpi"><b>${I.packages.wiki}</b><span>trang wiki · FAQ ${I.packages.faq} câu · SOP · glossary</span></div>
+   </div>
+   <h2>Nguồn</h2><table class="grid"><tr><th>ID</th><th>Tài liệu</th><th>Quyền</th><th>Quy mô</th></tr>${I.sources.map(s => `<tr><td>${esc(s.id)}</td><td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></td><td>${esc(s.license)}</td><td>${s.pages ? s.pages + " trang" : Math.round(s.seconds) + " giây"}</td></tr>`).join("")}</table>
+   <h2>Video đã nạp</h2><table class="grid"><tr><th>Video</th><th>Đoạn STT</th><th>Phụ đề</th><th>Khung cảnh</th><th>Khung có chữ</th><th>Đoạn sau gộp</th><th>Facts</th><th>Sửa OCR</th></tr>${I.videos.map(x => `<tr><td>${esc(x.title)}</td><td>${x.stt_segments}</td><td>${x.captions}</td><td>${x.frames}</td><td>${x.text_frames}</td><td>${x.segments}</td><td>${x.facts}</td><td>${x.corrections}</td></tr>`).join("")}</table>
+   <h2>Kho lưu trữ</h2><table class="grid"><tr><th>Store</th><th>Nội dung</th></tr>${Object.entries(I.stores).map(([k, o]) => `<tr><td>${esc(k)}</td><td>${Object.entries(o).map(([a, b]) => `<span class="pill">${esc(a)}: ${b}</span>`).join("")}</td></tr>`).join("")}
+     ${Object.keys(I.fingerprint_eval).length ? `<tr><td>Shazam-style eval</td><td>${Object.entries(I.fingerprint_eval).map(([a, b]) => `<span class="pill">${esc(a)}: ${b}</span>`).join("")}</td></tr>` : ""}</table>
+   <h2>Công thức (${I.recipes.length})</h2><table class="grid"><tr><th>Món</th><th>Nhóm</th><th>Giải</th><th>Nguyên liệu</th><th>Dị ứng (suy từ tên)</th><th>Trang PDF</th></tr>${I.recipes.map(r => `<tr><td>${esc(r.recipe)}</td><td>${esc(r.category)}</td><td>${esc(r.award || "")}</td><td>${r.ingredients}</td><td>${r.allergens.map(a => `<span class="pill">${esc(a)}</span>`).join("")}</td><td>${r.pages.length ? r.pages.join(", ") : r.videos.map(v => `<a target="_blank" rel="noopener" href="https://youtu.be/${esc(v)}">video ${esc(v)}</a>`).join(", ")}</td></tr>`).join("")}</table>
+   <h2>Danh mục nguyên liệu (${I.ingredients.length})</h2>
+   <input id="iq" placeholder="Tìm nguyên liệu… (vd: quinoa, egg, cheese)" style="font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;width:min(420px,100%);margin-bottom:8px;background:var(--panel);color:var(--ink)">
+   <table class="grid ingr" id="itab"></table>`;
+  const draw = () => { const f = $("#iq").value.toLowerCase(); $("#itab").innerHTML = `<tr><th>Nguyên liệu</th><th>Số món</th><th>Món · 25 suất (khối lượng / đong) · 50 suất · trang — hoặc món trong video · lượng trên thẻ · mốc thời gian</th></tr>` +
+    I.ingredients.filter(x => !f || x.ingredient.includes(f) || x.names.join(" ").toLowerCase().includes(f)).slice(0, 400).map(x => `<tr><td>${esc(x.ingredient)}</td><td>${x.n_recipes}</td><td>${x.recipes.map(r => r.video
+      ? `<span class="pill">${esc(r.recipe)} · ${esc(r.card)} · <a target="_blank" rel="noopener" href="https://youtu.be/${esc(r.video)}?t=${r.t | 0}">▶ ${Math.floor(r.t / 60)}:${String(r.t % 60).padStart(2, "0")}</a></span>`
+      : `<span class="pill">${esc(r.recipe)} · ${esc([r.w25, r.m25].filter(Boolean).join(" / ") || "–")} · ${esc([r.w50, r.m50].filter(Boolean).join(" / ") || "–")} · tr.${r.pdf_page}</span>`).join("")}</td></tr>`).join(""); };
+  $("#iq").oninput = draw; draw();
+}
+
+
+
+// ---------- retrieval method / image backend selectors ----------
+let METHODS = {};
+(async () => {
+  const d = await fetch("/api/methods").then(r => r.json()); METHODS = d.methods;
+  let saved = {}; try { saved = JSON.parse(localStorage.getItem("kb_methods") || "{}"); } catch {}
+  $("#method").innerHTML = Object.entries(d.methods).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  $("#ibackend").innerHTML = Object.entries(d.image_backends).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  if (saved.method && d.methods[saved.method]) $("#method").value = saved.method;
+  if (saved.ib && d.image_backends[saved.ib]) $("#ibackend").value = saved.ib;
+  const keep = () => { try { localStorage.setItem("kb_methods", JSON.stringify({ method: $("#method").value, ib: $("#ibackend").value })); } catch {} };
+  $("#method").onchange = keep; $("#ibackend").onchange = keep;
+})();
+// ---------- PDF tab: original PDF next to the extraction of the same page ----------
+let PDFPAGE = 12, PMETA = null;
+async function pdfGo(n, force) {
+  n = Math.max(1, Math.min(148, n | 0)); if (n === PDFPAGE && !force && $("#pout").dataset.n == n) return;
+  PDFPAGE = n; $("#pnum").value = n; $("#popen").href = `/media/pdf#page=${n}`;
+  if (!PMETA) PMETA = await fetch("/api/pages").then(r => r.json());
+  const meta = PMETA.find(p => p.n === n) || {};
+  $("#pinfo").textContent = `/ 148 · ${meta.printed ? "số in " + meta.printed + " · " : ""}${meta.type || ""}${meta.recipe ? " · " + meta.recipe : ""}`;
+  const mode = document.querySelector("input[name=pmode]:checked").value;
+  // A fresh element per page: the browser's PDF viewer only honours #page on load.
+  $("#psrc").innerHTML = mode === "pdf"
+    ? `<iframe title="PDF gốc trang ${n}" src="/media/pdf#page=${n}&view=FitH&toolbar=1"></iframe>`
+    : `<img alt="Ảnh trang ${n}" src="/media/page/${n}">`;
+  const [d, v] = await Promise.all([fetch(`/api/page/${n}`).then(r => r.json()), fetch(`/api/verify/${n}`).then(r => r.json())]);
+  if (PDFPAGE !== n) return;
+  const mism = v.mismatches || [];
+  $("#pout").dataset.n = n;
+  $("#pout").innerHTML = `<h3>Kết quả trích xuất · trang PDF ${n}</h3>
+    <div class="chk"><span>Model: ${meta.tier === "sonnet" ? "Sonnet 5.5" : "Haiku 5.5"}</span><span>độ tin cậy: ${esc(d.confidence)}</span>
+      <span>${d.facts.length} facts</span><span class="${d.disagreements.length ? "bad" : "good"}">${d.disagreements.length} sửa so với text layer</span>
+      <span class="${mism.length ? "bad" : "good"}">${mism.length ? mism.length + " số chưa khớp text layer" : "mọi số khớp text layer"}</span>${d.illegible?.length ? `<span class="bad">${d.illegible.length} chỗ không đọc được</span>` : ""}</div>
+    <div class="card gen">${d.html}</div>
+    ${d.disagreements.length ? `<div class="card" style="margin-top:10px"><h3 style="font-size:13px">Sửa so với text layer</h3><ul class="facts dis">${d.disagreements.map(x => `<li>${esc(x.where)}: ảnh <b>${esc(x.image)}</b> ≠ text layer <b>${esc(x.text_layer)}</b> → <b>${esc(x.chosen)}</b></li>`).join("")}</ul></div>` : ""}
+    ${mism.length ? `<div class="card" style="margin-top:10px"><h3 style="font-size:13px">Số chưa khớp (cần đọc lại)</h3><ul class="facts dis">${mism.map(x => `<li><b>${esc(x.qty)}</b> — ${esc(x.fact)}</li>`).join("")}</ul></div>` : ""}
+    <div class="card" style="margin-top:10px"><h3 style="font-size:13px">Atomic facts (${d.facts.length})</h3><ul class="facts">${d.facts.map(f => `<li>${esc(f)}</li>`).join("")}</ul></div>`;
+  $("#pout").scrollTop = 0;
+}
+$("#pprev").onclick = () => pdfGo(PDFPAGE - 1); $("#pnext").onclick = () => pdfGo(PDFPAGE + 1);
+$("#pnum").onchange = () => pdfGo(+$("#pnum").value);
+document.querySelectorAll("input[name=pmode]").forEach(r => r.onchange = () => pdfGo(PDFPAGE, true));
+addEventListener("keydown", e => { if (!$("#pdf").classList.contains("on") || /INPUT|TEXTAREA/.test(document.activeElement?.tagName)) return;
+  if (e.key === "ArrowLeft") pdfGo(PDFPAGE - 1); if (e.key === "ArrowRight") pdfGo(PDFPAGE + 1); });
+function openPdfPage(n) { PDFPAGE = n; document.querySelector('[data-tab=pdf]').click(); }
+// ---------- pipeline tab: diagrams + charts (plain SVG) ----------
+let PIPE = null;
+const fmt = n => (n ?? 0).toLocaleString("en-US");
+function hbar(data, { color = "var(--s1)", unit = "", max = null, w = 480 } = {}) {
+  const rowH = 24, padL = Math.min(250, 14 + 6.4 * Math.max(...data.map(d => String(d[0]).length))), padR = 60, H = data.length * rowH + 8;
+  const mx = max ?? Math.max(1, ...data.map(d => d[1])), sc = v => (w - padL - padR) * v / mx;
+  return `<svg viewBox="0 0 ${w} ${H}" role="img" aria-label="${esc(data.map(d => d[0] + " " + d[1]).join(", "))}">
+    <line x1="${padL}" x2="${padL}" y1="2" y2="${H - 4}" stroke="var(--grid)"/>
+    ${data.map((d, i) => { const y = 4 + i * rowH, bw = Math.max(2, sc(d[1])), c = d[2] || color;
+      return `<g><text x="${padL - 6}" y="${y + 14}" text-anchor="end">${esc(d[0])}</text>
+      <path class="bar" d="M${padL},${y + 3} h${bw - 4} a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-${bw - 4} z" fill="${c}"><title>${esc(d[0])}: ${fmt(d[1])}${unit}</title></path>
+      <text x="${padL + bw + 5}" y="${y + 14}">${fmt(d[1])}${unit}</text></g>`; }).join("")}</svg>`;
+}
+function chart(title, cap, svg) { return `<div class="chart"><h4>${title}</h4><p class="cap">${cap}</p>${svg}</div>`; }
+function flow(steps) { return `<div class="flowd">${steps.map((s, i) => `${i ? '<span class="farr">→</span>' : ""}<div class="fbox ${s.ai ? "ai" : ""}"><b>${s.t}</b>${s.n != null ? `<span class="n">${s.n}</span>` : ""}<span class="k">${s.k || ""}</span></div>`).join("")}</div>`; }
+function heat(fp) {
+  const clips = ["3.0", "5.0", "10.0"], snrs = ["clean", "10", "0"], lab = { clean: "sạch", 10: "SNR 10 dB", 0: "SNR 0 dB" };
+  const cell = (c, s) => { const v = fp[`${c}s / SNR ${s}`] || "0/1"; const [a, b] = v.split("/").map(Number); return { v, r: a / b }; };
+  const W = 420, cw = 100, ch = 34, x0 = 100, y0 = 24;
+  return `<svg viewBox="0 0 ${W} ${y0 + ch * 3 + 6}" role="img" aria-label="Shazam accuracy by clip length and noise">
+    ${snrs.map((s, j) => `<text x="${x0 + j * cw + cw / 2}" y="16" text-anchor="middle" class="m">${lab[s]}</text>`).join("")}
+    ${clips.map((c, i) => `<text x="${x0 - 8}" y="${y0 + i * ch + 21}" text-anchor="end">clip ${parseFloat(c)} s</text>` + snrs.map((s, j) => { const { v, r } = cell(c, s);
+      return `<rect x="${x0 + j * cw + 1}" y="${y0 + i * ch + 1}" width="${cw - 2}" height="${ch - 2}" rx="5" fill="var(--seq1)" fill-opacity="${(0.15 + 0.85 * Math.max(0, (r - 0.8) / 0.2)).toFixed(2)}"><title>${v} đúng (video + mốc ±1 s)</title></rect>
+      <text x="${x0 + j * cw + cw / 2}" y="${y0 + i * ch + 21}" text-anchor="middle" style="font-weight:650;fill:${r > .93 ? "#fff" : "var(--ink)"}">${v}</text>`; }).join("")).join("")}</svg>`;
+}
+async function loadPipeline() {
+  PIPE = await fetch("/api/pipeline").then(r => r.json()); const P = PIPE, pg = P.pages, V = P.videos, ve = P.verify;
+  const vA = V.find(v => v.id === "eSKtPtW0X2o") || V[0], vB = V.find(v => v.id === "QhkDOr6kmi4") || V[1];
+  const TYPE = { table: "bảng nguyên liệu", photo: "ảnh món", story: "câu chuyện", tips: "mẹo", front: "đầu sách", toc: "mục lục", cover: "bìa", blank: "trống", "back-matter": "bìa sau" };
+  const GL = { K: "K→½", L: "L→⅓", M: "M→⅔", N: "N→¼", O: "O→¾", V: "V→⅛", W: "W→⅜", X: "X→⅝", Y: "Y→⅞" };
+  const A = P.agent;
+  $("#pview2").innerHTML = `<div class="viz">
+  <div class="stage"><h2>Tổng quan: từ video + sách PDF tới agent trả lời có nguồn</h2>
+    <p class="lead">Theo slide 7 bài giảng: Data → Processing → Indexing → Enrichment → Compilation → Storage → Online (RAG) → Interface. Ô viền cam là bước dùng Claude (Sonnet 5.5 / Haiku 5.5) làm tầng VLM/LLM.</p>
+    ${flow([{ t: "Data", n: "148 tr. + 2 video", k: "USDA, public domain" },
+            { t: "Processing", n: fmt(pg.total) + " tr.", k: "triage · text layer · OCR · VLM · STT · frame OCR", ai: 1 },
+            { t: "Indexing", n: fmt(Object.values(P.units).reduce((a, b) => a + b, 0)), k: "đơn vị văn bản (bge + full-text)" },
+            { t: "Enrichment", n: fmt(Object.values(P.edges).reduce((a, b) => a + b, 0)), k: "cạnh graph · metadata · facts" },
+            { t: "Compilation", n: P.packages.wiki + " wiki", k: `FAQ ${P.packages.faq} · SOP · glossary`, ai: 1 },
+            { t: "Storage", n: fmt(Object.values(P.images).reduce((a, b) => a + b, 0)), k: "ảnh/khung hình (CLIP) + pgvector + graph" },
+            { t: "Agent", n: "ReAct", k: "Sonnet 5.5 · 6 tool · guardrails", ai: 1 }])}
+  </div>
+
+  <div class="stage"><h2>1 · Sách PDF khó → HTML giữ bố cục</h2>
+    <p class="lead">Mỗi trang được phân loại rẻ (không gọi model), rồi gửi tới tầng phù hợp: Sonnet cho bảng/nhãn/mục lục, Haiku cho ảnh và trang chữ. Mọi con số model viết ra được đối chiếu lại với text layer của PDF đã giải mã font phân số.</p>
+    ${flow([{ t: "PDF", n: pg.total + " trang", k: "ngang, 2 trang in/khổ, số in lệch 2" }, { t: "Triage", n: Object.keys(pg.by_type).length + " loại", k: "text layer, độ phủ ảnh, bảng" },
+            { t: "Sonnet 5.5", n: (pg.by_tier.sonnet || 0) + " tr.", k: `5 agent · ${fmt(pg.facts_by_tier.sonnet)} facts`, ai: 1 }, { t: "Haiku 5.5", n: (pg.by_tier.haiku || 0) + " tr.", k: `3 agent · ${fmt(pg.facts_by_tier.haiku)} facts`, ai: 1 },
+            { t: "HTML + JSON", n: fmt((pg.facts_by_tier.sonnet || 0) + (pg.facts_by_tier.haiku || 0)), k: "atomic facts + bất đồng" }, { t: "Kiểm chứng", n: fmt(ve.verified), k: `số khớp · ${ve.mismatch} lệch · ${ve.image_only} chỉ trong ảnh` }])}
+    <div class="charts">
+      ${chart("Trang theo loại", "Bảng nguyên liệu chiếm nhiều nhất — loại khó nhất về bố cục.", hbar(Object.entries(pg.by_type).sort((a, b) => b[1] - a[1]).map(([k, v]) => [TYPE[k] || k, v])))}
+      ${chart("Lỗi font phân số được sửa", "Text layer mã hoá phân số thành chữ cái; agent phát hiện từ ảnh, sau đó giải mã bằng code cho mọi trang.", hbar(Object.entries(pg.glyphs).sort((a, b) => b[1] - a[1]).map(([k, v]) => [GL[k] || k, v])))}
+      ${chart("Đối chiếu số liệu với text layer", "Mỗi con số trong facts phải xuất hiện trên cùng trang PDF sau khi giải mã.", hbar([["khớp text layer", ve.verified], ["chỉ có trong ảnh (nhãn dinh dưỡng)", ve.image_only], ["lệch (đã đọc lại: đều vô hại)", ve.mismatch]]))}
+      ${chart("Facts theo tầng model", "Sonnet đọc ít trang hơn nhưng mỗi trang bảng sinh ~28 facts.", hbar([["Sonnet 5.5", pg.facts_by_tier.sonnet || 0, "var(--s1)"], ["Haiku 5.5", pg.facts_by_tier.haiku || 0, "var(--s2)"]]))}
+    </div></div>
+
+  <div class="stage"><h2>2 · Video YouTube → lời nói, chữ trên màn hình, khung hình</h2>
+    <p class="lead">Một video không có lời (chỉ nhạc + chữ trên màn hình), một video có lời và phụ đề. Lời nói: Whisper chạy local, đối chiếu với phụ đề YouTube. Hình: khung hình mỗi giây + OCR; Sonnet đọc khung hình để sửa OCR (vd "% cup" → "⅛ cup") và gộp thành các đoạn có mốc thời gian.</p>
+    ${flow([{ t: "yt-dlp", n: V.length + " video", k: "mp4 + phụ đề + metadata" }, { t: "Whisper STT", n: fmt(vA.stt) + " / " + vB.stt, k: "đoạn lời (video không lời = 0)" },
+            { t: "Phụ đề", n: fmt(vA.captions) + " / " + vB.captions, k: "cue YouTube" }, { t: "Khung 1 giây", n: fmt(vA.dense + vB.dense), k: `${fmt(vA.dense_text + vB.dense_text)} khung có chữ (OCR)` },
+            { t: "Agent video (Sonnet)", n: (vA.segments + vB.segments) + " đoạn", k: `${vA.facts + vB.facts} facts · ${vA.corrections + vB.corrections} sửa OCR`, ai: 1 }])}
+    <div class="charts">
+      ${V.map(v => chart(esc(v.title), `${Math.round(v.seconds)} giây · ${v.stt ? "có lời" : "không lời — chỉ nhạc"}`, hbar([["đoạn lời (Whisper)", v.stt], ["cue phụ đề", v.captions], ["khung cảnh (scene-change)", v.keyframes], ["khung mỗi giây", v.dense], ["khung có chữ (1 s)", v.dense_text], ["facts sau gộp", v.facts]]))).join("")}
+    </div>
+    <p class="note">Vì sao cần khung mỗi giây: khung "scene-change" bỏ sót thẻ chữ hiện dần (vd thẻ "1 ½ cups of corn" lúc 3:59). Mốc thời gian của từng nguyên liệu trên thẻ được OCR xác minh tới từng giây.</p></div>
+
+  <div class="stage"><h2>3 · Enrichment & Compilation</h2>
+    <p class="lead">Code (không dùng model) gắn metadata, tách facts nguyên tử, dựng graph công thức–nguyên liệu–dị ứng–CCP; agent Sonnet viết gói kiến thức có trích dẫn: wiki từng món, SOP an toàn thực phẩm, FAQ, glossary.</p>
+    <div class="charts">
+      ${chart("Cạnh trong knowledge graph", "has_ingredient từ bảng nguyên liệu và thẻ nguyên liệu trong video; dị ứng suy từ tên nguyên liệu.", hbar(Object.entries(P.edges).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v])))}
+      ${chart("Đơn vị truy xuất (kb_cook)", "fact = mệnh đề nguyên tử; package = mục trong wiki/SOP/FAQ/glossary.", hbar(Object.entries(P.units).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v])))}
+      ${chart("FAQ theo loại câu hỏi", `${P.packages.faq} câu, mỗi câu có trích dẫn trang hoặc mốc video.`, hbar(Object.entries(P.packages.faq_by_type).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v])))}
+      ${chart("Chỉ mục ảnh (kb_image, CLIP)", "Ảnh trang PDF + khung video; tìm bằng ảnh hoặc bằng chữ.", hbar(Object.entries(P.images).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v])))}
+    </div></div>
+
+  <div class="stage"><h2>4 · Tìm bằng chữ, ảnh, giọng nói, âm thanh video, ngân nga</h2>
+    <p class="lead">Một ô nhập cho mọi kiểu: chữ → hybrid (bge + full-text, RRF) + graph; ảnh → CLIP + OCR chữ trong ảnh + hash gần trùng; một nút ghi âm chạy cùng lúc dấu vân âm thanh (kiểu Shazam), Whisper (giọng nói) và so giai điệu (ngân nga).</p>
+    ${flow([{ t: "Chữ", k: "dense bge + full-text → RRF; graph cho câu hỏi liệt kê" }, { t: "Ảnh", k: "CLIP + OCR + dHash → trang / giây video" },
+            { t: "Ghi âm", k: "fingerprint · STT · melody → verdict" }, { t: "Agent Sonnet", k: "chọn tool, kiểm tra, trả lời có nguồn", ai: 1 }])}
+    <div class="charts">
+      ${chart("Shazam-style: đúng video + mốc ±1 s", "40 đoạn ngẫu nhiên mỗi ô, nhiễu trắng thêm vào, âm lượng giảm một nửa.", heat(P.fingerprint))}
+      ${P.image_eval?.n ? chart("Ảnh → khoảnh khắc video (±2 s)", `${P.image_eval.n} ảnh chụp màn hình giả lập (cắt, đổi cỡ, nén JPEG mạnh).`, hbar([["trước: khung scene-change + CLIP", P.image_eval.baseline_2s, "var(--base)"], ["sau: khung 1 s + CLIP + OCR + hash", P.image_eval.new_2s], ["sau, sai số ±5 s", P.image_eval.new_5s]], { max: P.image_eval.n, unit: "/" + P.image_eval.n })) : ""}
+    </div>
+    <p class="note">Ngân nga: khớp tốt với đoạn có nhạc (video hotcakes), không đáng tin với đoạn chỉ có lời nói — hệ thống báo đây là phương án độ tin cậy thấp.</p></div>
+
+  <div class="stage"><h2>5 · Agent ReAct (Claude Sonnet 5.5) + guardrails + cache</h2>
+    <p class="lead">Mỗi lượt: Thought → Action (tool) → Observation lặp lại tới khi đủ bằng chứng, rồi Answer. Mọi bước được ghi trace và hiển thị trong tab Agent.</p>
+    <div class="loop">
+      <div><b>1 · Kiểm tra đầu vào</b>độ dài, prompt injection, secret</div><div><b>2 · Thought</b>Claude lập kế hoạch tìm kiếm</div>
+      <div><b>3 · Action</b>tool trong allowlist, tham số được kiểm, tối đa 6 lần gọi</div><div><b>4 · Observation</b>bọc là dữ liệu không tin cậy</div>
+      <div><b>5 · Answer</b>mỗi trích dẫn phải có trong kết quả tool lượt này</div><div><b>6 · Cache</b>prompt cache (system + tools + hội thoại) và cache câu trả lời</div></div>
+    <div class="tiles">
+      <div class="tile"><b>${A.turns}</b><span>lượt đã chạy (${A.cached_turns} từ cache câu trả lời)</span></div>
+      <div class="tile"><b>$${A.median_cost ?? "–"}</b><span>chi phí trung vị / lượt</span></div>
+      <div class="tile"><b>${A.median_seconds ?? "–"} s</b><span>thời gian trung vị / lượt</span></div>
+      <div class="tile"><b>${Math.round((A.cache_read_share || 0) * 100)}%</b><span>token đọc từ prompt cache</span></div>
+      <div class="tile"><b>${A.abstained}</b><span>lượt từ chối (thiếu bằng chứng / ngoài phạm vi)</span></div>
+    </div>
+    <div class="charts">${chart("Tool agent đã gọi", "Đếm trên mọi trace đã lưu.", hbar(Object.entries(A.tool_use).sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v])))}</div>
+  </div></div>`;
+}
+// ---------- graph tab ----------
+let GRAPH = null;
+const GCOL = { recipe: "#c4612f", ingredient: "#6b8f5e", allergen: "#b3261e", category: "#3f6fb5", temp: "#a8590c", video: "#7b4fb8" };
+const GLBL = { recipe: "Món", ingredient: "Nguyên liệu", allergen: "Dị ứng", category: "Nhóm", temp: "Nhiệt độ CCP", video: "Video" };
+const RELS = { has_ingredient: "nguyên liệu", contains_allergen: "dị ứng", in_category: "nhóm", ccp_temp_F: "CCP °F", demonstrates: "video" };
+async function loadGraph() {
+  GRAPH = await fetch("/api/graph").then(r => r.json());
+  $("#glegend").innerHTML = Object.entries(GLBL).map(([k, v]) => `<span><i style="background:${GCOL[k]}"></i>${v} (${GRAPH.nodes.filter(n => n.type === k).length})</span>`).join("");
+  $("#grels").innerHTML = Object.entries(RELS).map(([k, v]) => `<label><input type="checkbox" data-rel="${k}" checked> ${v} (${GRAPH.edges.filter(e => e.rel === k).length})</label>`).join(" ");
+  drawGraph();
+  document.querySelectorAll("#grels input").forEach(c => c.onchange = drawGraph);
+  $("#gq").oninput = () => highlight($("#gq").value.trim().toLowerCase());
+}
+// Small dependency-free force layout: springs on edges, pairwise repulsion (grid-bucketed), centring, collision.
+let gsel = null, gstate = null, view = { x: 0, y: 0, k: 1 }, raf = 0;
+const SVGNS = "http://www.w3.org/2000/svg", el = (t, a = {}) => { const e = document.createElementNS(SVGNS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+function drawGraph() {
+  cancelAnimationFrame(raf);
+  const on = new Set([...document.querySelectorAll("#grels input:checked")].map(c => c.dataset.rel));
+  const byId = {}, nodes = [];
+  const edgesRaw = GRAPH.edges.filter(e => on.has(e.rel));
+  const used = new Set(edgesRaw.flatMap(e => [e.source, e.target]));
+  GRAPH.nodes.filter(n => used.has(n.id) || n.type === "recipe").forEach((n, i) => {
+    const a = i * 2.39996, rr = 12 * Math.sqrt(i + 1);
+    byId[n.id] = { ...n, x: Math.cos(a) * rr, y: Math.sin(a) * rr, vx: 0, vy: 0 }; nodes.push(byId[n.id]); });
+  const edges = edgesRaw.map(e => ({ ...e, s: byId[e.source], t: byId[e.target] })).filter(e => e.s && e.t);
+  const R = n => n.type === "recipe" ? 6 + Math.sqrt(n.degree) : n.type === "ingredient" ? 3 + Math.sqrt(n.degree) : 6 + Math.sqrt(n.degree) * .9;
+  const svg = $("#gsvg"); svg.innerHTML = "";
+  const g = el("g"), gl = el("g"), gn = el("g"), gt = el("g"); g.append(gl, gn, gt); svg.append(g);
+  edges.forEach(e => { e.el = el("line", { stroke: e.rel === "contains_allergen" ? GCOL.allergen : "currentColor", "stroke-opacity": e.rel === "contains_allergen" ? .6 : .35, "stroke-width": e.rel === "contains_allergen" ? 1.5 : .8 }); e.el.style.color = "var(--muted)"; gl.append(e.el); });
+  nodes.forEach(n => {
+    n.el = el("circle", { r: R(n), fill: GCOL[n.type], stroke: "var(--panel)", "stroke-width": 1.2 }); n.el.style.cursor = "pointer";
+    const tt = el("title"); tt.textContent = `${GLBL[n.type]}: ${n.label} (${n.degree} cạnh)`; n.el.append(tt);
+    n.lab = el("text"); n.lab.textContent = n.label.length > 28 ? n.label.slice(0, 27) + "…" : n.label; if (n.type === "ingredient") n.lab.style.display = "none";
+    gn.append(n.el); gt.append(n.lab);
+    n.el.addEventListener("pointerdown", ev => { ev.stopPropagation(); drag = { n, moved: false }; n.fixed = true; });
+  });
+  let alpha = 1, drag = null, pan = null;
+  function tick() {
+    const rep = 900;                                                   // repulsion via 60px grid buckets (neighbours only)
+    const grid = new Map(), key = (x, y) => `${Math.floor(x / 60)},${Math.floor(y / 60)}`;
+    nodes.forEach(n => { const k = key(n.x, n.y); (grid.get(k) || grid.set(k, []).get(k)).push(n); });
+    nodes.forEach(a => { const gx = Math.floor(a.x / 60), gy = Math.floor(a.y / 60);
+      for (let dx = -2; dx <= 2; dx++) for (let dy = -2; dy <= 2; dy++) for (const b of grid.get(`${gx + dx},${gy + dy}`) || []) {
+        if (b === a) continue; let x = a.x - b.x, y = a.y - b.y, d2 = x * x + y * y || .01; const d = Math.sqrt(d2);
+        const f = rep / d2 * (a.type === "ingredient" ? .5 : 1); a.vx += x / d * f * alpha; a.vy += y / d * f * alpha;
+        const min = R(a) + R(b) + 2; if (d < min) { a.vx += x / d * (min - d) * .5; a.vy += y / d * (min - d) * .5; } } });
+    edges.forEach(e => { const L = e.rel === "has_ingredient" ? 40 : 65, x = e.t.x - e.s.x, y = e.t.y - e.s.y, d = Math.hypot(x, y) || .01, f = (d - L) * .04 * alpha;
+      e.s.vx += x / d * f; e.s.vy += y / d * f; e.t.vx -= x / d * f; e.t.vy -= y / d * f; });
+    nodes.forEach(n => { n.vx -= n.x * .004 * alpha; n.vy -= n.y * .004 * alpha; if (!n.fixed) { n.x += n.vx; n.y += n.vy; } n.vx *= .55; n.vy *= .55; });
+    render(); alpha *= .985; if (alpha > .02 || drag) raf = requestAnimationFrame(tick); else fit();
+  }
+  function render() {
+    edges.forEach(e => { e.el.setAttribute("x1", e.s.x); e.el.setAttribute("y1", e.s.y); e.el.setAttribute("x2", e.t.x); e.el.setAttribute("y2", e.t.y); });
+    nodes.forEach(n => { n.el.setAttribute("cx", n.x); n.el.setAttribute("cy", n.y); n.lab.setAttribute("x", n.x + R(n) + 2); n.lab.setAttribute("y", n.y + 3); });
+  }
+  const apply = () => { g.setAttribute("transform", `translate(${view.x},${view.y}) scale(${view.k})`);
+    nodes.forEach(n => { if (n.type === "ingredient" && !n.lab.classList.contains("hl")) n.lab.style.display = view.k > 1.6 ? "" : "none"; }); };
+  const pt = ev => { const r = svg.getBoundingClientRect(); return { x: (ev.clientX - r.left - view.x) / view.k, y: (ev.clientY - r.top - view.y) / view.k }; };
+  svg.onpointerdown = ev => { pan = { x: ev.clientX - view.x, y: ev.clientY - view.y, moved: false }; svg.setPointerCapture(ev.pointerId); };
+  svg.onpointermove = ev => {
+    if (drag) { const p = pt(ev); drag.n.x = p.x; drag.n.y = p.y; drag.moved = true; if (alpha < .1) { alpha = .1; cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); } render(); }
+    else if (pan) { view.x = ev.clientX - pan.x; view.y = ev.clientY - pan.y; pan.moved = true; apply(); } };
+  svg.onpointerup = ev => { if (drag) { drag.n.fixed = false; if (!drag.moved) select(drag.n.id); drag = null; }
+    else if (pan && !pan.moved && ev.target === svg) { gsel = null; highlight($("#gq").value.trim().toLowerCase()); } pan = null; };
+  svg.onwheel = ev => { ev.preventDefault(); const r = svg.getBoundingClientRect(), mx = ev.clientX - r.left, my = ev.clientY - r.top, k = Math.min(6, Math.max(.15, view.k * Math.exp(-ev.deltaY * .0015)));
+    view.x = mx - (mx - view.x) * k / view.k; view.y = my - (my - view.y) * k / view.k; view.k = k; apply(); };
+  function fit() { const W = svg.clientWidth, H = svg.clientHeight, xs = nodes.map(n => n.x), ys = nodes.map(n => n.y);
+    const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys), k = Math.min(3, .9 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+    view = { k, x: W / 2 - k * (x0 + x1) / 2, y: H / 2 - k * (y0 + y1) / 2 }; apply(); }
+  gstate = { nodes, edges }; $("#gfit").onclick = fit;
+  fit(); raf = requestAnimationFrame(tick);
+  if (gsel) select(gsel);
+}
+function neighbours(id) { const s = new Set([id]); gstate.edges.forEach(e => { if (e.s.id === id) s.add(e.t.id); if (e.t.id === id) s.add(e.s.id); }); return s; }
+function highlight(q) {
+  if (!gstate) return; const { nodes, edges } = gstate;
+  if (!q && !gsel) { nodes.forEach(n => { n.el.classList.remove("dim"); n.lab.classList.remove("dim", "hl"); }); edges.forEach(e => e.el.classList.remove("dim")); return; }
+  const keep = new Set();
+  if (gsel) neighbours(gsel).forEach(x => keep.add(x));
+  if (q) nodes.filter(n => n.label.toLowerCase().includes(q)).forEach(n => neighbours(n.id).forEach(x => keep.add(x)));
+  nodes.forEach(n => { const k = keep.has(n.id); n.el.classList.toggle("dim", !k); n.lab.classList.toggle("dim", !k); n.lab.classList.toggle("hl", k);
+    if (n.type === "ingredient") n.lab.style.display = k ? "" : "none"; });
+  edges.forEach(e => e.el.classList.toggle("dim", !(keep.has(e.s.id) && keep.has(e.t.id))));
+}
+function citeHtml(c) {
+  if (!c) return ""; const L = citeLink(c.replace(/^yt:([^@]+)@(\d+)$/, "yt:$1@$2"));
+  return L.url ? ` <a target="_blank" rel="noopener" href="${L.url}">${esc(L.label)}</a>` : ` <span class="muted">${esc(c)}</span>`;
+}
+function select(id) {
+  gsel = id; highlight($("#gq").value.trim().toLowerCase());
+  const n = GRAPH.nodes.find(x => x.id === id), es = GRAPH.edges.filter(e => e.source === id || e.target === id || e.source?.id === id || e.target?.id === id);
+  const other = e => { const s = e.source.id || e.source, t = e.target.id || e.target; return GRAPH.nodes.find(x => x.id === (s === id ? t : s)); };
+  const groups = {}; es.forEach(e => (groups[e.rel] ||= []).push(e));
+  $("#gside").innerHTML = `<h3>${esc(n.label)}</h3><div class="muted">${GLBL[n.type]} · ${n.degree} cạnh${n.category ? " · " + esc(n.category) : ""}${n.award ? " · " + esc(n.award) : ""}</div>
+    ${n.pages?.length ? `<p>Trang PDF: ${n.pages.map(p => `<a target="_blank" rel="noopener" href="/media/page/${p}">${p}</a>`).join(", ")}</p>` : ""}
+    ${n.videos?.length ? `<p>Video: ${n.videos.map(v => `<a target="_blank" rel="noopener" href="https://youtu.be/${esc(v)}">${esc(v)}</a>`).join(", ")}</p>` : ""}
+    ${Object.entries(groups).map(([rel, list]) => `<b>${esc(RELS[rel] || rel)} (${list.length})</b><ul>${list.map(e => { const o = other(e), d = e.detail || {};
+      const q = [d.name && d.name !== o?.label ? d.name : "", [d.w25, d.m25].filter(Boolean).join(" / "), d.evidence ? "· " + d.evidence : ""].filter(Boolean).join(" ");
+      return `<li><a href="#" data-node="${esc(o?.id)}">${esc(o?.label)}</a> ${q ? `<span class="muted">${esc(q)}</span>` : ""}${citeHtml(e.cite)}</li>`; }).join("")}</ul>`).join("")}`;
+  document.querySelectorAll("#gside [data-node]").forEach(a => a.onclick = ev => { ev.preventDefault(); select(a.dataset.node); });
+}
+</script>
+</body>
+</html>

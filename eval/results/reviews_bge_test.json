@@ -1,0 +1,80 @@
+[
+ {
+  "query_id": "q04",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states the one-month deadline, the possibility of a two-month extension where necessary given complexity and number of requests, and the notice requirement, all supported by the cited Article 12(3) chunk; the Article 12(5) chunk supports the free-of-charge and fee/refusal points attached to it.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q09",
+  "citation_support": [
+   true,
+   false
+  ],
+  "reason": "The answer correctly states the public-authority DPO requirement and the judicial-capacity exception, but it wrongly says the DPO duty applies to both controller and processor in a way that is supported, and the second citation (Article 37(4) on other cases) does not support the claim that Member State or Union law can require a DPO beyond these cases, which is only partially covered; the answer also adds an unsupported inference about administrative court processing, though it flags it as inferred.",
+  "labeler": "manual override (see manual_review_test.json)",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q14",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer gives the correct Article 3(1) definition covering machine-based, varying autonomy, adaptiveness after deployment, and inference of outputs, and each cited chunk supports its attached claim, with the recital context accurately drawn from the cited recitals.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q19",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly lists the Annex III point 3 education high-risk uses (admission/assignment, learning outcome evaluation, appropriate education level, and prohibited behaviour monitoring during tests), each supported by the cited Annex III chunks, and correctly identifies Annex III as referenced by Article 6(2).",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q21",
+  "citation_support": [
+   true,
+   true,
+   false
+  ],
+  "reason": "The agent correctly answers yes and states the law-enforcement exception with the gold quote, plus the artistic/fictional limitation supported by chunk 0 and recital 231. Chunk 2 is cited for the claim that the 'assistive function for standard editing' exception is in the text before the emotion-recognition paragraph, but that chunk is Article 50(2)-(4) text and does not support the agent's claim about the paragraph location in the way attached, so it is marked unsupported.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q23",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the text gives relative dates, applying 24 months after entry into force, and the cited Article 113 supports this along with the accurate exceptions for 6, 12 and 36 months.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "u03",
+  "citation_support": [],
+  "reason": "The question has no answer in the corpus, and the agent correctly abstained without asserting any unsupported fine amount or enforcement fact, citing no chunks.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ },
+ {
+  "query_id": "u04",
+  "citation_support": [
+   true
+  ],
+  "reason": "The question has no answer in the corpus; the agent abstained and its only cited claim (Commission may provide technical support, advice and tools) is supported by Article 57 text, with no invented euro figure.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ }
+]

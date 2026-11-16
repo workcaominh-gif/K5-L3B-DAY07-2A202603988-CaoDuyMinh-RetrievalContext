@@ -1,0 +1,205 @@
+[
+ {
+  "query_id": "q01",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the 72-hour deadline with the without-undue-delay qualifier, the unlikely-risk exception, the late-notification reasons requirement, and the processor duty, all supported by the cited Article 33 text.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q02",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the lowest permitted age is 13 with Member States able to lower the default 16 by law but not below 13, and the cited Article 8 text supports this along with the parental consent claim.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q03",
+  "citation_support": [
+   true,
+   true,
+   false
+  ],
+  "reason": "The answer correctly states the top tier (EUR 20 million or 4% of worldwide turnover, whichever is higher) and is supported by chunk 0; chunk 1 supports the Article 58(2) order claim; chunk 2 is cited for the lower tier (10 million / 2%) but the agent's sentence attributes that tier to nothing it states beyond the figures, and the chunk does support those figures, so the third citation is supported only in part, and it is marked false because the cited chunk is about the lower tier and the agent's sentence gives only the figures without the stated attribution and the chunk's own text is not the paragraph cited for that claim.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q05",
+  "citation_support": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer correctly gives the structured, commonly used, machine-readable format and the right to transmit to another controller, with the consent/contract, automated-means, and others'-rights conditions all supported by the cited Article 20 and recitals.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q06",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly answers No, lists all three exception conditions (risk, not occasional, special/criminal data) matching Article 30(5), and both citations support their attached claims; the recital chunk supports the derogation description.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q07",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the GDPR Article 4(1) definition of personal data as any information relating to an identified or identifiable natural person, with the identifiers and factors accurately drawn from the cited chunk, which contains the full gold quote.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q08",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly answers yes with the gold quote from recital 47 (cited chunk 0), and its conditions on overriding interests, reasonable expectations, careful assessment, and the right to object for direct marketing are supported by the cited recital chunks 1 and 2, though chunk 0 is labeled as recital 47 while the text shows the quote in the chunk that is numbered differently, a minor citation-label issue that does not change support.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q10",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer correctly states the right to obtain erasure without undue delay where a listed ground applies, with examples, notification duty, and exceptions, all supported by the cited Article 17 chunks; the agent also transparently notes its list may be incomplete.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q11",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent lists all special categories from Article 9(1) (racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, health, sex life or sexual orientation), matching the gold answer, and the first chunk directly supports this; the second chunk supports the exceptions claim about Article 9(2) only loosely, but the claim is not contradicted.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q12",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states EUR 35 million or 7% of worldwide annual turnover for undertakings, whichever is higher, matching the gold and cited Article 99(3); the Union institutions cap of EUR 1,500,000 is supported by the Article 100(2) chunk, so the answer is correct and complete.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q13",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly states the 10^25 FLOPs cumulative-training-compute presumption from Article 51(2), and its additional conditions (Article 51(1)(b) equivalence route and the recital on adjusting the threshold over time) are supported by the cited chunks.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q15",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly gives the 15-day deadline with the immediate-after-causal-link condition and the death-of-a-person 10-day rule, but it omits the 2-day rule for widespread infringements and serious incidents under Article 3(44)(b) in paragraph 3, saying the text was cut off when the chunk actually contains it.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 1
+ },
+ {
+  "query_id": "q16",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states that providers and deployers must take measures to ensure a sufficient level of AI literacy of staff and others operating AI on their behalf, with the 'best extent' qualifier, and both citations support their attached claims (Article 4 and Recital 20 on literacy content).",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q17",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states at least one national AI regulatory sandbox per Member State, operational within 24 months, with accurate joint and participation provisions supported by the cited Article 57 text; the note about Article 57(2) being cut off is accurate and not an unsupported claim.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q18",
+  "citation_support": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly states that urgent use may begin without prior authorisation if requested within 24 hours, and adds the supporting recital conditions (impossibility, reasons, stop and deletion on rejection), with each citation matching its claim.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q20",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent's answer correctly gives the discriminatory outcomes and exclusion rationale plus dignity and non-discrimination violations, all supported by the single cited Recital 31 chunk, which contains the full gold quote; the agent also accurately notes the truncation at the end.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q22",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The answer correctly states the disclosure duty for AI systems interacting with natural persons, the obviousness exception, and the law-enforcement exception with its public-reporting carve-out, all supported by Article 50; the recital citation supports the impersonation/deception rationale.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q24",
+  "citation_support": [
+   true,
+   true,
+   false
+  ],
+  "reason": "The agent correctly identifies Annex III point 4(a) recruitment/selection systems with all three examples, which chunk 0 supports, and the extra point 4(b) uses are supported by chunk 1; however, the final claim that these fall under Article 6(2) is attached to chunk 2, which only shows the Annex III heading referencing Article 6(2) and does not support the specific attached claim about these systems, so it is marked unsupported.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "u01",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The question has no answer in the corpus; the agent abstained and did not invent a fee, and its cited chunks accurately describe recital 89 and Article 57 without claiming any registration fee exists.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ },
+ {
+  "query_id": "u02",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The question has no answer in the corpus; the agent abstained and its cited chunks accurately describe Article 64 and Article 70(3) without asserting any headcount for the AI Office.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ }
+]

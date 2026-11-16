@@ -1,0 +1,86 @@
+{
+ "n": 48,
+ "note": "packages excluded (FAQ was compiled from them); hit = gold page or gold video \u00b110 s",
+ "methods": {
+  "dense_bge": {
+   "h1": 39,
+   "h3": 42,
+   "h5": 44
+  },
+  "lexical": {
+   "h1": 24,
+   "h3": 33,
+   "h5": 37
+  },
+  "hybrid_bge": {
+   "h1": 28,
+   "h3": 42,
+   "h5": 43
+  },
+  "dense_gemma": {
+   "h1": 43,
+   "h3": 46,
+   "h5": 46
+  },
+  "hybrid_gemma": {
+   "h1": 40,
+   "h3": 44,
+   "h5": 46
+  },
+  "gemma_all": {
+   "h1": 43,
+   "h3": 46,
+   "h5": 46
+  }
+ },
+ "hit3_by_type": {
+  "lookup": {
+   "dense_bge": 8,
+   "lexical": 8,
+   "hybrid_bge": 8,
+   "dense_gemma": 8,
+   "hybrid_gemma": 8,
+   "gemma_all": 8
+  },
+  "table": {
+   "dense_bge": 8,
+   "lexical": 7,
+   "hybrid_bge": 7,
+   "dense_gemma": 8,
+   "hybrid_gemma": 8,
+   "gemma_all": 8
+  },
+  "photo": {
+   "dense_bge": 7,
+   "lexical": 3,
+   "hybrid_bge": 7,
+   "dense_gemma": 8,
+   "hybrid_gemma": 8,
+   "gemma_all": 8
+  },
+  "video": {
+   "dense_bge": 6,
+   "lexical": 6,
+   "hybrid_bge": 6,
+   "dense_gemma": 7,
+   "hybrid_gemma": 6,
+   "gemma_all": 7
+  },
+  "multi-hop": {
+   "dense_bge": 7,
+   "lexical": 5,
+   "hybrid_bge": 8,
+   "dense_gemma": 8,
+   "hybrid_gemma": 8,
+   "gemma_all": 8
+  },
+  "compare": {
+   "dense_bge": 6,
+   "lexical": 4,
+   "hybrid_bge": 6,
+   "dense_gemma": 7,
+   "hybrid_gemma": 6,
+   "gemma_all": 7
+  }
+ }
+}

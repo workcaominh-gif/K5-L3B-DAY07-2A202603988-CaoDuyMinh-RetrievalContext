@@ -1,0 +1,497 @@
+[
+ {
+  "query_id": "q01",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "notification of a personal data breach to the supervisory authority within 72 hours",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:291",
+     "B:gdpr-2016:97",
+     "B:gdpr-2016:99",
+     "B:gdpr-2016:292"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:291"
+  ]
+ },
+ {
+  "query_id": "q02",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "conditions applicable to child's consent in relation to information society services age Member States may provide lower age",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:223",
+     "B:gdpr-2016:35",
+     "B:gdpr-2016:373",
+     "B:gdpr-2016:222"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:223"
+  ]
+ },
+ {
+  "query_id": "q03",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "administrative fines up to 20 000 000 EUR or 4% of total worldwide annual turnover",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:439",
+     "B:gdpr-2016:438",
+     "B:gdpr-2016:437",
+     "B:eu-ai-act-2024:660",
+     "B:eu-ai-act-2024:654"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:438",
+   "B:gdpr-2016:439",
+   "B:gdpr-2016:437"
+  ]
+ },
+ {
+  "query_id": "q05",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "right to data portability structured, commonly used and machine-readable format transmit to another controller",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:260",
+     "B:gdpr-2016:73",
+     "B:gdpr-2016:261",
+     "B:gdpr-2016:74",
+     "B:gdpr-2016:132"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:260",
+   "B:gdpr-2016:261",
+   "B:gdpr-2016:73",
+   "B:gdpr-2016:74"
+  ]
+ },
+ {
+  "query_id": "q06",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "records of processing activities obligation enterprise fewer than 250 employees exception",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:287",
+     "B:gdpr-2016:12",
+     "B:gdpr-2016:94",
+     "B:gdpr-2016:286",
+     "B:gdpr-2016:285"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:287",
+   "B:gdpr-2016:12"
+  ]
+ },
+ {
+  "query_id": "q07",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "definition of 'personal data' means any information relating to an identified or identifiable natural person",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:198",
+     "B:gdpr-2016:24",
+     "B:gdpr-2016:202",
+     "B:gdpr-2016:199",
+     "B:gdpr-2016:201"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:198",
+   "B:gdpr-2016:24"
+  ]
+ },
+ {
+  "query_id": "q08",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "processing personal data for direct marketing purposes may be regarded as carried out for a legitimate interest",
+    "filter": {
+     "part": "recital"
+    },
+    "results": [
+     "B:gdpr-2016:45",
+     "B:gdpr-2016:75",
+     "B:gdpr-2016:44",
+     "B:gdpr-2016:43",
+     "B:gdpr-2016:48"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:45",
+   "B:gdpr-2016:44",
+   "B:gdpr-2016:75"
+  ]
+ },
+ {
+  "query_id": "q10",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "right to erasure ('right to be forgotten') data subject obtain from controller erasure of personal data without undue delay",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:254",
+     "B:gdpr-2016:255",
+     "B:gdpr-2016:71",
+     "B:gdpr-2016:256",
+     "B:gdpr-2016:69"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:254",
+   "B:gdpr-2016:255",
+   "B:gdpr-2016:256"
+  ]
+ },
+ {
+  "query_id": "q11",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "processing of special categories of personal data prohibited racial or ethnic origin, political opinions, religious beliefs, health, sex life",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:224",
+     "B:gdpr-2016:51",
+     "B:gdpr-2016:229",
+     "B:eu-ai-act-2024:60",
+     "B:gdpr-2016:55"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:224",
+   "B:gdpr-2016:229"
+  ]
+ },
+ {
+  "query_id": "q12",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "administrative fines non-compliance with prohibition of AI practices referred to in Article 5",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:664",
+     "B:eu-ai-act-2024:654",
+     "B:eu-ai-act-2024:665",
+     "B:eu-ai-act-2024:525",
+     "B:eu-ai-act-2024:287"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:654",
+   "B:eu-ai-act-2024:664"
+  ]
+ },
+ {
+  "query_id": "q13",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "general-purpose AI model high-impact capabilities presumed cumulative amount of computation floating point operations",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:195",
+     "B:eu-ai-act-2024:198",
+     "B:eu-ai-act-2024:496",
+     "B:eu-ai-act-2024:321",
+     "B:eu-ai-act-2024:749"
+    ]
+   },
+   {
+    "event": "read",
+    "chunk_id": "B:eu-ai-act-2024:496"
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:496",
+   "B:eu-ai-act-2024:195",
+   "B:eu-ai-act-2024:198"
+  ]
+ },
+ {
+  "query_id": "q15",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "reporting of serious incidents provider high-risk AI system immediately not later than 15 days",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:587",
+     "B:eu-ai-act-2024:586",
+     "B:eu-ai-act-2024:589",
+     "B:eu-ai-act-2024:588",
+     "B:eu-ai-act-2024:264"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:586",
+   "B:eu-ai-act-2024:587"
+  ]
+ },
+ {
+  "query_id": "q16",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "AI literacy of staff and other persons dealing with the operation and use of AI systems",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:323",
+     "B:eu-ai-act-2024:38",
+     "B:eu-ai-act-2024:39",
+     "B:eu-ai-act-2024:105",
+     "B:eu-ai-act-2024:141"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:323",
+   "B:eu-ai-act-2024:38",
+   "B:eu-ai-act-2024:39"
+  ]
+ },
+ {
+  "query_id": "q17",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "Member States shall ensure competent authorities establish at least one AI regulatory sandbox at national level",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:518",
+     "B:eu-ai-act-2024:519",
+     "B:eu-ai-act-2024:523",
+     "B:eu-ai-act-2024:236",
+     "B:eu-ai-act-2024:532"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:518"
+  ]
+ },
+ {
+  "query_id": "q18",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "real-time remote biometric identification urgency use commenced without prior authorisation",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:333",
+     "B:eu-ai-act-2024:75",
+     "B:eu-ai-act-2024:70",
+     "B:eu-ai-act-2024:332",
+     "B:eu-ai-act-2024:69"
+    ]
+   },
+   {
+    "event": "thought",
+    "text": "I'm checking the rule for when authorisation is rejected, which is to use stopped and deleted data, and I'm thinking about searching for the rest of it before I read the next part.\n\n"
+   },
+   {
+    "event": "read",
+    "chunk_id": "B:eu-ai-act-2024:333"
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:333",
+   "B:eu-ai-act-2024:70",
+   "B:eu-ai-act-2024:332"
+  ]
+ },
+ {
+  "query_id": "q20",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "social scoring AI systems harmful discriminatory outcomes exclusion of certain groups",
+    "filter": {
+     "part": "recital"
+    },
+    "results": [
+     "B:eu-ai-act-2024:61",
+     "B:eu-ai-act-2024:111",
+     "B:eu-ai-act-2024:133",
+     "B:eu-ai-act-2024:110",
+     "B:eu-ai-act-2024:106"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:61"
+  ]
+ },
+ {
+  "query_id": "q22",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "providers shall ensure AI systems intended to interact directly with natural persons inform them they are interacting with an AI system",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:490",
+     "B:eu-ai-act-2024:491",
+     "B:eu-ai-act-2024:371",
+     "B:eu-ai-act-2024:225",
+     "B:eu-ai-act-2024:170"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:490",
+   "B:eu-ai-act-2024:491"
+  ]
+ },
+ {
+  "query_id": "q24",
+  "status": "answered",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "employment, workers management, recruitment or selection of natural persons high-risk AI systems",
+    "filter": {
+     "part": "annex"
+    },
+    "results": [
+     "B:eu-ai-act-2024:700",
+     "B:eu-ai-act-2024:702",
+     "B:eu-ai-act-2024:703",
+     "B:eu-ai-act-2024:733",
+     "B:eu-ai-act-2024:704"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:702",
+   "B:eu-ai-act-2024:703",
+   "B:eu-ai-act-2024:700"
+  ]
+ },
+ {
+  "query_id": "u01",
+  "status": "abstain",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "fee payable by controller to supervisory authority registration notification",
+    "filter": null,
+    "results": [
+     "B:gdpr-2016:376",
+     "B:eu-ai-act-2024:261",
+     "B:gdpr-2016:361",
+     "B:gdpr-2016:388",
+     "B:gdpr-2016:150"
+    ]
+   },
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "general obligation to notify supervisory authority abolished; records of processing activities",
+    "filter": {
+     "part": "recital"
+    },
+    "results": [
+     "B:gdpr-2016:101",
+     "B:gdpr-2016:94",
+     "B:gdpr-2016:146",
+     "B:gdpr-2016:107",
+     "B:gdpr-2016:136"
+    ]
+   }
+  ],
+  "citations": [
+   "B:gdpr-2016:101",
+   "B:gdpr-2016:376"
+  ]
+ },
+ {
+  "query_id": "u02",
+  "status": "abstain",
+  "events": [
+   {
+    "event": "search",
+    "tool": "search_law",
+    "query": "AI Office staff number full-time employees",
+    "filter": null,
+    "results": [
+     "B:eu-ai-act-2024:559",
+     "B:eu-ai-act-2024:434",
+     "B:eu-ai-act-2024:176",
+     "B:eu-ai-act-2024:577",
+     "B:eu-ai-act-2024:425"
+    ]
+   }
+  ],
+  "citations": [
+   "B:eu-ai-act-2024:559"
+  ]
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "cases": 20,
+ "provider_errors": 0,
+ "tool_use": {
+  "n": 20,
+  "N": 20
+ },
+ "grounded_answer": {
+  "0": 0,
+  "1": 0,
+  "2": 18,
+  "N": 18,
+  "mean": 2.0
+ },
+ "citation_validity": {
+  "n": 44,
+  "N": 44
+ },
+ "answer_citation_coverage": {
+  "n": 18,
+  "N": 18
+ },
+ "abstention": {
+  "n": 2,
+  "N": 2
+ },
+ "false_abstention": {
+  "n": 0,
+  "N": 18
+ },
+ "config": "gemma",
+ "split": "dev",
+ "context_evidence_rate": "18/18",
+ "searches_per_q": 1.05,
+ "cost_usd": 0.186,
+ "median_seconds": 5.2,
+ "judge_cost_usd": 0.011
+}

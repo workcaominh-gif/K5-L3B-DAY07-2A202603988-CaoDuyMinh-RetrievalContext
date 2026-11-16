@@ -1,0 +1,81 @@
+[
+ {
+  "query_id": "q04",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the one-month deadline, the two-month extension for complexity and number of requests, and the requirement to notify within the first month with reasons, all supported by the cited Article 12(3) text.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q09",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The agent correctly states the public-body designation duty applies whenever processing is carried out by a public authority or body, with the courts-in-judicial-capacity exception, and the cited chunks support this; the extra claim that the duty applies to both controller and processor is supported by Article 37 text, and the supervisory-competence and recital points are supported by the cited Article 55 and Recital 20 chunks.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q14",
+  "citation_support": [
+   true,
+   true,
+   true
+  ],
+  "reason": "The answer gives the full Article 3(1) definition matching the gold answer, including varying autonomy, adaptiveness after deployment, and inference of outputs, and each cited chunk supports its attached claim as the recital text covers inference, rules-based exclusion, adaptiveness, and stand-alone or embedded use.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q19",
+  "citation_support": [
+   true,
+   true,
+   false
+  ],
+  "reason": "The answer correctly lists the Annex III point 3 education high-risk uses, with the first two supported by chunk 701 and the other two by chunk 702; however, chunk 700 only introduces Annex III under Article 6(2) and does not support the claim about education uses, and the answer is otherwise complete against the gold answer.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q21",
+  "citation_support": [
+   true,
+   true
+  ],
+  "reason": "The agent correctly answers yes and states the law-enforcement exception supported by the cited Article 50 text, and also accurately describes the artistic/creative limitation with its recital support, so the answer is correct and complete with conditions.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "q23",
+  "citation_support": [
+   true
+  ],
+  "reason": "The agent correctly states the application date as 24 months after entry into force, noting the placeholder rather than a calendar date, and the cited Article 113 supports this and the listed exceptions.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "answer_grade": 2
+ },
+ {
+  "query_id": "u03",
+  "citation_support": [
+   false
+  ],
+  "reason": "The agent correctly abstained because the corpus has no enforcement decisions about Meta or the Irish DPC, but the cited GDPR recital 148 only describes general administrative fine principles and does not support any claim about the Meta fine, so the citation is not supporting.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ },
+ {
+  "query_id": "u04",
+  "citation_support": [
+   true
+  ],
+  "reason": "The question has no answer in the corpus, and the agent correctly abstained; its cited Article 57 chunk supports the statements that sandboxes must be established and the Commission may provide support, and the chunk states no euro amount, so no unsupported fact was asserted.",
+  "labeler": "draft: claude-haiku-5-5 judge",
+  "abstention_correct": true
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "cases": 8,
+ "provider_errors": 0,
+ "tool_use": {
+  "n": 8,
+  "N": 8
+ },
+ "grounded_answer": {
+  "0": 0,
+  "1": 0,
+  "2": 6,
+  "N": 6,
+  "mean": 2.0
+ },
+ "citation_validity": {
+  "n": 13,
+  "N": 15
+ },
+ "answer_citation_coverage": {
+  "n": 6,
+  "N": 6
+ },
+ "abstention": {
+  "n": 2,
+  "N": 2
+ },
+ "false_abstention": {
+  "n": 0,
+  "N": 6
+ },
+ "config": "bge",
+ "split": "test",
+ "context_evidence_rate": "6/6",
+ "searches_per_q": 1.0,
+ "cost_usd": 0.064,
+ "median_seconds": 9.9,
+ "judge_cost_usd": 0.0063
+}
