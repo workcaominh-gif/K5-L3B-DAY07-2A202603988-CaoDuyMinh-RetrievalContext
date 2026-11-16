@@ -76,7 +76,7 @@ Agent `vision` vòng 2 chạy đủ 22/22 câu, 0 lỗi (18 answered, 4 abstain)
 Kết quả sau sửa: `regions` 17 → 18/22 (table 4/4, text 4/4; vẫn trượt d06, d10, d12, d13). `vision`: 8/8 câu đã chấm đạt,
 14 câu chưa chấm được do giới hạn API.
 
-## 6. Cấu hình chốt (TẠM THỜI — chờ chấm nốt vision v2 trên dev)
+## 6. Cấu hình chốt (TẠM THỜI — chờ chấm nốt vision v2 trên dev) — *đã thay bằng mục 8*
 
 **`vision`** (prompt v2 = phiên bản hiện tại của `eval/dga_agent.py`), lý do: điểm dev cao nhất ở vòng 1 (19/22 so với 17/22
 `regions`, 8/22 `text`) dù scorer v1 còn phạt oan d01/d10; vòng 2 đạt 8/8 trên các câu đã chấm; chi phí ≈ $0.019/câu,
@@ -102,3 +102,28 @@ vì MPS bị treo khi nhiều luồng dùng chung.
 Agent: v1 $1.255 + v2 $0.816 + smoke test ≈ $0.10; judge: v1 $0.471 + v2 $0.382 ⇒ **≈ $3.02** (ngân sách $6).
 
 **Test split chưa được chạy** (không agent, không scorer, không xem kết quả test).
+
+## 8. Vòng 3 và CHỐT CHÍNH THỨC (2026-11-16, trước khi chạy test)
+
+Sau khi mở lại hạn mức API, chấm `vision` dev bằng scorer v2: 18/22 (= `regions` 18/22). Đọc lý do trượt thấy một lỗi
+của **scorer**, không phải của agent: d10, d12 trả đúng số và cite đúng vùng biểu đồ, nhưng judge chỉ đọc *chữ đã index* của
+vùng được cite (thiếu các số chỉ có trong hình) nên kết luận "không được hỗ trợ". Theo ADVANCED.md, evidence là vùng trong bản
+gốc. **Sửa scorer v3 (chung cho mọi câu, mọi cấu hình):** judge nhận thêm ảnh crop gốc của các vùng được cite (≤ 4, bỏ trùng).
+Chấm lại cả hai ứng viên bằng scorer v3 (agent không chạy lại):
+
+| Config | Split | Pass | table | image | chart | multihop | text | none | Errors | Median s | Agent $ | Judge $ |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| regions | dev | 19/22 | 4/4 | 2/3 | 4/4 | 1/3 | 4/4 | 4/4 | 0 | 4.9 | 0.40 | 0.20 |
+| **vision** | dev | **20/22** | 4/4 | 3/3 | 4/4 | 1/3 | 4/4 | 4/4 | 0 | 5.2 | 0.41 | 0.20 |
+
+Câu trượt còn lại của `vision` (d12, d13, multihop): judge xác nhận số đúng, nhưng kiểm tra citation tất định không thấy đủ
+mọi trang gold (d12 thiếu trang của câu văn; d13 cite Table 2-1 p.77 — cùng dữ liệu với gold Table A3-1 p.156). Giữ nguyên
+luật chấm chặt; người chấm xem lại ở bước duyệt tay.
+
+**CHỐT: `vision`** (prompt v2, scorer v3) theo tiêu chí đặt trước (tỉ lệ đạt dev; hoà → rẻ hơn). Không đổi gì sau mốc này.
+
+```bash
+$PY -W ignore eval/dga_agent.py --config vision --split test     # chạy test MỘT lần
+$PY -W ignore eval/dga_score.py --config vision --split test
+```
+Chi phí thêm ở vòng 3: judge ≈ $0.55 (3 lần chấm dev).
