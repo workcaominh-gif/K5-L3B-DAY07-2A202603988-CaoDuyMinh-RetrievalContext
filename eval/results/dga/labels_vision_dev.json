@@ -1,0 +1,349 @@
+{
+ "summary": {
+  "config": "vision",
+  "split": "dev",
+  "pass": "8/22",
+  "per_group": {
+   "table": "4/4",
+   "image": "3/3",
+   "chart": "1/4",
+   "multihop": "0/3",
+   "text": "0/4",
+   "none": "0/4"
+  },
+  "errors": 0,
+  "judge_errors": 14,
+  "median_seconds": 5.2,
+  "agent_cost_usd": 0.4117,
+  "judge_cost_usd": 0.0549,
+  "labels": "DRAFT (judge) - to be reviewed by hand"
+ },
+ "labels": [
+  {
+   "query_id": "d01",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The Oils (grams/day) row in Table A3-2 shows 31 in the 2,400 column, which matches the gold answer. The cited table text and the image both confirm it, and the printed page number 144 is correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2, row 'Oils (grams/day)', column '2,400'",
+      "satisfied_by": "dga:p157:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The Oils (grams/day) row in Table A3-2 shows 31 in the 2,400 column, which matches the gold answer. The cited table text and the image both confirm it, and the printed page number 144 is correct."
+  },
+  {
+   "query_id": "d02",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent gives 900 calories/day for boys and 800 for girls at 15 months, matching the gold answer. The cited Table A2-1 row '15' shows Males 900 and Females 800, and the table title and printed page 139 are also correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 152,
+      "kind": "table",
+      "ref": "Table A2-1, row '15', columns 'Males' and 'Females'",
+      "satisfied_by": "dga:p152:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent gives 900 calories/day for boys and 800 for girls at 15 months, matching the gold answer. The cited Table A2-1 row '15' shows Males 900 and Females 800, and the table title and printed page 139 are also correct."
+  },
+  {
+   "query_id": "d03",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives fruit 2½ cup eq/day and dairy 2 cup eq/day at 2,000 calories, matching the gold values. Both the cited facts unit and the table unit (and the image) confirm these values and Table A3-5 on printed p.149. The closing note about not opening the table is a process remark, not a factual claim that needs support."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 162,
+      "kind": "table",
+      "ref": "Table A3-5, rows 'Fruits (cup eq/day)' and 'Dairy (cup eq/day)', column '2,000'",
+      "satisfied_by": "dga:p162:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives fruit 2½ cup eq/day and dairy 2 cup eq/day at 2,000 calories, matching the gold values. Both the cited facts unit and the table unit (and the image) confirm these values and Table A3-5 on printed p.149. The closing note about not opening the table is a process remark, not a factual claim that needs support."
+  },
+  {
+   "query_id": "d04",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 28-40 lb total and a weekly gain of 1 lb (range 1-1.3) in the 2nd and 3rd trimesters, matching the gold answer. The cited Table 5-3 text and the image both show these values in the Underweight row, and the printed page 112 is correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 125,
+      "kind": "table",
+      "ref": "Table 5-3, row 'Underweight'",
+      "satisfied_by": "dga:p125:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 28-40 lb total and a weekly gain of 1 lb (range 1-1.3) in the 2nd and 3rd trimesters, matching the gold answer. The cited Table 5-3 text and the image both show these values in the Underweight row, and the printed page 112 is correct."
+  },
+  {
+   "query_id": "d05",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: 1,120 − 715 = 405 calories saved, and white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup). The cited Figure 1-8 table text and the attached image show these same values."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 51,
+      "kind": "figure",
+      "ref": "Figure 1-8, header row and first row of the comparison",
+      "satisfied_by": "dga:p051:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: 1,120 − 715 = 405 calories saved, and white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup). The cited Figure 1-8 table text and the attached image show these same values."
+  },
+  {
+   "query_id": "d06",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer lists all five benefits matching the gold answer and the figure image. The cited facts unit states each one, and the image unit supports the Strong or Moderate evidence claim."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 37,
+      "kind": "figure",
+      "ref": "Figure 1-3, panel 'Birth Through 23 Months'",
+      "satisfied_by": "dga:p037:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer lists all five benefits matching the gold answer and the figure image. The cited facts unit states each one, and the image unit supports the Strong or Moderate evidence claim."
+  },
+  {
+   "query_id": "d07",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: cereal with minimal added sugars, and fruit (e.g., canned in 100% juice). The cited unit for Figure 2-1 on PDF p.76 lists both arrows, so it supports every claim."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 76,
+      "kind": "figure",
+      "ref": "Figure 2-1, arrows 'Cereal with Added Sugars -> Cereal with Minimal Added Sugars' and 'Fruit Products with Added Sugars -> Fruit (e.g., canned in 100% juice)'",
+      "satisfied_by": "dga:p076:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: cereal with minimal added sugars, and fruit (e.g., canned in 100% juice). The cited unit for Figure 2-1 on PDF p.76 lists both arrows, so it supports every claim."
+  },
+  {
+   "query_id": "d08",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 99 calories from baked cod, 131 from breading and frying oil, and a 230 total, matching the gold answer, and 99+131=230 is correct. The cited chart unit and the attached figure show the same values for Breaded, Fried Cod, 4 ounces on printed page 21."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 34,
+      "kind": "figure",
+      "ref": "Figure 1-1, bar 'Breaded, Fried Cod, 4 ounces'",
+      "satisfied_by": "dga:p034:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 99 calories from baked cod, 131 from breading and frying oil, and a 230 total, matching the gold answer, and 99+131=230 is correct. The cited chart unit and the attached figure show the same values for Breaded, Fried Cod, 4 ounces on printed page 21."
+  },
+  {
+   "query_id": "d09",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d10",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d11",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d12",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d13",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d14",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d15",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d16",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d17",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d18",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d19",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d20",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d21",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  },
+  {
+   "query_id": "d22",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "pass": false,
+   "error": true,
+   "reason": "judge failed: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will "
+  }
+ ]
+}

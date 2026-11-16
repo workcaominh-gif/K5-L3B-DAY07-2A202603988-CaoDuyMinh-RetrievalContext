@@ -1,0 +1,1646 @@
+{
+ "summary": {
+  "config": "text",
+  "split": "dev",
+  "model": "claude-sonnet-5-5",
+  "n": 22,
+  "errors": 0,
+  "answered": 18,
+  "abstained": 4,
+  "tool_calls_per_q": 1.95,
+  "cost_usd": 0.3985,
+  "median_seconds": 5.2,
+  "this_run_cost_usd": 0.3985
+ },
+ "rows": [
+  {
+   "query_id": "d01",
+   "split": "dev",
+   "group": "table",
+   "question": "On a 2,400-calorie Healthy U.S.-Style pattern, how many grams of oils per day are included?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "The 2,400-calorie Healthy U.S.-Style pattern includes **31 grams of oils per day**. [cite:dga:p109]\n\nThis comes from Table 4-1, the Healthy U.S.-Style Dietary Pattern for Adults Ages 19 Through 59, on printed page 96. In the same table, oils are 27 g/day at 2,000 calories and 29 g/day at 2,200 calories. [cite:dga:p109]",
+   "raw_answer": "The 2,400-calorie Healthy U.S.-Style pattern includes **31 grams of oils per day**. [cite:dga:p109]\n\nThis comes from Table 4-1, the Healthy U.S.-Style Dietary Pattern for Adults Ages 19 Through 59, on printed page 96. In the same table, oils are 27 g/day at 2,000 calories and 29 g/day at 2,200 calories. [cite:dga:p109]",
+   "citations": [
+    "dga:p109"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern calorie levels oils grams per day 2,400",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p109",
+      "dga:p033",
+      "dga:p157:f0",
+      "dga:p108:c0",
+      "dga:p087"
+     ],
+     "error": null,
+     "latency_s": 1.3
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 109
+     },
+     "returned_ids": [
+      "dga:p109",
+      "dga:p109:c0",
+      "dga:p109:c1",
+      "dga:p109:c2",
+      "dga:p109:f0",
+      "dga:p109:f1",
+      "dga:p109"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p109",
+    "dga:p033",
+    "dga:p157:f0",
+    "dga:p108:c0",
+    "dga:p087",
+    "dga:p109:c0",
+    "dga:p109:c1",
+    "dga:p109:c2",
+    "dga:p109:f0",
+    "dga:p109:f1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 338,
+    "cache_read": 7140,
+    "cache_write": 6360
+   },
+   "cost_usd": 0.02,
+   "seconds": 7.0
+  },
+  {
+   "query_id": "d02",
+   "split": "dev",
+   "group": "table",
+   "question": "What are the estimated daily calorie needs of a 15-month-old boy and a 15-month-old girl?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "At 15 months, a boy needs an estimated 900 calories per day. A girl needs an estimated 800 calories per day. [cite:dga:p152]\n\nThe difference is 900 − 800 = 100 calories per day. [cite:dga:p152]\n\nThese figures come from Table A2-1, \"Estimated Calorie Needs per Day, by Age and Sex, Ages 12 Through 23 Months,\" in Appendix 2 (printed page 139). The table gives no activity-level breakdown for this age. [cite:dga:p152]",
+   "raw_answer": "At 15 months, a boy needs an estimated 900 calories per day. A girl needs an estimated 800 calories per day. [cite:dga:p152]\n\nThe difference is 900 − 800 = 100 calories per day. [cite:dga:p152]\n\nThese figures come from Table A2-1, \"Estimated Calorie Needs per Day, by Age and Sex, Ages 12 Through 23 Months,\" in Appendix 2 (printed page 139). The table gives no activity-level breakdown for this age. [cite:dga:p152]",
+   "citations": [
+    "dga:p152"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "estimated calorie needs per day by age, sex, physical activity level toddlers 12 to 23 months",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p152",
+      "dga:p152:c0",
+      "dga:p152:f0",
+      "dga:p086",
+      "dga:p153:f1",
+      "dga:p078:f0"
+     ],
+     "error": null,
+     "latency_s": 1.49
+    },
+    {
+     "event": "thought",
+     "text": "Two sources disagree, so I need to go to the page itself to settle it.\n\n"
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 152
+     },
+     "returned_ids": [
+      "dga:p152",
+      "dga:p152:c0",
+      "dga:p152:c1",
+      "dga:p152:f0",
+      "dga:p152:f1",
+      "dga:p152"
+     ],
+     "error": null,
+     "latency_s": 0.04
+    }
+   ],
+   "context_ids": [
+    "dga:p152",
+    "dga:p152:c0",
+    "dga:p152:f0",
+    "dga:p086",
+    "dga:p153:f1",
+    "dga:p078:f0",
+    "dga:p152:c1",
+    "dga:p152:f1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 364,
+    "cache_read": 7154,
+    "cache_write": 4835
+   },
+   "cost_usd": 0.0165,
+   "seconds": 6.8
+  },
+  {
+   "query_id": "d03",
+   "split": "dev",
+   "group": "table",
+   "question": "In the Healthy Mediterranean-Style pattern at 2,000 calories, how much fruit and how much dairy are recommended per day for an adult?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "At 2,000 calories, the Healthy Mediterranean-Style Dietary Pattern recommends:\n- **Fruits:** 2 ½ cup-eq per day [cite:dga:p162:f0]\n- **Dairy:** 2 cup-eq per day [cite:dga:p162:f0]\n\nSource: Table A3-5 in Appendix 3, \"USDA Dietary Patterns,\" printed page 149 (PDF page 162).\n\nDairy is lower here than in the Healthy U.S.-Style pattern, which has 3 cup-eq per day at 2,000 calories. [cite:dga:p157:f0]",
+   "raw_answer": "At 2,000 calories, the Healthy Mediterranean-Style Dietary Pattern recommends:\n- **Fruits:** 2 ½ cup-eq per day [cite:dga:p162:f0]\n- **Dairy:** 2 cup-eq per day [cite:dga:p162:f0]\n\nSource: Table A3-5 in Appendix 3, \"USDA Dietary Patterns,\" printed page 149 (PDF page 162).\n\nDairy is lower here than in the Healthy U.S.-Style pattern, which has 3 cup-eq per day at 2,000 calories. [cite:dga:p157:f0]",
+   "citations": [
+    "dga:p162:f0",
+    "dga:p157:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy Mediterranean-Style Dietary Pattern 2,000 calories fruits dairy cup eq per day",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p162:f0",
+      "dga:p161:f0",
+      "dga:p157:f0",
+      "dga:p033",
+      "dga:p087:f0",
+      "dga:p033:f0"
+     ],
+     "error": null,
+     "latency_s": 1.25
+    }
+   ],
+   "context_ids": [
+    "dga:p162:f0",
+    "dga:p161:f0",
+    "dga:p157:f0",
+    "dga:p033",
+    "dga:p087:f0",
+    "dga:p033:f0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 337,
+    "cache_read": 2909,
+    "cache_write": 3240
+   },
+   "cost_usd": 0.0118,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "d04",
+   "split": "dev",
+   "group": "table",
+   "question": "What total weight gain range is recommended during pregnancy for a woman who was underweight (BMI under 18.5) before pregnancy?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "For a woman who was underweight before pregnancy (BMI under 18.5), the recommended total pregnancy weight gain is 28–40 lb. The recommended weekly gain in the 2nd and 3rd trimesters is 1 lb (range 1–1.3). [cite:dga:p125:f1]\n\nThe source is Table 5-3, \"Weight Gain Recommendations for Pregnancy,\" on printed page 112. [cite:dga:p125]",
+   "raw_answer": "For a woman who was underweight before pregnancy (BMI under 18.5), the recommended total pregnancy weight gain is 28–40 lb. The recommended weekly gain in the 2nd and 3rd trimesters is 1 lb (range 1–1.3). [cite:dga:p125:f1]\n\nThe source is Table 5-3, \"Weight Gain Recommendations for Pregnancy,\" on printed page 112. [cite:dga:p125]",
+   "citations": [
+    "dga:p125:f1",
+    "dga:p125"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "recommended total weight gain during pregnancy underweight BMI less than 18.5",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p125",
+      "dga:p125:f1",
+      "dga:p125:c1",
+      "dga:p152:c1",
+      "dga:p125:c0"
+     ],
+     "error": null,
+     "latency_s": 0.8
+    }
+   ],
+   "context_ids": [
+    "dga:p125",
+    "dga:p125:f1",
+    "dga:p125:c1",
+    "dga:p152:c1",
+    "dga:p125:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 260,
+    "cache_read": 2903,
+    "cache_write": 2387
+   },
+   "cost_usd": 0.0089,
+   "seconds": 4.1
+  },
+  {
+   "query_id": "d05",
+   "split": "dev",
+   "group": "image",
+   "question": "In the 'one meal at a time' burrito bowl example, how many calories does the nutrient-dense bowl save compared with the typical bowl, and what replaces the white rice?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "The nutrient-dense bowl has 405 fewer calories than the typical bowl. The typical bowl has 1,120 calories and the nutrient-dense bowl has 715, so 1,120 − 715 = 405 [cite:dga:p051:f0].\n\nThe white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup) [cite:dga:p051:c0].\n\nThe source is Figure 1-8, \"Making Nutrient-Dense Choices: One Meal At a Time,\" on printed page 38.",
+   "raw_answer": "The nutrient-dense bowl has 405 fewer calories than the typical bowl. The typical bowl has 1,120 calories and the nutrient-dense bowl has 715, so 1,120 − 715 = 405 [cite:dga:p051:f0].\n\nThe white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup) [cite:dga:p051:c0].\n\nThe source is Figure 1-8, \"Making Nutrient-Dense Choices: One Meal At a Time,\" on printed page 38.",
+   "citations": [
+    "dga:p051:f0",
+    "dga:p051:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "burrito bowl example nutrient-dense choices calories white rice",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p051",
+      "dga:p051:f0",
+      "dga:p052",
+      "dga:p052:c0",
+      "dga:p051:c0"
+     ],
+     "error": null,
+     "latency_s": 0.51
+    }
+   ],
+   "context_ids": [
+    "dga:p051",
+    "dga:p051:f0",
+    "dga:p052",
+    "dga:p052:c0",
+    "dga:p051:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 288,
+    "cache_read": 2916,
+    "cache_write": 2599
+   },
+   "cost_usd": 0.0097,
+   "seconds": 4.0
+  },
+  {
+   "query_id": "d06",
+   "split": "dev",
+   "group": "image",
+   "question": "According to the lifespan science diagram, what health benefits of healthy eating are listed for the birth-to-23-months stage?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "For birth through 23 months, Figure 1-3 (printed p. 24) lists these health outcomes:\n- Lower risk of overweight and obesity [cite:dga:p037]\n- Lower risk of type 1 diabetes [cite:dga:p037]\n- Adequate iron status and lower risk of iron deficiency [cite:dga:p037]\n- Lower risk of peanut allergy [cite:dga:p037]\n- Lower risk of asthma [cite:dga:p037]\n\nThe figure is titled \"The Science Underlying the Dietary Guidelines Demonstrates That Healthy Eating Across the Lifespan Can Promote Health and Reduce Risk of Chronic Disease.\" Its outcomes are supported by Strong or Moderate evidence [cite:dga:p037].",
+   "raw_answer": "For birth through 23 months, Figure 1-3 (printed p. 24) lists these health outcomes:\n- Lower risk of overweight and obesity [cite:dga:p037]\n- Lower risk of type 1 diabetes [cite:dga:p037]\n- Adequate iron status and lower risk of iron deficiency [cite:dga:p037]\n- Lower risk of peanut allergy [cite:dga:p037]\n- Lower risk of asthma [cite:dga:p037]\n\nThe figure is titled \"The Science Underlying the Dietary Guidelines Demonstrates That Healthy Eating Across the Lifespan Can Promote Health and Reduce Risk of Chronic Disease.\" Its outcomes are supported by Strong or Moderate evidence [cite:dga:p037].",
+   "citations": [
+    "dga:p037"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "healthy eating benefits across lifespan birth to 23 months figure",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p037:f0",
+      "dga:p032",
+      "dga:p076",
+      "dga:p037",
+      "dga:p076:c0",
+      "dga:p037:f1"
+     ],
+     "error": null,
+     "latency_s": 0.4
+    }
+   ],
+   "context_ids": [
+    "dga:p037:f0",
+    "dga:p032",
+    "dga:p076",
+    "dga:p037",
+    "dga:p076:c0",
+    "dga:p037:f1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 378,
+    "cache_read": 2899,
+    "cache_write": 2759
+   },
+   "cost_usd": 0.011,
+   "seconds": 4.1
+  },
+  {
+   "query_id": "d07",
+   "split": "dev",
+   "group": "image",
+   "question": "For toddlers, what does the healthy-shifts photo panel suggest instead of cereal with added sugars and instead of fruit products with added sugars?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "Figure 2-1 (\"Make Healthy Shifts To Empower Toddlers To Eat Nutrient-Dense Foods in Dietary Patterns\") suggests two shifts:\n\n- **Cereal with added sugars:** switch to cereal with minimal added sugars. [cite:dga:p076]\n- **Fruit products with added sugars:** switch to fruit canned in 100% juice. [cite:dga:p076]\n\nThe figure is on printed page 63 (PDF page 76) of Chapter 2. It is one of six photo pairs, each showing a less nutrient-dense choice shifting to a more nutrient-dense one. [cite:dga:p076]",
+   "raw_answer": "Figure 2-1 (\"Make Healthy Shifts To Empower Toddlers To Eat Nutrient-Dense Foods in Dietary Patterns\") suggests two shifts:\n\n- **Cereal with added sugars:** switch to cereal with minimal added sugars. [cite:dga:p076]\n- **Fruit products with added sugars:** switch to fruit canned in 100% juice. [cite:dga:p076]\n\nThe figure is on printed page 63 (PDF page 76) of Chapter 2. It is one of six photo pairs, each showing a less nutrient-dense choice shifting to a more nutrient-dense one. [cite:dga:p076]",
+   "citations": [
+    "dga:p076"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "toddlers make shifts: instead of cereal with added sugars, fruit products with added sugars",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p079",
+      "dga:p075",
+      "dga:p076",
+      "dga:p079:c1",
+      "dga:p078:f0",
+      "dga:p075:f1"
+     ],
+     "error": null,
+     "latency_s": 0.37
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 76
+     },
+     "returned_ids": [
+      "dga:p076",
+      "dga:p076:c0",
+      "dga:p076:c1",
+      "dga:p076:c2",
+      "dga:p076:f0",
+      "dga:p076:f1",
+      "dga:p076"
+     ],
+     "error": null,
+     "latency_s": 0.05
+    },
+    {
+     "event": "thought",
+     "text": "I'm trying to pin down which facts unit ID goes with the Figure 2-1 shifts. My best guess is p076:f1, the second facts block, though I'm not sure of the list order. To be safe, I'll cite page p076 itself.\n\n"
+    }
+   ],
+   "context_ids": [
+    "dga:p079",
+    "dga:p075",
+    "dga:p076",
+    "dga:p079:c1",
+    "dga:p078:f0",
+    "dga:p075:f1",
+    "dga:p076:c0",
+    "dga:p076:c1",
+    "dga:p076:c2",
+    "dga:p076:f0",
+    "dga:p076:f1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 463,
+    "cache_read": 7089,
+    "cache_write": 5768
+   },
+   "cost_usd": 0.0198,
+   "seconds": 6.1
+  },
+  {
+   "query_id": "d08",
+   "split": "dev",
+   "group": "chart",
+   "question": "For a 4-ounce piece of breaded, fried cod, how many calories come from the fish itself and how many from breading and frying oil?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "A 4-ounce piece of breaded, fried cod has 230 total calories. Of these, 99 come from the cod, which the figure labels \"baked cod\". The other 131 come from the breading and frying oil. The check is 99 + 131 = 230. [cite:dga:p034:f0]\n\nThe source is Figure 1-1, \"Examples of Calories in Food Choices That Are Not Nutrient Dense and Calories in Nutrient-Dense Forms of These Foods,\" on printed page 21. [cite:dga:p034]",
+   "raw_answer": "A 4-ounce piece of breaded, fried cod has 230 total calories. Of these, 99 come from the cod, which the figure labels \"baked cod\". The other 131 come from the breading and frying oil. The check is 99 + 131 = 230. [cite:dga:p034:f0]\n\nThe source is Figure 1-1, \"Examples of Calories in Food Choices That Are Not Nutrient Dense and Calories in Nutrient-Dense Forms of These Foods,\" on printed page 21. [cite:dga:p034]",
+   "citations": [
+    "dga:p034:f0",
+    "dga:p034"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "breaded fried fish 4 ounces cod calories from breading and frying oil",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p109",
+      "dga:p087:c1",
+      "dga:p087",
+      "dga:p109:c1",
+      "dga:p033"
+     ],
+     "error": null,
+     "latency_s": 0.54
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "nutrient-dense form versus added calories: fish baked vs breaded and fried, calories example",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p033",
+      "dga:p051",
+      "dga:p034",
+      "dga:p108",
+      "dga:p109:c1"
+     ],
+     "error": null,
+     "latency_s": 1.02
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 34
+     },
+     "returned_ids": [
+      "dga:p034",
+      "dga:p034:c0",
+      "dga:p034:f0",
+      "dga:p034"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p109",
+    "dga:p087:c1",
+    "dga:p087",
+    "dga:p109:c1",
+    "dga:p033",
+    "dga:p051",
+    "dga:p034",
+    "dga:p108",
+    "dga:p034:c0",
+    "dga:p034:f0"
+   ],
+   "tool_calls": 3,
+   "rounds": 3,
+   "tokens": {
+    "input": 10,
+    "output": 437,
+    "cache_read": 14072,
+    "cache_write": 6307
+   },
+   "cost_usd": 0.0216,
+   "seconds": 8.7
+  },
+  {
+   "query_id": "d09",
+   "split": "dev",
+   "group": "chart",
+   "question": "What is the top food-category source of sodium for Americans aged 1 and older, what share does it contribute, and what is the average sodium intake shown?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "The top food-category source of sodium for Americans aged 1 and older is sandwiches. They contribute 21% of sodium intake. The average sodium intake shown is 3,393 mg/day. Figure 1-12 (\"Top Sources and Average Intakes of Sodium: U.S. Population Ages 1 and Older\") gives these values on printed page 47 [cite:dga:p060]. The figure's data source is NHANES 2013-2016 [cite:dga:p060].",
+   "raw_answer": "The top food-category source of sodium for Americans aged 1 and older is sandwiches. They contribute 21% of sodium intake. The average sodium intake shown is 3,393 mg/day. Figure 1-12 (\"Top Sources and Average Intakes of Sodium: U.S. Population Ages 1 and Older\") gives these values on printed page 47 [cite:dga:p060]. The figure's data source is NHANES 2013-2016 [cite:dga:p060].",
+   "citations": [
+    "dga:p060"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "food category sources of sodium Americans ages 1 and older percent of intake average intake mg",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p059",
+      "dga:p059:c0",
+      "dga:p113",
+      "dga:p060",
+      "dga:p113:c0"
+     ],
+     "error": null,
+     "latency_s": 0.63
+    }
+   ],
+   "context_ids": [
+    "dga:p059",
+    "dga:p059:c0",
+    "dga:p113",
+    "dga:p060",
+    "dga:p113:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 267,
+    "cache_read": 2905,
+    "cache_write": 2498
+   },
+   "cost_usd": 0.0092,
+   "seconds": 3.9
+  },
+  {
+   "query_id": "d10",
+   "split": "dev",
+   "group": "chart",
+   "question": "What are the average daily sodium intakes of boys and girls aged 14-18, and how far above the 2,300 mg limit is each?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "Average sodium intake for ages 14–18 (Figure 3-8, printed p. 85):\n\n- **Boys (males):** 3,888 mg/day. That is 3,888 − 2,300 = 1,588 mg above the 2,300 mg limit. [cite:dga:p098:f1]\n- **Girls (females):** 2,875 mg/day. That is 2,875 − 2,300 = 575 mg above the limit. [cite:dga:p098:f1]\n\nThe same figure says 97% of males and 77% of females in this age group exceed the 2,300 mg limit. [cite:dga:p098:f1]\n\nThe 2,300 mg/day limit is the Chronic Disease Risk Reduction level for all age groups other than ages 1 through 13. [cite:dga:p059:c0]",
+   "raw_answer": "Average sodium intake for ages 14–18 (Figure 3-8, printed p. 85):\n\n- **Boys (males):** 3,888 mg/day. That is 3,888 − 2,300 = 1,588 mg above the 2,300 mg limit. [cite:dga:p098:f1]\n- **Girls (females):** 2,875 mg/day. That is 2,875 − 2,300 = 575 mg above the limit. [cite:dga:p098:f1]\n\nThe same figure says 97% of males and 77% of females in this age group exceed the 2,300 mg limit. [cite:dga:p098:f1]\n\nThe 2,300 mg/day limit is the Chronic Disease Risk Reduction level for all age groups other than ages 1 through 13. [cite:dga:p059:c0]",
+   "citations": [
+    "dga:p098:f1",
+    "dga:p059:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "average sodium intake mg per day ages 14-18 males females Chronic Disease Risk Reduction level 2,300 mg",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p059",
+      "dga:p059:c0",
+      "dga:p098:f1",
+      "dga:p113",
+      "dga:p110:f1",
+      "dga:p113:c0"
+     ],
+     "error": null,
+     "latency_s": 0.75
+    }
+   ],
+   "context_ids": [
+    "dga:p059",
+    "dga:p059:c0",
+    "dga:p098:f1",
+    "dga:p113",
+    "dga:p110:f1",
+    "dga:p113:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 388,
+    "cache_read": 2902,
+    "cache_write": 2894
+   },
+   "cost_usd": 0.0114,
+   "seconds": 5.2
+  },
+  {
+   "query_id": "d11",
+   "split": "dev",
+   "group": "chart",
+   "question": "In the chart comparing intakes to recommendations for Americans aged 1+, which food subgroup has the largest percentage of the population below its recommendation, and roughly what percentage?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "In Figure 1-6, whole grains has the largest share of the population below its recommendation, at about 97%. About 2% are at or above it. [cite:dga:p043:f0]\n\nWhole grains is a subgroup of the grains group. The recommendation is that whole grains make up at least half of total grain consumption. [cite:dga:p043:f0]\n\nThe other values I could read from the figure's text are lower:\n- Total vegetables: about 90% below. [cite:dga:p043:f0]\n- Seafood: about 86% below. [cite:dga:p043:f0]\n- Dairy: about 86% below. [cite:dga:p043:f0]\n- Fruits: roughly 80% below. [cite:dga:p043:f0]\n\nThe text I retrieved does not list the individual vegetable subgroups, such as dark-green or red and orange vegetables. I can't confirm from it how those compare with whole grains.\n\nSource: Figure 1-6, \"Dietary Intakes Compared to Recommendations: Percent of the U.S. Population Ages 1 and Older Who Are Below and At or Above Each Dietary Goal,\" printed page 30. [cite:dga:p043]",
+   "raw_answer": "In Figure 1-6, whole grains has the largest share of the population below its recommendation, at about 97%. About 2% are at or above it. [cite:dga:p043:f0]\n\nWhole grains is a subgroup of the grains group. The recommendation is that whole grains make up at least half of total grain consumption. [cite:dga:p043:f0]\n\nThe other values I could read from the figure's text are lower:\n- Total vegetables: about 90% below. [cite:dga:p043:f0]\n- Seafood: about 86% below. [cite:dga:p043:f0]\n- Dairy: about 86% below. [cite:dga:p043:f0]\n- Fruits: roughly 80% below. [cite:dga:p043:f0]\n\nThe text I retrieved does not list the individual vegetable subgroups, such as dark-green or red and orange vegetables. I can't confirm from it how those compare with whole grains.\n\nSource: Figure 1-6, \"Dietary Intakes Compared to Recommendations: Percent of the U.S. Population Ages 1 and Older Who Are Below and At or Above Each Dietary Goal,\" printed page 30. [cite:dga:p043]",
+   "citations": [
+    "dga:p043:f0",
+    "dga:p043"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "percent of population ages 1 and older below recommendations food subgroups Figure 2-? usual intake compared to recommendations",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p007",
+      "dga:p007:c0",
+      "dga:p007:c1",
+      "dga:p078",
+      "dga:p079",
+      "dga:p090"
+     ],
+     "error": null,
+     "latency_s": 0.48
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Figure 1-6 Dietary Intakes Compared to Recommendations, percent of population ages 1 and older below recommendations",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p007",
+      "dga:p007:c0",
+      "dga:p007:c1",
+      "dga:p078",
+      "dga:p060"
+     ],
+     "error": null,
+     "latency_s": 0.36
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Figure 1-6 dietary intakes compared to recommendations percent below recommendations dark-green vegetables whole grains dairy",
+      "top_k": 5,
+      "kinds": [
+       "page",
+       "facts"
+      ]
+     },
+     "returned_ids": [
+      "dga:p007",
+      "dga:p113",
+      "dga:p111",
+      "dga:p043",
+      "dga:p127"
+     ],
+     "error": null,
+     "latency_s": 0.21
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 43
+     },
+     "returned_ids": [
+      "dga:p043",
+      "dga:p043:c0",
+      "dga:p043:f0",
+      "dga:p043:f1",
+      "dga:p043"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    },
+    {
+     "event": "thought",
+     "text": "I'm noting that the vegetable subgroups like dark green or beans aren't given in the facts, so I can't compare them. Among the listed groups, whole grains at about 97% looks largest, and since the question asks about food subgroups, whole grains counts as one under grains. I'll answer that way and add a caveat about the missing vegetable data.\n\n"
+    }
+   ],
+   "context_ids": [
+    "dga:p007",
+    "dga:p007:c0",
+    "dga:p007:c1",
+    "dga:p078",
+    "dga:p079",
+    "dga:p090",
+    "dga:p060",
+    "dga:p113",
+    "dga:p111",
+    "dga:p043",
+    "dga:p127",
+    "dga:p043:c0",
+    "dga:p043:f0",
+    "dga:p043:f1"
+   ],
+   "tool_calls": 4,
+   "rounds": 4,
+   "tokens": {
+    "input": 12,
+    "output": 922,
+    "cache_read": 23743,
+    "cache_write": 9573
+   },
+   "cost_usd": 0.0356,
+   "seconds": 10.3
+  },
+  {
+   "query_id": "d12",
+   "split": "dev",
+   "group": "multihop",
+   "question": "If a person on a 2,000-calorie diet ate the U.S. average amount of added sugars, how far over the guideline limit for added sugars would they be?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "The person would be about 66 kcal/day over the limit. That is 266 − 200, using the 10 percent limit.\n\n- **Limit:** Added sugars should be less than 10 percent of calories per day starting at age 2 [cite:dga:p013:f0]. At 2,000 calories, 10 percent is 200 kcal (2,000 × 0.10 = 200).\n- **U.S. average:** Average added sugars intake for the U.S. population ages 1 and older is 266 kcal/day (Figure 1-10, printed p. 43) [cite:dga:p056:f0].\n- **Difference:** 266 − 200 = 66 kcal/day over the limit. That is about 33% above the limit (66 ÷ 200), and 266 ÷ 2,000 is 13.3% of calories.\n\n**Caveat:** The document also says a 2,000-calorie eater has less than 7 percent of calories available for added sugars under specific assumptions (printed p. 42) [cite:dga:p055:c0]. That is 140 kcal (2,000 × 0.07), and against it the overage would be 126 kcal (266 − 140). I used the formal 10 percent limit as \"the guideline limit.\"\n\nThe 266 kcal figure is a population average for ages 1 and older, not specific to a 2,000-calorie diet.",
+   "raw_answer": "The person would be about 66 kcal/day over the limit. That is 266 − 200, using the 10 percent limit.\n\n- **Limit:** Added sugars should be less than 10 percent of calories per day starting at age 2 [cite:dga:p013:f0]. At 2,000 calories, 10 percent is 200 kcal (2,000 × 0.10 = 200).\n- **U.S. average:** Average added sugars intake for the U.S. population ages 1 and older is 266 kcal/day (Figure 1-10, printed p. 43) [cite:dga:p056:f0].\n- **Difference:** 266 − 200 = 66 kcal/day over the limit. That is about 33% above the limit (66 ÷ 200), and 266 ÷ 2,000 is 13.3% of calories.\n\n**Caveat:** The document also says a 2,000-calorie eater has less than 7 percent of calories available for added sugars under specific assumptions (printed p. 42) [cite:dga:p055:c0]. That is 140 kcal (2,000 × 0.07), and against it the overage would be 126 kcal (266 − 140). I used the formal 10 percent limit as \"the guideline limit.\"\n\nThe 266 kcal figure is a population average for ages 1 and older, not specific to a 2,000-calorie diet.",
+   "citations": [
+    "dga:p013:f0",
+    "dga:p056:f0",
+    "dga:p055:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "added sugars less than 10 percent of calories; average U.S. intake added sugars teaspoons per day",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p055",
+      "dga:p055:c0",
+      "dga:p113",
+      "dga:p113:c0",
+      "dga:p054",
+      "dga:p055:f0"
+     ],
+     "error": null,
+     "latency_s": 0.64
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "average intake added sugars 13 percent of total calories teaspoons",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p055:c0",
+      "dga:p055",
+      "dga:p113:c0",
+      "dga:p113",
+      "dga:p116",
+      "dga:p078"
+     ],
+     "error": null,
+     "latency_s": 0.14
+    },
+    {
+     "event": "thought",
+     "text": "I'm looking for the \"U.S. average\" figure, probably in Chapter 1 or the key recommendations, where it says Americans get about 13 percent of their calories from added sugars. I'll run one more search to confirm it.\n\n"
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Americans ages 1 and older average added sugars intake 13 percent of total calories, 17 teaspoons",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p055:c0",
+      "dga:p055",
+      "dga:p113",
+      "dga:p113:c0",
+      "dga:p078",
+      "dga:p056:f0"
+     ],
+     "error": null,
+     "latency_s": 0.29
+    },
+    {
+     "event": "thought",
+     "text": "I'm checking the guideline's 10% limit, which works out to about 200 kcal at 2,000 calories, and I need to confirm that wording. The 7% figure refers to something else, and the 266 kcal average puts the excess at 66 kcal. I'll run a quick search to verify the 10% statement.\n\n"
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Limit added sugars to less than 10 percent of calories per day starting at age 2",
+      "top_k": 3
+     },
+     "returned_ids": [
+      "dga:p087",
+      "dga:p055",
+      "dga:p013:f0"
+     ],
+     "error": null,
+     "latency_s": 0.24
+    }
+   ],
+   "context_ids": [
+    "dga:p055",
+    "dga:p055:c0",
+    "dga:p113",
+    "dga:p113:c0",
+    "dga:p054",
+    "dga:p055:f0",
+    "dga:p116",
+    "dga:p078",
+    "dga:p056:f0",
+    "dga:p087",
+    "dga:p013:f0"
+   ],
+   "tool_calls": 4,
+   "rounds": 4,
+   "tokens": {
+    "input": 12,
+    "output": 1021,
+    "cache_read": 23033,
+    "cache_write": 9520
+   },
+   "cost_usd": 0.0363,
+   "seconds": 11.9
+  },
+  {
+   "query_id": "d13",
+   "split": "dev",
+   "group": "multihop",
+   "question": "An 18-month-old girl no longer drinks breast milk or formula. Using her estimated calorie needs, how much dairy and how many vegetables should her daily pattern include?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "An 18-month-old girl needs an estimated 900 calories per day, according to Table A2-1 (printed p. 139) [cite:dga:p152:f1].\n\nAt the 900-calorie level, the Healthy U.S.-Style Dietary Pattern for toddlers 12–23 months who no longer receive human milk or infant formula recommends:\n- **Dairy:** 2 cup eq/day [cite:dga:p077].\n- **Vegetables:** 1 cup eq/day. This is split across the week into dark-green ½, red and orange 2 ½, beans/peas/lentils ½, starchy 2, and other 1 ½ cup eq/wk [cite:dga:p077].\n\nThe source is Table 2-1 (printed p. 64). The dairy in this pattern includes whole-fat fluid milk, reduced-fat plain yogurts, and reduced-fat cheese [cite:dga:p077].",
+   "raw_answer": "An 18-month-old girl needs an estimated 900 calories per day, according to Table A2-1 (printed p. 139) [cite:dga:p152:f1].\n\nAt the 900-calorie level, the Healthy U.S.-Style Dietary Pattern for toddlers 12–23 months who no longer receive human milk or infant formula recommends:\n- **Dairy:** 2 cup eq/day [cite:dga:p077].\n- **Vegetables:** 1 cup eq/day. This is split across the week into dark-green ½, red and orange 2 ½, beans/peas/lentils ½, starchy 2, and other 1 ½ cup eq/wk [cite:dga:p077].\n\nThe source is Table 2-1 (printed p. 64). The dairy in this pattern includes whole-fat fluid milk, reduced-fat plain yogurts, and reduced-fat cheese [cite:dga:p077].",
+   "citations": [
+    "dga:p152:f1",
+    "dga:p077"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern ages 12 through 23 months no longer receiving human milk or infant formula dairy and fortified soy alternatives vegetables",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p156",
+      "dga:p076:c0",
+      "dga:p160",
+      "dga:p076",
+      "dga:p155",
+      "dga:p077"
+     ],
+     "error": null,
+     "latency_s": 0.22
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 77
+     },
+     "returned_ids": [
+      "dga:p077",
+      "dga:p077:c0",
+      "dga:p077:c1",
+      "dga:p077:f0",
+      "dga:p077:f1",
+      "dga:p077:f2",
+      "dga:p077"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "estimated calorie needs toddlers 12 through 23 months female male calories per day",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p152",
+      "dga:p152:c0",
+      "dga:p152:f0",
+      "dga:p152:f1",
+      "dga:p078:f0"
+     ],
+     "error": null,
+     "latency_s": 0.13
+    }
+   ],
+   "context_ids": [
+    "dga:p156",
+    "dga:p076:c0",
+    "dga:p160",
+    "dga:p076",
+    "dga:p155",
+    "dga:p077",
+    "dga:p077:c0",
+    "dga:p077:c1",
+    "dga:p077:f0",
+    "dga:p077:f1",
+    "dga:p077:f2",
+    "dga:p152",
+    "dga:p152:c0",
+    "dga:p152:f0",
+    "dga:p152:f1",
+    "dga:p078:f0"
+   ],
+   "tool_calls": 3,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 621,
+    "cache_read": 7373,
+    "cache_write": 9105
+   },
+   "cost_usd": 0.0297,
+   "seconds": 6.0
+  },
+  {
+   "query_id": "d14",
+   "split": "dev",
+   "group": "multihop",
+   "question": "At 2,000 calories, how does the weekly seafood amount in the pattern for adults 60+ compare with the general Healthy U.S.-Style pattern for ages 2+?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "At 2,000 calories, the pattern for adults 60+ has 1 ounce eq more seafood per week than the general pattern.\n\n- **Adults 60+:** Seafood is 9 ounce eq/week at the 2,000-calorie level [cite:dga:p138]. This comes from Table 6-1 on printed page 125.\n- **General pattern (ages 2+):** Seafood is 8 ounce eq/week at the 2,000-calorie level [cite:dga:p033]. This comes from Table 1-1 on printed page 20.\n\nThe difference is 9 − 8 = 1 ounce eq/week.",
+   "raw_answer": "At 2,000 calories, the pattern for adults 60+ has 1 ounce eq more seafood per week than the general pattern.\n\n- **Adults 60+:** Seafood is 9 ounce eq/week at the 2,000-calorie level [cite:dga:p138]. This comes from Table 6-1 on printed page 125.\n- **General pattern (ages 2+):** Seafood is 8 ounce eq/week at the 2,000-calorie level [cite:dga:p033]. This comes from Table 1-1 on printed page 20.\n\nThe difference is 9 − 8 = 1 ounce eq/week.",
+   "citations": [
+    "dga:p138",
+    "dga:p033"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern seafood weekly 2,000 calories ounce eq",
+      "top_k": 8
+     },
+     "returned_ids": [
+      "dga:p033",
+      "dga:p109",
+      "dga:p077",
+      "dga:p162:f0",
+      "dga:p156",
+      "dga:p033:c0",
+      "dga:p138",
+      "dga:p087"
+     ],
+     "error": null,
+     "latency_s": 0.24
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern for Adults Ages 60 and older seafood",
+      "top_k": 8
+     },
+     "returned_ids": [
+      "dga:p137",
+      "dga:p137:c0",
+      "dga:p138",
+      "dga:p108:c0",
+      "dga:p137:f0",
+      "dga:p140",
+      "dga:p109",
+      "dga:p136:c0"
+     ],
+     "error": null,
+     "latency_s": 0.27
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 138
+     },
+     "returned_ids": [
+      "dga:p138",
+      "dga:p138:c0",
+      "dga:p138:c1",
+      "dga:p138:f0",
+      "dga:p138:f1",
+      "dga:p138:f2",
+      "dga:p138"
+     ],
+     "error": null,
+     "latency_s": 0.02
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 33
+     },
+     "returned_ids": [
+      "dga:p033",
+      "dga:p033:c0",
+      "dga:p033:c1",
+      "dga:p033:f0",
+      "dga:p033:f1",
+      "dga:p033:f2",
+      "dga:p033"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    }
+   ],
+   "context_ids": [
+    "dga:p033",
+    "dga:p109",
+    "dga:p077",
+    "dga:p162:f0",
+    "dga:p156",
+    "dga:p033:c0",
+    "dga:p138",
+    "dga:p087",
+    "dga:p137",
+    "dga:p137:c0",
+    "dga:p108:c0",
+    "dga:p137:f0",
+    "dga:p140",
+    "dga:p136:c0",
+    "dga:p138:c0",
+    "dga:p138:c1",
+    "dga:p138:f0",
+    "dga:p138:f1",
+    "dga:p138:f2",
+    "dga:p033:c1",
+    "dga:p033:f0",
+    "dga:p033:f1",
+    "dga:p033:f2"
+   ],
+   "tool_calls": 4,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 540,
+    "cache_read": 12480,
+    "cache_write": 14533
+   },
+   "cost_usd": 0.043,
+   "seconds": 6.5
+  },
+  {
+   "query_id": "d15",
+   "split": "dev",
+   "group": "text",
+   "question": "Which infants need a vitamin D supplement, how much, and when is it not needed?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "All infants fed human milk exclusively, and infants who get both human milk and infant formula (mixed fed), need a vitamin D supplement. The dose is 400 IU per day, starting soon after birth. [cite:dga:p069:c0]\n\nA supplement is not needed when an infant is receiving full feeds of infant formula, because infant formula is fortified with vitamin D. [cite:dga:p069:c0]\n\nYoung children may need to keep taking a vitamin D supplement after age 12 months. Getting enough vitamin D from foods and beverages alone is challenging. [cite:dga:p069:f0]\n\nSource: Chapter 2, \"Provide Infants Supplemental Vitamin D Beginning Soon After Birth,\" printed page 56.",
+   "raw_answer": "All infants fed human milk exclusively, and infants who get both human milk and infant formula (mixed fed), need a vitamin D supplement. The dose is 400 IU per day, starting soon after birth. [cite:dga:p069:c0]\n\nA supplement is not needed when an infant is receiving full feeds of infant formula, because infant formula is fortified with vitamin D. [cite:dga:p069:c0]\n\nYoung children may need to keep taking a vitamin D supplement after age 12 months. Getting enough vitamin D from foods and beverages alone is challenging. [cite:dga:p069:f0]\n\nSource: Chapter 2, \"Provide Infants Supplemental Vitamin D Beginning Soon After Birth,\" printed page 56.",
+   "citations": [
+    "dga:p069:c0",
+    "dga:p069:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "infants vitamin D supplement 400 IU per day breastfed",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p069",
+      "dga:p069:c0",
+      "dga:p069:f0",
+      "dga:p069:c1",
+      "dga:p151",
+      "dga:p151:c0"
+     ],
+     "error": null,
+     "latency_s": 0.15
+    }
+   ],
+   "context_ids": [
+    "dga:p069",
+    "dga:p069:c0",
+    "dga:p069:f0",
+    "dga:p069:c1",
+    "dga:p151",
+    "dga:p151:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 355,
+    "cache_read": 2886,
+    "cache_write": 2965
+   },
+   "cost_usd": 0.0113,
+   "seconds": 3.7
+  },
+  {
+   "query_id": "d16",
+   "split": "dev",
+   "group": "text",
+   "question": "Can a baby under 1 year have honey, for example baked into foods, and why?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "No. Infants should not be given any foods containing raw or cooked honey, so honey baked into foods is also not allowed. [cite:dga:p074] The reason is that honey can contain the *Clostridium botulinum* organism, which could cause serious illness or death among infants. [cite:dga:p074]\n\nSource: Chapter 2, \"Avoid Honey and Unpasteurized Foods and Beverages,\" printed p. 61. The page is in the \"Dietary Components to Limit\" section for birth through 23 months.\n\nThe document says \"infants\" and doesn't give a specific age cutoff in this passage. Your \"under 1 year\" framing is not stated there.",
+   "raw_answer": "No. Infants should not be given any foods containing raw or cooked honey, so honey baked into foods is also not allowed. [cite:dga:p074] The reason is that honey can contain the *Clostridium botulinum* organism, which could cause serious illness or death among infants. [cite:dga:p074]\n\nSource: Chapter 2, \"Avoid Honey and Unpasteurized Foods and Beverages,\" printed p. 61. The page is in the \"Dietary Components to Limit\" section for birth through 23 months.\n\nThe document says \"infants\" and doesn't give a specific age cutoff in this passage. Your \"under 1 year\" framing is not stated there.",
+   "citations": [
+    "dga:p074"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "honey infants younger than 12 months botulism",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p069",
+      "dga:p072",
+      "dga:p067",
+      "dga:p074",
+      "dga:p069:c1"
+     ],
+     "error": null,
+     "latency_s": 0.25
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 74
+     },
+     "returned_ids": [
+      "dga:p074",
+      "dga:p074:c0",
+      "dga:p074:c1",
+      "dga:p074:f0",
+      "dga:p074:f1",
+      "dga:p074"
+     ],
+     "error": null,
+     "latency_s": 0.02
+    }
+   ],
+   "context_ids": [
+    "dga:p069",
+    "dga:p072",
+    "dga:p067",
+    "dga:p074",
+    "dga:p069:c1",
+    "dga:p074:c0",
+    "dga:p074:c1",
+    "dga:p074:f0",
+    "dga:p074:f1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 361,
+    "cache_read": 6384,
+    "cache_write": 3755
+   },
+   "cost_usd": 0.0137,
+   "seconds": 5.2
+  },
+  {
+   "query_id": "d17",
+   "split": "dev",
+   "group": "text",
+   "question": "A breastfeeding mother follows a strict vegan diet. What does the guidance say about vitamin B12 for her baby?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "The guidance says her baby may need a vitamin B12 supplement, depending on her own B12 status. Human milk has enough vitamin B12 to meet an infant's needs unless the mother's B12 status is inadequate. [cite:dga:p069:f1] When the mother is at risk of vitamin B12 deficiency, the mother, the breastfed infant, or both may require a vitamin B12 supplement. [cite:dga:p069:f1]\n\nThe passage doesn't mention a vegan diet by name, so applying it to her case is an inference. The source is Chapter 2, Infants and Toddlers, printed page 56. The page also has a callout about supplemental vitamin B12. [cite:dga:p069]",
+   "raw_answer": "The guidance says her baby may need a vitamin B12 supplement, depending on her own B12 status. Human milk has enough vitamin B12 to meet an infant's needs unless the mother's B12 status is inadequate. [cite:dga:p069:f1] When the mother is at risk of vitamin B12 deficiency, the mother, the breastfed infant, or both may require a vitamin B12 supplement. [cite:dga:p069:f1]\n\nThe passage doesn't mention a vegan diet by name, so applying it to her case is an inference. The source is Chapter 2, Infants and Toddlers, printed page 56. The page also has a callout about supplemental vitamin B12. [cite:dga:p069]",
+   "citations": [
+    "dga:p069:f1",
+    "dga:p069"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "vitamin B12 breastfed infant mother vegan diet",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p069",
+      "dga:p069:c1",
+      "dga:p151",
+      "dga:p069:f1",
+      "dga:p151:c0",
+      "dga:p080"
+     ],
+     "error": null,
+     "latency_s": 0.29
+    }
+   ],
+   "context_ids": [
+    "dga:p069",
+    "dga:p069:c1",
+    "dga:p151",
+    "dga:p069:f1",
+    "dga:p151:c0",
+    "dga:p080"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 350,
+    "cache_read": 2900,
+    "cache_write": 3040
+   },
+   "cost_usd": 0.0114,
+   "seconds": 4.1
+  },
+  {
+   "query_id": "d18",
+   "split": "dev",
+   "group": "text",
+   "question": "What sodium intake level (CDRR) applies to a 6-year-old, a 12-year-old and an adult?",
+   "config": "text",
+   "status": "answered",
+   "error": null,
+   "answer": "Sodium CDRR (Chronic Disease Risk Reduction level) by age:\n\n- **6-year-old:** 1,500 mg/day, the level for ages 4 through 8 [cite:dga:p059:f0].\n- **12-year-old:** 1,800 mg/day, the level for ages 9 through 13 [cite:dga:p059:f0].\n- **Adult:** 2,300 mg/day, the level for \"all other age groups\" [cite:dga:p059:f0].\n\nThe document says healthy eating patterns limit sodium to these National Academies CDRR levels [cite:dga:p059:c0]. The source is the Sodium section of Chapter 1 (printed page 46).",
+   "raw_answer": "Sodium CDRR (Chronic Disease Risk Reduction level) by age:\n\n- **6-year-old:** 1,500 mg/day, the level for ages 4 through 8 [cite:dga:p059:f0].\n- **12-year-old:** 1,800 mg/day, the level for ages 9 through 13 [cite:dga:p059:f0].\n- **Adult:** 2,300 mg/day, the level for \"all other age groups\" [cite:dga:p059:f0].\n\nThe document says healthy eating patterns limit sodium to these National Academies CDRR levels [cite:dga:p059:c0]. The source is the Sodium section of Chapter 1 (printed page 46).",
+   "citations": [
+    "dga:p059:f0",
+    "dga:p059:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Chronic Disease Risk Reduction (CDRR) sodium intake level by age group",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p059",
+      "dga:p059:c0",
+      "dga:p059:f0",
+      "dga:p090:c0",
+      "dga:p090",
+      "dga:p059:f1"
+     ],
+     "error": null,
+     "latency_s": 0.29
+    }
+   ],
+   "context_ids": [
+    "dga:p059",
+    "dga:p059:c0",
+    "dga:p059:f0",
+    "dga:p090:c0",
+    "dga:p090",
+    "dga:p059:f1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 341,
+    "cache_read": 2896,
+    "cache_write": 2905
+   },
+   "cost_usd": 0.011,
+   "seconds": 3.9
+  },
+  {
+   "query_id": "d19",
+   "split": "dev",
+   "group": "none",
+   "question": "What daily carbohydrate limit (grams) do the guidelines set for people following a ketogenic diet?",
+   "config": "text",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for ketogenic diet carbohydrate limits in grams per day and found nothing on ketogenic diets. The results only covered the Healthy U.S.-Style Dietary Pattern and carbohydrate goals for specific groups. For example, lactating women have a carbohydrate RDA of 210 g per day and an AMDR of 45-65% of calories [cite:dga:p150:f0]. The document sets no carbohydrate limit for people following a ketogenic diet.",
+   "raw_answer": "Not enough evidence in the document. I searched for ketogenic diet carbohydrate limits in grams per day and found nothing on ketogenic diets. The results only covered the Healthy U.S.-Style Dietary Pattern and carbohydrate goals for specific groups. For example, lactating women have a carbohydrate RDA of 210 g per day and an AMDR of 45-65% of calories [cite:dga:p150:f0]. The document sets no carbohydrate limit for people following a ketogenic diet.",
+   "citations": [
+    "dga:p150:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "ketogenic diet carbohydrate grams per day",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p033:f1",
+      "dga:p157:f0",
+      "dga:p150:f0",
+      "dga:p033",
+      "dga:p055:c0"
+     ],
+     "error": null,
+     "latency_s": 0.51
+    }
+   ],
+   "context_ids": [
+    "dga:p033:f1",
+    "dga:p157:f0",
+    "dga:p150:f0",
+    "dga:p033",
+    "dga:p055:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 277,
+    "cache_read": 2894,
+    "cache_write": 2514
+   },
+   "cost_usd": 0.0094,
+   "seconds": 4.3
+  },
+  {
+   "query_id": "d20",
+   "split": "dev",
+   "group": "none",
+   "question": "Are creatine or whey protein powder supplements recommended for teenage athletes?",
+   "config": "text",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for creatine, whey protein powder, and supplements for athletes or sports performance. The results covered adolescent food patterns, older adults' protein, and nutrient goals. None of them mention creatine, whey protein powder, or recommendations for teenage athletes, so I can't say whether the document recommends them.",
+   "raw_answer": "Not enough evidence in the document. I searched for creatine, whey protein powder, and supplements for athletes or sports performance. The results covered adolescent food patterns, older adults' protein, and nutrient goals. None of them mention creatine, whey protein powder, or recommendations for teenage athletes, so I can't say whether the document recommends them.",
+   "citations": [],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "creatine or whey protein supplements for athletes adolescents",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p097",
+      "dga:p097:c0",
+      "dga:p101",
+      "dga:p089",
+      "dga:p094:c0"
+     ],
+     "error": null,
+     "latency_s": 1.38
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "dietary supplements sports performance protein powder creatine",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p141",
+      "dga:p141:c1",
+      "dga:p020",
+      "dga:p147:c1",
+      "dga:p151"
+     ],
+     "error": null,
+     "latency_s": 0.3
+    }
+   ],
+   "context_ids": [
+    "dga:p097",
+    "dga:p097:c0",
+    "dga:p101",
+    "dga:p089",
+    "dga:p094:c0",
+    "dga:p141",
+    "dga:p141:c1",
+    "dga:p020",
+    "dga:p147:c1",
+    "dga:p151"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 298,
+    "cache_read": 7074,
+    "cache_write": 5183
+   },
+   "cost_usd": 0.0167,
+   "seconds": 9.1
+  },
+  {
+   "query_id": "d21",
+   "split": "dev",
+   "group": "none",
+   "question": "How should a child with celiac disease replace gluten-containing grains to meet the grains recommendation?",
+   "config": "text",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for celiac disease, gluten, and gluten-free grain substitutes. The Dietary Guidelines never mention celiac disease or gluten, and they give no advice on replacing gluten-containing grains.\n\nThe document does list grain examples, but it doesn't label any of them gluten-free or gluten-containing:\n- **Whole grains:** amaranth, brown rice, buckwheat, millet, oats, popcorn, quinoa, whole-grain cornmeal, and wild rice, among others [cite:dga:p042:c0].\n- **Refined grains:** corn grits, cream of rice, masa, and white rice, among others. Refined-grain choices should be enriched [cite:dga:p042:c0].\n\nI can't say which of these suit a child with celiac disease. That question needs a source outside this document.",
+   "raw_answer": "Not enough evidence in the document. I searched for celiac disease, gluten, and gluten-free grain substitutes. The Dietary Guidelines never mention celiac disease or gluten, and they give no advice on replacing gluten-containing grains.\n\nThe document does list grain examples, but it doesn't label any of them gluten-free or gluten-containing:\n- **Whole grains:** amaranth, brown rice, buckwheat, millet, oats, popcorn, quinoa, whole-grain cornmeal, and wild rice, among others [cite:dga:p042:c0].\n- **Refined grains:** corn grits, cream of rice, masa, and white rice, among others. Refined-grain choices should be enriched [cite:dga:p042:c0].\n\nI can't say which of these suit a child with celiac disease. That question needs a source outside this document.",
+   "citations": [
+    "dga:p042:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "celiac disease gluten-free grains substitute",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p045:c1",
+      "dga:p042",
+      "dga:p045:f1",
+      "dga:p042:c0",
+      "dga:p046"
+     ],
+     "error": null,
+     "latency_s": 1.53
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "celiac disease gluten children grains",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p087",
+      "dga:p093",
+      "dga:p091",
+      "dga:p096",
+      "dga:p089"
+     ],
+     "error": null,
+     "latency_s": 0.37
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "gluten-free grains such as rice, corn, quinoa for people with celiac disease",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p042:c0",
+      "dga:p042",
+      "dga:p042:f0",
+      "dga:p045:c1",
+      "dga:p045"
+     ],
+     "error": null,
+     "latency_s": 0.23
+    },
+    {
+     "event": "thought",
+     "text": "Celiac doesn't seem to come up anywhere in the text. I'll run one more search, this time on \"gluten,\" to see whether it's mentioned.\n\n"
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "gluten",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p046",
+      "dga:p045:f2",
+      "dga:p015:c0",
+      "dga:p158:f1",
+      "dga:p042"
+     ],
+     "error": null,
+     "latency_s": 0.25
+    }
+   ],
+   "context_ids": [
+    "dga:p045:c1",
+    "dga:p042",
+    "dga:p045:f1",
+    "dga:p042:c0",
+    "dga:p046",
+    "dga:p087",
+    "dga:p093",
+    "dga:p091",
+    "dga:p096",
+    "dga:p089",
+    "dga:p042:f0",
+    "dga:p045",
+    "dga:p045:f2",
+    "dga:p015:c0",
+    "dga:p158:f1"
+   ],
+   "tool_calls": 4,
+   "rounds": 4,
+   "tokens": {
+    "input": 12,
+    "output": 626,
+    "cache_read": 21015,
+    "cache_write": 8911
+   },
+   "cost_usd": 0.0307,
+   "seconds": 14.1
+  },
+  {
+   "query_id": "d22",
+   "split": "dev",
+   "group": "none",
+   "question": "Do the guidelines recommend probiotic supplements or kombucha to support an infant's gut microbiome?",
+   "config": "text",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for probiotic supplements, kombucha and infant gut microbiome, and none of the results mention them.\n\nThe infant guidance I found says the following:\n- Human milk alone is the ideal nutrition from birth through about age 6 months. If human milk is unavailable, infants should be fed iron-fortified commercial infant formula [cite:dga:p067].\n- Infants fed human milk, or both human milk and formula, need a vitamin D supplement of 400 IU per day beginning soon after birth [cite:dga:p069:c0].\n- Complementary foods should be introduced at about age 6 months [cite:dga:p069:c1].",
+   "raw_answer": "Not enough evidence in the document. I searched for probiotic supplements, kombucha and infant gut microbiome, and none of the results mention them.\n\nThe infant guidance I found says the following:\n- Human milk alone is the ideal nutrition from birth through about age 6 months. If human milk is unavailable, infants should be fed iron-fortified commercial infant formula [cite:dga:p067].\n- Infants fed human milk, or both human milk and formula, need a vitamin D supplement of 400 IU per day beginning soon after birth [cite:dga:p069:c0].\n- Complementary foods should be introduced at about age 6 months [cite:dga:p069:c1].",
+   "citations": [
+    "dga:p067",
+    "dga:p069:c0",
+    "dga:p069:c1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "probiotic supplements kombucha infant gut microbiome",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p069",
+      "dga:p069:c1",
+      "dga:p072",
+      "dga:p069:c0",
+      "dga:p067",
+      "dga:p074"
+     ],
+     "error": null,
+     "latency_s": 0.94
+    }
+   ],
+   "context_ids": [
+    "dga:p069",
+    "dga:p069:c1",
+    "dga:p072",
+    "dga:p069:c0",
+    "dga:p067",
+    "dga:p074"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 323,
+    "cache_read": 2895,
+    "cache_write": 2499
+   },
+   "cost_usd": 0.0098,
+   "seconds": 4.2
+  }
+ ]
+}

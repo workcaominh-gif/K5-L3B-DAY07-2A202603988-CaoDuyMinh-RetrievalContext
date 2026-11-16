@@ -1,0 +1,576 @@
+{
+ "summary": {
+  "config": "regions",
+  "split": "dev",
+  "pass": "17/22",
+  "per_group": {
+   "table": "3/4",
+   "image": "3/3",
+   "chart": "3/4",
+   "multihop": "1/3",
+   "text": "3/4",
+   "none": "4/4"
+  },
+  "errors": 0,
+  "judge_errors": 0,
+  "median_seconds": 6.3,
+  "agent_cost_usd": 0.3855,
+  "judge_cost_usd": 0.1579,
+  "labels": "DRAFT (judge) - to be reviewed by hand"
+ },
+ "labels": [
+  {
+   "query_id": "d01",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": false,
+    "reason": "The answer of 31 g/day matches the gold value in the image (Oils row, 2,400 column). However, the cited text is truncated after the Refined Grains row and never reaches the Oils row, so the 31 g claim is supported only by the attached image, not by the cited unit's text."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2, row 'Oils (grams/day)', column '2,400'",
+      "satisfied_by": "dga:p157:r1"
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "cited evidence does not support the answer"
+   ],
+   "reason": "The answer of 31 g/day matches the gold value in the image (Oils row, 2,400 column). However, the cited text is truncated after the Refined Grains row and never reaches the Oils row, so the 31 g claim is supported only by the attached image, not by the cited unit's text."
+  },
+  {
+   "query_id": "d02",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 900 calories/day for a 15-month-old boy and 800 for a girl, matching the gold answer and the Table A2-1 row for age 15. The cited table text and image support these values, the table title, and the printed page 139; the 900−800=100 difference is correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 152,
+      "kind": "table",
+      "ref": "Table A2-1, row '15', columns 'Males' and 'Females'",
+      "satisfied_by": "dga:p152:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 900 calories/day for a 15-month-old boy and 800 for a girl, matching the gold answer and the Table A2-1 row for age 15. The cited table text and image support these values, the table title, and the printed page 139; the 900−800=100 difference is correct."
+  },
+  {
+   "query_id": "d03",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent gives fruit 2½ cup-eq/day and dairy 2 cup-eq/day at 2,000 calories, matching the gold answer and the Table A3-5 image. The facts unit supports both values, and the table unit supports the table name, the page, and the 'ages 2 and older' note. The dairy footnote on children is omitted, but the question asks about adults, so this is not required."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 162,
+      "kind": "table",
+      "ref": "Table A3-5, rows 'Fruits (cup eq/day)' and 'Dairy (cup eq/day)', column '2,000'",
+      "satisfied_by": "dga:p162:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent gives fruit 2½ cup-eq/day and dairy 2 cup-eq/day at 2,000 calories, matching the gold answer and the Table A3-5 image. The facts unit supports both values, and the table unit supports the table name, the page, and the 'ages 2 and older' note. The dairy footnote on children is omitted, but the question asks about adults, so this is not required."
+  },
+  {
+   "query_id": "d04",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 28-40 lb total and weekly gain of mean 1 lb (range 1-1.3) in trimesters 2 and 3, matching the gold answer and Table 5-3's Underweight row. The cited table unit and facts unit both support these values and the table title and page."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 125,
+      "kind": "table",
+      "ref": "Table 5-3, row 'Underweight'",
+      "satisfied_by": "dga:p125:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 28-40 lb total and weekly gain of mean 1 lb (range 1-1.3) in trimesters 2 and 3, matching the gold answer and Table 5-3's Underweight row. The cited table unit and facts unit both support these values and the table title and page."
+  },
+  {
+   "query_id": "d05",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: 1,120 − 715 = 405 calories saved, and white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup). The cited table and facts units, and the attached figure, support all of these claims."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 51,
+      "kind": "figure",
+      "ref": "Figure 1-8, header row and first row of the comparison",
+      "satisfied_by": "dga:p051:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: 1,120 − 715 = 405 calories saved, and white rice (1½ cups) is replaced by brown rice (1 cup) plus romaine lettuce (½ cup). The cited table and facts units, and the attached figure, support all of these claims."
+  },
+  {
+   "query_id": "d06",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer lists all five birth-to-23-months outcomes from Figure 1-3, matching the gold answer and the figure image. The cited facts, image description, and page text support every claim, including the figure title and printed page 24."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 37,
+      "kind": "figure",
+      "ref": "Figure 1-3, panel 'Birth Through 23 Months'",
+      "satisfied_by": "dga:p037:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer lists all five birth-to-23-months outcomes from Figure 1-3, matching the gold answer and the figure image. The cited facts, image description, and page text support every claim, including the figure title and printed page 24."
+  },
+  {
+   "query_id": "d07",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: cereal with minimal added sugars, and fruit (e.g., canned in 100% juice). The cited Figure 2-1 text on PDF p.76 contains both arrows, so every claim is supported."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 76,
+      "kind": "figure",
+      "ref": "Figure 2-1, arrows 'Cereal with Added Sugars -> Cereal with Minimal Added Sugars' and 'Fruit Products with Added Sugars -> Fruit (e.g., canned in 100% juice)'",
+      "satisfied_by": "dga:p076:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: cereal with minimal added sugars, and fruit (e.g., canned in 100% juice). The cited Figure 2-1 text on PDF p.76 contains both arrows, so every claim is supported."
+  },
+  {
+   "query_id": "d08",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 99 calories from baked cod, 131 from breading and frying oil, and a 230 total, all matching the gold answer and Figure 1-1. The cited chart unit supports every claim, including the figure title and printed page 21. The percentage share was not required."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 34,
+      "kind": "figure",
+      "ref": "Figure 1-1, bar 'Breaded, Fried Cod, 4 ounces'",
+      "satisfied_by": "dga:p034:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 99 calories from baked cod, 131 from breading and frying oil, and a 230 total, all matching the gold answer and Figure 1-1. The cited chart unit supports every claim, including the figure title and printed page 21. The percentage share was not required."
+  },
+  {
+   "query_id": "d09",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives Sandwiches, 21%, and 3,393 mg/day, which match the gold answer and the figure image. The cited units (chart unit p060:r1 and page unit p060) contain the 21% and 3,393 mg/day values, and the printed page 47 and data source are also correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 60,
+      "kind": "figure",
+      "ref": "Figure 1-12, largest bubble 'Sandwiches' and side label 'Sodium Average Intake'",
+      "satisfied_by": "dga:p060:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives Sandwiches, 21%, and 3,393 mg/day, which match the gold answer and the figure image. The cited units (chart unit p060:r1 and page unit p060) contain the 21% and 3,393 mg/day values, and the printed page 47 and data source are also correct."
+  },
+  {
+   "query_id": "d10",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives boys 3,888 mg (1,588 above) and girls 2,875 mg (575 above), matching the gold, and the subtractions are correct. The figure cite (p098:f1) supports the intakes and the 97%/77% figures; the p059 chunk supports the 2,300 mg limit for ages 14-18 as 'all other age groups'."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 98,
+      "kind": "figure",
+      "ref": "Figure 3-8, 'Sodium' panel (Limit: 2,300 mg; Average Intakes)",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.98 figure"
+   ],
+   "reason": "The answer gives boys 3,888 mg (1,588 above) and girls 2,875 mg (575 above), matching the gold, and the subtractions are correct. The figure cite (p098:f1) supports the intakes and the 97%/77% figures; the p059 chunk supports the 2,300 mg limit for ages 14-18 as 'all other age groups'."
+  },
+  {
+   "query_id": "d11",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer names Whole Grains at about 98% below the recommendation, with Red & Orange Vegetables next at about 95%, matching the gold answer and the figure. The cited chart unit is the right figure and lists Red & Orange Vegetables below at 95% and Whole Grains at/above at 2%; its text is truncated before the Whole Grains below value, but 98% follows from 2% at/above and the figure image shows the bar near 98%."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 43,
+      "kind": "figure",
+      "ref": "Figure 1-6, lower (dark blue) bars 'Percent of Population Below Recommendation'",
+      "satisfied_by": "dga:p043:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer names Whole Grains at about 98% below the recommendation, with Red & Orange Vegetables next at about 95%, matching the gold answer and the figure. The cited chart unit is the right figure and lists Red & Orange Vegetables below at 95% and Whole Grains at/above at 2%; its text is truncated before the Whole Grains below value, but 98% follows from 2% at/above and the figure image shows the bar near 98%."
+  },
+  {
+   "query_id": "d12",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": false,
+    "reason": "The answer gives 266 − 200 = 66 kcal over the 10% limit, matching the gold, and the extra 7% figure is accurate and not contradicted. But the cited p.55 text only mentions a 10 percent limit in passing, and the 266 kcal figure is a chart label the cited chart text omits, though the attached image does show it. The claim that 'the document refers to a 10 percent added sugars limit' is supported, but the answer's '1.3 times the limit' is just arithmetic. The citation for 266 (p056:r1) lacks that number in its indexed text, though the image supports it, so support is mostly there but weak; the cited units don't clearly state the 266 figure."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 56,
+      "kind": "figure",
+      "ref": "Figure 1-10, label 'Added Sugars Average Intake: 266 kcal/day'",
+      "satisfied_by": "dga:p056:r1"
+     },
+     {
+      "pdf_page": 54,
+      "kind": "text",
+      "ref": "PDF p.54 body text",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.54 text",
+    "cited evidence does not support the answer"
+   ],
+   "reason": "The answer gives 266 − 200 = 66 kcal over the 10% limit, matching the gold, and the extra 7% figure is accurate and not contradicted. But the cited p.55 text only mentions a 10 percent limit in passing, and the 266 kcal figure is a chart label the cited chart text omits, though the attached image does show it. The claim that 'the document refers to a 10 percent added sugars limit' is supported, but the answer's '1.3 times the limit' is just arithmetic. The citation for 266 (p056:r1) lacks that number in its indexed text, though the image supports it, so support is mostly there but weak; the cited units don't clearly state the 266 figure."
+  },
+  {
+   "query_id": "d13",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 900 calories, 2 cup eq/day dairy and 1 cup eq/day vegetables, which matches the gold. The cited units support these: Table A2-1 shows 900 for females at 18 months, and the 900 column of the toddler pattern table (Table 2-1 in the chapter, A3-1 in the appendix) shows vegetables 1 and dairy 2. The weekly subgroup values also match the table."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 152,
+      "kind": "table",
+      "ref": "Table A2-1, row '18', column 'Females'",
+      "satisfied_by": "dga:p152:r1"
+     },
+     {
+      "pdf_page": 156,
+      "kind": "table",
+      "ref": "Table A3-1, rows 'Vegetables (cup eq/day)' and 'Dairy (cup eq/day)', column '900'",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.156 table"
+   ],
+   "reason": "The answer gives 900 calories, 2 cup eq/day dairy and 1 cup eq/day vegetables, which matches the gold. The cited units support these: Table A2-1 shows 900 for females at 18 months, and the 900 column of the toddler pattern table (Table 2-1 in the chapter, A3-1 in the appendix) shows vegetables 1 and dairy 2. The weekly subgroup values also match the table."
+  },
+  {
+   "query_id": "d14",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 9 ounce eq/wk for adults 60+ and 8 for ages 2+ at 2,000 calories, a difference of 1, matching the gold answer. Both cited tables (Table 6-1 and Table A3-2) show these values in the Seafood row at the 2,000 column."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 138,
+      "kind": "table",
+      "ref": "Table 6-1, row 'Seafood (ounce eq/wk)', column '2,000'",
+      "satisfied_by": "dga:p138:r1"
+     },
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2, row 'Seafood (ounce eq/wk)', column '2,000'",
+      "satisfied_by": "dga:p157:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 9 ounce eq/wk for adults 60+ and 8 for ages 2+ at 2,000 calories, a difference of 1, matching the gold answer. Both cited tables (Table 6-1 and Table A3-2) show these values in the Seafood row at the 2,000 column."
+  },
+  {
+   "query_id": "d15",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: exclusively human-milk-fed and mixed-fed infants need 400 IU/day soon after birth, and infants on full feeds of fortified formula do not. The extra claim about children after 12 months is also stated in the cited chunk and facts unit."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 69,
+      "kind": "text",
+      "ref": "PDF p.69 body text",
+      "satisfied_by": "dga:p069:c0"
+     },
+     {
+      "pdf_page": 69,
+      "kind": "text",
+      "ref": "PDF p.69 body text",
+      "satisfied_by": "dga:p069:c0"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: exclusively human-milk-fed and mixed-fed infants need 400 IU/day soon after birth, and infants on full feeds of fortified formula do not. The extra claim about children after 12 months is also stated in the cited chunk and facts unit."
+  },
+  {
+   "query_id": "d16",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: no honey, raw or cooked, because Clostridium botulinum can cause serious illness or death in infants. The cited page unit dga:p074 contains the full passage and section heading. The first cited chunk (c1) does not contain the honey text, so that citation is misplaced, but the page-level unit supports every claim."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 74,
+      "kind": "text",
+      "ref": "PDF p.74 body text",
+      "satisfied_by": "dga:p074:c1"
+     },
+     {
+      "pdf_page": 74,
+      "kind": "text",
+      "ref": "PDF p.74 body text",
+      "satisfied_by": "dga:p074:c1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: no honey, raw or cooked, because Clostridium botulinum can cause serious illness or death in infants. The cited page unit dga:p074 contains the full passage and section heading. The first cited chunk (c1) does not contain the honey text, so that citation is misplaced, but the page-level unit supports every claim."
+  },
+  {
+   "query_id": "d17",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": false,
+    "supported": true,
+    "reason": "The answer gives the core B12 guidance (human milk is sufficient unless maternal status is inadequate; mother and/or infant may need a supplement). It explicitly says the page does not name a strict vegan diet as the risk factor, so it never connects the vegan scenario to the guidance, and it omits the 'consult a healthcare provider' point. The gold answer ties the vegan example to inadequate B12 status, so the answer misses that condition. Every claim in the answer is supported by the cited text."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 69,
+      "kind": "text",
+      "ref": "PDF p.69 body text",
+      "satisfied_by": "dga:p069:f1"
+     },
+     {
+      "pdf_page": 69,
+      "kind": "text",
+      "ref": "PDF p.69 body text",
+      "satisfied_by": "dga:p069:f1"
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "answer not correct/complete"
+   ],
+   "reason": "The answer gives the core B12 guidance (human milk is sufficient unless maternal status is inadequate; mother and/or infant may need a supplement). It explicitly says the page does not name a strict vegan diet as the risk factor, so it never connects the vegan scenario to the guidance, and it omits the 'consult a healthcare provider' point. The gold answer ties the vegan example to inadequate B12 status, so the answer misses that condition. Every claim in the answer is supported by the cited text."
+  },
+  {
+   "query_id": "d18",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 1,500, 1,800 and 2,300 mg/day for the 6-year-old, 12-year-old and adult, matching the gold values with correct units. The cited chunk states these CDRR levels by age group, so the age mapping is supported. The only unsupported detail is the gloss 'ages 14 and older', which is a trivial inference from 'all other age groups'."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 59,
+      "kind": "text",
+      "ref": "PDF p.59 body text",
+      "satisfied_by": "dga:p059:c0"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 1,500, 1,800 and 2,300 mg/day for the 6-year-old, 12-year-old and adult, matching the gold values with correct units. The cited chunk states these CDRR levels by age group, so the age mapping is supported. The only unsupported detail is the gloss 'ages 14 and older', which is a trivial inference from 'all other age groups'."
+  },
+  {
+   "query_id": "d19",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, saying the document has no ketogenic-diet guidance or carbohydrate limit. It did not offer 210 g as an answer, only as an unrelated example, and the cited unit confirms the 210 g RDA for lactating women in Table A1-4."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, saying the document has no ketogenic-diet guidance or carbohydrate limit. It did not offer 210 g as an answer, only as an unrelated example, and the cited unit confirms the 210 g RDA for lactating women in Table A1-4."
+  },
+  {
+   "query_id": "d20",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained correctly, saying the document lacks evidence on creatine or whey protein for teenage athletes. Its only factual claim, that Table 3-3 gives a Healthy U.S.-Style Dietary Pattern for ages 14–18, is supported by the cited page. The claim about searching the document is process narration, not a factual claim about the document's content."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained correctly, saying the document lacks evidence on creatine or whey protein for teenage athletes. Its only factual claim, that Table 3-3 gives a Healthy U.S.-Style Dietary Pattern for ages 14–18, is supported by the cited page. The claim about searching the document is process narration, not a factual claim about the document's content."
+  },
+  {
+   "query_id": "d21",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, stating the document has no celiac or gluten-free guidance, and made no outside-knowledge claims about which grains are gluten-free. The grain lists it cites (whole grains, refined grains, enrichment) match the cited chunk dga:p042:c0."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, stating the document has no celiac or gluten-free guidance, and made no outside-knowledge claims about which grains are gluten-free. The grain lists it cites (whole grains, refined grains, enrichment) match the cited chunk dga:p042:c0."
+  },
+  {
+   "query_id": "d22",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, saying the document gives no recommendation on probiotics or kombucha for infants, and made no unsupported claim answering the question. The extra infant facts it cited (human milk alone as the ideal nutrition through about 6 months, and a 400 IU/day vitamin D supplement for human-milk-fed infants) match the cited units."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, saying the document gives no recommendation on probiotics or kombucha for infants, and made no unsupported claim answering the question. The extra infant facts it cited (human milk alone as the ideal nutrition through about 6 months, and a 400 IU/day vitamin D supplement for human-milk-fed infants) match the cited units."
+  }
+ ]
+}
