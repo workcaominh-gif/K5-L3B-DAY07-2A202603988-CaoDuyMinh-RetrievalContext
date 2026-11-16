@@ -133,6 +133,33 @@ class H(BaseHTTPRequestHandler):
             return self._json(200, {"methods": R.METHODS, "image_backends": {"fusion": "Ảnh: CLIP + EmbeddingGemma 2 + OCR + hash (mặc định)",
                                                                           "gemma": "Ảnh: EmbeddingGemma 2 + OCR + hash",
                                                                           "clip": "Ảnh: CLIP + tiles + OCR + hash"}})
+        if self.path == "/api/vectors/summary":
+            return self._json(200, vectors_summary())
+        if self.path.startswith("/api/vectors"):
+            from urllib.parse import parse_qs, urlparse
+            u = urlparse(self.path)
+            qs = {k: v[0] for k, v in parse_qs(u.query).items()}
+            try:
+                if u.path == "/api/vectors/nn":
+                    return self._json(200, vectors_nn(qs.get("table", ""), qs.get("id", "")))
+                if u.path == "/api/vectors" and qs.get("table") == "audio_fingerprint":
+                    return self._json(200, fingerprint_rows(qs.get("kind", ""), qs.get("q", ""), int(qs.get("offset", 0) or 0)))
+                if u.path == "/api/vectors":
+                    return self._json(200, vectors_rows(qs.get("table", ""), qs.get("kind", ""), qs.get("q", ""),
+                                                        int(qs.get("offset", 0) or 0)))
+            except ValueError as e:
+                return self._json(400, {"error": str(e)})
+        m = re.fullmatch(r"/media/audio/(QhkDOr6kmi4|eSKtPtW0X2o)/(\d{1,4})", self.path)
+        if m:                                   # the 5-second window an audio embedding was computed from
+            vid, t = m.group(1), int(m.group(2))
+            out = T.WORK / "stills" / f"{vid}_{t}.m4a"
+            if not out.exists():
+                import subprocess
+                out.parent.mkdir(exist_ok=True)
+                subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(t), "-t", "5", "-i",
+                                str(T.WORK.parent / "raw" / "video" / f"{vid}.mp4"), "-vn", "-c:a", "aac", "-b:a", "96k", str(out)], timeout=20)
+            if out.exists():
+                return self._send(200, out.read_bytes(), "audio/mp4")
         if self.path == "/api/graph":
             return self._json(200, graph())
         if self.path == "/api/pipeline":
@@ -389,6 +416,200 @@ def pipeline_stats() -> dict:
                       "median_seconds": med([t.get("seconds") for t in live]), "median_steps": med([t.get("steps") for t in live]),
                       "cache_read_share": round(sum(t.get("cache_read_tokens") or 0 for t in live) / max(1, sum(t.get("tokens") or 0 for t in live)), 2),
                       "abstained": sum(bool(t.get("abstained")) for t in turns), "tool_use": dict(tool_use)}}
+
+
+# ---------------- embedding databases explorer ----------------
+VEC_TABLES = {
+    "kb_cook": {"model": "BAAI/bge-small-en-v1.5", "dims": 384, "kind_col": "kind", "text_col": "text", "corpus": "Kitchen KB",
+                "purpose": "Đơn vị văn bản của sách + video: fact nguyên tử, trang, đoạn video, gói wiki/SOP/FAQ (+ full-text tsvector)"},
+    "kb_image": {"model": "CLIP ViT-B/32 (sentence-transformers/clip-ViT-B-32)", "dims": 512, "kind_col": "kind", "text_col": None, "corpus": "Kitchen KB",
+                 "purpose": "Ảnh: trang PDF, hình nhúng trong PDF, khung video mỗi giây, khung đổi cảnh, 5 tile mỗi ảnh (bắt ảnh cắt)"},
+    "kb_mm": {"model": "google/embeddinggemma-2", "dims": 768, "kind_col": "kind", "text_col": None, "corpus": "Kitchen KB",
+              "purpose": "MỘT không gian cho mọi phương thức: chữ, ảnh trang, hình, khung video, cửa sổ âm thanh 5 giây"},
+    "chunks_bge": {"model": "BAAI/bge-small-en-v1.5", "dims": 384, "kind_col": "strategy", "text_col": "text", "corpus": "Day 6 · EU AI Act + GDPR",
+                   "purpose": "Chunk luật theo 6 chiến lược chunking của Day 6 (F/A/D/B/S/L); baseline của Day 7"},
+    "chunks_minilm": {"model": "sentence-transformers/all-MiniLM-L6-v2", "dims": 384, "kind_col": "strategy", "text_col": "text", "corpus": "Day 6 · EU AI Act + GDPR",
+                      "purpose": "Cùng các chunk, model MiniLM (so sánh model ở Day 6)"},
+    "chunks_gemma": {"model": "google/embeddinggemma-300m", "dims": 768, "kind_col": "strategy", "text_col": "text", "corpus": "Day 6 · EU AI Act + GDPR",
+                     "purpose": "Cùng các chunk, EmbeddingGemma-300m — cấu hình chốt của Day 7"},
+}
+KIND_LABEL = {"F": "F · cố định 500", "A": "A · 500 + overlap 50", "D": "D · đệ quy 800/80", "B": "B · theo cấu trúc (chọn)",
+              "S": "S · ngữ nghĩa", "L": "L · Haiku chia (mẫu)"}
+
+
+def _vt(table: str) -> dict:
+    if table not in VEC_TABLES:
+        raise ValueError("unknown table")
+    return VEC_TABLES[table]
+
+
+_FP: dict = {}
+
+
+def _fp() -> dict:
+    """Shazam-style fingerprint index (parser/audio_search.py), regrouped per (video, second) for browsing."""
+    if not _FP:
+        import audio_search as A
+        db = A._db(T.WORK)
+        per: dict = {}
+        for h, posts in db["index"].items():
+            f1, f2, dt = h >> 20, (h >> 8) & 0xFFF, h & 0xFF
+            for vid, frame in posts:
+                per.setdefault((vid, int(frame * A.FRAME_S)), []).append((f1, f2, dt, int(frame)))
+        _FP.update(A=A, keys=sorted(per), per=per, meta=db["meta"], melody=db["melody"],
+                   hz=A.SR / A.NFFT, frame_s=A.FRAME_S)
+    return _FP
+
+
+def fingerprint_summary() -> dict:
+    F = _fp()
+    kinds = [{"kind": f"hash:{v}", "label": f"vân âm thanh · {v}", "n": sum(1 for k in F["keys"] if k[0] == v)} for v in F["meta"]]
+    kinds += [{"kind": f"melody:{v}", "label": f"giai điệu (ngân nga) · {v}", "n": -(-F["melody"][v].shape[1] // 100)} for v in F["melody"]]
+    return {"table": "audio_fingerprint", "model": "Không phải embedding: hash cặp đỉnh phổ (Wang 2003) + đường cao độ pYIN",
+            "dims": None, "corpus": "Kitchen KB · 2 video", "total": sum(m["hashes"] for m in F["meta"].values()),
+            "purpose": "Shazam: mỗi hash = (tần số đỉnh 1, tần số đỉnh 2, khoảng cách thời gian) → (video, thời điểm). "
+                       "Ngân nga: bước cao độ (nửa cung) theo thời gian. Lưu trong fp_index.pkl, không trong pgvector.",
+            "kinds": kinds}
+
+
+def fingerprint_rows(kind: str, q: str, offset: int, limit: int = 20) -> dict:
+    F = _fp()
+    if kind.startswith("melody:"):
+        vid = kind.split(":", 1)[1]
+        c = F["melody"].get(vid)
+        if c is None:
+            raise ValueError("unknown video")
+        blocks = list(range(0, c.shape[1], 100))                          # ~100 contour points per row
+        rows = []
+        for b in blocks[offset:offset + limit]:
+            seg = c[:, b:b + 100]
+            t0, t1 = int(seg[1][0]), int(seg[1][-1])
+            iv = [round(float(x), 2) for x in seg[0]]
+            rows.append({"id": f"melody:{vid}@{t0}", "kind": kind, "kind_label": "giai điệu", "text": f"{len(iv)} bước cao độ, {t0}s–{t1}s",
+                         "media": {"audio": f"/media/audio/{vid}/{t0}", "label": f"âm thanh {t0 // 60}:{t0 % 60:02d}", "href": f"https://youtu.be/{vid}?t={t0}"},
+                         "meta": {"video": vid, "t": t0}, "melody": iv})
+        return {"table": "audio_fingerprint", "total": len(blocks), "offset": offset, "limit": limit, "rows": rows}
+    keys = [k for k in F["keys"] if not kind or kind == f"hash:{k[0]}"]
+    if q and q.replace(":", "").isdigit():                                # jump to a time like 5:40 or 340
+        sec = int(q.split(":")[0]) * 60 + int(q.split(":")[1]) if ":" in q else int(q)
+        keys = [k for k in keys if k[1] >= sec]
+    rows = []
+    for vid, sec in keys[offset:offset + limit]:
+        hs = F["per"][(vid, sec)]
+        rows.append({"id": f"fp:{vid}@{sec}", "kind": f"hash:{vid}", "kind_label": "vân âm thanh",
+                     "text": f"{len(hs)} hash trong giây {sec // 60}:{sec % 60:02d} · ví dụ " + ", ".join(
+                         f"({h[0] * F['hz']:.0f} Hz → {h[1] * F['hz']:.0f} Hz, +{h[2] * F['frame_s'] * 1000:.0f} ms)" for h in hs[:3]),
+                     "media": {"audio": f"/media/audio/{vid}/{sec}", "label": f"âm thanh {sec // 60}:{sec % 60:02d}", "href": f"https://youtu.be/{vid}?t={sec}"},
+                     "meta": {"video": vid, "t": sec, "hashes": len(hs)},
+                     "constellation": [[round((h[3] * F["frame_s"]) - sec, 3), h[0], round(h[2] * F["frame_s"], 3), h[1]] for h in hs[:60]]})
+    return {"table": "audio_fingerprint", "total": len(keys), "offset": offset, "limit": limit, "rows": rows}
+
+
+def vectors_summary() -> list[dict]:
+    out = []
+    with T.M._conn() as c:
+        for t, info in VEC_TABLES.items():
+            kinds = c.execute(f"SELECT {info['kind_col']}, count(*) FROM {t} GROUP BY 1 ORDER BY 2 DESC").fetchall()
+            out.append({"table": t, **{k: v for k, v in info.items() if k not in ("kind_col", "text_col")},
+                        "total": sum(n for _, n in kinds), "kinds": [{"kind": k, "label": KIND_LABEL.get(k, k), "n": n} for k, n in kinds]})
+    try:
+        out.append(fingerprint_summary())
+    except Exception as e:                       # index file missing -> show the other stores, report why
+        out.append({"table": "audio_fingerprint", "model": "unavailable", "dims": None, "corpus": "", "total": 0,
+                    "purpose": f"fp_index.pkl không đọc được: {type(e).__name__}", "kinds": []})
+    return out
+
+
+def _media_for(table: str, rid: str, kind: str, meta: dict) -> dict:
+    """What a human sees for this embedding: text, an image or an audio clip."""
+    m = re.match(r"(?:mm:)?(?:img|aud):yt:([\w-]{11})@([\d.]+)", rid)
+    if m and kind.startswith("audio"):
+        t = int(float(m.group(2)))
+        return {"audio": f"/media/audio/{m.group(1)}/{t}", "label": f"âm thanh {t // 60}:{t % 60:02d}–{(t + 5) // 60}:{(t + 5) % 60:02d}",
+                "href": f"https://youtu.be/{m.group(1)}?t={t}"}
+    if m:
+        t = int(float(m.group(2)))
+        return {"img": f"/media/still/{m.group(1)}/{t}", "label": f"khung {t // 60}:{t % 60:02d}", "href": f"https://youtu.be/{m.group(1)}?t={t}"}
+    m = re.match(r"img:yt:([\w-]{11}):(f_\d{3})", rid)
+    if m:
+        return {"img": f"/media/frame/{m.group(1)}/{m.group(2)}", "label": f"khung đổi cảnh {m.group(2)}"}
+    m = re.match(r"(?:mm:)?img:cookbook:fig:x(\d+)", rid)
+    if m:
+        return {"img": f"/media/figure/x{m.group(1)}", "label": f"hình x{m.group(1)} · {len(meta.get('pages') or [])} trang"}
+    m = re.match(r"(?:mm:)?img:cookbook:p(\d{3})", rid)
+    if m:
+        return {"img": f"/media/page/{int(m.group(1))}", "label": f"trang PDF {int(m.group(1))}"}
+    return {}
+
+
+def _vec_preview(vec_text: str) -> dict:
+    import numpy as np
+    v = np.array(json.loads(vec_text), dtype=np.float32)
+    return {"dims": int(v.size), "norm": round(float(np.linalg.norm(v)), 4), "head": [round(float(x), 4) for x in v[:8]],
+            "bars": [round(float(x), 3) for x in v[:: max(1, v.size // 96)][:96]],      # ~96 evenly spaced dims for the strip
+            "min": round(float(v.min()), 4), "max": round(float(v.max()), 4)}
+
+
+def _row_out(table: str, r: dict) -> dict:
+    info = VEC_TABLES[table]
+    meta = r.get("meta") or {}
+    rid, kind = r["id"], r["kind"]
+    if table.startswith("chunks_"):
+        text = r.get("text") or ""
+        meta = {"document": r.get("document_id"), "page": r.get("page"), "page_end": r.get("page_end"), "part": r.get("part"),
+                "article": r.get("article"), "annex": r.get("annex"), "strategy": kind}
+    else:
+        text = r.get("text") or meta.get("text") or meta.get("ocr") or meta.get("segment") or ""
+        if table == "kb_image" and kind == "tile":
+            text = f"tile {rid.split('#')[-1]} của {meta.get('parent')}"
+    media = _media_for(table, rid if kind != "tile" else (meta.get("parent") or rid), kind, meta)
+    keep = {k: meta.get(k) for k in ("recipe", "pdf_page", "pages", "printed_page", "page_type", "category", "t", "t0", "link", "video_title",
+                                     "document", "page", "page_end", "part", "article", "annex", "unit_id", "parent", "box", "extractor")
+            if meta.get(k) not in (None, "", [])}
+    return {"id": rid, "kind": kind, "kind_label": KIND_LABEL.get(kind, kind), "text": " ".join(text.split())[:420], "media": media,
+            "meta": keep, "vector": _vec_preview(r["e"])}
+
+
+def vectors_rows(table: str, kind: str, q: str, offset: int, limit: int = 20) -> dict:
+    info = _vt(table)
+    kc = info["kind_col"]
+    cols = ("chunk_id AS id, strategy AS kind, text, document_id, page, page_end, part, article, annex" if table.startswith("chunks_")
+            else "id, kind, meta" + (", text" if info["text_col"] else ""))
+    where, args = [], []
+    if kind:
+        where.append(f"{kc} = %s")
+        args.append(kind)
+    if q:
+        where.append(("text" if info["text_col"] else "meta::text") + " ILIKE %s" + (" OR id ILIKE %s" if not table.startswith("chunks_") else " OR chunk_id ILIKE %s"))
+        args += [f"%{q[:80]}%", f"%{q[:80]}%"]
+    w = (" WHERE " + " AND ".join(f"({x})" for x in where)) if where else ""
+    idcol = "chunk_id" if table.startswith("chunks_") else "id"
+    from psycopg.rows import dict_row
+    with T.M._conn() as c:
+        total = c.execute(f"SELECT count(*) FROM {table}{w}", args).fetchone()[0]
+        with c.cursor(row_factory=dict_row) as cur:
+            rows = cur.execute(f"SELECT {cols}, embedding::text AS e FROM {table}{w} ORDER BY {idcol} LIMIT %s OFFSET %s",
+                               args + [limit, max(0, offset)]).fetchall()
+    return {"table": table, "model": info["model"], "dims": info["dims"], "total": total, "offset": offset, "limit": limit,
+            "rows": [_row_out(table, r) for r in rows]}
+
+
+def vectors_nn(table: str, rid: str, k: int = 6) -> dict:
+    """Nearest neighbours of one stored vector inside the same table (cosine), excluding itself and its own tiles."""
+    info = _vt(table)
+    idcol = "chunk_id" if table.startswith("chunks_") else "id"
+    cols = ("chunk_id AS id, strategy AS kind, text, document_id, page, page_end, part, article, annex" if table.startswith("chunks_")
+            else "id, kind, meta" + (", text" if info["text_col"] else ""))
+    from psycopg.rows import dict_row
+    with T.M._conn() as c, c.cursor(row_factory=dict_row) as cur:
+        src = cur.execute(f"SELECT embedding::text AS e, {info['kind_col']} AS kind FROM {table} WHERE {idcol} = %s", (rid,)).fetchone()
+        if not src:
+            raise ValueError("unknown id")
+        same = f" AND strategy = %s" if table.startswith("chunks_") else (" AND kind <> 'tile'" if table == "kb_image" else "")
+        args = [src["e"], rid] + ([src["kind"]] if table.startswith("chunks_") else []) + [src["e"], k]
+        rows = cur.execute(f"SELECT {cols}, embedding::text AS e, 1 - (embedding <=> %s::vector) AS cos FROM {table} "
+                           f"WHERE {idcol} <> %s{same} ORDER BY embedding <=> %s::vector LIMIT %s", args).fetchall()
+    return {"table": table, "id": rid, "neighbours": [{**_row_out(table, r), "cos": round(float(r["cos"]), 4)} for r in rows]}
 
 
 def warm() -> None:

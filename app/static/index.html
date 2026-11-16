@@ -88,6 +88,23 @@ sup.c{display:inline-block;min-width:18px;padding:0 5px;margin:0 1px;border-radi
 .chk{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 10px}.chk span{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:2px 8px;background:var(--panel)}
 .chk .good{border-color:var(--ok);color:var(--ok)}.chk .bad{border-color:var(--bad);color:var(--bad)}
 @media(max-width:900px){.pdfgrid{grid-template-columns:1fr;grid-template-rows:55vh auto}.pdfsrc{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* vector explorer */
+#vec .view{max-width:1200px;margin:0 auto}
+.vcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-bottom:14px}
+.vcard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel);cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.vcard[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.vcard b{font-size:14px}.vcard .m{color:var(--muted);font-size:12px;margin:2px 0 6px}.vcard .n{font-size:20px;font-weight:650;letter-spacing:-.02em}
+.vbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 10px;font-size:13px}
+.vbar select,.vbar input{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);max-width:100%;min-width:0}
+.vrow{display:grid;grid-template-columns:150px minmax(0,1fr) 300px;gap:12px;border:1px solid var(--line);border-radius:12px;padding:10px;margin:0 0 8px;background:var(--panel);align-items:start}
+.vrow .vm img{width:150px;max-height:110px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#000}
+.vrow .vm audio{width:150px}.vrow .vm .lbl{font-size:11px;color:var(--muted);margin-top:3px}
+.vrow .vid{font:11.5px ui-monospace,Menlo,monospace;color:var(--muted);word-break:break-all}.vrow .vt{font-size:13px;margin:4px 0}
+.vrow .pill{font-size:11px}.vvec svg{width:100%;height:46px;display:block}.vvec .vh{font:11px ui-monospace,Menlo,monospace;color:var(--muted);word-break:break-all}
+.vnn{margin:4px 0 0 0;padding:8px 10px;border-left:3px solid var(--accent);background:var(--bg);border-radius:0 8px 8px 0}
+.vnn .vrow{grid-template-columns:110px minmax(0,1fr) 70px;background:var(--panel)}.vnn .vrow .vm img{width:110px;max-height:80px}
+@media(max-width:900px){.vrow{grid-template-columns:1fr}.vrow .vm img{width:100%;max-height:180px}.vnn .vrow{grid-template-columns:1fr}}
 /* pages tab */
 #pages{min-height:0}
 .side{width:300px;border-right:1px solid var(--line);display:flex;flex-direction:column;background:var(--panel)}
@@ -160,6 +177,7 @@ align-items:center;justify-content:center;z-index:9;font-size:22px;font-weight:6
     <button role="tab" aria-selected="false" data-tab="ingest">Dữ liệu đã nạp</button>
     <button role="tab" aria-selected="false" data-tab="graph">Graph</button>
     <button role="tab" aria-selected="false" data-tab="pipe">Pipeline</button>
+    <button role="tab" aria-selected="false" data-tab="vec">Kho vector</button>
   </nav>
 </header>
 <div id="drop">Thả ảnh hoặc âm thanh để tìm trong sách và video</div>
@@ -228,6 +246,9 @@ align-items:center;justify-content:center;z-index:9;font-size:22px;font-weight:6
     <div class="view" id="pview"><p class="muted">Chọn một trang hoặc video bên trái.</p></div>
   </section>
 
+  <!-- TAB: embedding databases explorer -->
+  <section class="tab" id="vec"><div class="view" id="vview"><p class="muted">Đang tải…</p></div></section>
+
   <!-- TAB 5: pipeline explained -->
   <section class="tab" id="pipe"><div class="view" id="pview2"><p class="muted">Đang tải…</p></div></section>
 
@@ -260,6 +281,7 @@ document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
   if (b.dataset.tab === "ingest" && !INV) loadInventory();
   if (b.dataset.tab === "graph" && !GRAPH) loadGraph();
   if (b.dataset.tab === "pipe" && !PIPE) loadPipeline();
+  if (b.dataset.tab === "vec" && !VSUM) loadVectors();
   if (b.dataset.tab === "pdf") pdfGo(PDFPAGE, true);
 });
 // ---------- markdown (small, escape-first) ----------
@@ -480,6 +502,82 @@ let METHODS = {};
   const keep = () => { try { localStorage.setItem("kb_methods", JSON.stringify({ method: $("#method").value, ib: $("#ibackend").value })); } catch {} };
   $("#method").onchange = keep; $("#ibackend").onchange = keep;
 })();
+
+// ---------- embedding databases explorer ----------
+let VSUM = null, VSTATE = { table: "kb_mm", kind: "", q: "", offset: 0 };
+function vecStrip(v) {
+  const W = 300, H = 46, n = v.bars.length, bw = W / n, mx = Math.max(1e-6, ...v.bars.map(Math.abs)), mid = H / 2;
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${v.dims} dims, norm ${v.norm}">
+    <line x1="0" x2="${W}" y1="${mid}" y2="${mid}" stroke="var(--line)"/>
+    ${v.bars.map((x, i) => { const h = Math.max(1, Math.abs(x) / mx * (mid - 2)); return `<rect x="${(i * bw).toFixed(2)}" width="${Math.max(1, bw - 1).toFixed(2)}" y="${x >= 0 ? mid - h : mid}" height="${h.toFixed(2)}" fill="${x >= 0 ? "#2a78d6" : "#eb6834"}"><title>dim ${i * Math.max(1, Math.floor(v.dims / 96))}: ${x}</title></rect>`; }).join("")}</svg>
+    <div class="vh">${v.dims}-d · ‖v‖=${v.norm} · min ${v.min} · max ${v.max}<br>[${v.head.join(", ")}, …]</div>`;
+}
+function vecMedia(m) {
+  if (m.audio) return `<audio controls preload="none" src="${esc(m.audio)}"></audio><div class="lbl">${esc(m.label)} · <a target="_blank" rel="noopener" href="${esc(m.href)}">YouTube</a></div>`;
+  if (m.img) return `<a target="_blank" rel="noopener" href="${esc(m.href || m.img)}"><img loading="lazy" alt="${esc(m.label)}" src="${esc(m.img)}"></a><div class="lbl">${esc(m.label)}</div>`;
+  return `<div class="lbl">văn bản</div>`;
+}
+function constellation(pts) {
+  const W = 300, H = 70, fmax = 512, x = t => (t * W).toFixed(1), y = f => (H - 4 - f / fmax * (H - 8)).toFixed(1);
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="fingerprint constellation">
+    <rect x="0" y="0" width="${W}" height="${H}" fill="none" stroke="var(--line)"/>
+    ${pts.map(([t, f1, dt, f2]) => `<line x1="${x(t)}" y1="${y(f1)}" x2="${x(Math.min(1, t + dt))}" y2="${y(f2)}" stroke="#2a78d6" stroke-opacity=".45"/>`).join("")}
+    ${pts.map(([t, f1]) => `<circle cx="${x(t)}" cy="${y(f1)}" r="2.2" fill="#eb6834"><title>đỉnh ${Math.round(f1 * 7.8)} Hz</title></circle>`).join("")}</svg>
+    <div class="vh">đỉnh phổ (cam) nối thành cặp (xanh): trục ngang = thời gian trong giây này, trục dọc = tần số 0–4 kHz</div>`;
+}
+function melodyStrip(iv) {
+  return vecStrip({ bars: iv, dims: iv.length, norm: "-", min: Math.min(...iv), max: Math.max(...iv), head: iv.slice(0, 8) })
+    .replace(/\d+-d · ‖v‖=- /, `${iv.length} bước cao độ (nửa cung) · `);
+}
+function vecRow(r, table, nn) {
+  if (r.constellation || r.melody) return `<div class="vrow"><div class="vm">${vecMedia(r.media || {})}</div>
+    <div><div class="vid">${esc(r.id)} · <b>${esc(r.kind_label)}</b></div><div class="vt">${esc(r.text)}</div></div>
+    <div class="vvec">${r.constellation ? constellation(r.constellation) : melodyStrip(r.melody)}</div></div>`;
+  const metaPills = Object.entries(r.meta).slice(0, 6).map(([k, v]) => `<span class="pill">${esc(k)}: ${esc(Array.isArray(v) ? (v.length > 6 ? v.slice(0, 6).join(",") + "…" : v.join(",")) : String(v).slice(0, 60))}</span>`).join("");
+  return `<div class="vrow"><div class="vm">${vecMedia(r.media || {})}</div>
+    <div><div class="vid">${esc(r.id)} · <b>${esc(r.kind_label)}</b>${r.cos != null ? ` · cos <b>${r.cos}</b>` : ""}</div>
+      ${r.text ? `<div class="vt">${esc(r.text)}</div>` : ""}<div>${metaPills}</div>
+      ${nn ? "" : `<button class="ib" style="height:28px;margin-top:6px;font-size:12px" data-nn="${esc(r.id)}">Gần nhất (cosine)</button><div class="nnbox"></div>`}</div>
+    <div class="vvec">${nn ? `<b style="font-size:18px">${r.cos}</b><div class="vh">cosine</div>` : vecStrip(r.vector)}</div></div>`;
+}
+async function loadVectors() {
+  VSUM = await fetch("/api/vectors/summary").then(r => r.json());
+  const total = VSUM.reduce((a, t) => a + t.total, 0);
+  const nvec = VSUM.filter(t => t.dims).reduce((a, t) => a + t.total, 0);
+  $("#vview").innerHTML = `<h2 style="margin-top:0">Kho vector · ${nvec.toLocaleString()} embedding trong ${VSUM.filter(t => t.dims).length} bảng pgvector + chỉ mục vân âm thanh</h2>
+    <p class="muted">Mỗi dòng là một vector đã lưu: nội dung người đọc được (chữ, ảnh, đoạn âm thanh) bên trái, chính vector bên phải
+    (dải cột = các chiều được lấy mẫu đều, xanh dương dương / cam âm). "Gần nhất" tính cosine trong cùng bảng.</p>
+    <div class="vcards">${VSUM.map(t => `<button class="vcard" data-t="${t.table}" aria-pressed="${t.table === VSTATE.table}"><b>${esc(t.table)}</b>
+      <div class="m">${esc(t.model)}${t.dims ? " · " + t.dims + "-d" : ""} · ${esc(t.corpus)}</div><div class="n">${t.total.toLocaleString()}</div>
+      <div class="m">${esc(t.purpose)}</div><div>${t.kinds.map(k => `<span class="pill">${esc(k.label)}: ${k.n.toLocaleString()}</span>`).join("")}</div></button>`).join("")}</div>
+    <div class="vbar"><select id="vkind" aria-label="Loại"></select><input id="vq" placeholder="Tìm trong nội dung / id… (vd: egg, Article 99; với vân âm thanh: 5:40)" style="flex:1;min-width:200px">
+      <button class="ib" id="vprev">‹</button><span class="muted" id="vpage"></span><button class="ib" id="vnext">›</button></div>
+    <div id="vrows"></div>`;
+  document.querySelectorAll(".vcard").forEach(b => b.onclick = () => { VSTATE = { table: b.dataset.t, kind: "", q: "", offset: 0 }; $("#vq").value = "";
+    document.querySelectorAll(".vcard").forEach(x => x.setAttribute("aria-pressed", x === b)); vecKinds(); vecLoad(); });
+  let tmr; $("#vq").oninput = () => { clearTimeout(tmr); tmr = setTimeout(() => { VSTATE.q = $("#vq").value.trim(); VSTATE.offset = 0; vecLoad(); }, 300); };
+  $("#vkind").onchange = () => { VSTATE.kind = $("#vkind").value; VSTATE.offset = 0; vecLoad(); };
+  $("#vprev").onclick = () => { VSTATE.offset = Math.max(0, VSTATE.offset - 20); vecLoad(); };
+  $("#vnext").onclick = () => { VSTATE.offset += 20; vecLoad(); };
+  vecKinds(); vecLoad();
+}
+function vecKinds() { const t = VSUM.find(x => x.table === VSTATE.table);
+  $("#vkind").innerHTML = `<option value="">Mọi loại (${t.total.toLocaleString()})</option>` + t.kinds.map(k => `<option value="${esc(k.kind)}">${esc(k.label)} (${k.n.toLocaleString()})</option>`).join(""); }
+async function vecLoad() {
+  const { table, kind, q, offset } = VSTATE;
+  $("#vrows").innerHTML = `<p class="muted">Đang tải…</p>`;
+  const d = await fetch(`/api/vectors?table=${encodeURIComponent(table)}&kind=${encodeURIComponent(kind)}&q=${encodeURIComponent(q)}&offset=${offset}`).then(r => r.json());
+  if (d.error) { $("#vrows").innerHTML = `<p class="flag">${esc(d.error)}</p>`; return; }
+  if (offset >= d.total && d.total > 0) { VSTATE.offset = Math.max(0, d.total - 20); return vecLoad(); }
+  $("#vpage").textContent = d.total ? `${offset + 1}–${Math.min(offset + d.limit, d.total)} / ${d.total.toLocaleString()}` : "0 kết quả";
+  $("#vrows").innerHTML = d.rows.map(r => vecRow(r, table)).join("") || `<p class="muted">Không có dòng nào khớp.</p>`;
+  document.querySelectorAll("#vrows [data-nn]").forEach(b => b.onclick = async () => {
+    const box = b.nextElementSibling; if (box.innerHTML) { box.innerHTML = ""; return; }
+    box.innerHTML = `<p class="muted">Đang tính cosine…</p>`;
+    const n = await fetch(`/api/vectors/nn?table=${encodeURIComponent(table)}&id=${encodeURIComponent(b.dataset.nn)}`).then(r => r.json());
+    box.innerHTML = n.error ? `<p class="flag">${esc(n.error)}</p>` : `<div class="vnn">${n.neighbours.map(x => vecRow(x, table, true)).join("")}</div>`;
+  });
+}
 // ---------- PDF tab: original PDF next to the extraction of the same page ----------
 let PDFPAGE = 12, PMETA = null;
 async function pdfGo(n, force) {
@@ -523,7 +621,8 @@ function hbar(data, { color = "var(--s1)", unit = "", max = null, w = 480 } = {}
     <line x1="${padL}" x2="${padL}" y1="2" y2="${H - 4}" stroke="var(--grid)"/>
     ${data.map((d, i) => { const y = 4 + i * rowH, bw = Math.max(2, sc(d[1])), c = d[2] || color;
       return `<g><text x="${padL - 6}" y="${y + 14}" text-anchor="end">${esc(d[0])}</text>
-      <path class="bar" d="M${padL},${y + 3} h${bw - 4} a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-${bw - 4} z" fill="${c}"><title>${esc(d[0])}: ${fmt(d[1])}${unit}</title></path>
+      ${bw >= 8 ? `<path class="bar" d="M${padL},${y + 3} h${bw - 4} a4,4 0 0 1 4,4 v6 a4,4 0 0 1 -4,4 h-${bw - 4} z" fill="${c}"><title>${esc(d[0])}: ${fmt(d[1])}${unit}</title></path>`
+        : `<rect class="bar" x="${padL}" y="${y + 3}" width="${bw}" height="14" rx="1" fill="${c}"><title>${esc(d[0])}: ${fmt(d[1])}${unit}</title></rect>`}
       <text x="${padL + bw + 5}" y="${y + 14}">${fmt(d[1])}${unit}</text></g>`; }).join("")}</svg>`;
 }
 function chart(title, cap, svg) { return `<div class="chart"><h4>${title}</h4><p class="cap">${cap}</p>${svg}</div>`; }
