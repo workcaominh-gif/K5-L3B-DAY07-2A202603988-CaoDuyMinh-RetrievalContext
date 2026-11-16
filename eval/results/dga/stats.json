@@ -1,0 +1,175 @@
+{
+ "document": "Dietary Guidelines for Americans 2020-2025 (USDA & HHS, 9th ed., Dec 2020), 164 PDF pages",
+ "pages_processed": 164,
+ "pages_missing": [],
+ "pages_by_model": {
+  "claude-haiku-5-5": 85,
+  "claude-sonnet-5-5": 79
+ },
+ "api_calls": 180,
+ "api_errors": [],
+ "tokens": {
+  "input": 1175639,
+  "output": 446937
+ },
+ "tokens_by_model": {
+  "claude-haiku-5-5": {
+   "in": 612972,
+   "out": 154362,
+   "cost_usd": 0.1384
+  },
+  "claude-sonnet-5-5": {
+   "in": 562667,
+   "out": 292575,
+   "cost_usd": 4.0511
+  }
+ },
+ "cost_usd_total_incl_reruns": 4.1895,
+ "regions_by_kind": {
+  "image": 145,
+  "diagram": 19,
+  "table": 32,
+  "text": 13,
+  "chart": 58
+ },
+ "facts": 1986,
+ "units_by_kind": {
+  "page": 164,
+  "chunk": 268,
+  "facts": 321,
+  "image": 164,
+  "image:crop": 254,
+  "image:page": 164,
+  "table_row": 457,
+  "table": 42,
+  "box": 13,
+  "chart": 73
+ },
+ "units_total": 1920,
+ "verification": {
+  "pages": 164,
+  "printed_numbers": {
+   "table_cells": {
+    "checked": 3182,
+    "found_in_text_layer": 3182,
+    "rate": 1.0
+   },
+   "chart_printed": {
+    "checked": 171,
+    "found_in_text_layer": 171,
+    "rate": 1.0
+   },
+   "facts": {
+    "checked": 6374,
+    "found_in_text_layer": 6176,
+    "rate": 0.9689
+   }
+  },
+  "pages_with_>=3_hard_mismatches": [],
+  "charts": {
+   "regions": 37,
+   "compared": 36,
+   "points": 537,
+   "points_ok": 529,
+   "points_added_from_geometry": 124,
+   "status": {
+    "no_vertical_axis": 1,
+    "compared": 36
+   },
+   "point_agreement": 0.9851
+  }
+ },
+ "low_confidence_pages": [
+  [
+   91,
+   0.6
+  ],
+  [
+   93,
+   0.6
+  ],
+  [
+   96,
+   0.6
+  ],
+  [
+   99,
+   0.6
+  ],
+  [
+   111,
+   0.6
+  ],
+  [
+   113,
+   0.6
+  ],
+  [
+   127,
+   0.6
+  ],
+  [
+   140,
+   0.6
+  ],
+  [
+   163,
+   0.3
+  ]
+ ],
+ "illegible": {
+  "43": [
+   "Bar values are estimates read from geometry"
+  ],
+  "72": [
+   "Text cut off at bottom of page at 'After'; continuation on next page.",
+   "Figure region at the bottom (child with food on tray photo) not transcribed as a structured region in the html placeholder"
+  ],
+  "79": [
+   "All chart values are estimated from geometry; no values printed"
+  ],
+  "91": [
+   "Chart values are estimated from geometry, so they are approximate"
+  ],
+  "93": [
+   "Chart values are estimated from geometry; no values printed."
+  ],
+  "96": [
+   "Recommended range ends not given numerically; bars not enumerated"
+  ],
+  "99": [
+   "Chart values are estimated from geometry"
+  ],
+  "111": [
+   "Dot and range values are estimated from geometry"
+  ],
+  "113": [
+   "Recommended range endpoints not extracted for all categories; dot values estimated from geometry"
+  ],
+  "127": [
+   "Recommended range ends not itemized",
+   "Dot values are estimates"
+  ],
+  "140": [
+   "Recommended range ends for many categories are estimated from geometry and not all are listed"
+  ],
+  "163": [
+   "Page appears blank with a solid light teal background; no text layer and no printed content visible."
+  ]
+ },
+ "corrected_pages": [
+  19,
+  45,
+  47,
+  62,
+  70,
+  75,
+  81,
+  91,
+  93,
+  99,
+  103,
+  111,
+  117
+ ]
+}
