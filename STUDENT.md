@@ -12,6 +12,12 @@ Cấu hình chốt: [eval/LOCKED.md](eval/LOCKED.md) · Kết quả: [eval/resul
 
 ## Chạy lại
 
+**Dựng lại vector store (nếu chưa có Day 6):** clone repo public
+[K5-L3B-DAY06-2A202603988-DataIngestion](https://github.com/workcaominh-gif/K5-L3B-DAY06-2A202603988-DataIngestion) đặt cạnh
+thư mục này (`AI20K/Day 6/…` và `AI20K/Day 7/…`), làm theo phần "Cài đặt và chạy" của README Day 6: tạo venv, `.env` từ `.env.example`,
+`docker compose -p day6_student_starter up -d --wait`, đặt 2 PDF theo `data/manifest.json` (nguồn công khai, không commit), rồi
+`python -m src.run ingest` → bảng `chunks_bge` / `chunks_gemma` (chunking B) mà Day 7 dùng. Không cần chạy lại `llm` (đã cache).
+
 Yêu cầu: Postgres/pgvector của Day 6 đang chạy (`docker start day6_student_starter-postgres-1`), venv Day 6 (có torch,
 sentence-transformers, rank_bm25, anthropic), `ANTHROPIC_API_KEY` trong `.env` của Day 6 (không có trong repo này).
 

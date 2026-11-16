@@ -117,7 +117,7 @@ Interface), mô tả trong `parser/PIPELINE.md`:
   vân âm thanh kiểu Shazam (100% với đoạn 3–10 s sạch và SNR 10 dB), giọng nói (Whisper), ngân nga (pYIN + DTW; chỉ đáng tin
   với đoạn có nhạc). Kết quả trong `eval/results/kitchen/`.
 - **Agent và giao diện:** Claude Sonnet 5.5 ReAct với 8 tool (thêm `view_candidates` cho model tự nhìn ảnh, `get_recipe` để kiểm
-  chứng), verifier tự sửa (tối đa 2 lần), prompt caching + cache câu trả lời, web 7 tab (Agent, PDF ↔ kết quả, trang khó → HTML,
+  chứng), verifier tự sửa (tối đa 2 lần), prompt caching + cache câu trả lời, web 9 tab (Agent, PDF ↔ kết quả, trang khó → HTML, kho vector, so sánh truy xuất,
   dữ liệu đã nạp, Graph, Pipeline).
 - **Thử thách nâng cao (+15):** **không đăng ký.** Sách không có biểu đồ (yêu cầu ≥ 5 câu biểu đồ) và chưa có test 30 câu chấm
   tay theo `ADVANCED.md`.
