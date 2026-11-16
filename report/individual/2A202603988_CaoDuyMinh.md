@@ -119,10 +119,41 @@ Interface), mô tả trong `parser/PIPELINE.md`:
 - **Agent và giao diện:** Claude Sonnet 5.5 ReAct với 8 tool (thêm `view_candidates` cho model tự nhìn ảnh, `get_recipe` để kiểm
   chứng), verifier tự sửa (tối đa 2 lần), prompt caching + cache câu trả lời, web 9 tab (Agent, PDF ↔ kết quả, trang khó → HTML, kho vector, so sánh truy xuất,
   dữ liệu đã nạp, Graph, Pipeline).
-- **Thử thách nâng cao (+15):** **không đăng ký.** Sách không có biểu đồ (yêu cầu ≥ 5 câu biểu đồ) và chưa có test 30 câu chấm
-  tay theo `ADVANCED.md`.
+
+## Thử thách nâng cao (+15): Dietary Guidelines for Americans 2020–2025
+
+- **Tài liệu:** DGA 2020–2025 (USDA + HHS, ấn bản 9, 12/2020, tài liệu chính phủ Mỹ — public domain), 164 trang PDF có chữ,
+  ~32 bảng, 58 biểu đồ (dot-range, donut, cột), ảnh/sơ đồ. Nguồn: dietaryguidelines.gov (sha256 trong `benchmark/dga/README.md`);
+  PDF không commit, tải lại theo link.
+- **Pipeline + index** (`parser/DGA_PIPELINE.md`): 164/164 trang; Sonnet 5.5 đọc 79 trang có hình/bảng, Haiku 5.5 đọc 85 trang chữ
+  ($4,19). Mỗi vùng bảng/biểu đồ/ảnh có bbox + crop. Kiểm chứng với bản gốc: 3.182/3.182 ô bảng và 171/171 nhãn biểu đồ khớp
+  text layer; giá trị đọc trên trục biểu đồ so với toạ độ vector của PDF: 529/537 điểm khớp (≤ 0,2 vạch). Bảng `dga_units`:
+  1.920 unit (trang, chunk, fact, bảng, hàng bảng, biểu đồ, ảnh + vector ảnh crop/trang), EmbeddingGemma 2 768-d + tsvector.
+  Chưa xử lý trọn: Figure 1-6 (cột ngang %, chỉ có ước lượng của model), chú thích dưới bảng nằm ngoài crop, p.163 trống.
+- **Benchmark** (`benchmark/dga/`, chốt và push trước mọi thử nghiệm, commit cb99f09): dev 22 (18 có đáp án + 4 thiếu bằng
+  chứng), test 30 (bảng 6, ảnh 5, biểu đồ 5, multi-hop 4, text 4, thiếu bằng chứng 6); evidence theo trang/vùng + crop;
+  `eval/dga_verify_benchmark.py` kiểm lại (PASS). Pipeline không đọc benchmark.
+- **Chọn cấu hình trên dev** (`eval/DGA_LOCKED.md`, commit 325b712 trước khi chạy test): text 8/22 → regions 19/22 →
+  **vision 20/22** (agent Sonnet 5.5 tự xem crop gốc của bảng/biểu đồ).
+- **Test (chạy một lần, cấu hình vision):** 30 câu, 0 lỗi, trung vị 4,9 s/câu, agent $0,50 + judge $0,31.
+
+| Nhãn | Đạt | Bảng | Ảnh | Biểu đồ | Multi-hop | Text | Thiếu bằng chứng |
+|---|---|---|---|---|---|---|---|
+| Tự động (kiểm citation tất định + judge Sonnet 5.5, DRAFT) | 26/30 (86,7%) | 6/6 | 4/5 | 4/5 | 2/4 | 4/4 | 6/6 |
+| Sau khi xem crop gốc của 4 câu trượt (đề xuất) | 29/30 (96,7%) | 6/6 | 4/5 | 5/5 | 4/4 | 4/4 | 6/6 |
+| **Duyệt tay (chính thức)** | _đang duyệt — `eval/results/dga/REVIEW_test.md`_ | | | | | | |
+
+  Cả 4 câu trượt tự động đều được judge xác nhận đúng số; chúng trượt ở kiểm tra citation tất định vì agent cite **vùng khác
+  vùng gold nhưng cũng chứa bằng chứng**: t18 cite Table 4-1 (cùng số với Table A3-2 gold), t19 cite Figure 1-4 (có cả 51 và
+  63), t16 cite đúng Figure 2-2 nhưng không cite đoạn văn bổ trợ p.79. t10 là lỗi thật: trả đúng số nhưng chỉ cite trang/fact,
+  không cite vùng Figure 1-9. Bài học: benchmark nên ghi các vị trí bằng chứng thay thế (như Day 6 có `alternatives`) — **không
+  sửa gold test sau khi đã xem kết quả**; ghi lại làm hạn chế.
+- **Hạn chế:** judge LLM có lúc chấm khác nhau cho cùng câu trả lời (thấy trên dev) → nhãn chính thức là nhãn duyệt tay;
+  multi-hop là nhóm yếu nhất trên dev; tổng chi phí phần nâng cao ≈ $9 (trích xuất $4,19, dev ≈ $4, test $0,81).
 
 ## Tái lập
+
+Nâng cao: `parser/dga_extract.py run` → `parser/dga_verify.py` → `parser/dga_index.py build`; `eval/dga_verify_benchmark.py`; `eval/dga_agent.py --config vision --split test`; `eval/dga_score.py --config vision --split test`; `eval/dga_review_sheet.py` (bảng duyệt tay).
 
 `STUDENT.md` có lệnh chạy. Phụ thuộc: Postgres/pgvector Day 6 đang chạy, venv Day 6 (torch, sentence-transformers,
 rank_bm25, anthropic), `ANTHROPIC_API_KEY` trong `.env` của Day 6 (không có trong repo). Test của đề: 15/15 pass.

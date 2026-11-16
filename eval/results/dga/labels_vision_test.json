@@ -1,0 +1,787 @@
+{
+ "summary": {
+  "config": "vision",
+  "split": "test",
+  "pass": "26/30",
+  "per_group": {
+   "table": "6/6",
+   "image": "4/5",
+   "chart": "4/5",
+   "multihop": "2/4",
+   "text": "4/4",
+   "none": "6/6"
+  },
+  "errors": 0,
+  "judge_errors": 0,
+  "median_seconds": 4.9,
+  "agent_cost_usd": 0.504,
+  "judge_cost_usd": 0.311,
+  "labels": "DRAFT (judge) - to be reviewed by hand"
+ },
+ "labels": [
+  {
+   "query_id": "t01",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The values 1½ cup eq/wk dark-green and 5½ cup eq/wk red & orange at 1,800 kcal match the gold answer. The cited p157 table supports dark-green, and its indexed text and crop also show 5½ for red & orange, so the agent's claim of truncated text is wrong but harmless. The p097 and p109 tables support 5½ as well."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2, rows 'Red and Orange Vegetables (cup eq/wk)' and 'Dark-Green Vegetables (cup eq/wk)', column '1,800'",
+      "satisfied_by": "dga:p157:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The values 1½ cup eq/wk dark-green and 5½ cup eq/wk red & orange at 1,800 kcal match the gold answer. The cited p157 table supports dark-green, and its indexed text and crop also show 5½ for red & orange, so the agent's claim of truncated text is wrong but harmless. The p097 and p109 tables support 5½ as well."
+  },
+  {
+   "query_id": "t02",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 2,800 (boy) and 2,000 (girl) calories/day with an 800 gap, matching the gold answer. The cited Table A2-2 row for age 16 shows Males Moderately Active 2,800 and Females Moderately Active 2,000, and the printed page 140 / PDF p.153 reference is correct."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 153,
+      "kind": "table",
+      "ref": "Table A2-2, row '16', columns Males 'Moderately Active' and Females 'Moderately Active'",
+      "satisfied_by": "dga:p153:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 2,800 (boy) and 2,000 (girl) calories/day with an 800 gap, matching the gold answer. The cited Table A2-2 row for age 16 shows Males Moderately Active 2,800 and Females Moderately Active 2,000, and the printed page 140 / PDF p.153 reference is correct."
+  },
+  {
+   "query_id": "t03",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives +330 calories/day and the derivation 500 − 170, which matches the gold. The cited Table 5-2 crop and its footnotes support all claims, including the 400 calories for the second 6 months, the IOM EER basis, and the healthy-weight condition. The mention of Table A2-3 on printed page 141 is not in the cited unit, but it is a minor extra detail."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 125,
+      "kind": "table",
+      "ref": "Table 5-2, row 'Lactation: 1st 6 months' + footnote b",
+      "satisfied_by": "dga:p125:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives +330 calories/day and the derivation 500 − 170, which matches the gold. The cited Table 5-2 crop and its footnotes support all claims, including the 400 calories for the second 6 months, the IOM EER basis, and the healthy-weight condition. The mention of Table A2-3 on printed page 141 is not in the cited unit, but it is a minor extra detail."
+  },
+  {
+   "query_id": "t04",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 240 kcal/day, 12%, and 5½ ounce-eq protein foods at the 2,000-calorie level for adults 60+, matching the gold answer. The cited Table 6-1 (pdf p.138, printed p.125) shows these values in the 2,000 column, so the citation supports every claim."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 138,
+      "kind": "table",
+      "ref": "Table 6-1, rows 'Limit on Calories for Other Uses (kcal/day)', '(%/day)', 'Protein Foods (ounce eq/day)', column '2,000'",
+      "satisfied_by": "dga:p138:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 240 kcal/day, 12%, and 5½ ounce-eq protein foods at the 2,000-calorie level for adults 60+, matching the gold answer. The cited Table 6-1 (pdf p.138, printed p.125) shows these values in the 2,000 column, so the citation supports every claim."
+  },
+  {
+   "query_id": "t05",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer correctly identifies BMI 27 as Overweight with total gain of 15-25 lb and weekly gain of 0.6 lb (range 0.5-0.7) in the 2nd and 3rd trimesters, matching the gold answer; the cited Table 5-3 supports every value. The first-trimester footnote is omitted, but the gold treats it as a parenthetical assumption."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 125,
+      "kind": "table",
+      "ref": "Table 5-3, row 'Overweight' (BMI 25-29.9)",
+      "satisfied_by": "dga:p125:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer correctly identifies BMI 27 as Overweight with total gain of 15-25 lb and weekly gain of 0.6 lb (range 0.5-0.7) in the 2nd and 3rd trimesters, matching the gold answer; the cited Table 5-3 supports every value. The first-trimester footnote is omitted, but the gold treats it as a parenthetical assumption."
+  },
+  {
+   "query_id": "t06",
+   "group": "table",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The values (dairy 2 cup eq/day, fruits 1 cup eq/day, grains 3 ounce eq/day) match the gold answer, and the whole/refined split of 2 and 1 ounce eq is also correct. Both cited tables (A3-1 on p.156 and Table 2-1 on p.77) show these 1,000-calorie values."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 156,
+      "kind": "table",
+      "ref": "Table A3-1, rows 'Dairy (cup eq/day)', 'Fruits (cup eq/day)', 'Grains (ounce eq/day)', column '1,000'",
+      "satisfied_by": "dga:p156:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The values (dairy 2 cup eq/day, fruits 1 cup eq/day, grains 3 ounce eq/day) match the gold answer, and the whole/refined split of 2 and 1 ounce eq is also correct. Both cited tables (A3-1 on p.156 and Table 2-1 on p.77) show these 1,000-calorie values."
+  },
+  {
+   "query_id": "t07",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives vegetable oil for butter and sparkling water for soda, matching the gold. The cited Figure 1-2 crop shows these as column pairs, with Vegetable Oil above Butter and Sparkling Water above Soda."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 35,
+      "kind": "figure",
+      "ref": "Figure 1-2 (Making Nutrient-Dense Choices: One Food or Beverage At a Time), columns 4 and 5",
+      "satisfied_by": "dga:p035:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives vegetable oil for butter and sparkling water for soda, matching the gold. The cited Figure 1-2 crop shows these as column pairs, with Vegetable Oil above Butter and Sparkling Water above Soda."
+  },
+  {
+   "query_id": "t08",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent lists both benefits from the gold answer (favorable cognitive development in the child, favorable folate status during pregnancy and lactation). The cited crop of Figure 1-3 on pdf p.37 shows exactly these two items in the 'Women Who Are Pregnant or Lactating' panel."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 37,
+      "kind": "figure",
+      "ref": "Figure 1-3, panel 'Women Who Are Pregnant or Lactating'",
+      "satisfied_by": "dga:p037:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent lists both benefits from the gold answer (favorable cognitive development in the child, favorable folate status during pregnancy and lactation). The cited crop of Figure 1-3 on pdf p.37 shows exactly these two items in the 'Women Who Are Pregnant or Lactating' panel."
+  },
+  {
+   "query_id": "t09",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 85% for nutrient-dense food group needs and 15% for other uses including added sugars and saturated fat, matching the figure. The 250-350 calorie detail is extra and not required; the cited Figure 1-7 supports every claim made."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 50,
+      "kind": "figure",
+      "ref": "Figure 1-7 (The 85-15 Guide)",
+      "satisfied_by": "dga:p050:r1"
+     },
+     {
+      "pdf_page": 50,
+      "kind": "text",
+      "ref": "PDF p.50 body text",
+      "satisfied_by": "dga:p050:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 85% for nutrient-dense food group needs and 15% for other uses including added sugars and saturated fat, matching the figure. The 250-350 calorie detail is extra and not required; the cited Figure 1-7 supports every claim made."
+  },
+  {
+   "query_id": "t10",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 375, 715, 585 and 300 calories and a correct sum of 1,975, matching the gold. Each figure is backed by the cited units: p52 chunk for breakfast and lunch, p53 facts for dinner and snacks, and the 'under 2,000' wording. The page's 'total of 2,000' line is also in the cited facts, so the note about rounding is supported."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 52,
+      "kind": "figure",
+      "ref": "Figure 1-9 (Making Healthy Choices: One Day At a Time), Breakfast and Lunch panels",
+      "satisfied_by": null
+     },
+     {
+      "pdf_page": 53,
+      "kind": "figure",
+      "ref": "Figure 1-9 (continued), Dinner and Snacks panels",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.52 figure; p.53 figure"
+   ],
+   "reason": "The answer gives 375, 715, 585 and 300 calories and a correct sum of 1,975, matching the gold. Each figure is backed by the cited units: p52 chunk for breakfast and lunch, p53 facts for dinner and snacks, and the 'under 2,000' wording. The page's 'total of 2,000' line is also in the cited facts, so the note about rounding is supported."
+  },
+  {
+   "query_id": "t11",
+   "group": "image",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold swaps (fried vegetables -> roasted vegetables; high-sodium meats -> ground lean meats), and the cited Figure 2-1 crop shows both arrows, the title, and six photo pairs."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 76,
+      "kind": "figure",
+      "ref": "Figure 2-1 (Make Healthy Shifts To Empower Toddlers ...), arrows 'Fried Vegetables -> Roasted Vegetables' and 'High-sodium Meats -> Ground Lean Meats'",
+      "satisfied_by": "dga:p076:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold swaps (fried vegetables -> roasted vegetables; high-sodium meats -> ground lean meats), and the cited Figure 2-1 crop shows both arrows, the title, and six photo pairs."
+  },
+  {
+   "query_id": "t12",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 62 calories from popcorn, 122 from butter, 184 total, and 122/184 ≈ 66%, matching the gold answer. The cited Figure 1-1 chart text and crop show these exact values for the 2-cup movie-theater popcorn bar, and printed page 21 matches the page the chart is on."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 34,
+      "kind": "figure",
+      "ref": "Figure 1-1, bar 'Movie Theater-Style Popcorn With Butter, 2 cups'",
+      "satisfied_by": "dga:p034:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 62 calories from popcorn, 122 from butter, 184 total, and 122/184 ≈ 66%, matching the gold answer. The cited Figure 1-1 chart text and crop show these exact values for the 2-cup movie-theater popcorn bar, and printed page 21 matches the page the chart is on."
+  },
+  {
+   "query_id": "t13",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives sugar-sweetened beverages at 24% and soft drinks at 16% as the largest item within them, matching the gold answer. Both claims, plus the extra details (Desserts & Sweet Snacks 19%, fruit drinks 5%, sport & energy drinks 2%), are shown in the cited Figure 1-10 regions r1 and r2."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 56,
+      "kind": "figure",
+      "ref": "Figure 1-10, largest bubble 'Sugar-Sweetened Beverages' and inset 'Within Sugar-Sweetened Beverages'",
+      "satisfied_by": "dga:p056:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives sugar-sweetened beverages at 24% and soft drinks at 16% as the largest item within them, matching the gold answer. Both claims, plus the extra details (Desserts & Sweet Snacks 19%, fruit drinks 5%, sport & energy drinks 2%), are shown in the cited Figure 1-10 regions r1 and r2."
+  },
+  {
+   "query_id": "t14",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer correctly identifies sodium (girls 95%, boys 97%, so boys are slightly worse) and gives the correct comparison values of 88% and 57%. The cited figure region shows these exact labels under the right headers, so every claim is supported."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 90,
+      "kind": "figure",
+      "ref": "Figure 3-2, bottom panel 'Percent Exceeding Limits of Added Sugars, Saturated Fat, and Sodium'",
+      "satisfied_by": "dga:p090:r3"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer correctly identifies sodium (girls 95%, boys 97%, so boys are slightly worse) and gives the correct comparison values of 88% and 57%. The cited figure region shows these exact labels under the right headers, so every claim is supported."
+  },
+  {
+   "query_id": "t15",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives adult women 54, pregnant 63, lactating 62 and the correct 9-point difference. The cited Figure 5-1 crop shows exactly these labeled values, and the extra differences (8 and 1) are computed correctly."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 126,
+      "kind": "figure",
+      "ref": "Figure 5-1, right panel 'Healthy Eating Index Score (on a scale of 0-100)'",
+      "satisfied_by": "dga:p126:r2"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives adult women 54, pregnant 63, lactating 62 and the correct 9-point difference. The cited Figure 5-1 crop shows exactly these labeled values, and the extra differences (8 and 1) are computed correctly."
+  },
+  {
+   "query_id": "t16",
+   "group": "chart",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer names the right groups: grains, dairy and fruits are above range, and vegetables is the only group below. It gives fruit and vegetable values within tolerance and says it didn't read the grains and dairy values, which is acceptable because the question asks which groups, not the values. The cited chart summary and facts support all claims, including the 0.5 vegetable average, which is close to 0.55 and within ±0.1."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 78,
+      "kind": "figure",
+      "ref": "Figure 2-2, top panel 'Average Daily Food Group Intakes Compared to Recommended Intake Ranges'",
+      "satisfied_by": "dga:p078:r1"
+     },
+     {
+      "pdf_page": 79,
+      "kind": "text",
+      "ref": "PDF p.79 body text",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.79 text"
+   ],
+   "reason": "The answer names the right groups: grains, dairy and fruits are above range, and vegetables is the only group below. It gives fruit and vegetable values within tolerance and says it didn't read the grains and dairy values, which is acceptable because the question asks which groups, not the values. The cited chart summary and facts support all claims, including the 0.5 vegetable average, which is close to 0.55 and within ±0.1."
+  },
+  {
+   "query_id": "t17",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 16 (Mediterranean) minus 10 (U.S.-Style) = 6 ounce eq/week at 2,400 calories, matching the gold answer. Both cited tables (A3-5 on pdf p.162, A3-2 on pdf p.157) show those seafood values in the 2,400 column."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 162,
+      "kind": "table",
+      "ref": "Table A3-5 (Mediterranean), row 'Seafood (ounce eq/wk)', column '2,400'",
+      "satisfied_by": "dga:p162:r1"
+     },
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2 (U.S.-Style), row 'Seafood (ounce eq/wk)', column '2,400'",
+      "satisfied_by": "dga:p157:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 16 (Mediterranean) minus 10 (U.S.-Style) = 6 ounce eq/week at 2,400 calories, matching the gold answer. Both cited tables (A3-5 on pdf p.162, A3-2 on pdf p.157) show those seafood values in the 2,400 column."
+  },
+  {
+   "query_id": "t18",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 2,000 kcal, 2½ cup-eq vegetables and 2 cup-eq fruits daily, matching the gold; the sum of 4½ is correct. Both cited tables (A2-2 for 26-30 moderately active females, and Table 4-1 for the 2,000 column) support the claims, and the page references (printed p.140 and p.96) are consistent with the cited units."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 153,
+      "kind": "table",
+      "ref": "Table A2-2, row '26-30', Females 'Moderately Active'",
+      "satisfied_by": "dga:p153:r1:1"
+     },
+     {
+      "pdf_page": 157,
+      "kind": "table",
+      "ref": "Table A3-2, rows 'Vegetables (cup eq/day)' and 'Fruits (cup eq/day)', column '2,000'",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.157 table"
+   ],
+   "reason": "The answer gives 2,000 kcal, 2½ cup-eq vegetables and 2 cup-eq fruits daily, matching the gold; the sum of 4½ is correct. Both cited tables (A2-2 for 26-30 moderately active females, and Table 4-1 for the 2,000 column) support the claims, and the page references (printed p.140 and p.96) are consistent with the cited units."
+  },
+  {
+   "query_id": "t19",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 63 and 51 with a difference of 12, matching the gold. Figure 1-4 (p039) shows 63 for ages 60+ and 51 for ages 14-18, Figure 3-1 (p088) shows 51 for ages 14-18, and the Chapter 6 facts unit (p139) gives 63 for ages 60+, so every claim is supported."
+   },
+   "citation_check": {
+    "ok": false,
+    "evidence": [
+     {
+      "pdf_page": 98,
+      "kind": "figure",
+      "ref": "Figure 3-8, 'Healthy Eating Index Score (on a scale of 0-100)' bubble",
+      "satisfied_by": null
+     },
+     {
+      "pdf_page": 140,
+      "kind": "text",
+      "ref": "PDF p.140 body text",
+      "satisfied_by": null
+     }
+    ]
+   },
+   "pass": false,
+   "fail_reasons": [
+    "citation does not identify gold page/region: p.98 figure; p.140 text"
+   ],
+   "reason": "The answer gives 63 and 51 with a difference of 12, matching the gold. Figure 1-4 (p039) shows 63 for ages 60+ and 51 for ages 14-18, Figure 3-1 (p088) shows 51 for ages 14-18, and the Chapter 6 facts unit (p139) gives 63 for ages 60+, so every claim is supported."
+  },
+  {
+   "query_id": "t20",
+   "group": "multihop",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives 1,800 + 340 = 2,140 calories/day, matching the gold. Table A2-2 (26-30 sedentary female = 1,800) and Table 5-2 (2nd trimester +340, healthy prepregnancy weight) support the figures. The p.152 passage supports the caveats about estimates, multiples, weight gain, and following a healthcare provider's guidance."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 153,
+      "kind": "table",
+      "ref": "Table A2-2, row '26-30', Females 'Sedentary'",
+      "satisfied_by": "dga:p153:r1"
+     },
+     {
+      "pdf_page": 125,
+      "kind": "table",
+      "ref": "Table 5-2, row 'Pregnancy: 2nd trimester'",
+      "satisfied_by": "dga:p125:r1"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives 1,800 + 340 = 2,140 calories/day, matching the gold. Table A2-2 (26-30 sedentary female = 1,800) and Table 5-2 (2nd trimester +340, healthy prepregnancy weight) support the figures. The p.152 passage supports the caveats about estimates, multiples, weight gain, and following a healthcare provider's guidance."
+  },
+  {
+   "query_id": "t21",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold: 4-6 months for infants with severe eczema or egg allergy, and first check with the healthcare provider (blood test or skin prick may be recommended). Every claim, including the extra note on delaying allergenic foods, is backed by the cited p.71 text."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 71,
+      "kind": "text",
+      "ref": "PDF p.71 body text",
+      "satisfied_by": "dga:p071:f0"
+     },
+     {
+      "pdf_page": 71,
+      "kind": "text",
+      "ref": "PDF p.71 body text",
+      "satisfied_by": "dga:p071:f0"
+     },
+     {
+      "pdf_page": 71,
+      "kind": "text",
+      "ref": "PDF p.71 body text",
+      "satisfied_by": "dga:p071:f0"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold: 4-6 months for infants with severe eczema or egg allergy, and first check with the healthcare provider (blood test or skin prick may be recommended). Every claim, including the extra note on delaying allergenic foods, is backed by the cited p.71 text."
+  },
+  {
+   "query_id": "t22",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives the gold values (about 300 mg or less per day, about 2-3 cups of coffee) and the small-amount transfer into breast milk, and both cited units on p.131 state this. The extra claims about varying caffeine content and consulting a healthcare provider are also in the cited text, and the 'Chapter 5, printed page 118' source line matches the header."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 131,
+      "kind": "text",
+      "ref": "PDF p.131 body text",
+      "satisfied_by": "dga:p131:c0"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives the gold values (about 300 mg or less per day, about 2-3 cups of coffee) and the small-amount transfer into breast milk, and both cited units on p.131 state this. The extra claims about varying caffeine content and consulting a healthcare provider are also in the cited text, and the 'Chapter 5, printed page 118' source line matches the header."
+  },
+  {
+   "query_id": "t23",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer matches the gold values: 2 drinks or less for men and 1 or less for women on days alcohol is consumed, not an average over several days, and one drink equals 14 g (0.6 fl oz) pure alcohol with the beer, wine and spirits equivalents. The cited p.62 text states each of these claims, including the extra binge-drinking detail."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 62,
+      "kind": "text",
+      "ref": "PDF p.62 body text",
+      "satisfied_by": "dga:p062"
+     },
+     {
+      "pdf_page": 62,
+      "kind": "text",
+      "ref": "PDF p.62 body text",
+      "satisfied_by": "dga:p062"
+     },
+     {
+      "pdf_page": 62,
+      "kind": "text",
+      "ref": "PDF p.62 body text",
+      "satisfied_by": "dga:p062"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer matches the gold values: 2 drinks or less for men and 1 or less for women on days alcohol is consumed, not an average over several days, and one drink equals 14 g (0.6 fl oz) pure alcohol with the beer, wine and spirits equivalents. The cited p.62 text states each of these claims, including the extra binge-drinking detail."
+  },
+  {
+   "query_id": "t24",
+   "group": "text",
+   "status": "answered",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The answer gives folic acid (1,000 micrograms) and iron (45 milligrams) as the lactation ULs and advises consulting a healthcare provider, matching the gold answer. The cited chunk supports each claim, including the page and chapter source; the statement that no other nutrients are listed in the passage is also consistent with the text."
+   },
+   "citation_check": {
+    "ok": true,
+    "evidence": [
+     {
+      "pdf_page": 128,
+      "kind": "text",
+      "ref": "PDF p.128 body text",
+      "satisfied_by": "dga:p128:c0"
+     },
+     {
+      "pdf_page": 128,
+      "kind": "text",
+      "ref": "PDF p.128 body text",
+      "satisfied_by": "dga:p128:c0"
+     }
+    ]
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The answer gives folic acid (1,000 micrograms) and iron (45 milligrams) as the lactation ULs and advises consulting a healthcare provider, matching the gold answer. The cited chunk supports each claim, including the page and chapter source; the statement that no other nutrients are listed in the passage is also consistent with the text."
+  },
+  {
+   "query_id": "t25",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, saying the document lacks evidence on intermittent fasting or time-restricted eating, and gave no stance on the question. Its only factual claims describe what the searches returned (pregnancy calorie needs, estimated calorie needs by age and sex), which are plausible document content, and no citations were required."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, saying the document lacks evidence on intermittent fasting or time-restricted eating, and gave no stance on the question. Its only factual claims describe what the searches returned (pregnancy calorie needs, estimated calorie needs by age and sex), which are plausible document content, and no citations were required."
+  },
+  {
+   "query_id": "t26",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent correctly abstained, saying the document gives no acceptable daily intake value for aspartame or sucralose, and it offered no outside figure or guess. Its only claims describe its own searches and what they returned, and these are not factual claims about the document that would need citations."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent correctly abstained, saying the document gives no acceptable daily intake value for aspartame or sucralose, and it offered no outside figure or guess. Its only claims describe its own searches and what they returned, and these are not factual claims about the document that would need citations."
+  },
+  {
+   "query_id": "t27",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent correctly abstained, stating the document gives no glycemic index values. Its only factual claims, about white rice (1½ cups) and brown rice (1 cup) in the Figure 1-8 burrito bowls, are supported by the cited unit."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent correctly abstained, stating the document gives no glycemic index values. Its only factual claims, about white rice (1½ cups) and brown rice (1 cup) in the Figure 1-8 burrito bowls, are supported by the cited unit."
+  },
+  {
+   "query_id": "t28",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, saying the document has no evidence on organic produce or pesticide residues, and made no unsupported claim. Its descriptions of the food safety graphic (Clean, Separate, Cook, Chill) and the cover photo of a father and child washing a cucumber match the cited units."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, saying the document has no evidence on organic produce or pesticide residues, and made no unsupported claim. Its descriptions of the food safety graphic (Clean, Separate, Cook, Chill) and the cover photo of a father and child washing a cucumber match the cited units."
+  },
+  {
+   "query_id": "t29",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent abstained, saying the document has nothing on microplastic exposure from seafood, and gave no unsupported answer. Its description of the methylmercury advice (pregnant or lactating women, young children, choices higher in EPA/DHA and lower in methylmercury) matches the cited chunk."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent abstained, saying the document has nothing on microplastic exposure from seafood, and gave no unsupported answer. Its description of the methylmercury advice (pregnant or lactating women, young children, choices higher in EPA/DHA and lower in methylmercury) matches the cited chunk."
+  },
+  {
+   "query_id": "t30",
+   "group": "none",
+   "status": "abstain",
+   "labeler": "DRAFT: claude-sonnet-5-5 judge + deterministic citation check",
+   "judge": {
+    "correct_complete": true,
+    "supported": true,
+    "reason": "The agent correctly abstained, saying the document never addresses MSG as a hidden sodium source. Its three supporting claims (sodium as a flavor enhancer, most sodium coming from commercial processing and restaurant foods, and only a small share coming from inherent sodium or home and table salt) are all stated in the cited units."
+   },
+   "pass": true,
+   "fail_reasons": [],
+   "reason": "The agent correctly abstained, saying the document never addresses MSG as a hidden sodium source. Its three supporting claims (sodium as a flavor enhancer, most sodium coming from commercial processing and restaurant foods, and only a small share coming from inherent sodium or home and table salt) are all stated in the cited units."
+  }
+ ]
+}

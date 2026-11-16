@@ -1,0 +1,2037 @@
+{
+ "summary": {
+  "config": "vision",
+  "split": "test",
+  "model": "claude-sonnet-5-5",
+  "n": 30,
+  "errors": 0,
+  "answered": 24,
+  "abstained": 6,
+  "tool_calls_per_q": 1.73,
+  "cost_usd": 0.504,
+  "median_seconds": 4.9,
+  "this_run_cost_usd": 0.504
+ },
+ "rows": [
+  {
+   "query_id": "t01",
+   "split": "test",
+   "group": "table",
+   "question": "For a client on an 1,800-calorie Healthy U.S.-Style eating pattern (age 2+), how many cup-equivalents per week of red & orange vegetables and of dark-green vegetables does the pattern call for?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "At the 1,800-calorie level, the Healthy U.S.-Style Dietary Pattern for ages 2 and older (Table A3-2, printed p. 144) calls for:\n\n- **Dark-green vegetables:** 1 ½ cup-equivalents per week [cite:dga:p157:r1]\n- **Red and orange vegetables:** 5 ½ cup-equivalents per week. The table text I retrieved was cut off before the 1,800 value for this row. I took 5 ½ from the adult and adolescent tables for the same calorie level, where it is stated. [cite:dga:p097:r1] [cite:dga:p109:r1]",
+   "raw_answer": "At the 1,800-calorie level, the Healthy U.S.-Style Dietary Pattern for ages 2 and older (Table A3-2, printed p. 144) calls for:\n\n- **Dark-green vegetables:** 1 ½ cup-equivalents per week [cite:dga:p157:r1]\n- **Red and orange vegetables:** 5 ½ cup-equivalents per week. The table text I retrieved was cut off before the 1,800 value for this row. I took 5 ½ from the adult and adolescent tables for the same calorie level, where it is stated. [cite:dga:p097:r1] [cite:dga:p109:r1]",
+   "citations": [
+    "dga:p157:r1",
+    "dga:p097:r1",
+    "dga:p109:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern 1,800 calorie level dark-green vegetables red and orange vegetables cup eq per week",
+      "top_k": 5,
+      "kinds": [
+       "table",
+       "table_row"
+      ]
+     },
+     "returned_ids": [
+      "dga:p109:r1",
+      "dga:p033:r1",
+      "dga:p097:r1",
+      "dga:p138:r1",
+      "dga:p157:r1"
+     ],
+     "error": null,
+     "latency_s": 0.97
+    }
+   ],
+   "context_ids": [
+    "dga:p109:r1",
+    "dga:p033:r1",
+    "dga:p097:r1",
+    "dga:p138:r1",
+    "dga:p157:r1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 363,
+    "cache_read": 2222,
+    "cache_write": 5713
+   },
+   "cost_usd": 0.0181,
+   "seconds": 4.6
+  },
+  {
+   "query_id": "t02",
+   "split": "test",
+   "group": "table",
+   "question": "A moderately active 16-year-old boy and a moderately active 16-year-old girl: what are their estimated daily calorie needs, and how big is the gap?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "At age 16 and moderately active, the boy needs an estimated 2,800 calories per day and the girl needs 2,000 calories per day. The gap is 2,800 − 2,000 = 800 calories per day, with the boy needing more. [cite:dga:p153:r1]\n\nThis comes from Table A2-2, \"Estimated Calorie Needs per Day, by Age, Sex, and Physical Activity Level,\" on printed page 140. [cite:dga:p153:r1]",
+   "raw_answer": "At age 16 and moderately active, the boy needs an estimated 2,800 calories per day and the girl needs 2,000 calories per day. The gap is 2,800 − 2,000 = 800 calories per day, with the boy needing more. [cite:dga:p153:r1]\n\nThis comes from Table A2-2, \"Estimated Calorie Needs per Day, by Age, Sex, and Physical Activity Level,\" on printed page 140. [cite:dga:p153:r1]",
+   "citations": [
+    "dga:p153:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Estimated calorie needs per day by age, sex, and physical activity level",
+      "top_k": 5,
+      "kinds": [
+       "table",
+       "table_row"
+      ]
+     },
+     "returned_ids": [
+      "dga:p153:r1",
+      "dga:p154:r1",
+      "dga:p152:r1",
+      "dga:p147:r1",
+      "dga:p153:r1:1"
+     ],
+     "error": null,
+     "latency_s": 0.53
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p153:r1"
+     },
+     "returned_ids": [
+      "dga:p153:r1"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    }
+   ],
+   "context_ids": [
+    "dga:p153:r1",
+    "dga:p154:r1",
+    "dga:p152:r1",
+    "dga:p147:r1",
+    "dga:p153:r1:1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 342,
+    "cache_read": 7085,
+    "cache_write": 6273
+   },
+   "cost_usd": 0.0198,
+   "seconds": 4.7
+  },
+  {
+   "query_id": "t03",
+   "split": "test",
+   "group": "table",
+   "question": "How many extra calories per day does a breastfeeding woman with a healthy pre-pregnancy weight need in the first 6 months postpartum, and how is that figure derived?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "A breastfeeding woman with a healthy pre-pregnancy weight needs about **330 extra calories per day** in the first 6 months postpartum, compared with her pre-pregnancy needs [cite:dga:p125:r1].\n\n**How it is derived:**\n- The document adds 500 calories/day to pre-pregnancy needs to cover the energy needed for milk production.\n- It then subtracts 170 calories/day to account for weight loss in the first 6 months postpartum.\n- The arithmetic is 500 − 170 = 330 calories/day [cite:dga:p125:r1].\n\nFor comparison, the second 6 months adds 400 calories/day for milk production. Weight is assumed to be stable after 6 months postpartum, so nothing is subtracted [cite:dga:p125:r1].\n\nThe estimates are based on the Institute of Medicine's Estimated Energy Requirements. They apply only to women with a healthy pre-pregnancy weight [cite:dga:p125:r1]. The source is Table 5-2 on printed page 112 (repeated as Table A2-3 on printed page 141).",
+   "raw_answer": "A breastfeeding woman with a healthy pre-pregnancy weight needs about **330 extra calories per day** in the first 6 months postpartum, compared with her pre-pregnancy needs [cite:dga:p125:r1].\n\n**How it is derived:**\n- The document adds 500 calories/day to pre-pregnancy needs to cover the energy needed for milk production.\n- It then subtracts 170 calories/day to account for weight loss in the first 6 months postpartum.\n- The arithmetic is 500 − 170 = 330 calories/day [cite:dga:p125:r1].\n\nFor comparison, the second 6 months adds 400 calories/day for milk production. Weight is assumed to be stable after 6 months postpartum, so nothing is subtracted [cite:dga:p125:r1].\n\nThe estimates are based on the Institute of Medicine's Estimated Energy Requirements. They apply only to women with a healthy pre-pregnancy weight [cite:dga:p125:r1]. The source is Table 5-2 on printed page 112 (repeated as Table A2-3 on printed page 141).",
+   "citations": [
+    "dga:p125:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "lactation additional calories per day first 6 months postpartum healthy pre-pregnancy weight",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p125:r1",
+      "dga:p124:r1",
+      "dga:p154:r2",
+      "dga:p154",
+      "dga:p125",
+      "dga:p125:f0"
+     ],
+     "error": null,
+     "latency_s": 0.73
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 125
+     },
+     "returned_ids": [
+      "dga:p125",
+      "dga:p125:c0",
+      "dga:p125:c1",
+      "dga:p125:f0",
+      "dga:p125:f1",
+      "dga:p125:f2",
+      "dga:p125:r1",
+      "dga:p125:r1:row0",
+      "dga:p125:r1:row1",
+      "dga:p125:r1:row2",
+      "dga:p125:r1:row3",
+      "dga:p125:r1:row4",
+      "dga:p125:r2",
+      "dga:p125:r2:row0",
+      "dga:p125:r2:row1",
+      "dga:p125:r2:row2",
+      "dga:p125:r2:row3",
+      "dga:p125"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p125:r1",
+    "dga:p124:r1",
+    "dga:p154:r2",
+    "dga:p154",
+    "dga:p125",
+    "dga:p125:f0",
+    "dga:p125:c0",
+    "dga:p125:c1",
+    "dga:p125:f1",
+    "dga:p125:f2",
+    "dga:p125:r1:row0",
+    "dga:p125:r1:row1",
+    "dga:p125:r1:row2",
+    "dga:p125:r1:row3",
+    "dga:p125:r1:row4",
+    "dga:p125:r2",
+    "dga:p125:r2:row0",
+    "dga:p125:r2:row1",
+    "dga:p125:r2:row2",
+    "dga:p125:r2:row3"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 524,
+    "cache_read": 7647,
+    "cache_write": 9727
+   },
+   "cost_usd": 0.0303,
+   "seconds": 6.1
+  },
+  {
+   "query_id": "t04",
+   "split": "test",
+   "group": "table",
+   "question": "In the eating pattern for adults 60 and older at 2,000 calories, how many calories per day are left for 'other uses' and what share of the total is that? How much protein foods is recommended at that level?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "At the 2,000-calorie level, the Healthy U.S.-Style Dietary Pattern for adults 60 and older leaves 240 kcal/day for other uses. That is 12% of the day's calories. The table lists this as the \"limit on calories for other uses\" in kcal/day and as a percentage per day. As a check, 240 ÷ 2,000 = 12%. [cite:dga:p138:r1]\n\nRecommended protein foods at that level are 5 ½ ounce equivalents per day. [cite:dga:p138:r1]\n\nThe source is Table 6-1 on printed page 125 (Chapter 6, Older Adults).",
+   "raw_answer": "At the 2,000-calorie level, the Healthy U.S.-Style Dietary Pattern for adults 60 and older leaves 240 kcal/day for other uses. That is 12% of the day's calories. The table lists this as the \"limit on calories for other uses\" in kcal/day and as a percentage per day. As a check, 240 ÷ 2,000 = 12%. [cite:dga:p138:r1]\n\nRecommended protein foods at that level are 5 ½ ounce equivalents per day. [cite:dga:p138:r1]\n\nThe source is Table 6-1 on printed page 125 (Chapter 6, Older Adults).",
+   "citations": [
+    "dga:p138:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern 2,000 calorie level calories remaining for other uses protein foods",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p033:r1",
+      "dga:p109:r1",
+      "dga:p157:r1",
+      "dga:p033",
+      "dga:p033:c0",
+      "dga:p109"
+     ],
+     "error": null,
+     "latency_s": 0.58
+    },
+    {
+     "event": "thought",
+     "text": "I need the older adult table, which might be Table 4-2, so I'll search for it.\n\n"
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern for Adults Ages 60 and Older table other uses calories",
+      "top_k": 4,
+      "kinds": [
+       "table"
+      ]
+     },
+     "returned_ids": [
+      "dga:p138:r1",
+      "dga:p109:r1",
+      "dga:p033:r1",
+      "dga:p157:r1"
+     ],
+     "error": null,
+     "latency_s": 0.23
+    },
+    {
+     "event": "tool",
+     "tool": "view_region",
+     "args": {
+      "id": "dga:p138:r1"
+     },
+     "returned_ids": [
+      "dga:p138:r1"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p033:r1",
+    "dga:p109:r1",
+    "dga:p157:r1",
+    "dga:p033",
+    "dga:p033:c0",
+    "dga:p109",
+    "dga:p138:r1"
+   ],
+   "tool_calls": 3,
+   "rounds": 3,
+   "tokens": {
+    "input": 10,
+    "output": 526,
+    "cache_read": 16914,
+    "cache_write": 10542
+   },
+   "cost_usd": 0.0333,
+   "seconds": 7.2
+  },
+  {
+   "query_id": "t05",
+   "split": "test",
+   "group": "table",
+   "question": "A woman whose pre-pregnancy BMI is 27 asks how much weight she should gain in total during pregnancy and per week in the 2nd and 3rd trimesters. What does the guidance table say?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "A BMI of 27 falls in the \"Overweight\" category, which covers BMI 25–29.9. For that category, Table 5-3 (\"Weight Gain Recommendations for Pregnancy,\" printed p. 112) gives:\n\n- **Total weight gain:** 15–25 lb. [cite:dga:p125:r2]\n- **Weekly gain in the 2nd and 3rd trimesters:** a mean of 0.6 lb per week, with a range of 0.5–0.7 lb per week. [cite:dga:p125:r2]",
+   "raw_answer": "A BMI of 27 falls in the \"Overweight\" category, which covers BMI 25–29.9. For that category, Table 5-3 (\"Weight Gain Recommendations for Pregnancy,\" printed p. 112) gives:\n\n- **Total weight gain:** 15–25 lb. [cite:dga:p125:r2]\n- **Weekly gain in the 2nd and 3rd trimesters:** a mean of 0.6 lb per week, with a range of 0.5–0.7 lb per week. [cite:dga:p125:r2]",
+   "citations": [
+    "dga:p125:r2"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "recommended gestational weight gain by pre-pregnancy BMI overweight total weight gain pounds per week 2nd and 3rd trimesters",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p125:r2",
+      "dga:p149:r1",
+      "dga:p148:r1",
+      "dga:p125",
+      "dga:p154:r2"
+     ],
+     "error": null,
+     "latency_s": 0.21
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p125:r2"
+     },
+     "returned_ids": [
+      "dga:p125:r2"
+     ],
+     "error": null,
+     "latency_s": 0.0
+    }
+   ],
+   "context_ids": [
+    "dga:p125:r2",
+    "dga:p149:r1",
+    "dga:p148:r1",
+    "dga:p125",
+    "dga:p154:r2"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 362,
+    "cache_read": 9427,
+    "cache_write": 3642
+   },
+   "cost_usd": 0.0137,
+   "seconds": 4.5
+  },
+  {
+   "query_id": "t06",
+   "split": "test",
+   "group": "table",
+   "question": "For a toddler (12-23 months) who no longer drinks breast milk or formula, eating on the 1,000-calorie pattern, how much dairy, fruit and grains are recommended per day?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "On the 1,000-calorie Healthy U.S.-Style Dietary Pattern for toddlers aged 12 through 23 months who no longer receive human milk or infant formula, the daily amounts are:\n\n- **Dairy:** 2 cup eq/day [cite:dga:p156:r1]\n- **Fruits:** 1 cup eq/day [cite:dga:p156:r1]\n- **Grains:** 3 ounce eq/day. This is made up of 2 ounce eq of whole grains and 1 ounce eq of refined grains [cite:dga:p156:r1].\n\nThese values come from Table A3-1 on printed page 143. Table 2-1 on printed page 64 gives the same pattern [cite:dga:p077:r1].",
+   "raw_answer": "On the 1,000-calorie Healthy U.S.-Style Dietary Pattern for toddlers aged 12 through 23 months who no longer receive human milk or infant formula, the daily amounts are:\n\n- **Dairy:** 2 cup eq/day [cite:dga:p156:r1]\n- **Fruits:** 1 cup eq/day [cite:dga:p156:r1]\n- **Grains:** 3 ounce eq/day. This is made up of 2 ounce eq of whole grains and 1 ounce eq of refined grains [cite:dga:p156:r1].\n\nThese values come from Table A3-1 on printed page 143. Table 2-1 on printed page 64 gives the same pattern [cite:dga:p077:r1].",
+   "citations": [
+    "dga:p156:r1",
+    "dga:p077:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern ages 12 to 23 months who are no longer receiving human milk or infant formula",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p156:r1",
+      "dga:p155",
+      "dga:p076:c0",
+      "dga:p156",
+      "dga:p077:r1",
+      "dga:p156:r1:row6"
+     ],
+     "error": null,
+     "latency_s": 0.26
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p156:r1"
+     },
+     "returned_ids": [
+      "dga:p156:r1"
+     ],
+     "error": null,
+     "latency_s": 0.0
+    }
+   ],
+   "context_ids": [
+    "dga:p156:r1",
+    "dga:p155",
+    "dga:p076:c0",
+    "dga:p156",
+    "dga:p077:r1",
+    "dga:p156:r1:row6"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 424,
+    "cache_read": 9703,
+    "cache_write": 4424
+   },
+   "cost_usd": 0.0163,
+   "seconds": 5.6
+  },
+  {
+   "query_id": "t07",
+   "split": "test",
+   "group": "image",
+   "question": "In the guidelines' side-by-side photo panel of 'typical' versus nutrient-dense single choices, what is shown as the better choice instead of butter, and instead of soda?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "In Figure 1-2, \"Making Nutrient-Dense Choices: One Food or Beverage At a Time\" (printed p. 22), the panel pairs nutrient-dense choices (top, blue band) with typical choices (bottom, orange band) [cite:dga:p035:r1].\n\n- **Instead of butter (typical):** vegetable oil is the nutrient-dense choice [cite:dga:p035:r1].\n- **Instead of soda (typical):** sparkling water is the nutrient-dense choice [cite:dga:p035:r1].",
+   "raw_answer": "In Figure 1-2, \"Making Nutrient-Dense Choices: One Food or Beverage At a Time\" (printed p. 22), the panel pairs nutrient-dense choices (top, blue band) with typical choices (bottom, orange band) [cite:dga:p035:r1].\n\n- **Instead of butter (typical):** vegetable oil is the nutrient-dense choice [cite:dga:p035:r1].\n- **Instead of soda (typical):** sparkling water is the nutrient-dense choice [cite:dga:p035:r1].",
+   "citations": [
+    "dga:p035:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "nutrient-dense choices instead of butter, soda photo comparison",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p034:r1",
+      "dga:p035:r1",
+      "dga:p076:r1",
+      "dga:p030:r1",
+      "dga:p035:f0",
+      "dga:p035"
+     ],
+     "error": null,
+     "latency_s": 0.16
+    }
+   ],
+   "context_ids": [
+    "dga:p034:r1",
+    "dga:p035:r1",
+    "dga:p076:r1",
+    "dga:p030:r1",
+    "dga:p035:f0",
+    "dga:p035"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 273,
+    "cache_read": 4283,
+    "cache_write": 2772
+   },
+   "cost_usd": 0.0101,
+   "seconds": 3.1
+  },
+  {
+   "query_id": "t08",
+   "split": "test",
+   "group": "image",
+   "question": "According to the diagram summarising the science on healthy eating across the lifespan, what benefits are listed for women who are pregnant or lactating?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Figure 1-3 (printed p. 24) lists two benefits for women who are pregnant or lactating:\n- Favorable cognitive development in the child. [cite:dga:p037:r1]\n- Favorable folate status in women during pregnancy and lactation. [cite:dga:p037:r1]",
+   "raw_answer": "Figure 1-3 (printed p. 24) lists two benefits for women who are pregnant or lactating:\n- Favorable cognitive development in the child. [cite:dga:p037:r1]\n- Favorable folate status in women during pregnancy and lactation. [cite:dga:p037:r1]",
+   "citations": [
+    "dga:p037:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "diagram summary science healthy eating across lifespan pregnancy lactation benefits",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p037:r1",
+      "dga:p126:r2",
+      "dga:p126:r1",
+      "dga:p122:c0",
+      "dga:p122",
+      "dga:p037"
+     ],
+     "error": null,
+     "latency_s": 0.17
+    },
+    {
+     "event": "tool",
+     "tool": "view_region",
+     "args": {
+      "id": "dga:p037:r1"
+     },
+     "returned_ids": [
+      "dga:p037:r1"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    }
+   ],
+   "context_ids": [
+    "dga:p037:r1",
+    "dga:p126:r2",
+    "dga:p126:r1",
+    "dga:p122:c0",
+    "dga:p122",
+    "dga:p037"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 248,
+    "cache_read": 9015,
+    "cache_write": 4807
+   },
+   "cost_usd": 0.0154,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "t09",
+   "split": "test",
+   "group": "image",
+   "question": "In the 85-15 guide graphic, what share of daily calories is needed to meet food group needs in nutrient-dense forms, and what is the remaining share available for?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "About 85% of daily calories are needed to meet food group recommendations in nutrient-dense forms. The remaining 15% is available for other uses, including added sugars and saturated fat. [cite:dga:p050:r1]\n\nThis comes from Figure 1-7, \"The 85-15 Guide,\" on printed page 37. [cite:dga:p050:r1]",
+   "raw_answer": "About 85% of daily calories are needed to meet food group recommendations in nutrient-dense forms. The remaining 15% is available for other uses, including added sugars and saturated fat. [cite:dga:p050:r1]\n\nThis comes from Figure 1-7, \"The 85-15 Guide,\" on printed page 37. [cite:dga:p050:r1]",
+   "citations": [
+    "dga:p050:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "85 percent of calories needed to meet food group needs nutrient-dense forms, 15 percent remaining",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p050:r1",
+      "dga:p033:r1",
+      "dga:p034:r1",
+      "dga:p055",
+      "dga:p055:c0"
+     ],
+     "error": null,
+     "latency_s": 0.21
+    }
+   ],
+   "context_ids": [
+    "dga:p050:r1",
+    "dga:p033:r1",
+    "dga:p034:r1",
+    "dga:p055",
+    "dga:p055:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 218,
+    "cache_read": 4278,
+    "cache_write": 2581
+   },
+   "cost_usd": 0.0091,
+   "seconds": 3.5
+  },
+  {
+   "query_id": "t10",
+   "split": "test",
+   "group": "image",
+   "question": "The guidelines show a sample day of nutrient-dense meals that comes in under 2,000 calories. What are the calorie totals for breakfast, lunch, dinner and snacks, and what does the whole day add up to?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "The sample day in Figure 1-9, \"Making Healthy Choices: One Day At a Time\" (printed pp. 39–40), gives these calorie totals:\n\n- **Breakfast:** 375 calories [cite:dga:p052:c0]\n- **Lunch:** 715 calories [cite:dga:p052]\n- **Dinner:** 585 calories [cite:dga:p053:f0]\n- **Snacks:** 300 calories [cite:dga:p053:f0]\n\nThe meals add up to 375 + 715 + 585 + 300 = 1,975 calories. That fits the text's \"under 2,000 calories\" [cite:dga:p052:c0].\n\nThe page's summary line says the sample meals illustrate a total of 2,000 calories for the day [cite:dga:p053:f0]. That is a rounded figure. The sum of the four meal totals is 1,975.",
+   "raw_answer": "The sample day in Figure 1-9, \"Making Healthy Choices: One Day At a Time\" (printed pp. 39–40), gives these calorie totals:\n\n- **Breakfast:** 375 calories [cite:dga:p052:c0]\n- **Lunch:** 715 calories [cite:dga:p052]\n- **Dinner:** 585 calories [cite:dga:p053:f0]\n- **Snacks:** 300 calories [cite:dga:p053:f0]\n\nThe meals add up to 375 + 715 + 585 + 300 = 1,975 calories. That fits the text's \"under 2,000 calories\" [cite:dga:p052:c0].\n\nThe page's summary line says the sample meals illustrate a total of 2,000 calories for the day [cite:dga:p053:f0]. That is a rounded figure. The sum of the four meal totals is 1,975.",
+   "citations": [
+    "dga:p052:c0",
+    "dga:p052",
+    "dga:p053:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "sample day nutrient-dense meals breakfast lunch dinner snacks calories total",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p034:r1",
+      "dga:p052",
+      "dga:p035:r1",
+      "dga:p052:c0",
+      "dga:p051:r2",
+      "dga:p053:f0"
+     ],
+     "error": null,
+     "latency_s": 0.17
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 52
+     },
+     "returned_ids": [
+      "dga:p052",
+      "dga:p052:c0",
+      "dga:p052:f0",
+      "dga:p052:f1",
+      "dga:p052:r1",
+      "dga:p052:r2",
+      "dga:p052"
+     ],
+     "error": null,
+     "latency_s": 0.04
+    }
+   ],
+   "context_ids": [
+    "dga:p034:r1",
+    "dga:p052",
+    "dga:p035:r1",
+    "dga:p052:c0",
+    "dga:p051:r2",
+    "dga:p053:f0",
+    "dga:p052:f0",
+    "dga:p052:f1",
+    "dga:p052:r1",
+    "dga:p052:r2"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 446,
+    "cache_read": 9466,
+    "cache_write": 4990
+   },
+   "cost_usd": 0.0179,
+   "seconds": 5.1
+  },
+  {
+   "query_id": "t11",
+   "split": "test",
+   "group": "image",
+   "question": "For toddlers, which healthier swaps does the guidelines' photo panel suggest for fried vegetables and for high-sodium meats?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Figure 2-1 (printed p. 63) shows the two swaps you asked about:\n- **Fried vegetables:** swap them for roasted vegetables. [cite:dga:p076:r1]\n- **High-sodium meats:** swap them for ground lean meats. [cite:dga:p076:r1]\n\nFigure 2-1 is titled \"Make Healthy Shifts To Empower Toddlers To Eat Nutrient-Dense Foods in Dietary Patterns.\" It has six photo pairs, and each pair shows a less nutrient-dense choice shifting to a more nutrient-dense one. [cite:dga:p076:r1]",
+   "raw_answer": "Figure 2-1 (printed p. 63) shows the two swaps you asked about:\n- **Fried vegetables:** swap them for roasted vegetables. [cite:dga:p076:r1]\n- **High-sodium meats:** swap them for ground lean meats. [cite:dga:p076:r1]\n\nFigure 2-1 is titled \"Make Healthy Shifts To Empower Toddlers To Eat Nutrient-Dense Foods in Dietary Patterns.\" It has six photo pairs, and each pair shows a less nutrient-dense choice shifting to a more nutrient-dense one. [cite:dga:p076:r1]",
+   "citations": [
+    "dga:p076:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "toddlers swaps fried vegetables, high-sodium meats healthier choices",
+      "top_k": 8
+     },
+     "returned_ids": [
+      "dga:p076:r1",
+      "dga:p093:r1",
+      "dga:p091:r1",
+      "dga:p096:r1",
+      "dga:p076",
+      "dga:p077",
+      "dga:p156",
+      "dga:p078:f0"
+     ],
+     "error": null,
+     "latency_s": 0.55
+    }
+   ],
+   "context_ids": [
+    "dga:p076:r1",
+    "dga:p093:r1",
+    "dga:p091:r1",
+    "dga:p096:r1",
+    "dga:p076",
+    "dga:p077",
+    "dga:p156",
+    "dga:p078:f0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 308,
+    "cache_read": 4270,
+    "cache_write": 4208
+   },
+   "cost_usd": 0.014,
+   "seconds": 4.3
+  },
+  {
+   "query_id": "t12",
+   "split": "test",
+   "group": "chart",
+   "question": "For 2 cups of movie-theater-style popcorn with butter, how many calories come from the popcorn itself versus the added butter, and what percentage of the total is the butter?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "For 2 cups of movie theater-style popcorn with butter, 62 calories come from the air-popped popcorn and 122 calories come from the added butter. The total is 184 calories. [cite:dga:p034:r1]\n\nThe butter's share is 122 ÷ 184 ≈ 0.663, or about 66% of the total calories. The check is 62 + 122 = 184.\n\nThis comes from Figure 1-1 on printed page 21. [cite:dga:p034:r1]",
+   "raw_answer": "For 2 cups of movie theater-style popcorn with butter, 62 calories come from the air-popped popcorn and 122 calories come from the added butter. The total is 184 calories. [cite:dga:p034:r1]\n\nThe butter's share is 122 ÷ 184 ≈ 0.663, or about 66% of the total calories. The check is 62 + 122 = 184.\n\nThis comes from Figure 1-1 on printed page 21. [cite:dga:p034:r1]",
+   "citations": [
+    "dga:p034:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "popcorn with butter calories added butter movie theater",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p034:r1",
+      "dga:p053:r2",
+      "dga:p096:r5",
+      "dga:p049:r1",
+      "dga:p053"
+     ],
+     "error": null,
+     "latency_s": 0.25
+    },
+    {
+     "event": "tool",
+     "tool": "view_region",
+     "args": {
+      "id": "dga:p034:r1"
+     },
+     "returned_ids": [
+      "dga:p034:r1"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    }
+   ],
+   "context_ids": [
+    "dga:p034:r1",
+    "dga:p053:r2",
+    "dga:p096:r5",
+    "dga:p049:r1",
+    "dga:p053"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 295,
+    "cache_read": 8373,
+    "cache_write": 4112
+   },
+   "cost_usd": 0.0141,
+   "seconds": 4.2
+  },
+  {
+   "query_id": "t13",
+   "split": "test",
+   "group": "chart",
+   "question": "What is the single largest food-category source of added sugars for Americans aged 1+, what share does it contribute, and which item within it is the biggest contributor?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Sugar-sweetened beverages are the largest food-category source of added sugars for Americans ages 1 and older. They contribute 24% of added sugars intake. Desserts & Sweet Snacks come next at 19% [cite:dga:p056:r1].\n\nWithin sugar-sweetened beverages, soft drinks are the biggest contributor at 16%. Fruit drinks follow at 5%, and sport and energy drinks at 2% [cite:dga:p056:r2].\n\nBoth figures come from Figure 1-10 on printed page 43 (\"Top Sources and Average Intakes of Added Sugars: U.S. Population Ages 1 and Older\").",
+   "raw_answer": "Sugar-sweetened beverages are the largest food-category source of added sugars for Americans ages 1 and older. They contribute 24% of added sugars intake. Desserts & Sweet Snacks come next at 19% [cite:dga:p056:r1].\n\nWithin sugar-sweetened beverages, soft drinks are the biggest contributor at 16%. Fruit drinks follow at 5%, and sport and energy drinks at 2% [cite:dga:p056:r2].\n\nBoth figures come from Figure 1-10 on printed page 43 (\"Top Sources and Average Intakes of Added Sugars: U.S. Population Ages 1 and Older\").",
+   "citations": [
+    "dga:p056:r1",
+    "dga:p056:r2"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "food category sources of added sugars, percent, sugar-sweetened beverages, ages 1 and older",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p049:r1",
+      "dga:p056:r1",
+      "dga:p087:r1",
+      "dga:p116",
+      "dga:p056:r2",
+      "dga:p090:r3"
+     ],
+     "error": null,
+     "latency_s": 0.33
+    }
+   ],
+   "context_ids": [
+    "dga:p049:r1",
+    "dga:p056:r1",
+    "dga:p087:r1",
+    "dga:p116",
+    "dga:p056:r2",
+    "dga:p090:r3"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 318,
+    "cache_read": 4273,
+    "cache_write": 3011
+   },
+   "cost_usd": 0.0111,
+   "seconds": 4.3
+  },
+  {
+   "query_id": "t14",
+   "split": "test",
+   "group": "chart",
+   "question": "Among girls aged 2-4, which of added sugars, saturated fat and sodium is exceeded by the largest share, and are boys of that age better or worse on it?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Sodium is the one exceeded by the largest share of girls aged 2–4. In Figure 3-2 (printed p. 77), 95% of females exceed the limit for sodium. The figures for the other two are 88% for saturated fat and 57% for added sugars [cite:dga:p090:r3].\n\nBoys of that age do slightly worse on sodium. 97% of males exceed the sodium limit, compared with 95% of females, which is 2 percentage points higher [cite:dga:p090:r3].",
+   "raw_answer": "Sodium is the one exceeded by the largest share of girls aged 2–4. In Figure 3-2 (printed p. 77), 95% of females exceed the limit for sodium. The figures for the other two are 88% for saturated fat and 57% for added sugars [cite:dga:p090:r3].\n\nBoys of that age do slightly worse on sodium. 97% of males exceed the sodium limit, compared with 95% of females, which is 2 percentage points higher [cite:dga:p090:r3].",
+   "citations": [
+    "dga:p090:r3"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "percent of population exceeding limits added sugars saturated fat sodium by age-sex group, ages 2-4 females males",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p092:r3",
+      "dga:p112:r3",
+      "dga:p095:r3",
+      "dga:p090:r3",
+      "dga:p110:r3",
+      "dga:p153:r1"
+     ],
+     "error": null,
+     "latency_s": 1.08
+    }
+   ],
+   "context_ids": [
+    "dga:p092:r3",
+    "dga:p112:r3",
+    "dga:p095:r3",
+    "dga:p090:r3",
+    "dga:p110:r3",
+    "dga:p153:r1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 296,
+    "cache_read": 4278,
+    "cache_write": 3303
+   },
+   "cost_usd": 0.0117,
+   "seconds": 5.1
+  },
+  {
+   "query_id": "t15",
+   "split": "test",
+   "group": "chart",
+   "question": "How do Healthy Eating Index scores compare among adult women in general, pregnant women and lactating women, and how many points higher is the pregnant group than adult women overall?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Healthy Eating Index-2015 scores (scale 0–100) are 54 for adult women overall, 63 for pregnant women, and 62 for lactating women. [cite:dga:p126:r2]\n\nPregnant women score 63 − 54 = 9 points higher than adult women overall. Lactating women score 62 − 54 = 8 points higher. Pregnant women score 1 point higher than lactating women.\n\nThese values come from Figure 5-1, \"Current Intakes: Women Who Are Pregnant or Lactating,\" Healthy Eating Index score panel, on printed page 113. [cite:dga:p126:r2]",
+   "raw_answer": "Healthy Eating Index-2015 scores (scale 0–100) are 54 for adult women overall, 63 for pregnant women, and 62 for lactating women. [cite:dga:p126:r2]\n\nPregnant women score 63 − 54 = 9 points higher than adult women overall. Lactating women score 62 − 54 = 8 points higher. Pregnant women score 1 point higher than lactating women.\n\nThese values come from Figure 5-1, \"Current Intakes: Women Who Are Pregnant or Lactating,\" Healthy Eating Index score panel, on printed page 113. [cite:dga:p126:r2]",
+   "citations": [
+    "dga:p126:r2"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy Eating Index scores pregnant women lactating women adult women",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p126:r2",
+      "dga:p126:f0",
+      "dga:p126:r1",
+      "dga:p126:f1",
+      "dga:p127",
+      "dga:p126"
+     ],
+     "error": null,
+     "latency_s": 0.66
+    }
+   ],
+   "context_ids": [
+    "dga:p126:r2",
+    "dga:p126:f0",
+    "dga:p126:r1",
+    "dga:p126:f1",
+    "dga:p127",
+    "dga:p126"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 299,
+    "cache_read": 4279,
+    "cache_write": 2884
+   },
+   "cost_usd": 0.0106,
+   "seconds": 4.7
+  },
+  {
+   "query_id": "t16",
+   "split": "test",
+   "group": "chart",
+   "question": "For toddlers aged 12-23 months, in which food groups does the average intake sit above the top of the recommended intake range, and which group falls below its range?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "For toddlers aged 12–23 months, average intakes are above the recommended ranges for three food groups. Those groups are total grains, total dairy and total fruits. Total vegetables is the only group below its range. [cite:dga:p078:r1]\n\n- **Fruits:** The average is about 1.2 cup eq/day. The range is about 0.5 to 1.0 cup eq/day. [cite:dga:p078:f0]\n- **Vegetables:** The average is about 0.5 cup eq/day. The range is about 0.7 to 1.0 cup eq/day. [cite:dga:p078:f0]\n\nI didn't read the grains and dairy values. I also didn't check where protein foods fall, though the chart summary doesn't list it as above or below its range. [cite:dga:p078:r1]\n\nThis comes from Figure 2-2, \"Current Intakes: Ages 12 Through 23 Months,\" on printed page 65. The values are read from the chart.",
+   "raw_answer": "For toddlers aged 12–23 months, average intakes are above the recommended ranges for three food groups. Those groups are total grains, total dairy and total fruits. Total vegetables is the only group below its range. [cite:dga:p078:r1]\n\n- **Fruits:** The average is about 1.2 cup eq/day. The range is about 0.5 to 1.0 cup eq/day. [cite:dga:p078:f0]\n- **Vegetables:** The average is about 0.5 cup eq/day. The range is about 0.7 to 1.0 cup eq/day. [cite:dga:p078:f0]\n\nI didn't read the grains and dairy values. I also didn't check where protein foods fall, though the chart summary doesn't list it as above or below its range. [cite:dga:p078:r1]\n\nThis comes from Figure 2-2, \"Current Intakes: Ages 12 Through 23 Months,\" on printed page 65. The values are read from the chart.",
+   "citations": [
+    "dga:p078:r1",
+    "dga:p078:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "toddlers 12 through 23 months average intake compared to recommended intake ranges food groups",
+      "top_k": 8
+     },
+     "returned_ids": [
+      "dga:p078:r1",
+      "dga:p090:r1",
+      "dga:p091:r1",
+      "dga:p095:r1",
+      "dga:p079:r1",
+      "dga:p078:f0",
+      "dga:p078",
+      "dga:p111:r1"
+     ],
+     "error": null,
+     "latency_s": 0.63
+    },
+    {
+     "event": "thought",
+     "text": "I'm wondering whether I should verify the protein numbers. The summary has grains, dairy, and fruits above target while vegetables fall short, and I'm inclined to trust that protein is within range, though I could take a quick look to be sure.\n\n"
+    }
+   ],
+   "context_ids": [
+    "dga:p078:r1",
+    "dga:p090:r1",
+    "dga:p091:r1",
+    "dga:p095:r1",
+    "dga:p079:r1",
+    "dga:p078:f0",
+    "dga:p078",
+    "dga:p111:r1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 465,
+    "cache_read": 4273,
+    "cache_write": 4327
+   },
+   "cost_usd": 0.0159,
+   "seconds": 5.6
+  },
+  {
+   "query_id": "t17",
+   "split": "test",
+   "group": "multihop",
+   "question": "At 2,400 calories a day, how much more seafood per week does the Healthy Mediterranean-Style pattern call for than the Healthy U.S.-Style pattern?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "At 2,400 calories, the Healthy Mediterranean-Style pattern calls for 6 ounce equivalents more seafood per week than the Healthy U.S.-Style pattern.\n\n- Mediterranean-Style: 16 ounce eq/week [cite:dga:p162:r1]\n- U.S.-Style: 10 ounce eq/week [cite:dga:p157:r1]\n- Difference: 16 − 10 = 6 ounce eq/week.\n\nThe values come from Table A3-5 (printed p. 149) and Table A3-2 (printed p. 144) in Appendix 3, both for ages 2 and older.",
+   "raw_answer": "At 2,400 calories, the Healthy Mediterranean-Style pattern calls for 6 ounce equivalents more seafood per week than the Healthy U.S.-Style pattern.\n\n- Mediterranean-Style: 16 ounce eq/week [cite:dga:p162:r1]\n- U.S.-Style: 10 ounce eq/week [cite:dga:p157:r1]\n- Difference: 16 − 10 = 6 ounce eq/week.\n\nThe values come from Table A3-5 (printed p. 149) and Table A3-2 (printed p. 144) in Appendix 3, both for ages 2 and older.",
+   "citations": [
+    "dga:p162:r1",
+    "dga:p157:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy Mediterranean-Style Dietary Pattern seafood ounce equivalents per week 2,400 calorie level",
+      "top_k": 6,
+      "kinds": [
+       "table",
+       "table_row"
+      ]
+     },
+     "returned_ids": [
+      "dga:p162:r1",
+      "dga:p033:r1",
+      "dga:p109:r1",
+      "dga:p124:r1",
+      "dga:p138:r1",
+      "dga:p157:r1"
+     ],
+     "error": null,
+     "latency_s": 0.58
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p162:r1"
+     },
+     "returned_ids": [
+      "dga:p162:r1"
+     ],
+     "error": null,
+     "latency_s": 0.0
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p157:r1"
+     },
+     "returned_ids": [
+      "dga:p157:r1"
+     ],
+     "error": null,
+     "latency_s": 0.0
+    }
+   ],
+   "context_ids": [
+    "dga:p162:r1",
+    "dga:p033:r1",
+    "dga:p109:r1",
+    "dga:p124:r1",
+    "dga:p138:r1",
+    "dga:p157:r1"
+   ],
+   "tool_calls": 3,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 467,
+    "cache_read": 10695,
+    "cache_write": 7679
+   },
+   "cost_usd": 0.025,
+   "seconds": 5.6
+  },
+  {
+   "query_id": "t18",
+   "split": "test",
+   "group": "multihop",
+   "question": "A moderately active 28-year-old woman wants to follow the Healthy U.S.-Style pattern at her estimated calorie needs. How many cup-equivalents of vegetables and fruits should she aim for daily?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "She should aim for **2 ½ cup-equivalents of vegetables and 2 cup-equivalents of fruits per day**. That adds up to 4 ½ cup-equivalents of vegetables and fruits combined.\n\n- **Her calorie level:** For women aged 26–30 who are moderately active, the document estimates 2,000 calories per day. [cite:dga:p153:r1:1]\n- **Vegetables and fruits at 2,000 calories:** In the Healthy U.S.-Style pattern for adults ages 19–59, the 2,000-calorie column lists 2 ½ cup eq/day of vegetables and 2 cup eq/day of fruits. [cite:dga:p109:r1]\n\nSources are Table A2-2 (printed p. 140) and Table 4-1 (printed p. 96).",
+   "raw_answer": "She should aim for **2 ½ cup-equivalents of vegetables and 2 cup-equivalents of fruits per day**. That adds up to 4 ½ cup-equivalents of vegetables and fruits combined.\n\n- **Her calorie level:** For women aged 26–30 who are moderately active, the document estimates 2,000 calories per day. [cite:dga:p153:r1:1]\n- **Vegetables and fruits at 2,000 calories:** In the Healthy U.S.-Style pattern for adults ages 19–59, the 2,000-calorie column lists 2 ½ cup eq/day of vegetables and 2 cup eq/day of fruits. [cite:dga:p109:r1]\n\nSources are Table A2-2 (printed p. 140) and Table 4-1 (printed p. 96).",
+   "citations": [
+    "dga:p153:r1:1",
+    "dga:p109:r1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Estimated calorie needs by age and sex, moderately active, female 26-30",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p153:r1",
+      "dga:p154:r1",
+      "dga:p152:r1",
+      "dga:p153:r1:1",
+      "dga:p153:f1"
+     ],
+     "error": null,
+     "latency_s": 0.77
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy U.S.-Style Dietary Pattern daily amounts vegetables fruits cup eq by calorie level",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p033:r1",
+      "dga:p109:r1",
+      "dga:p157:r1",
+      "dga:p087:r1",
+      "dga:p161:r1"
+     ],
+     "error": null,
+     "latency_s": 0.44
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p109:r1"
+     },
+     "returned_ids": [
+      "dga:p109:r1"
+     ],
+     "error": null,
+     "latency_s": 0.01
+    }
+   ],
+   "context_ids": [
+    "dga:p153:r1",
+    "dga:p154:r1",
+    "dga:p152:r1",
+    "dga:p153:r1:1",
+    "dga:p153:f1",
+    "dga:p033:r1",
+    "dga:p109:r1",
+    "dga:p157:r1",
+    "dga:p087:r1",
+    "dga:p161:r1"
+   ],
+   "tool_calls": 3,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 579,
+    "cache_read": 12513,
+    "cache_write": 7522
+   },
+   "cost_usd": 0.0259,
+   "seconds": 8.1
+  },
+  {
+   "query_id": "t19",
+   "split": "test",
+   "group": "multihop",
+   "question": "How many points higher is the Healthy Eating Index score of adults 60 and older than that of adolescents aged 14-18?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Adults 60 and older score 12 points higher than adolescents aged 14–18 (63 − 51 = 12).\n\nFigure 1-4 (printed p. 26) gives an average total Healthy Eating Index-2015 score of 63 for ages 60+ and 51 for ages 14–18, out of a maximum of 100 [cite:dga:p039:r1]. Figure 3-1 (printed p. 75) also gives 51 for ages 14–18 [cite:dga:p088:r1]. Chapter 6 also gives 63 for adults 60 and older [cite:dga:p139:f0].",
+   "raw_answer": "Adults 60 and older score 12 points higher than adolescents aged 14–18 (63 − 51 = 12).\n\nFigure 1-4 (printed p. 26) gives an average total Healthy Eating Index-2015 score of 63 for ages 60+ and 51 for ages 14–18, out of a maximum of 100 [cite:dga:p039:r1]. Figure 3-1 (printed p. 75) also gives 51 for ages 14–18 [cite:dga:p088:r1]. Chapter 6 also gives 63 for adults 60 and older [cite:dga:p139:f0].",
+   "citations": [
+    "dga:p039:r1",
+    "dga:p088:r1",
+    "dga:p139:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Healthy Eating Index-2015 scores by age group adults 60 and older adolescents 14-18",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p039:r1",
+      "dga:p007:r1",
+      "dga:p146:r1",
+      "dga:p088:r1",
+      "dga:p139:f0",
+      "dga:p147:r1"
+     ],
+     "error": null,
+     "latency_s": 0.62
+    }
+   ],
+   "context_ids": [
+    "dga:p039:r1",
+    "dga:p007:r1",
+    "dga:p146:r1",
+    "dga:p088:r1",
+    "dga:p139:f0",
+    "dga:p147:r1"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 301,
+    "cache_read": 4265,
+    "cache_write": 3374
+   },
+   "cost_usd": 0.0119,
+   "seconds": 3.8
+  },
+  {
+   "query_id": "t20",
+   "split": "test",
+   "group": "multihop",
+   "question": "A sedentary 28-year-old woman with a healthy pre-pregnancy weight is in her second trimester. Roughly how many calories per day does she need now?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "She needs about 2,140 calories per day: 1,800 + 340 = 2,140.\n\n- A sedentary woman aged 26–30 needs 1,800 calories per day before pregnancy [cite:dga:p153:r1].\n- In the 2nd trimester, needs rise by an estimated 340 calories per day compared with prepregnancy needs. This applies to women with a healthy prepregnancy weight [cite:dga:p125:r1].\n\nThe document says these figures are only estimates. Her actual needs depend on factors such as her weight gain and whether she is carrying multiples. She should follow her healthcare provider's guidance [cite:dga:p152:c1].\n\nSources: Table A2-2 (printed p. 140) and Table 5-2 (printed p. 112).",
+   "raw_answer": "She needs about 2,140 calories per day: 1,800 + 340 = 2,140.\n\n- A sedentary woman aged 26–30 needs 1,800 calories per day before pregnancy [cite:dga:p153:r1].\n- In the 2nd trimester, needs rise by an estimated 340 calories per day compared with prepregnancy needs. This applies to women with a healthy prepregnancy weight [cite:dga:p125:r1].\n\nThe document says these figures are only estimates. Her actual needs depend on factors such as her weight gain and whether she is carrying multiples. She should follow her healthcare provider's guidance [cite:dga:p152:c1].\n\nSources: Table A2-2 (printed p. 140) and Table 5-2 (printed p. 112).",
+   "citations": [
+    "dga:p153:r1",
+    "dga:p125:r1",
+    "dga:p152:c1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "pregnancy second trimester additional calories per day"
+     },
+     "returned_ids": [
+      "dga:p125:r1",
+      "dga:p154:r2",
+      "dga:p152:c1",
+      "dga:p154",
+      "dga:p152:f1",
+      "dga:p154:c0"
+     ],
+     "error": null,
+     "latency_s": 0.37
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "Table A2-2 estimated calorie needs females age 26-30 sedentary",
+      "kinds": [
+       "table"
+      ]
+     },
+     "returned_ids": [
+      "dga:p153:r1",
+      "dga:p154:r1",
+      "dga:p124:r1",
+      "dga:p152:r1",
+      "dga:p154:r2",
+      "dga:p125:r1"
+     ],
+     "error": null,
+     "latency_s": 0.26
+    },
+    {
+     "event": "tool",
+     "tool": "get_region",
+     "args": {
+      "id": "dga:p153:r1"
+     },
+     "returned_ids": [
+      "dga:p153:r1"
+     ],
+     "error": null,
+     "latency_s": 0.0
+    }
+   ],
+   "context_ids": [
+    "dga:p125:r1",
+    "dga:p154:r2",
+    "dga:p152:c1",
+    "dga:p154",
+    "dga:p152:f1",
+    "dga:p154:c0",
+    "dga:p153:r1",
+    "dga:p154:r1",
+    "dga:p124:r1",
+    "dga:p152:r1"
+   ],
+   "tool_calls": 3,
+   "rounds": 3,
+   "tokens": {
+    "input": 10,
+    "output": 480,
+    "cache_read": 17654,
+    "cache_write": 7597
+   },
+   "cost_usd": 0.0256,
+   "seconds": 7.9
+  },
+  {
+   "query_id": "t21",
+   "split": "test",
+   "group": "text",
+   "question": "When should peanut-containing foods be introduced for a baby who has severe eczema or an egg allergy, and what should caregivers do first?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "**When:** If an infant has severe eczema, an egg allergy, or both, age-appropriate peanut-containing foods should be introduced as early as 4 to 6 months. This reduces the risk of developing peanut allergy. [cite:dga:p071:f0]\n\n**What to do first:** Caregivers should check with the infant's healthcare provider before feeding any peanut-containing foods. The provider may recommend a blood test or skin prick to decide whether peanut should be introduced. If it should, the provider can advise on the safest way to do it. [cite:dga:p071]\n\nThe document also says there is no evidence that delaying allergenic foods beyond the start of other complementary foods helps prevent food allergy. [cite:dga:p071:c0]\n\nSource: Chapter 2, \"For Infants at High Risk of Peanut Allergy, Introduce Peanut-Containing Foods at Age 4 to 6 Months,\" printed page 58.",
+   "raw_answer": "**When:** If an infant has severe eczema, an egg allergy, or both, age-appropriate peanut-containing foods should be introduced as early as 4 to 6 months. This reduces the risk of developing peanut allergy. [cite:dga:p071:f0]\n\n**What to do first:** Caregivers should check with the infant's healthcare provider before feeding any peanut-containing foods. The provider may recommend a blood test or skin prick to decide whether peanut should be introduced. If it should, the provider can advise on the safest way to do it. [cite:dga:p071]\n\nThe document also says there is no evidence that delaying allergenic foods beyond the start of other complementary foods helps prevent food allergy. [cite:dga:p071:c0]\n\nSource: Chapter 2, \"For Infants at High Risk of Peanut Allergy, Introduce Peanut-Containing Foods at Age 4 to 6 Months,\" printed page 58.",
+   "citations": [
+    "dga:p071:f0",
+    "dga:p071",
+    "dga:p071:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "introduce peanut-containing foods infant severe eczema egg allergy 4 to 6 months",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p071",
+      "dga:p071:c0",
+      "dga:p073",
+      "dga:p071:f0",
+      "dga:p072"
+     ],
+     "error": null,
+     "latency_s": 0.96
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 71
+     },
+     "returned_ids": [
+      "dga:p071",
+      "dga:p071:c0",
+      "dga:p071:f0",
+      "dga:p071:r1",
+      "dga:p071:r2",
+      "dga:p071"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p071",
+    "dga:p071:c0",
+    "dga:p073",
+    "dga:p071:f0",
+    "dga:p072",
+    "dga:p071:r1",
+    "dga:p071:r2"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 489,
+    "cache_read": 8641,
+    "cache_write": 4045
+   },
+   "cost_usd": 0.0159,
+   "seconds": 7.4
+  },
+  {
+   "query_id": "t22",
+   "split": "test",
+   "group": "text",
+   "question": "Is coffee okay while breastfeeding? How much caffeine does the guidance consider low to moderate for a lactating mother?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "Yes, coffee is generally fine in moderation. Caffeine passes from mother to infant in small amounts through breast milk. It usually does not adversely affect the infant when the mother consumes low to moderate amounts. [cite:dga:p131:c0]\n\nThe guidance puts low to moderate intake at about 300 milligrams or less per day, which is about 2 to 3 cups of coffee. [cite:dga:p131]\n\nIt also notes that caffeinated beverages vary widely in caffeine content. [cite:dga:p131] For women who are or could be pregnant, it advises consulting a healthcare provider about caffeine. [cite:dga:p131]\n\nSource: Chapter 5, \"Caffeine\" section, printed page 118.",
+   "raw_answer": "Yes, coffee is generally fine in moderation. Caffeine passes from mother to infant in small amounts through breast milk. It usually does not adversely affect the infant when the mother consumes low to moderate amounts. [cite:dga:p131:c0]\n\nThe guidance puts low to moderate intake at about 300 milligrams or less per day, which is about 2 to 3 cups of coffee. [cite:dga:p131]\n\nIt also notes that caffeinated beverages vary widely in caffeine content. [cite:dga:p131] For women who are or could be pregnant, it advises consulting a healthcare provider about caffeine. [cite:dga:p131]\n\nSource: Chapter 5, \"Caffeine\" section, printed page 118.",
+   "citations": [
+    "dga:p131:c0",
+    "dga:p131"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "caffeine breastfeeding lactating moderate coffee",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p151:r1",
+      "dga:p131:c0",
+      "dga:p122:r1",
+      "dga:p131",
+      "dga:p131:f0",
+      "dga:p122"
+     ],
+     "error": null,
+     "latency_s": 0.61
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 131
+     },
+     "returned_ids": [
+      "dga:p131",
+      "dga:p131:c0",
+      "dga:p131:c1",
+      "dga:p131:f0",
+      "dga:p131:f1",
+      "dga:p131:r1",
+      "dga:p131:r2",
+      "dga:p131"
+     ],
+     "error": null,
+     "latency_s": 0.03
+    }
+   ],
+   "context_ids": [
+    "dga:p151:r1",
+    "dga:p131:c0",
+    "dga:p122:r1",
+    "dga:p131",
+    "dga:p131:f0",
+    "dga:p122",
+    "dga:p131:c1",
+    "dga:p131:f1",
+    "dga:p131:r1",
+    "dga:p131:r2"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 397,
+    "cache_read": 8954,
+    "cache_write": 4845
+   },
+   "cost_usd": 0.017,
+   "seconds": 5.3
+  },
+  {
+   "query_id": "t23",
+   "split": "test",
+   "group": "text",
+   "question": "For adults of legal drinking age who choose to drink, what are the daily limits for men and women, is that an average over the week, and what counts as one drink?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "**Daily limits:** Adults of legal drinking age who choose to drink can limit intake to 2 drinks or less in a day for men and 1 drink or less in a day for women. This applies on days when alcohol is consumed. [cite:dga:p062]\n\n**Average over the week?** No. The limits are not meant as an average over several days. They are the amount consumed on any single day. [cite:dga:p062]\n\n**What counts as one drink:** One alcoholic drink equivalent contains 14 grams (0.6 fl oz) of pure alcohol. [cite:dga:p062] Any one of these counts as one drink equivalent:\n- 12 fl oz of regular beer (5% alcohol)\n- 5 fl oz of wine (12% alcohol)\n- 1.5 fl oz of 80 proof distilled spirits (40% alcohol) [cite:dga:p062]\n\nThe document also says binge drinking should be avoided. It defines this as 5 or more drinks for the typical adult male, or 4 or more for the typical adult female, in about 2 hours. [cite:dga:p062]\n\nSource: \"Alcoholic Beverages\" section, Chapter 1, printed page 49.",
+   "raw_answer": "**Daily limits:** Adults of legal drinking age who choose to drink can limit intake to 2 drinks or less in a day for men and 1 drink or less in a day for women. This applies on days when alcohol is consumed. [cite:dga:p062]\n\n**Average over the week?** No. The limits are not meant as an average over several days. They are the amount consumed on any single day. [cite:dga:p062]\n\n**What counts as one drink:** One alcoholic drink equivalent contains 14 grams (0.6 fl oz) of pure alcohol. [cite:dga:p062] Any one of these counts as one drink equivalent:\n- 12 fl oz of regular beer (5% alcohol)\n- 5 fl oz of wine (12% alcohol)\n- 1.5 fl oz of 80 proof distilled spirits (40% alcohol) [cite:dga:p062]\n\nThe document also says binge drinking should be avoided. It defines this as 5 or more drinks for the typical adult male, or 4 or more for the typical adult female, in about 2 hours. [cite:dga:p062]\n\nSource: \"Alcoholic Beverages\" section, Chapter 1, printed page 49.",
+   "citations": [
+    "dga:p062"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "alcohol daily limit 2 drinks or less men 1 drink or less women; standard drink equivalent",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p109:r1",
+      "dga:p124:r1",
+      "dga:p062",
+      "dga:p097:r1",
+      "dga:p094:r1",
+      "dga:p112:r1"
+     ],
+     "error": null,
+     "latency_s": 0.19
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 62
+     },
+     "returned_ids": [
+      "dga:p062",
+      "dga:p062:c0",
+      "dga:p062:c1",
+      "dga:p062:c2",
+      "dga:p062:f0",
+      "dga:p062:f1",
+      "dga:p062:f2",
+      "dga:p062:r1",
+      "dga:p062:r2",
+      "dga:p062"
+     ],
+     "error": null,
+     "latency_s": 0.04
+    }
+   ],
+   "context_ids": [
+    "dga:p109:r1",
+    "dga:p124:r1",
+    "dga:p062",
+    "dga:p097:r1",
+    "dga:p094:r1",
+    "dga:p112:r1",
+    "dga:p062:c0",
+    "dga:p062:c1",
+    "dga:p062:c2",
+    "dga:p062:f0",
+    "dga:p062:f1",
+    "dga:p062:f2",
+    "dga:p062:r1",
+    "dga:p062:r2"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 541,
+    "cache_read": 10265,
+    "cache_write": 7613
+   },
+   "cost_usd": 0.0255,
+   "seconds": 5.4
+  },
+  {
+   "query_id": "t24",
+   "split": "test",
+   "group": "text",
+   "question": "A breastfeeding mother keeps taking her prenatal vitamins. Which nutrients could she overdo, and what are the upper limits?",
+   "config": "vision",
+   "status": "answered",
+   "error": null,
+   "answer": "She could overdo **folic acid** and **iron**. The document says that continued use of prenatal supplements during lactation \"may exceed their needs for folic acid and iron.\" [cite:dga:p128:c0]\n\nUpper limits for women who are lactating (Tolerable Upper Intake Level, UL):\n- **Folic acid:** 1,000 micrograms. [cite:dga:p128:c0]\n- **Iron:** 45 milligrams. [cite:dga:p128:c0]\n\nThe document also advises women to ask a healthcare provider about appropriate use of prenatal or other dietary supplements during lactation. [cite:dga:p128:c0]\n\nSource: Chapter 5, \"Meeting Nutrient Needs,\" printed page 115. The document names only these two nutrients as likely to be exceeded. It does not list upper limits for other nutrients in this passage.",
+   "raw_answer": "She could overdo **folic acid** and **iron**. The document says that continued use of prenatal supplements during lactation \"may exceed their needs for folic acid and iron.\" [cite:dga:p128:c0]\n\nUpper limits for women who are lactating (Tolerable Upper Intake Level, UL):\n- **Folic acid:** 1,000 micrograms. [cite:dga:p128:c0]\n- **Iron:** 45 milligrams. [cite:dga:p128:c0]\n\nThe document also advises women to ask a healthcare provider about appropriate use of prenatal or other dietary supplements during lactation. [cite:dga:p128:c0]\n\nSource: Chapter 5, \"Meeting Nutrient Needs,\" printed page 115. The document names only these two nutrients as likely to be exceeded. It does not list upper limits for other nutrients in this passage.",
+   "citations": [
+    "dga:p128:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "lactating women dietary supplements prenatal vitamins upper limit excess nutrients",
+      "top_k": 8
+     },
+     "returned_ids": [
+      "dga:p151:r1",
+      "dga:p128:c0",
+      "dga:p128",
+      "dga:p149:r1",
+      "dga:p151",
+      "dga:p126:r3",
+      "dga:p151:f0",
+      "dga:p128:f0"
+     ],
+     "error": null,
+     "latency_s": 0.21
+    },
+    {
+     "event": "tool",
+     "tool": "get_page",
+     "args": {
+      "pdf_page": 128
+     },
+     "returned_ids": [
+      "dga:p128",
+      "dga:p128:c0",
+      "dga:p128:c1",
+      "dga:p128:f0",
+      "dga:p128:f1",
+      "dga:p128:r1",
+      "dga:p128"
+     ],
+     "error": null,
+     "latency_s": 0.02
+    }
+   ],
+   "context_ids": [
+    "dga:p151:r1",
+    "dga:p128:c0",
+    "dga:p128",
+    "dga:p149:r1",
+    "dga:p151",
+    "dga:p126:r3",
+    "dga:p151:f0",
+    "dga:p128:f0",
+    "dga:p128:c1",
+    "dga:p128:f1",
+    "dga:p128:r1"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 431,
+    "cache_read": 10557,
+    "cache_write": 6507
+   },
+   "cost_usd": 0.0216,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "t25",
+   "split": "test",
+   "group": "none",
+   "question": "Does the guidance recommend intermittent fasting or time-restricted eating windows for weight management in adults?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for intermittent fasting, time-restricted eating and meal timing for weight management. The results had nothing on those topics. They only returned unrelated pages, such as calorie needs during pregnancy and estimated calorie needs by age and sex. I can't say whether the guidance recommends or addresses fasting or eating windows for adults.",
+   "raw_answer": "Not enough evidence in the document. I searched for intermittent fasting, time-restricted eating and meal timing for weight management. The results had nothing on those topics. They only returned unrelated pages, such as calorie needs during pregnancy and estimated calorie needs by age and sex. I can't say whether the guidance recommends or addresses fasting or eating windows for adults.",
+   "citations": [],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "intermittent fasting time-restricted eating meal timing weight management"
+     },
+     "returned_ids": [
+      "dga:p038:r3",
+      "dga:p125:f1",
+      "dga:p125:c0",
+      "dga:p154:c0",
+      "dga:p163",
+      "dga:p125"
+     ],
+     "error": null,
+     "latency_s": 0.23
+    }
+   ],
+   "context_ids": [
+    "dga:p038:r3",
+    "dga:p125:f1",
+    "dga:p125:c0",
+    "dga:p154:c0",
+    "dga:p163",
+    "dga:p125"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 186,
+    "cache_read": 4260,
+    "cache_write": 2340
+   },
+   "cost_usd": 0.0081,
+   "seconds": 3.6
+  },
+  {
+   "query_id": "t26",
+   "split": "test",
+   "group": "none",
+   "question": "What is the acceptable daily intake (mg per kg body weight) of aspartame or sucralose according to these guidelines?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I ran three searches: \"acceptable daily intake aspartame sucralose high-intensity sweeteners\", \"low-calorie sweeteners aspartame sucralose safety FDA\", and \"acceptable daily intake non-nutritive sweeteners\". None of them returned a passage that gives an acceptable daily intake (mg per kg body weight) for aspartame or sucralose. The results were about added sugars, beverage calories, and food group intakes. I can't give a value without evidence from the document.",
+   "raw_answer": "Not enough evidence in the document. I ran three searches: \"acceptable daily intake aspartame sucralose high-intensity sweeteners\", \"low-calorie sweeteners aspartame sucralose safety FDA\", and \"acceptable daily intake non-nutritive sweeteners\". None of them returned a passage that gives an acceptable daily intake (mg per kg body weight) for aspartame or sucralose. The results were about added sugars, beverage calories, and food group intakes. I can't give a value without evidence from the document.",
+   "citations": [],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "acceptable daily intake aspartame sucralose high-intensity sweeteners",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p110:r1",
+      "dga:p112:r1",
+      "dga:p113:r1",
+      "dga:p049:r1",
+      "dga:p112:r3"
+     ],
+     "error": null,
+     "latency_s": 0.26
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "low-calorie sweeteners aspartame sucralose safety FDA",
+      "top_k": 5,
+      "kinds": [
+       "chunk",
+       "page"
+      ]
+     },
+     "returned_ids": [
+      "dga:p055",
+      "dga:p055:c0",
+      "dga:p108:c0",
+      "dga:p108",
+      "dga:p054"
+     ],
+     "error": null,
+     "latency_s": 0.53
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "sweeteners \"acceptable daily intake\" non-nutritive sweeteners",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p049:r1",
+      "dga:p110:r1",
+      "dga:p055",
+      "dga:p111:r1",
+      "dga:p113:r1"
+     ],
+     "error": null,
+     "latency_s": 0.28
+    }
+   ],
+   "context_ids": [
+    "dga:p110:r1",
+    "dga:p112:r1",
+    "dga:p113:r1",
+    "dga:p049:r1",
+    "dga:p112:r3",
+    "dga:p055",
+    "dga:p055:c0",
+    "dga:p108:c0",
+    "dga:p108",
+    "dga:p054",
+    "dga:p111:r1"
+   ],
+   "tool_calls": 3,
+   "rounds": 3,
+   "tokens": {
+    "input": 10,
+    "output": 478,
+    "cache_read": 16388,
+    "cache_write": 7704
+   },
+   "cost_usd": 0.0257,
+   "seconds": 8.1
+  },
+  {
+   "query_id": "t27",
+   "split": "test",
+   "group": "none",
+   "question": "What glycemic index values do the guidelines give for brown rice versus white rice?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for glycemic index values for brown rice and white rice, and the results had none. The document does mention brown rice and white rice, but only in the burrito bowl comparison in Figure 1-8. There, the typical bowl uses white rice (1½ cups) and the nutrient-dense bowl uses brown rice (1 cup) [cite:dga:p051:f0]. It gives no glycemic index figures for either.",
+   "raw_answer": "Not enough evidence in the document. I searched for glycemic index values for brown rice and white rice, and the results had none. The document does mention brown rice and white rice, but only in the burrito bowl comparison in Figure 1-8. There, the typical bowl uses white rice (1½ cups) and the nutrient-dense bowl uses brown rice (1 cup) [cite:dga:p051:f0]. It gives no glycemic index figures for either.",
+   "citations": [
+    "dga:p051:f0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "glycemic index brown rice white rice",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p060:r3",
+      "dga:p038:r3",
+      "dga:p051:f0",
+      "dga:p079:r2",
+      "dga:p113:r2"
+     ],
+     "error": null,
+     "latency_s": 0.23
+    }
+   ],
+   "context_ids": [
+    "dga:p060:r3",
+    "dga:p038:r3",
+    "dga:p051:f0",
+    "dga:p079:r2",
+    "dga:p113:r2"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 240,
+    "cache_read": 4251,
+    "cache_write": 2333
+   },
+   "cost_usd": 0.0087,
+   "seconds": 3.6
+  },
+  {
+   "query_id": "t28",
+   "split": "test",
+   "group": "none",
+   "question": "Do the guidelines recommend choosing organic produce to reduce pesticide residues for children?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for organic produce and pesticide residues, and for pesticides, organic foods and washing produce. None of the results contained a recommendation to choose organic produce, or any mention of pesticide residues for children. The only related items were a food safety graphic (Clean, Separate, Cook, Chill) [cite:dga:p047:r1] and a cover photo of a father and child washing a cucumber [cite:dga:p001:r3]. Neither mentions pesticides or organic produce.",
+   "raw_answer": "Not enough evidence in the document. I searched for organic produce and pesticide residues, and for pesticides, organic foods and washing produce. None of the results contained a recommendation to choose organic produce, or any mention of pesticide residues for children. The only related items were a food safety graphic (Clean, Separate, Cook, Chill) [cite:dga:p047:r1] and a cover photo of a father and child washing a cucumber [cite:dga:p001:r3]. Neither mentions pesticides or organic produce.",
+   "citations": [
+    "dga:p047:r1",
+    "dga:p001:r3"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "organic produce pesticide residues",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p041:r4",
+      "dga:p041:r1",
+      "dga:p158",
+      "dga:p041:r5",
+      "dga:p158:f0",
+      "dga:p023"
+     ],
+     "error": null,
+     "latency_s": 0.17
+    },
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "pesticides organic foods food safety washing fruits and vegetables",
+      "top_k": 6
+     },
+     "returned_ids": [
+      "dga:p001:r3",
+      "dga:p041:r4",
+      "dga:p041:r1",
+      "dga:p047:r1",
+      "dga:p041",
+      "dga:p041:r5"
+     ],
+     "error": null,
+     "latency_s": 0.38
+    }
+   ],
+   "context_ids": [
+    "dga:p041:r4",
+    "dga:p041:r1",
+    "dga:p158",
+    "dga:p041:r5",
+    "dga:p158:f0",
+    "dga:p023",
+    "dga:p001:r3",
+    "dga:p047:r1",
+    "dga:p041"
+   ],
+   "tool_calls": 2,
+   "rounds": 2,
+   "tokens": {
+    "input": 8,
+    "output": 354,
+    "cache_read": 8249,
+    "cache_write": 3305
+   },
+   "cost_usd": 0.0126,
+   "seconds": 4.9
+  },
+  {
+   "query_id": "t29",
+   "split": "test",
+   "group": "none",
+   "question": "How much microplastic exposure comes from eating seafood, and do the guidelines limit seafood because of it?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for microplastics and seafood and found nothing on microplastic exposure from seafood.\n\nThe seafood advice I did find concerns methylmercury. For women who might become or are pregnant or lactating, and for young children, it points to joint advice on seafood consumption to limit methylmercury exposure. It also encourages seafood choices that are higher in EPA and DHA and lower in methylmercury [cite:dga:p047:c0].",
+   "raw_answer": "Not enough evidence in the document. I searched for microplastics and seafood and found nothing on microplastic exposure from seafood.\n\nThe seafood advice I did find concerns methylmercury. For women who might become or are pregnant or lactating, and for young children, it points to joint advice on seafood consumption to limit methylmercury exposure. It also encourages seafood choices that are higher in EPA and DHA and lower in methylmercury [cite:dga:p047:c0].",
+   "citations": [
+    "dga:p047:c0"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "microplastics seafood exposure",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p099:r3",
+      "dga:p047:c0",
+      "dga:p047",
+      "dga:p093:r3",
+      "dga:p091:r3"
+     ],
+     "error": null,
+     "latency_s": 0.26
+    }
+   ],
+   "context_ids": [
+    "dga:p099:r3",
+    "dga:p047:c0",
+    "dga:p047",
+    "dga:p093:r3",
+    "dga:p091:r3"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 230,
+    "cache_read": 4260,
+    "cache_write": 2675
+   },
+   "cost_usd": 0.0094,
+   "seconds": 3.2
+  },
+  {
+   "query_id": "t30",
+   "split": "test",
+   "group": "none",
+   "question": "What do the guidelines say about monosodium glutamate (MSG) as a hidden source of sodium?",
+   "config": "vision",
+   "status": "abstain",
+   "error": null,
+   "answer": "Not enough evidence in the document. I searched for monosodium glutamate and MSG, and the results didn't mention either one. The document doesn't address MSG as a hidden source of sodium.\n\nThe closest content is general sodium information:\n- Sodium is used in foods in several ways, including as a flavor enhancer. [cite:dga:p059:c0]\n- Most sodium consumed in the U.S. comes from salt added during commercial food processing and preparation, including restaurant foods. [cite:dga:p059:f1]\n- Only a small share of sodium intake comes from sodium inherent in foods or from salt added in home cooking or at the table. [cite:dga:p059:f1]",
+   "raw_answer": "Not enough evidence in the document. I searched for monosodium glutamate and MSG, and the results didn't mention either one. The document doesn't address MSG as a hidden source of sodium.\n\nThe closest content is general sodium information:\n- Sodium is used in foods in several ways, including as a flavor enhancer. [cite:dga:p059:c0]\n- Most sodium consumed in the U.S. comes from salt added during commercial food processing and preparation, including restaurant foods. [cite:dga:p059:f1]\n- Only a small share of sodium intake comes from sodium inherent in foods or from salt added in home cooking or at the table. [cite:dga:p059:f1]",
+   "citations": [
+    "dga:p059:c0",
+    "dga:p059:f1"
+   ],
+   "flags": [],
+   "events": [
+    {
+     "event": "tool",
+     "tool": "search",
+     "args": {
+      "query": "monosodium glutamate MSG sodium",
+      "top_k": 5
+     },
+     "returned_ids": [
+      "dga:p060:r1",
+      "dga:p059",
+      "dga:p060:f0",
+      "dga:p059:f1",
+      "dga:p059:c0"
+     ],
+     "error": null,
+     "latency_s": 0.16
+    }
+   ],
+   "context_ids": [
+    "dga:p060:r1",
+    "dga:p059",
+    "dga:p060:f0",
+    "dga:p059:f1",
+    "dga:p059:c0"
+   ],
+   "tool_calls": 1,
+   "rounds": 1,
+   "tokens": {
+    "input": 6,
+    "output": 303,
+    "cache_read": 4259,
+    "cache_write": 2506
+   },
+   "cost_usd": 0.0097,
+   "seconds": 4.1
+  }
+ ]
+}

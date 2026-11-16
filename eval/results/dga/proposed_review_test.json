@@ -1,0 +1,18 @@
+{
+ "t10": {
+  "pass": false,
+  "reason": "Số liệu đúng (375/715/585/300, tổng 1.975) nhưng citation chỉ là trang và fact (dga:p052, dga:p052:c0, dga:p053:f0), không chỉ ra vùng Figure 1-9 → không đạt yêu cầu 'citation xác định được trang và vùng evidence'."
+ },
+ "t16": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p078:r1 (Figure 2-2): rau ~0,55 dưới khoảng 0,7–1,0; trái cây ~1,25, ngũ cốc ~3,08, sữa ~2,6 trên khoảng; đạm ~1,94 ≈ mức 2,0. Câu trả lời đúng cả hai vế và cite đúng vùng biểu đồ; bằng chứng gold thứ hai (đoạn văn p.79) chỉ là bổ trợ."
+ },
+ "t18": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p109:r1 (Table 4-1, mẫu Healthy U.S.-Style cho 19–59 tuổi): cột 2.000 có rau 2½, trái cây 2 cup eq/ngày — cùng số với Table A3-2 gold và đúng nhóm tuổi của người 28 tuổi; kèm Table A2-2 p.153 cho 2.000 kcal. Hai nguồn, đúng vùng."
+ },
+ "t19": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p039:r1 (Figure 1-4): 14–18 tuổi = 51, 60+ = 63 trên cùng biểu đồ; hiệu 12 đúng. Thêm Figure 3-1 (p.88) và fact chương 6 (p.139) xác nhận từng số. Vùng khác vùng gold nhưng chứa trọn bằng chứng."
+ }
+}
