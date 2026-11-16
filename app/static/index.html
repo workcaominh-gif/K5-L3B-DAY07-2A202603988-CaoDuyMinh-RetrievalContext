@@ -130,6 +130,20 @@ sup.c{display:inline-block;min-width:18px;padding:0 5px;margin:0 1px;border-radi
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.kpi b{display:block;font-size:22px;letter-spacing:-.02em}.kpi span{color:var(--muted);font-size:12px}
 table.grid{border-collapse:collapse;width:100%;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 table.grid th,table.grid td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}table.grid th{background:var(--code);font-weight:600}
+#cmp .view{max-width:1400px;margin:0 auto}
+.cbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 8px;font-size:13px}
+.cbar select,.cbar input[type=text]{font:inherit;padding:5px 9px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);max-width:100%;min-width:0}
+.cms{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}.cms label{display:flex;gap:5px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:3px 9px;background:var(--panel);font-size:13px;cursor:pointer}
+.cms label.llm{border-style:dashed}.cms small{color:var(--warn)}
+.cgold{font-size:13px;margin:0 0 10px;padding:8px 10px;border-radius:10px;background:var(--code)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:10px;align-items:start}
+.ccol{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:10px;min-width:0}
+.ccol h3{font-size:13.5px;margin:0 0 4px}.ccol .cst{display:flex;gap:4px;flex-wrap:wrap;font-size:11.5px;margin:0 0 8px}
+.ccol .cst span{border:1px solid var(--line);border-radius:7px;padding:0 6px}.ccol .cst .y{border-color:var(--ok);color:var(--ok)}.ccol .cst .n{border-color:var(--bad);color:var(--bad)}
+.citem{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px;border-top:1px solid var(--line);padding:7px 0;font-size:12.5px}
+.citem .r{font-weight:650;color:var(--muted)}.citem.hit{background:color-mix(in srgb,var(--ok) 12%,transparent);border-radius:8px}.citem.hit .r{color:var(--ok)}
+.citem .w{font-weight:600}.citem img{width:100%;max-height:90px;object-fit:cover;border-radius:6px;border:1px solid var(--line);margin:3px 0}
+.citem .tx{color:var(--muted)}.cq{font-size:11.5px;color:var(--muted);margin:0 0 6px}
 h2{font-size:16px;margin:22px 0 8px}.muted{color:var(--muted)}
 .ingr td:first-child{font-weight:600}.pill{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:7px;padding:0 6px;margin:1px 2px 1px 0;background:var(--bg)}
 .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12.5px;margin:6px 0 14px}.flow span{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:4px 9px}.flow i{color:var(--muted);font-style:normal}
@@ -178,6 +192,7 @@ align-items:center;justify-content:center;z-index:9;font-size:22px;font-weight:6
     <button role="tab" aria-selected="false" data-tab="graph">Graph</button>
     <button role="tab" aria-selected="false" data-tab="pipe">Pipeline</button>
     <button role="tab" aria-selected="false" data-tab="vec">Kho vector</button>
+    <button role="tab" aria-selected="false" data-tab="cmp">So sánh truy xuất</button>
   </nav>
 </header>
 <div id="drop">Thả ảnh hoặc âm thanh để tìm trong sách và video</div>
@@ -247,6 +262,7 @@ align-items:center;justify-content:center;z-index:9;font-size:22px;font-weight:6
   </section>
 
   <!-- TAB: embedding databases explorer -->
+  <section class="tab" id="cmp"><div class="view" id="cview"><p class="muted">Đang tải…</p></div></section>
   <section class="tab" id="vec"><div class="view" id="vview"><p class="muted">Đang tải…</p></div></section>
 
   <!-- TAB 5: pipeline explained -->
@@ -282,6 +298,7 @@ document.querySelectorAll("nav.tabs button").forEach(b => b.onclick = () => {
   if (b.dataset.tab === "graph" && !GRAPH) loadGraph();
   if (b.dataset.tab === "pipe" && !PIPE) loadPipeline();
   if (b.dataset.tab === "vec" && !VSUM) loadVectors();
+  if (b.dataset.tab === "cmp" && !CMETA) loadCompare();
   if (b.dataset.tab === "pdf") pdfGo(PDFPAGE, true);
 });
 // ---------- markdown (small, escape-first) ----------
@@ -577,6 +594,74 @@ async function vecLoad() {
     const n = await fetch(`/api/vectors/nn?table=${encodeURIComponent(table)}&id=${encodeURIComponent(b.dataset.nn)}`).then(r => r.json());
     box.innerHTML = n.error ? `<p class="flag">${esc(n.error)}</p>` : `<div class="vnn">${n.neighbours.map(x => vecRow(x, table, true)).join("")}</div>`;
   });
+}
+// ---------- Compare tab: the same question through several retrieval methods, side by side ----------
+let CMETA = null, CCORP = "kitchen";
+async function loadCompare() {
+  CMETA = await fetch("/api/compare/meta").then(r => r.json());
+  $("#cview").innerHTML = `<h2 style="margin-top:0">So sánh phương pháp truy xuất</h2>
+    <p class="muted">Cùng một câu hỏi chạy qua nhiều phương pháp. Chọn câu hỏi trong benchmark để thấy kết quả đúng (nền xanh) theo đúng định nghĩa "hit" của benchmark, hoặc tự gõ câu hỏi.
+    Phương pháp viền nét đứt gọi Claude Haiku 5.5 (tốn phí, chậm hơn) nên mặc định tắt.</p>
+    <div class="cbar"><select id="ccorp" aria-label="Kho dữ liệu"></select><select id="cqsel" aria-label="Câu hỏi" style="flex:1;min-width:min(220px,100%)"></select>
+      <select id="ck" aria-label="Top k"><option>3</option><option selected>5</option><option>10</option></select>
+      <label id="cpkgl" title="Benchmark FAQ loại các gói tri thức vì FAQ được viết từ chúng"><input type="checkbox" id="cpkg" checked> bỏ gói tri thức</label>
+      <button class="ib" id="crun" style="background:var(--accent);color:#fff;border-color:var(--accent)">Chạy so sánh</button></div>
+    <div class="cbar"><input type="text" id="ctext" placeholder="…hoặc tự gõ câu hỏi (tiếng Anh cho kho Day 6)" style="flex:1"></div>
+    <div class="cms" id="cms"></div><div id="cgold"></div><div id="cres"></div><div id="cbench"></div>`;
+  $("#ccorp").innerHTML = Object.entries(CMETA.corpora).map(([k, c]) => `<option value="${k}">${esc(c.label)}</option>`).join("");
+  $("#ccorp").onchange = () => { CCORP = $("#ccorp").value; cSetup(); };
+  $("#cqsel").onchange = () => { if ($("#cqsel").value) $("#ctext").value = ""; cGold(); };
+  $("#ctext").oninput = () => { if ($("#ctext").value.trim()) $("#cqsel").value = ""; cGold(); };
+  $("#ctext").onkeydown = e => { if (e.key === "Enter") cRun(); };
+  $("#crun").onclick = cRun;
+  cSetup();
+}
+function cSetup() {
+  const c = CMETA.corpora[CCORP];
+  $("#cpkgl").style.display = CCORP === "kitchen" ? "" : "none";
+  $("#cqsel").innerHTML = `<option value="">— tự gõ câu hỏi —</option>` + c.questions.map(q =>
+    `<option value="${q.id}">${esc(q.id)}${q.split ? " · " + q.split : ""} · ${esc(q.type || "")}${q.answerable === false ? " · không có đáp án" : ""} — ${esc(q.question.slice(0, 110))}</option>`).join("");
+  $("#cqsel").value = c.questions[0].id; $("#ctext").value = "";
+  $("#cms").innerHTML = Object.entries(c.methods).map(([m, l]) => { const llm = c.llm.includes(m);
+    return `<label class="${llm ? "llm" : ""}"><input type="checkbox" value="${m}" ${c.default.includes(m) ? "checked" : ""}> ${esc(l)}${llm ? " <small>· LLM</small>" : ""}</label>`; }).join("");
+  $("#cres").innerHTML = ""; cGold(); cBench();
+}
+function cGold() {
+  const q = CMETA.corpora[CCORP].questions.find(x => x.id === $("#cqsel").value);
+  $("#cgold").innerHTML = q ? `<div class="cgold"><b>${esc(q.question)}</b><br>${q.answerable === false ? `<span class="flag">Câu này không có đáp án trong kho — không chấm hit; agent phải từ chối.</span>`
+    : `Nguồn đúng: ${q.gold.map(g => `<span class="pill">${esc(g)}</span>`).join("")}${q.answer ? `<br><span class="muted">Đáp án: ${esc(q.answer.slice(0, 300))}</span>` : ""}`}</div>` : "";
+}
+async function cRun() {
+  const methods = [...document.querySelectorAll("#cms input:checked")].map(x => x.value);
+  const body = { corpus: CCORP, qid: $("#cqsel").value || null, text: $("#ctext").value.trim(), methods, k: +$("#ck").value, no_pkg: $("#cpkg").checked };
+  if (!body.qid && !body.text) { $("#cres").innerHTML = `<p class="flag">Chọn một câu hỏi hoặc tự gõ.</p>`; return; }
+  $("#crun").disabled = true;
+  $("#cres").innerHTML = `<p class="muted">Đang chạy ${methods.length} phương pháp${CCORP === "day6" && !window.CD6 ? " (lần đầu nạp kho Day 6 + BM25, ~20 giây)" : ""}…</p>`;
+  try {
+    const d = await fetch("/api/compare", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(r => r.json());
+    if (CCORP === "day6") window.CD6 = 1;
+    if (d.error) { $("#cres").innerHTML = `<p class="flag">${esc(d.error)}</p>`; return; }
+    const lbl = CMETA.corpora[CCORP].methods;
+    const cols = d.columns.filter(c => !c.error);
+    const best = d.graded && cols.length ? Math.max(...cols.map(c => c.rr || 0)) : null;
+    $("#cres").innerHTML = `<div class="cgrid">${d.columns.map(c => c.error ? `<div class="ccol"><h3>${esc(lbl[c.method] || c.method)}</h3><p class="flag">${esc(c.error)}</p></div>` : `<div class="ccol"${best && c.rr === best ? ' style="border-color:var(--ok)"' : ""}>
+      <h3>${esc(lbl[c.method] || c.method)}</h3>
+      <div class="cst">${d.graded ? `<span class="${c.hit1 ? "y" : "n"}">Hit@1 ${c.hit1 ? "✓" : "✗"}</span><span class="${c.hit3 ? "y" : "n"}">Hit@3 ${c.hit3 ? "✓" : "✗"}</span><span>RR ${c.rr}</span>` : ""}
+        <span>${c.ms < 1000 ? c.ms + " ms" : (c.ms / 1000).toFixed(1) + " s"}</span><span>${c.cost_usd ? "$" + c.cost_usd.toFixed(4) : "$0"}</span></div>
+      ${c.warning ? `<div class="cq flag">${esc(c.warning)}</div>` : ""}${c.queries ? `<div class="cq">Haiku viết lại: ${c.queries.map(x => "“" + esc(x) + "”").join(" · ")}</div>` : ""}
+      ${c.items.map((it, i) => `<div class="citem${it.hit ? " hit" : ""}"><span class="r">${i + 1}</span><div><span class="w">${esc(it.where)}</span>${it.rerank != null ? ` <span class="pill">Haiku ${it.rerank}/3</span>` : ""}
+        ${it.thumb ? `<img loading="lazy" alt="" src="${esc(it.thumb)}">` : ""}<div class="tx">${esc(it.text)}</div><div class="vid">${esc(it.id)}</div></div></div>`).join("") || `<p class="muted">Không có kết quả.</p>`}
+    </div>`).join("")}</div>`;
+  } finally { $("#crun").disabled = false; }
+}
+function cBench() {
+  const B = CMETA.bench, lbl = CMETA.corpora[CCORP].methods;
+  const tbl = (title, b, cols) => b ? `<h2>${title}</h2><div style="overflow-x:auto"><table class="grid"><tr><th>Phương pháp</th>${cols.map(c => `<th>${c[1]}</th>`).join("")}</tr>${Object.entries(b.rows).map(([m, r]) =>
+    `<tr><td>${esc(lbl[m] || m)}</td>${cols.map(([k]) => `<td>${k === "cost_usd" ? "$" + r[k] : k === "seconds" ? r[k] + " s" : k === "mrr10" ? r[k].toFixed(3) : r[k] + "/" + b.n}</td>`).join("")}</tr>`).join("")}</table></div>` : "";
+  $("#cbench").innerHTML = CCORP === "kitchen"
+    ? tbl(`Kết quả benchmark đã lưu · FAQ Kitchen KB, ${B.kitchen.n} câu`, B.kitchen, [["hit1", "Hit@1"], ["hit3", "Hit@3"], ["hit5", "Hit@5"]]) + `<p class="muted">${esc(B.kitchen.note || "")}. Câu hỏi do LLM viết từ chính dữ liệu nên điểm tuyệt đối lạc quan; dùng để so các phương pháp với nhau.</p>`
+    : ["dev", "test"].map(s => tbl(`Kết quả benchmark đã lưu · Day 6 ${s} (${B["day6_" + s]?.n} câu có đáp án)`, B["day6_" + s],
+        [["hit1", "Hit@1"], ["hit3", "Evidence Hit@3"], ["mrr10", "MRR@10"], ["seconds", "Thời gian"], ["cost_usd", "Chi phí"]])).join("") + `<p class="muted">Cấu hình khoá trên dev: dense EmbeddingGemma (eval/LOCKED.md). Hit = đúng tài liệu + trang + chứa trọn câu bằng chứng.</p>`;
 }
 // ---------- PDF tab: original PDF next to the extraction of the same page ----------
 let PDFPAGE = 12, PMETA = null;

@@ -160,6 +160,9 @@ class H(BaseHTTPRequestHandler):
                                 str(T.WORK.parent / "raw" / "video" / f"{vid}.mp4"), "-vn", "-c:a", "aac", "-b:a", "96k", str(out)], timeout=20)
             if out.exists():
                 return self._send(200, out.read_bytes(), "audio/mp4")
+        if self.path == "/api/compare/meta":
+            import compare as CMP
+            return self._json(200, CMP.meta())
         if self.path == "/api/graph":
             return self._json(200, graph())
         if self.path == "/api/pipeline":
@@ -218,6 +221,14 @@ class H(BaseHTTPRequestHandler):
             fid = f"{secrets.token_hex(6)}.{ext}"
             (T.UPLOADS / fid).write_bytes(data)
             return self._json(200, {"id": fid})
+        if self.path == "/api/compare":
+            import compare as CMP
+            try:
+                return self._json(200, CMP.run(str(body.get("corpus") or ""), body.get("qid") or None, body.get("text"),
+                                               [str(m) for m in body.get("methods") or []][:8], int(body.get("k") or 5),
+                                               bool(body.get("no_pkg", True))))
+            except ValueError as e:
+                return self._json(400, {"error": str(e)})
         if self.path == "/api/chat":
             sid = re.sub(r"[^a-f0-9]", "", body.get("session") or "")[:10] or None
             sess = SESSIONS.get(sid) if sid else None

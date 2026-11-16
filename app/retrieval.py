@@ -103,13 +103,16 @@ def rerank_haiku(query: str, cands: list[dict], top: int) -> list[dict]:
                 messages=[{"role": "user", "content": f"Query: {query}\n\n{docs}\n\nScore every doc 0-3 (3 = directly contains the "
                            "answer, 0 = unrelated). Reply with JSON only: {\"scores\": [s0, s1, ...]} in doc order."}],
                 output_config={"effort": "low", "format": {"type": "json_schema", "schema": {"type": "object", "properties": {
-                    "scores": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}},
+                    "scores": {"type": "array", "items": {"type": "integer"}}},
                     "required": ["scores"], "additionalProperties": False}}})
-            scores = json.loads("".join(b.text for b in r.content if b.type == "text"))["scores"]
+            scores = [max(0, min(3, int(x))) for x in json.loads("".join(b.text for b in r.content if b.type == "text"))["scores"]]
             usage = (r.usage.input_tokens, r.usage.output_tokens)
         except Exception as e:                                    # rerank failure = keep hybrid order, report it
-            scores, usage = [0] * len(cands), (0, 0)
-            print("rerank error:", type(e).__name__, str(e)[:120], file=sys.stderr)
+            print("rerank error:", type(e).__name__, str(e)[:300], file=sys.stderr)
+            out = [dict(c) for c in cands[:top]]                  # not cached, so the next call retries
+            if out:
+                out[0]["rerank_error"] = f"{type(e).__name__}: {str(e)[:160]}"
+            return out
         _rerank_cache[key] = (scores + [0] * len(cands))[:len(cands)], usage
     scores, usage = _rerank_cache[key]
     order = sorted(range(len(cands)), key=lambda i: (-scores[i], i))
