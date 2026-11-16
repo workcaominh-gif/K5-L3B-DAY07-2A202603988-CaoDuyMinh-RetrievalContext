@@ -8,6 +8,7 @@ Cấu hình chốt: [eval/LOCKED.md](eval/LOCKED.md) · Kết quả: [eval/resul
 | Phần | Kho dữ liệu | Nội dung |
 |---|---|---|
 | **Bài cơ bản (rubric 85 điểm)** | Vector store Day 6: EU AI Act + GDPR, 572 trang, Postgres/pgvector | 6 phương pháp retrieval trên cùng 24 câu Day 6 + 4 câu thiếu bằng chứng (dev 18+2, test 6+2); agent Claude Sonnet 5.5 ReAct có guardrails; baseline vs cấu hình chọn trên dev và test |
+| **Thử thách nâng cao (+15)** | Dietary Guidelines for Americans 2020–2025 (USDA+HHS, 164 trang, bảng + biểu đồ + ảnh) | Pipeline trích xuất có kiểm chứng (`parser/DGA_PIPELINE.md`), benchmark dev 22 / test 30 (`benchmark/dga/`), cấu hình chốt trên dev (`eval/DGA_LOCKED.md`), test duyệt tay **29/30 = 96,7%** (`eval/results/dga/REVIEW_test.md`) |
 | **Mở rộng (demo)** | Sách USDA 148 trang + 2 video YouTube (public domain) | Pipeline nạp đa phương thức theo slide 7 (Data → Processing → Indexing → Enrichment → Compilation), agent đa phương thức (chữ, ảnh, giọng nói, Shazam, ngân nga), web 7 tab |
 
 ## Chạy lại

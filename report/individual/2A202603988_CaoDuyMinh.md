@@ -3,7 +3,7 @@
 Tóm tắt: trên vector store Day 6 (EU AI Act + GDPR), tôi so 6 phương pháp retrieval trên cùng bộ câu hỏi, chốt cấu hình
 trên dev (`eval/LOCKED.md`) rồi mới chạy test, và đánh giá agent Claude Sonnet 5.5 (ReAct, guardrails) cho baseline và
 cấu hình chọn. Phần mở rộng là một kho đa phương thức (sách PDF 148 trang + 2 video) với agent tìm bằng chữ, ảnh, giọng nói
-và âm thanh — trình bày ở cuối, **không** dùng để tính điểm phần cơ bản.
+và âm thanh — trình bày ở cuối, **không** dùng để tính điểm phần cơ bản. Thử thách nâng cao dùng tài liệu riêng (Dietary Guidelines 2020–2025, 164 trang): test duyệt tay **29/30 (96,7%)**.
 
 ## Dữ liệu và benchmark
 
@@ -141,8 +141,11 @@ Interface), mô tả trong `parser/PIPELINE.md`:
 |---|---|---|---|---|---|---|---|
 | Tự động (kiểm citation tất định + judge Sonnet 5.5, DRAFT) | 26/30 (86,7%) | 6/6 | 4/5 | 4/5 | 2/4 | 4/4 | 6/6 |
 | Sau khi xem crop gốc của 4 câu trượt (đề xuất) | 29/30 (96,7%) | 6/6 | 4/5 | 5/5 | 4/4 | 4/4 | 6/6 |
-| **Duyệt tay (chính thức)** | _đang duyệt — `eval/results/dga/REVIEW_test.md`_ | | | | | | |
+| **Duyệt tay (chính thức, Cao Duy Minh)** | **29/30 (96,7%) ≥ 90% ✓** | **6/6** | **4/5** | **5/5** | **4/4** | **4/4** | **6/6** |
 
+  Nhãn chính thức: `eval/results/dga/manual_review_test.json` (sinh viên đọc từng câu test, câu trả lời, citation và crop gốc,
+  xác nhận nhãn đề xuất — lý do từng câu trong `REVIEW_test.md`). Câu không đạt duy nhất: t10. Lỗi hệ thống/timeout: 0/30.
+  Câu biên: t01 (lấy 5½ từ Table 4-1 tương đương vì phần bảng A3-2 trả về bị cắt) — tính đạt; nếu tính trượt vẫn 28/30.
   Cả 4 câu trượt tự động đều được judge xác nhận đúng số; chúng trượt ở kiểm tra citation tất định vì agent cite **vùng khác
   vùng gold nhưng cũng chứa bằng chứng**: t18 cite Table 4-1 (cùng số với Table A3-2 gold), t19 cite Figure 1-4 (có cả 51 và
   63), t16 cite đúng Figure 2-2 nhưng không cite đoạn văn bổ trợ p.79. t10 là lỗi thật: trả đúng số nhưng chỉ cite trang/fact,

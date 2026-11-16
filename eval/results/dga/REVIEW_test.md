@@ -9,9 +9,9 @@ nhãn tự động (DRAFT: kiểm citation tất định + judge Sonnet 5.5) và
 |---|---|---|---|---|---|---|---|
 | Tự động (DRAFT) | 26/30 (86.7%) | 6/6 | 4/5 | 4/5 | 2/4 | 4/4 | 6/6 |
 | Tự động + đề xuất sau khi xem crop gốc (chưa duyệt tay) | 29/30 (96.7%) | 6/6 | 4/5 | 5/5 | 4/4 | 4/4 | 6/6 |
-| Duyệt tay (0/30 câu đã duyệt) | 0/30 (0.0%) | 0/6 | 0/5 | 0/5 | 0/4 | 0/4 | 0/6 |
+| Duyệt tay (30/30 câu đã duyệt) | 29/30 (96.7%) | 6/6 | 4/5 | 5/5 | 4/4 | 4/4 | 6/6 |
 
-Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24, t25, t26, t27, t28, t29, t30
+Câu chưa duyệt tay: không
 
 ## t01 · table
 
@@ -29,7 +29,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Dark-green 1½ cup eq/tuần cite đúng Table A3-2 (p.157). Red & orange 5½: agent nói phần bảng A3-2 bị cắt nên lấy từ Table 4-1 (p.109, cùng mẫu U.S.-Style, cột 1.800 = 5½ — đã xem crop) và Table 3-3; số đúng, bằng chứng tương đương. BIÊN — người duyệt cân nhắc.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Dark-green 1½ cup eq/tuần cite đúng Table A3-2 (p.157). Red & orange 5½: agent nói phần bảng A3-2 bị cắt nên lấy từ Table 4-1 (p.109, cùng mẫu U.S.-Style, cột 1.800 = 5½ — đã xem crop) và Table 3-3; số đúng, bằng chứng tương đương. BIÊN — người duyệt cân nhắc. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t02 · table
 
@@ -47,7 +47,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 2.800 vs 2.000 kcal, chênh 800; cite Table A2-2 p.153 đúng vùng.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 2.800 vs 2.000 kcal, chênh 800; cite Table A2-2 p.153 đúng vùng. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t03 · table
 
@@ -65,7 +65,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — +330 kcal = 500 − 170, đúng điều kiện cân nặng khỏe mạnh; cite Table 5-2 p.125.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — +330 kcal = 500 − 170, đúng điều kiện cân nặng khỏe mạnh; cite Table 5-2 p.125. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t04 · table
 
@@ -83,7 +83,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 240 kcal = 12%, đạm 5½ oz eq; cite Table 6-1 p.138.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 240 kcal = 12%, đạm 5½ oz eq; cite Table 6-1 p.138. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t05 · table
 
@@ -101,7 +101,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — BMI 27 = Overweight, 15–25 lb, 0,6 lb/tuần (0,5–0,7); cite Table 5-3 p.125. Không nêu giả định 1,1–4,4 lb quý 1 — không được hỏi.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — BMI 27 = Overweight, 15–25 lb, 0,6 lb/tuần (0,5–0,7); cite Table 5-3 p.125. Không nêu giả định 1,1–4,4 lb quý 1 — không được hỏi. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t06 · table
 
@@ -119,7 +119,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Sữa 2 cup, trái cây 1 cup, ngũ cốc 3 oz eq; cite Table A3-1 p.156.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Sữa 2 cup, trái cây 1 cup, ngũ cốc 3 oz eq; cite Table A3-1 p.156. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t07 · image
 
@@ -137,7 +137,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Bơ → dầu thực vật, soda → nước có ga; đã xem crop Figure 1-2 p.35.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Bơ → dầu thực vật, soda → nước có ga; đã xem crop Figure 1-2 p.35. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t08 · image
 
@@ -155,7 +155,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Hai lợi ích (phát triển nhận thức của trẻ, tình trạng folate của mẹ); cite Figure 1-3 p.37.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Hai lợi ích (phát triển nhận thức của trẻ, tình trạng folate của mẹ); cite Figure 1-3 p.37. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t09 · image
 
@@ -173,7 +173,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 85% / 15% cho mục đích khác gồm đường bổ sung, chất béo bão hoà; cite Figure 1-7 p.50. Không nêu 250–350 kcal — không bắt buộc với câu hỏi.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 85% / 15% cho mục đích khác gồm đường bổ sung, chất béo bão hoà; cite Figure 1-7 p.50. Không nêu 250–350 kcal — không bắt buộc với câu hỏi. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t10 · image
 
@@ -191,7 +191,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** KHÔNG ĐẠT — Số liệu đúng (375/715/585/300, tổng 1.975) nhưng citation chỉ là trang và fact (dga:p052, dga:p052:c0, dga:p053:f0), không chỉ ra vùng Figure 1-9 → không đạt yêu cầu 'citation xác định được trang và vùng evidence'.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** KHÔNG ĐẠT — Số liệu đúng (375/715/585/300, tổng 1.975) nhưng citation chỉ là trang và fact (dga:p052, dga:p052:c0, dga:p053:f0), không chỉ ra vùng Figure 1-9 → không đạt yêu cầu 'citation xác định được trang và vùng evidence'. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t11 · image
 
@@ -209,7 +209,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Rau chiên → rau nướng, thịt nhiều muối → thịt nạc xay; cite Figure 2-1 p.76.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Rau chiên → rau nướng, thịt nhiều muối → thịt nạc xay; cite Figure 2-1 p.76. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t12 · chart
 
@@ -227,7 +227,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 62 + 122 = 184 kcal, bơ ≈ 66%; cite Figure 1-1 p.34.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 62 + 122 = 184 kcal, bơ ≈ 66%; cite Figure 1-1 p.34. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t13 · chart
 
@@ -245,7 +245,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Đồ uống có đường 24%, nước ngọt 16%; cite Figure 1-10 p.56 (cả bong bóng chính và ô con).
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Đồ uống có đường 24%, nước ngọt 16%; cite Figure 1-10 p.56 (cả bong bóng chính và ô con). (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t14 · chart
 
@@ -263,7 +263,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Natri: nữ 95%, nam 97% (tệ hơn); kèm 88%/57% — khớp crop Figure 3-2 p.90 đã xem.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Natri: nữ 95%, nam 97% (tệ hơn); kèm 88%/57% — khớp crop Figure 3-2 p.90 đã xem. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t15 · chart
 
@@ -281,7 +281,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 54 / 63 / 62, hiệu 9 — khớp crop Figure 5-1 p.126 đã xem.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 54 / 63 / 62, hiệu 9 — khớp crop Figure 5-1 p.126 đã xem. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t16 · chart
 
@@ -299,7 +299,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Đã xem crop dga:p078:r1 (Figure 2-2): rau ~0,55 dưới khoảng 0,7–1,0; trái cây ~1,25, ngũ cốc ~3,08, sữa ~2,6 trên khoảng; đạm ~1,94 ≈ mức 2,0. Câu trả lời đúng cả hai vế và cite đúng vùng biểu đồ; bằng chứng gold thứ hai (đoạn văn p.79) chỉ là bổ trợ.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Đã xem crop dga:p078:r1 (Figure 2-2): rau ~0,55 dưới khoảng 0,7–1,0; trái cây ~1,25, ngũ cốc ~3,08, sữa ~2,6 trên khoảng; đạm ~1,94 ≈ mức 2,0. Câu trả lời đúng cả hai vế và cite đúng vùng biểu đồ; bằng chứng gold thứ hai (đoạn văn p.79) chỉ là bổ trợ. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t17 · multihop
 
@@ -317,7 +317,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 16 − 10 = 6 oz eq/tuần; cite Table A3-5 p.162 và A3-2 p.157 (đủ hai nguồn).
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 16 − 10 = 6 oz eq/tuần; cite Table A3-5 p.162 và A3-2 p.157 (đủ hai nguồn). (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t18 · multihop
 
@@ -335,7 +335,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Đã xem crop dga:p109:r1 (Table 4-1, mẫu Healthy U.S.-Style cho 19–59 tuổi): cột 2.000 có rau 2½, trái cây 2 cup eq/ngày — cùng số với Table A3-2 gold và đúng nhóm tuổi của người 28 tuổi; kèm Table A2-2 p.153 cho 2.000 kcal. Hai nguồn, đúng vùng.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Đã xem crop dga:p109:r1 (Table 4-1, mẫu Healthy U.S.-Style cho 19–59 tuổi): cột 2.000 có rau 2½, trái cây 2 cup eq/ngày — cùng số với Table A3-2 gold và đúng nhóm tuổi của người 28 tuổi; kèm Table A2-2 p.153 cho 2.000 kcal. Hai nguồn, đúng vùng. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t19 · multihop
 
@@ -353,7 +353,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Đã xem crop dga:p039:r1 (Figure 1-4): 14–18 tuổi = 51, 60+ = 63 trên cùng biểu đồ; hiệu 12 đúng. Thêm Figure 3-1 (p.88) và fact chương 6 (p.139) xác nhận từng số. Vùng khác vùng gold nhưng chứa trọn bằng chứng.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Đã xem crop dga:p039:r1 (Figure 1-4): 14–18 tuổi = 51, 60+ = 63 trên cùng biểu đồ; hiệu 12 đúng. Thêm Figure 3-1 (p.88) và fact chương 6 (p.139) xác nhận từng số. Vùng khác vùng gold nhưng chứa trọn bằng chứng. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t20 · multihop
 
@@ -371,7 +371,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 1.800 + 340 = 2.140 kcal; cite Table A2-2 p.153 và Table 5-2 p.125, kèm lưu ý chỉ là ước tính.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — 1.800 + 340 = 2.140 kcal; cite Table A2-2 p.153 và Table 5-2 p.125, kèm lưu ý chỉ là ước tính. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t21 · text
 
@@ -389,7 +389,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ 4–6 tháng; hỏi bác sĩ trước (có thể xét nghiệm máu/lẩy da); cite p.71.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ 4–6 tháng; hỏi bác sĩ trước (có thể xét nghiệm máu/lẩy da); cite p.71. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t22 · text
 
@@ -407,7 +407,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — ≤ 300 mg/ngày ≈ 2–3 cốc; cafein qua sữa lượng nhỏ; cite p.131.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — ≤ 300 mg/ngày ≈ 2–3 cốc; cafein qua sữa lượng nhỏ; cite p.131. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t23 · text
 
@@ -425,7 +425,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Nam ≤ 2, nữ ≤ 1 ly trong ngày uống, không phải trung bình; 1 ly = 14 g cồn + ví dụ; cite p.62.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Nam ≤ 2, nữ ≤ 1 ly trong ngày uống, không phải trung bình; 1 ly = 14 g cồn + ví dụ; cite p.62. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t24 · text
 
@@ -443,7 +443,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Axit folic ≤ 1.000 µg, sắt ≤ 45 mg; hỏi nhân viên y tế; cite p.128.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Axit folic ≤ 1.000 µg, sắt ≤ 45 mg; hỏi nhân viên y tế; cite p.128. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t25 · none
 
@@ -461,7 +461,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối, không khẳng định thêm.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối, không khẳng định thêm. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t26 · none
 
@@ -479,7 +479,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối, không đưa con số ADI.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối, không đưa con số ADI. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t27 · none
 
@@ -497,7 +497,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; nhắc ví dụ burrito bowl (gạo trắng/gạo lứt) có cite, không đưa chỉ số GI.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối; nhắc ví dụ burrito bowl (gạo trắng/gạo lứt) có cite, không đưa chỉ số GI. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t28 · none
 
@@ -515,7 +515,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; chỉ nêu hình an toàn thực phẩm và ảnh bìa có cite, không khuyến nghị organic.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối; chỉ nêu hình an toàn thực phẩm và ảnh bìa có cite, không khuyến nghị organic. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t29 · none
 
@@ -533,7 +533,7 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; nêu khuyến cáo methylmercury có cite, không nói về vi nhựa.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối; nêu khuyến cáo methylmercury có cite, không nói về vi nhựa. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 
 ## t30 · none
 
@@ -551,5 +551,5 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; chỉ nêu thông tin natri chung có cite, không nói về MSG.
 
-**Nhãn duyệt tay:** _chờ duyệt_
+**Nhãn duyệt tay:** ĐẠT — Từ chối; chỉ nêu thông tin natri chung có cite, không nói về MSG. (Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất))
 

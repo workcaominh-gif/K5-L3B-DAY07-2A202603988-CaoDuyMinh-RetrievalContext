@@ -1,0 +1,152 @@
+{
+ "t01": {
+  "pass": true,
+  "reason": "Dark-green 1½ cup eq/tuần cite đúng Table A3-2 (p.157). Red & orange 5½: agent nói phần bảng A3-2 bị cắt nên lấy từ Table 4-1 (p.109, cùng mẫu U.S.-Style, cột 1.800 = 5½ — đã xem crop) và Table 3-3; số đúng, bằng chứng tương đương. BIÊN — người duyệt cân nhắc.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t02": {
+  "pass": true,
+  "reason": "2.800 vs 2.000 kcal, chênh 800; cite Table A2-2 p.153 đúng vùng.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t03": {
+  "pass": true,
+  "reason": "+330 kcal = 500 − 170, đúng điều kiện cân nặng khỏe mạnh; cite Table 5-2 p.125.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t04": {
+  "pass": true,
+  "reason": "240 kcal = 12%, đạm 5½ oz eq; cite Table 6-1 p.138.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t05": {
+  "pass": true,
+  "reason": "BMI 27 = Overweight, 15–25 lb, 0,6 lb/tuần (0,5–0,7); cite Table 5-3 p.125. Không nêu giả định 1,1–4,4 lb quý 1 — không được hỏi.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t06": {
+  "pass": true,
+  "reason": "Sữa 2 cup, trái cây 1 cup, ngũ cốc 3 oz eq; cite Table A3-1 p.156.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t07": {
+  "pass": true,
+  "reason": "Bơ → dầu thực vật, soda → nước có ga; đã xem crop Figure 1-2 p.35.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t08": {
+  "pass": true,
+  "reason": "Hai lợi ích (phát triển nhận thức của trẻ, tình trạng folate của mẹ); cite Figure 1-3 p.37.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t09": {
+  "pass": true,
+  "reason": "85% / 15% cho mục đích khác gồm đường bổ sung, chất béo bão hoà; cite Figure 1-7 p.50. Không nêu 250–350 kcal — không bắt buộc với câu hỏi.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t10": {
+  "pass": false,
+  "reason": "Số liệu đúng (375/715/585/300, tổng 1.975) nhưng citation chỉ là trang và fact (dga:p052, dga:p052:c0, dga:p053:f0), không chỉ ra vùng Figure 1-9 → không đạt yêu cầu 'citation xác định được trang và vùng evidence'.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t11": {
+  "pass": true,
+  "reason": "Rau chiên → rau nướng, thịt nhiều muối → thịt nạc xay; cite Figure 2-1 p.76.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t12": {
+  "pass": true,
+  "reason": "62 + 122 = 184 kcal, bơ ≈ 66%; cite Figure 1-1 p.34.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t13": {
+  "pass": true,
+  "reason": "Đồ uống có đường 24%, nước ngọt 16%; cite Figure 1-10 p.56 (cả bong bóng chính và ô con).",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t14": {
+  "pass": true,
+  "reason": "Natri: nữ 95%, nam 97% (tệ hơn); kèm 88%/57% — khớp crop Figure 3-2 p.90 đã xem.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t15": {
+  "pass": true,
+  "reason": "54 / 63 / 62, hiệu 9 — khớp crop Figure 5-1 p.126 đã xem.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t16": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p078:r1 (Figure 2-2): rau ~0,55 dưới khoảng 0,7–1,0; trái cây ~1,25, ngũ cốc ~3,08, sữa ~2,6 trên khoảng; đạm ~1,94 ≈ mức 2,0. Câu trả lời đúng cả hai vế và cite đúng vùng biểu đồ; bằng chứng gold thứ hai (đoạn văn p.79) chỉ là bổ trợ.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t17": {
+  "pass": true,
+  "reason": "16 − 10 = 6 oz eq/tuần; cite Table A3-5 p.162 và A3-2 p.157 (đủ hai nguồn).",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t18": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p109:r1 (Table 4-1, mẫu Healthy U.S.-Style cho 19–59 tuổi): cột 2.000 có rau 2½, trái cây 2 cup eq/ngày — cùng số với Table A3-2 gold và đúng nhóm tuổi của người 28 tuổi; kèm Table A2-2 p.153 cho 2.000 kcal. Hai nguồn, đúng vùng.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t19": {
+  "pass": true,
+  "reason": "Đã xem crop dga:p039:r1 (Figure 1-4): 14–18 tuổi = 51, 60+ = 63 trên cùng biểu đồ; hiệu 12 đúng. Thêm Figure 3-1 (p.88) và fact chương 6 (p.139) xác nhận từng số. Vùng khác vùng gold nhưng chứa trọn bằng chứng.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t20": {
+  "pass": true,
+  "reason": "1.800 + 340 = 2.140 kcal; cite Table A2-2 p.153 và Table 5-2 p.125, kèm lưu ý chỉ là ước tính.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t21": {
+  "pass": true,
+  "reason": "Từ 4–6 tháng; hỏi bác sĩ trước (có thể xét nghiệm máu/lẩy da); cite p.71.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t22": {
+  "pass": true,
+  "reason": "≤ 300 mg/ngày ≈ 2–3 cốc; cafein qua sữa lượng nhỏ; cite p.131.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t23": {
+  "pass": true,
+  "reason": "Nam ≤ 2, nữ ≤ 1 ly trong ngày uống, không phải trung bình; 1 ly = 14 g cồn + ví dụ; cite p.62.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t24": {
+  "pass": true,
+  "reason": "Axit folic ≤ 1.000 µg, sắt ≤ 45 mg; hỏi nhân viên y tế; cite p.128.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t25": {
+  "pass": true,
+  "reason": "Từ chối, không khẳng định thêm.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t26": {
+  "pass": true,
+  "reason": "Từ chối, không đưa con số ADI.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t27": {
+  "pass": true,
+  "reason": "Từ chối; nhắc ví dụ burrito bowl (gạo trắng/gạo lứt) có cite, không đưa chỉ số GI.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t28": {
+  "pass": true,
+  "reason": "Từ chối; chỉ nêu hình an toàn thực phẩm và ảnh bìa có cite, không khuyến nghị organic.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t29": {
+  "pass": true,
+  "reason": "Từ chối; nêu khuyến cáo methylmercury có cite, không nói về vi nhựa.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ },
+ "t30": {
+  "pass": true,
+  "reason": "Từ chối; chỉ nêu thông tin natri chung có cite, không nói về MSG.",
+  "reviewer": "Cao Duy Minh (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"
+ }
+}
