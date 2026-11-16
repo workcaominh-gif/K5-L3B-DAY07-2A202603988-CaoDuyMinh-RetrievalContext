@@ -27,6 +27,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The values 1½ cup eq/wk dark-green and 5½ cup eq/wk red & orange at 1,800 kcal match the gold answer. The cited p157 table supports dark-green, and its indexed text and crop also show 5½ for red & orange, so the agent's claim of truncated text is wrong but harmless. The p097 and p109 tables support 5½ as well.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Dark-green 1½ cup eq/tuần cite đúng Table A3-2 (p.157). Red & orange 5½: agent nói phần bảng A3-2 bị cắt nên lấy từ Table 4-1 (p.109, cùng mẫu U.S.-Style, cột 1.800 = 5½ — đã xem crop) và Table 3-3; số đúng, bằng chứng tương đương. BIÊN — người duyệt cân nhắc.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t02 · table
@@ -42,6 +44,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p153:r1
 
 **Nhãn tự động:** ĐẠT — The answer gives 2,800 (boy) and 2,000 (girl) calories/day with an 800 gap, matching the gold answer. The cited Table A2-2 row for age 16 shows Males Moderately Active 2,800 and Females Moderately Active 2,000, and the printed page 140 / PDF p.153 reference is correct.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 2.800 vs 2.000 kcal, chênh 800; cite Table A2-2 p.153 đúng vùng.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -59,6 +63,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives +330 calories/day and the derivation 500 − 170, which matches the gold. The cited Table 5-2 crop and its footnotes support all claims, including the 400 calories for the second 6 months, the IOM EER basis, and the healthy-weight condition. The mention of Table A2-3 on printed page 141 is not in the cited unit, but it is a minor extra detail.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — +330 kcal = 500 − 170, đúng điều kiện cân nặng khỏe mạnh; cite Table 5-2 p.125.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t04 · table
@@ -74,6 +80,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p138:r1
 
 **Nhãn tự động:** ĐẠT — The answer gives 240 kcal/day, 12%, and 5½ ounce-eq protein foods at the 2,000-calorie level for adults 60+, matching the gold answer. The cited Table 6-1 (pdf p.138, printed p.125) shows these values in the 2,000 column, so the citation supports every claim.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 240 kcal = 12%, đạm 5½ oz eq; cite Table 6-1 p.138.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -91,6 +99,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer correctly identifies BMI 27 as Overweight with total gain of 15-25 lb and weekly gain of 0.6 lb (range 0.5-0.7) in the 2nd and 3rd trimesters, matching the gold answer; the cited Table 5-3 supports every value. The first-trimester footnote is omitted, but the gold treats it as a parenthetical assumption.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — BMI 27 = Overweight, 15–25 lb, 0,6 lb/tuần (0,5–0,7); cite Table 5-3 p.125. Không nêu giả định 1,1–4,4 lb quý 1 — không được hỏi.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t06 · table
@@ -106,6 +116,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p156:r1, dga:p077:r1
 
 **Nhãn tự động:** ĐẠT — The values (dairy 2 cup eq/day, fruits 1 cup eq/day, grains 3 ounce eq/day) match the gold answer, and the whole/refined split of 2 and 1 ounce eq is also correct. Both cited tables (A3-1 on p.156 and Table 2-1 on p.77) show these 1,000-calorie values.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Sữa 2 cup, trái cây 1 cup, ngũ cốc 3 oz eq; cite Table A3-1 p.156.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -123,6 +135,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives vegetable oil for butter and sparkling water for soda, matching the gold. The cited Figure 1-2 crop shows these as column pairs, with Vegetable Oil above Butter and Sparkling Water above Soda.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Bơ → dầu thực vật, soda → nước có ga; đã xem crop Figure 1-2 p.35.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t08 · image
@@ -139,6 +153,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The agent lists both benefits from the gold answer (favorable cognitive development in the child, favorable folate status during pregnancy and lactation). The cited crop of Figure 1-3 on pdf p.37 shows exactly these two items in the 'Women Who Are Pregnant or Lactating' panel.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Hai lợi ích (phát triển nhận thức của trẻ, tình trạng folate của mẹ); cite Figure 1-3 p.37.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t09 · image
@@ -154,6 +170,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p050:r1
 
 **Nhãn tự động:** ĐẠT — The answer gives 85% for nutrient-dense food group needs and 15% for other uses including added sugars and saturated fat, matching the figure. The 250-350 calorie detail is extra and not required; the cited Figure 1-7 supports every claim made.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 85% / 15% cho mục đích khác gồm đường bổ sung, chất béo bão hoà; cite Figure 1-7 p.50. Không nêu 250–350 kcal — không bắt buộc với câu hỏi.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -189,6 +207,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer matches the gold swaps (fried vegetables -> roasted vegetables; high-sodium meats -> ground lean meats), and the cited Figure 2-1 crop shows both arrows, the title, and six photo pairs.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Rau chiên → rau nướng, thịt nhiều muối → thịt nạc xay; cite Figure 2-1 p.76.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t12 · chart
@@ -204,6 +224,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p034:r1
 
 **Nhãn tự động:** ĐẠT — The answer gives 62 calories from popcorn, 122 from butter, 184 total, and 122/184 ≈ 66%, matching the gold answer. The cited Figure 1-1 chart text and crop show these exact values for the 2-cup movie-theater popcorn bar, and printed page 21 matches the page the chart is on.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 62 + 122 = 184 kcal, bơ ≈ 66%; cite Figure 1-1 p.34.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -221,6 +243,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives sugar-sweetened beverages at 24% and soft drinks at 16% as the largest item within them, matching the gold answer. Both claims, plus the extra details (Desserts & Sweet Snacks 19%, fruit drinks 5%, sport & energy drinks 2%), are shown in the cited Figure 1-10 regions r1 and r2.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Đồ uống có đường 24%, nước ngọt 16%; cite Figure 1-10 p.56 (cả bong bóng chính và ô con).
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t14 · chart
@@ -237,6 +261,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer correctly identifies sodium (girls 95%, boys 97%, so boys are slightly worse) and gives the correct comparison values of 88% and 57%. The cited figure region shows these exact labels under the right headers, so every claim is supported.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Natri: nữ 95%, nam 97% (tệ hơn); kèm 88%/57% — khớp crop Figure 3-2 p.90 đã xem.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t15 · chart
@@ -252,6 +278,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p126:r2
 
 **Nhãn tự động:** ĐẠT — The answer gives adult women 54, pregnant 63, lactating 62 and the correct 9-point difference. The cited Figure 5-1 crop shows exactly these labeled values, and the extra differences (8 and 1) are computed correctly.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 54 / 63 / 62, hiệu 9 — khớp crop Figure 5-1 p.126 đã xem.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -286,6 +314,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p162:r1, dga:p157:r1
 
 **Nhãn tự động:** ĐẠT — The answer gives 16 (Mediterranean) minus 10 (U.S.-Style) = 6 ounce eq/week at 2,400 calories, matching the gold answer. Both cited tables (A3-5 on pdf p.162, A3-2 on pdf p.157) show those seafood values in the 2,400 column.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 16 − 10 = 6 oz eq/tuần; cite Table A3-5 p.162 và A3-2 p.157 (đủ hai nguồn).
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -339,6 +369,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives 1,800 + 340 = 2,140 calories/day, matching the gold. Table A2-2 (26-30 sedentary female = 1,800) and Table 5-2 (2nd trimester +340, healthy prepregnancy weight) support the figures. The p.152 passage supports the caveats about estimates, multiples, weight gain, and following a healthcare provider's guidance.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — 1.800 + 340 = 2.140 kcal; cite Table A2-2 p.153 và Table 5-2 p.125, kèm lưu ý chỉ là ước tính.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t21 · text
@@ -354,6 +386,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p071:f0, dga:p071, dga:p071:c0
 
 **Nhãn tự động:** ĐẠT — The answer matches the gold: 4-6 months for infants with severe eczema or egg allergy, and first check with the healthcare provider (blood test or skin prick may be recommended). Every claim, including the extra note on delaying allergenic foods, is backed by the cited p.71 text.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ 4–6 tháng; hỏi bác sĩ trước (có thể xét nghiệm máu/lẩy da); cite p.71.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -371,6 +405,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives the gold values (about 300 mg or less per day, about 2-3 cups of coffee) and the small-amount transfer into breast milk, and both cited units on p.131 state this. The extra claims about varying caffeine content and consulting a healthcare provider are also in the cited text, and the 'Chapter 5, printed page 118' source line matches the header.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — ≤ 300 mg/ngày ≈ 2–3 cốc; cafein qua sữa lượng nhỏ; cite p.131.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t23 · text
@@ -386,6 +422,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p062
 
 **Nhãn tự động:** ĐẠT — The answer matches the gold values: 2 drinks or less for men and 1 or less for women on days alcohol is consumed, not an average over several days, and one drink equals 14 g (0.6 fl oz) pure alcohol with the beer, wine and spirits equivalents. The cited p.62 text states each of these claims, including the extra binge-drinking detail.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Nam ≤ 2, nữ ≤ 1 ly trong ngày uống, không phải trung bình; 1 ly = 14 g cồn + ví dụ; cite p.62.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -403,6 +441,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The answer gives folic acid (1,000 micrograms) and iron (45 milligrams) as the lactation ULs and advises consulting a healthcare provider, matching the gold answer. The cited chunk supports each claim, including the page and chapter source; the statement that no other nutrients are listed in the passage is also consistent with the text.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Axit folic ≤ 1.000 µg, sắt ≤ 45 mg; hỏi nhân viên y tế; cite p.128.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t25 · none
@@ -418,6 +458,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** —
 
 **Nhãn tự động:** ĐẠT — The agent abstained, saying the document lacks evidence on intermittent fasting or time-restricted eating, and gave no stance on the question. Its only factual claims describe what the searches returned (pregnancy calorie needs, estimated calorie needs by age and sex), which are plausible document content, and no citations were required.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối, không khẳng định thêm.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -435,6 +477,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The agent correctly abstained, saying the document gives no acceptable daily intake value for aspartame or sucralose, and it offered no outside figure or guess. Its only claims describe its own searches and what they returned, and these are not factual claims about the document that would need citations.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối, không đưa con số ADI.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t27 · none
@@ -450,6 +494,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p051:f0
 
 **Nhãn tự động:** ĐẠT — The agent correctly abstained, stating the document gives no glycemic index values. Its only factual claims, about white rice (1½ cups) and brown rice (1 cup) in the Figure 1-8 burrito bowls, are supported by the cited unit.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; nhắc ví dụ burrito bowl (gạo trắng/gạo lứt) có cite, không đưa chỉ số GI.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 
@@ -467,6 +513,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The agent abstained, saying the document has no evidence on organic produce or pesticide residues, and made no unsupported claim. Its descriptions of the food safety graphic (Clean, Separate, Cook, Chill) and the cover photo of a father and child washing a cucumber match the cited units.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; chỉ nêu hình an toàn thực phẩm và ảnh bìa có cite, không khuyến nghị organic.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t29 · none
@@ -483,6 +531,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 
 **Nhãn tự động:** ĐẠT — The agent abstained, saying the document has nothing on microplastic exposure from seafood, and gave no unsupported answer. Its description of the methylmercury advice (pregnant or lactating women, young children, choices higher in EPA/DHA and lower in methylmercury) matches the cited chunk.
 
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; nêu khuyến cáo methylmercury có cite, không nói về vi nhựa.
+
 **Nhãn duyệt tay:** _chờ duyệt_
 
 ## t30 · none
@@ -498,6 +548,8 @@ Câu chưa duyệt tay: t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t
 **Citation:** dga:p059:c0, dga:p059:f1
 
 **Nhãn tự động:** ĐẠT — The agent correctly abstained, saying the document never addresses MSG as a hidden sodium source. Its three supporting claims (sodium as a flavor enhancer, most sodium coming from commercial processing and restaurant foods, and only a small share coming from inherent sodium or home and table salt) are all stated in the cited units.
+
+**Đề xuất (chưa phải nhãn duyệt tay):** ĐẠT — Từ chối; chỉ nêu thông tin natri chung có cite, không nói về MSG.
 
 **Nhãn duyệt tay:** _chờ duyệt_
 

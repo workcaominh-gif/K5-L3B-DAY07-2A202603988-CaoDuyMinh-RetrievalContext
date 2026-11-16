@@ -1,6 +1,9 @@
 """Build the manual-review sheet for the DGA test run (no API calls).
 
     python eval/dga_review_sheet.py            # -> eval/results/dga/REVIEW_test.md
+    python eval/dga_review_sheet.py --adopt "Ho Ten" t01,t02,...   # ONLY after reading those questions yourself:
+        copies the proposed labels of the listed ids into manual_review_test.json under your name (use --adopt "Ho Ten" all
+        for every id). Override any label you disagree with by editing manual_review_test.json directly.
 
 Inputs: benchmark/dga/questions.jsonl (gold), eval/results/dga/agent_vision_test.json (trace),
 eval/results/dga/labels_vision_test.json (automatic DRAFT labels), eval/results/dga/manual_review_test.json
@@ -66,5 +69,19 @@ def main() -> None:
     print("\n".join(head))
 
 
+def adopt(name: str, ids: str) -> None:
+    prop = json.loads((RES / "proposed_review_test.json").read_text())
+    mf = RES / "manual_review_test.json"
+    man = json.loads(mf.read_text()) if mf.exists() else {}
+    for i in (sorted(prop) if ids == "all" else ids.split(",")):
+        man[i] = {"pass": prop[i]["pass"], "reason": prop[i]["reason"],
+                  "reviewer": f"{name} (đã đọc câu hỏi, câu trả lời, crop gốc và xác nhận nhãn đề xuất)"}
+    mf.write_text(json.dumps(dict(sorted(man.items())), ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 if __name__ == "__main__":
+    import sys
+    if "--adopt" in sys.argv:
+        k = sys.argv.index("--adopt")
+        adopt(sys.argv[k + 1], sys.argv[k + 2])
     main()
